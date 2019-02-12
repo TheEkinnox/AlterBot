@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
-
+using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
@@ -38,6 +39,10 @@ namespace AlterBotNet
             this._client.Ready += Client_Ready;
             this._client.Log += Client_Log;
             this._client.UserJoined += AnnounceUserJoined;
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Monday && DateTime.Now.Hour == 0)
+            {
+                this.VerserSalaireAsync();
+            }
 
             string token;
             using (FileStream stream = new FileStream((Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)).Replace(@"bin\Debug\netcoreapp2.1", @"Data\Token.txt"), FileMode.Open, FileAccess.Read))
@@ -49,6 +54,19 @@ namespace AlterBotNet
                 await this._client.StartAsync();
 
                 await Task.Delay(-1);
+        }
+
+        // Todo: Compléter le système de salaires
+        private async void VerserSalaireAsync()
+        {
+            string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
+            BankAccount methodes = new BankAccount("");
+            List<BankAccount> bankAccounts = (await methodes.ChargerDonneesPersosAsync(nomFichier));
+            foreach (BankAccount bankAccount in bankAccounts)
+            {
+                
+            }
+
         }
 
         private async Task AnnounceUserJoined(SocketGuildUser user)

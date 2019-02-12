@@ -12,8 +12,7 @@ namespace AlterBotNet.Core.Commands
 {
     public class HelloWorld : ModuleBase<SocketCommandContext>
     {
-        // ReSharper disable once InconsistentNaming
-        Random rand = new Random();
+        private Random _rand = new Random();
 
         [Command("hello"), Alias("helloworld", "world"), Summary("Commande hello world")]
         public async Task SendMessage()
@@ -67,7 +66,7 @@ namespace AlterBotNet.Core.Commands
             try
             {
                 //await this.Context.Channel.SendFileAsync((@"C:\Users\1832960\source\repos\AlterBotNet\AlterBotNet\Data\Plop\p6.jpg"));
-                await this.Context.Channel.SendFileAsync(vectImgs[this.rand.Next(vectImgs.Length)], $"{vectCapt[this.rand.Next(vectCapt.Length)]}");
+                await this.Context.Channel.SendFileAsync(vectImgs[this._rand.Next(vectImgs.Length)], $"{vectCapt[this._rand.Next(vectCapt.Length)]}");
             }
             catch (Exception e)
             {
@@ -87,7 +86,7 @@ namespace AlterBotNet.Core.Commands
         public async Task SendHelp()
         {
             string message = "";
-            message += "**Liste des commandes disponibles**\n";
+            message += "\n";
             message += "Liste des commandes: `help`\n";
             message += "Aide sur la commande bank: `bank help`\n";
             message += "Aide sur la commande stuff: `stuff help`\n";
@@ -96,10 +95,23 @@ namespace AlterBotNet.Core.Commands
             message += "Faire parler le bot (c useless): `say message`\n";
             message += "Saluer l'utilisateur qui a envoyé la commande: `hello`\n";
             message += "Tester le message de bienvenue sur le serveur: `testjoin`\n";
-            await ReplyAsync("Aide envoyée en mp");
-            Console.WriteLine("Aide envoyée en mp");
-            await this.Context.User.SendMessageAsync(message);
-            Console.WriteLine(message);
+            try
+            {
+                await ReplyAsync("Infos envoyées en mp");
+                Console.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
+                EmbedBuilder eb = new EmbedBuilder();
+                eb.WithTitle(("**Liste des commandes disponibles**"))
+                    .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
+                    .AddField("==============================================", message);
+                //await this.Context.User.SendMessageAsync(infoAccount.ToString());
+                await this.Context.User.SendMessageAsync("", false, eb.Build());
+                Console.WriteLine(message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return;
+            }
         }
     }
 }
