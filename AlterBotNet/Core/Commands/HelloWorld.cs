@@ -59,6 +59,9 @@ namespace AlterBotNet.Core.Commands
                 "C mi ke jsui le + bô",
                 "La vie est beeeeeelle!",
                 "Plop mon poulpe",
+                "Alors déjà on dit pas poulpe, c'est supeeeer péjoratif!",
+                "Alors déjà on dit pas poulpe, c'est supeeeer péjoratif!",
+                "Alors déjà on dit pas poulpe, c'est supeeeer péjoratif!",
                 "Alors déjà on dit pas poulpe, c'est supeeeer péjoratif!"
             };
             try
@@ -87,6 +90,7 @@ namespace AlterBotNet.Core.Commands
             message += "**Liste des commandes disponibles**\n";
             message += "Liste des commandes: `help`\n";
             message += "Aide sur la commande bank: `bank help`\n";
+            message += "Aide sur la commande stuff: `stuff help`\n";
             message += "Envoyer une image de poulpe avec un message aléatoire: `plop`\n";
             message += "Lancer un dé: `roll 1d100`\n";
             message += "Faire parler le bot (c useless): `say message`\n";

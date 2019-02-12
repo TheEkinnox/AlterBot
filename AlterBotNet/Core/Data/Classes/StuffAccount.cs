@@ -1,18 +1,41 @@
-﻿using System;
+﻿#region MÉTADONNÉES
+
+// Nom du fichier : StuffAccount.cs
+// Auteur : Loick OBIANG (1832960)
+// Date de création : 2019-02-11
+// Date de modification : 2019-02-11
+
+#endregion
+
+#region USING
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
+#endregion
+
 namespace AlterBotNet.Core.Data.Classes
 {
     public class StuffAccount
     {
+        #region CONSTANTES ET ATTRIBUTS STATIQUES
+
         private const decimal salaire = 0;
+
+        #endregion
+
+        #region PROPRIÉTÉS ET INDEXEURS
 
         public string Name { get; set; }
         public ulong UserId { get; set; }
         public List<string> Items { get; set; }
+
+        #endregion
+
+        #region CONSTRUCTEURS
 
         /// <summary>
         /// Constructeur permettant l'initialisation d'un compte en banque
@@ -20,12 +43,16 @@ namespace AlterBotNet.Core.Data.Classes
         /// <param name="name">Nom du propriétaire du compte</param>
         /// <param name="amount">Montant disponible sur le compte</param>
         /// <param name="userId">ID Discord du créateur du compte</param>
-        public StuffAccount(string name, List<string> items = null, ulong userId = 0)
+        public StuffAccount(string name = "", List<string> items = null, ulong userId = 0)
         {
             this.Name = name;
             this.Items = items;
             this.UserId = userId;
         }
+
+        #endregion
+
+        #region MÉTHODES
 
         public void EnregistrerDonneesPersos(string cheminFichier, List<StuffAccount> savedStuffAccounts)
         {
@@ -44,6 +71,7 @@ namespace AlterBotNet.Core.Data.Classes
                             personneTexte += $",{savedStuffAccounts[i].Items[j]}";
                         }
                     }
+
                     personneTexte += $",{savedStuffAccounts[i].UserId}";
 
                     fluxEcriture.WriteLine(personneTexte);
@@ -83,7 +111,7 @@ namespace AlterBotNet.Core.Data.Classes
                 List<string> items = new List<string>();
                 vectChamps = vectLignes[i].Split(',');
                 name = vectChamps[0].Trim();
-                for (int j = 1; !ulong.TryParse(vectChamps[j],out userId) && vectChamps[j]!=null; j++)
+                for (int j = 1; !ulong.TryParse(vectChamps[j], out userId) && vectChamps[j] != null; j++)
                 {
                     items.Add(vectChamps[j]);
                 }
@@ -151,15 +179,23 @@ namespace AlterBotNet.Core.Data.Classes
 
         public override string ToString()
         {
-            string message = ($"**{this.Name}:**");
-            for (int j = 0; j < this.Items.Length; j++)
+            string message = $"**{this.Name}:**";
+
+            if (this.Items.Count > 0)
             {
-                if (this.Items[j] != null)
+                for (int j = 0; j < this.Items.Count; j++)
                 {
-                    message += $"\n[{j}]{this.Items[j]}";
+                    if (!string.IsNullOrEmpty(this.Items[j]))
+                    {
+                        message += $"\n[{j}] {this.Items[j]}";
+                    }
                 }
             }
+            else message += "\nInventaire vide";
+
             return message;
         }
+
+        #endregion
     }
 }

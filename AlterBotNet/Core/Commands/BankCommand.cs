@@ -26,8 +26,6 @@ namespace AlterBotNet.Core.Commands
     /// <summary>
     /// Classe des commandes bank
     /// </summary>
-    // ReSharper disable once UnusedMember.Global
-    // ReSharper disable once InheritdocConsiderUsage
     public class BankCommand : ModuleBase<SocketCommandContext>
     {
         #region MÉTHODES
@@ -296,7 +294,7 @@ namespace AlterBotNet.Core.Commands
                         else
                         {
                             decimal.TryParse(argus[1], out montant);
-                            BankAccount withdrawAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[3]);
+                            BankAccount withdrawAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]);
                             BankAccount depositAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[3]);
                             if (withdrawAccount != null && depositAccount != null)
                             {
