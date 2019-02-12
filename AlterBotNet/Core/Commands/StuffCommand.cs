@@ -57,7 +57,6 @@ namespace AlterBotNet.Core.Commands
                     message += "Afficher les objets d'un personnage: `stuff info (nom_Personnage)`\n";
                     message += "(staff) Ajouter un objet à un personnage: `stuff add (objet) (nom_Personnage)`\n";
                     message += "(staff) Retirer un objet à un personnage: `stuff remove (objet) (nom_Personnage)`\n";
-                    // Todo: Transférer un objet d'un compte à un autre
                     message += "Transférer un objet d'un compte à un autre: `stuff give (objet) (nom_Personnage1) (nom_Personnage2)`\n";
                     message += "Créer un nouveau compte: `stuff create (nomPersonnage)`\n";
                     message += "(staff) Supprimer un compte: `stuff delete (nomPersonnage)`\n";
@@ -393,6 +392,9 @@ namespace AlterBotNet.Core.Commands
                                         Console.WriteLine(e);
                                         return;
                                     }
+
+                                    await ReplyAsync($"L'objet \"**{argus[1]}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
+                                    Console.WriteLine($"L'objet \"**{argus[1]}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
                                 }
                                 else
                                 {
