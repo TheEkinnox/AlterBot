@@ -28,7 +28,7 @@ namespace AlterBotNet.Core.Commands
     /// </summary>
     public class StuffCommand : ModuleBase<SocketCommandContext>
     {
-        private Random _rand = new Random();
+        private Random rand = new Random();
         #region MÉTHODES
 
         [Command("stuff"), Alias("stf","inv"), Summary("Affiche le stuff d'un personnage")]
@@ -130,7 +130,7 @@ namespace AlterBotNet.Core.Commands
                                     Console.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
                                     EmbedBuilder eb = new EmbedBuilder();
                                     eb.WithTitle(($"Inventaire de **{infoAccount.Name}**"))
-                                        .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
+                                        .WithColor(this.rand.Next(256), this.rand.Next(256), this.rand.Next(256))
                                         .AddField("==============================================", infoAccount.ToString());
                                     //await this.Context.User.SendMessageAsync(infoAccount.ToString());
                                     await this.Context.User.SendMessageAsync("", false, eb.Build());
@@ -262,10 +262,6 @@ namespace AlterBotNet.Core.Commands
                                     string wdName = withdrawAccount.Name;
                                     List<string> wdItems = withdrawAccount.Items;
                                     ulong wdUserId = withdrawAccount.UserId;
-                                    if (argus[1].Contains('_'))
-                                        argus[1] = argus[1].Replace("_", " ");
-                                    if (argus[1].Contains('-'))
-                                        argus[1] = argus[1].Replace("-", " ");
                                     if (int.TryParse(argus[1],out int indexObj))
                                     {
                                         if (!string.IsNullOrEmpty(wdItems[indexObj]))
@@ -362,42 +358,7 @@ namespace AlterBotNet.Core.Commands
                                 string dpName = depositAccount.Name;
                                 List<string> dpItems = depositAccount.Items;
                                 ulong dpUserId = depositAccount.UserId;
-                                if (argus[1].Contains('_'))
-                                    argus[1] = argus[1].Replace("_", " ");
-                                if (argus[1].Contains('-'))
-                                    argus[1] = argus[1].Replace("-", " ");
-                                if (int.TryParse(argus[1], out int indexObj))
-                                {
-                                    if (!string.IsNullOrEmpty(wdItems[indexObj]) && string.IsNullOrEmpty(dpItems[indexObj]))
-                                    {
-                                        string nomObj = wdItems[indexObj];
-                                        wdItems.RemoveAt(indexObj);
-                                        stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
-                                        StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
-                                        stuffAccounts.Add(newAccount);
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
-                                        Console.WriteLine($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
-                                        Console.WriteLine(newAccount.ToString());
-                                        dpItems.Add(nomObj);
-                                        stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, dpName));
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
-                                        StuffAccount newDpAccount = new StuffAccount(dpName, dpItems, dpUserId);
-                                        stuffAccounts.Add(newDpAccount);
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
-                                        Console.WriteLine($"Objet \"**{nomObj}**\" ajouté sur le compte de \"**{dpName}**\"");
-                                        Console.WriteLine(newDpAccount.ToString());
-
-                                        await ReplyAsync($"L'objet \"**{nomObj}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
-                                        Console.WriteLine($"L'objet \"**{nomObj}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
-                                    }
-                                    else
-                                    {
-                                        await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
-                                        Console.WriteLine($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
-                                    }
-                                }
-                                else if (wdItems.Contains(argus[1]) && !dpItems.Contains(argus[1]))
+                                if (wdItems.Contains(argus[1]) && !dpItems.Contains(argus[1]))
                                 {
                                     try
                                     {
