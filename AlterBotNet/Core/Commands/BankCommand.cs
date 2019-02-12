@@ -32,7 +32,7 @@ namespace AlterBotNet.Core.Commands
     {
         #region MÉTHODES
 
-        [Command("bank"), Alias("bnk", "money", "sb"), Summary("Affiche l'argent en banque d'un utilisateur")]
+        [Command("bank"), Alias("bnk", "money", "bk"), Summary("Affiche l'argent en banque d'un utilisateur")]
         public async Task SendBank([Remainder] string input = "none")
         {
             BankAccount methodes = new BankAccount("");
@@ -59,10 +59,10 @@ namespace AlterBotNet.Core.Commands
                     message += "(staff) Ajouter de l'argent sur le compte d'un personnage: `bank deposit (montant) (nom_Personnage)`\n";
                     message += "(staff) Retirer de l'argent sur le compte d'un personnage: `bank withdraw (montant) (nom_Personnage)`\n";
                     message += "(staff) Définir le montant sur le compte d'un joueur: `bank set (montant) (nom_Personnage)`\n";
-                    // Todo: Commande bank pay (montant) (nom_Personnage1) (nom_Personnage2)
                     message += "Transférer de l'argent d'un compte à un autre: `bank pay (montant) (nom_Personnage1) (nom_Personnage2)`\n";
-                    message += "Créer un nouveau compte: `bank add (nomPersonnage)`";
-                    message += "(staff) Supprimer un compte: `bank delete (nomPersonnage)`";
+                    message += "Créer un nouveau compte: `bank add (nomPersonnage)`\n";
+                    message += "(staff) Supprimer un compte: `bank delete (nomPersonnage)`\n";
+                    message += "Trier la liste des comptes (par ordre alphabétique): `bank sort`\n";
                     await ReplyAsync("Aide envoyée en mp");
                     Console.WriteLine("Aide envoyée en mp");
                     await this.Context.User.SendMessageAsync(message);
@@ -375,33 +375,43 @@ namespace AlterBotNet.Core.Commands
                 else if (input.StartsWith("delete") || input.StartsWith("del"))
                 {
                     argus = input.Split(' ');
-                    // Sert à s'assurer qu'argus[0] == toujours add
-                    if (argus[0] == "delete" || argus[0] == "del")
+                    if (IsStaff((SocketGuildUser) this.Context.User) || userId == (await methodes.GetBankAccountByNameAsync(nomFichier, argus[1])).UserId)
                     {
-                        if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                        // Sert à s'assurer qu'argus[0] == toujours add
+                        if (argus[0] == "delete" || argus[0] == "del")
                         {
-                            await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                            Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            }
+                            else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            }
+                            else if (await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) != -1)
+                            {
+                                int toRemIndex = await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]);
+                                bankAccounts.RemoveAt(toRemIndex);
+                                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                await ReplyAsync($"Compte de {argus[1]} supprimé");
+                                Console.WriteLine($"Compte de {argus[1]} supprimé");
+                                Console.WriteLine(await methodes.AccountsListAsync(nomFichier));
+                            }
+                            else if (await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) == -1)
+                            {
+                                await ReplyAsync($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                Console.WriteLine($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                            }
                         }
-                        else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                        {
-                            await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                            Console.WriteLine($"{error} Nombre insuffisant d'arguments");
-                        }
-                        else if (await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) != -1)
-                        {
-                            int toRemIndex = await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]);
-                            bankAccounts.RemoveAt(toRemIndex);
-                            methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                            await ReplyAsync($"Compte de {argus[1]} supprimé");
-                            Console.WriteLine($"Compte de {argus[1]} supprimé");
-                            Console.WriteLine(await methodes.AccountsListAsync(nomFichier));
-                        }
-                        else if (await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) == -1)
-                        {
-                            await ReplyAsync($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                            Console.WriteLine($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                        }
+                    }
+                    else
+                    {
+                        if (this.Context.Guild.Name == "ServeurTest")
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} ou le propriétaire du compte pour utiliser cette commande");
+                        else
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} ou le propriétaire du compte pour utiliser cette commande");
                     }
                 }
                 // ====================================
@@ -413,7 +423,7 @@ namespace AlterBotNet.Core.Commands
                     {
                         List<BankAccount> sortedList = bankAccounts.OrderBy(o => o.Name).ToList();
                         methodes.EnregistrerDonneesPersos(nomFichier, sortedList);
-                        await ReplyAsync("La liste des comptes en banque a été triée");
+                        await ReplyAsync("La liste des comptes en banque a été triée par ordre alphabétique");
                     }
                     catch (Exception e)
                     {
@@ -436,12 +446,12 @@ namespace AlterBotNet.Core.Commands
         private bool IsStaff(SocketGuildUser user)
         {
             string targetRoleName = "Staff";
-            var result = from r in user.Guild.Roles
+            IEnumerable<ulong> result = from r in user.Guild.Roles
                 where r.Name == targetRoleName
                 select r.Id;
             ulong roleId = result.FirstOrDefault();
             if (roleId == 0) return false;
-            var targetRole = user.Guild.GetRole(roleId);
+            SocketRole targetRole = user.Guild.GetRole(roleId);
             return user.Roles.Contains(targetRole);
         }
 

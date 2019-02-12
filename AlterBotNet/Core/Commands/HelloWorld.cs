@@ -79,5 +79,23 @@ namespace AlterBotNet.Core.Commands
             await this.Context.Message.DeleteAsync();
             await ReplyAsync(input);
         }
+
+        [Command("help"), Summary("Envoie la liste des commandes disponibles en mp")]
+        public async Task SendHelp()
+        {
+            string message = "";
+            message += "**Liste des commandes disponibles**\n";
+            message += "Liste des commandes: `help`\n";
+            message += "Aide sur la commande bank: `bank help`\n";
+            message += "Envoyer une image de poulpe avec un message aléatoire: `plop`\n";
+            message += "Lancer un dé: `roll 1d100`\n";
+            message += "Faire parler le bot (c useless): `say message`\n";
+            message += "Saluer l'utilisateur qui a envoyé la commande: `hello`\n";
+            message += "Tester le message de bienvenue sur le serveur: `testjoin`\n";
+            await ReplyAsync("Aide envoyée en mp");
+            Console.WriteLine("Aide envoyée en mp");
+            await this.Context.User.SendMessageAsync(message);
+            Console.WriteLine(message);
+        }
     }
 }
