@@ -21,11 +21,13 @@ namespace AlterBotNet.Core.Data.Classes
         /// <param name="name">Nom du propriétaire du compte</param>
         /// <param name="amount">Montant disponible sur le compte</param>
         /// <param name="userId">ID Discord du créateur du compte</param>
-        public BankAccount(string name, decimal amount = 500, ulong userId = 0)
+        /// <param name="salaire">Salaire du compte</param>
+        public BankAccount(string name, decimal amount = 500, ulong userId = 0, decimal salaire = 0)
         {
             this.Name = name;
             this.Amount = amount;
             this.UserId = userId;
+            this.Salaire = salaire;
         }
 
         public void Deposit(decimal montant)
@@ -48,7 +50,7 @@ namespace AlterBotNet.Core.Data.Classes
                 if (savedBankAccounts[i] != null)
                 {
                     personneTexte = savedBankAccounts[i].Name + "," + savedBankAccounts[i].Amount + "," +
-                                    savedBankAccounts[i].UserId;
+                                    savedBankAccounts[i].Salaire + "," + savedBankAccounts[i].UserId;
 
                     fluxEcriture.WriteLine(personneTexte);
                 }
@@ -81,6 +83,7 @@ namespace AlterBotNet.Core.Data.Classes
             String[] vectChamps;
             string name;
             decimal amount;
+            decimal salaire;
             ulong userId;
 
             for (int i = 0; i < bankAccounts.Length; i++)
@@ -88,9 +91,10 @@ namespace AlterBotNet.Core.Data.Classes
                 vectChamps = vectLignes[i].Split(',');
                 name = vectChamps[0].Trim();
                 amount = decimal.Parse(vectChamps[1]);
-                userId = ulong.Parse(vectChamps[2]);
+                salaire = decimal.Parse(vectChamps[2]);
+                userId = ulong.Parse(vectChamps[3]);
 
-                bankAccounts[i] = new BankAccount(name, amount, userId);
+                bankAccounts[i] = new BankAccount(name, amount, userId, salaire);
             }
 
             return bankAccounts.ToList();
@@ -136,24 +140,49 @@ namespace AlterBotNet.Core.Data.Classes
         public int GetBankAccountIndexByName(string nomFichier, string nomPerso)
             => new BankAccount("").GetBankAccountIndexByNameAsync(nomFichier, nomPerso).GetAwaiter().GetResult();
 
-        public async Task<string> AccountsListAsync(string nomFichier)
+        public async Task<List<string>> AccountsListAsync(string nomFichier)
         {
             List<BankAccount> regAccounts = ChargerDonneesPersos(nomFichier);
-            string message = "";
-            for (int i = 0; i < regAccounts.Count; i++)
+            List<string> message = new List<string>();
+            int lastIndex = 0;
+            for (int i = 0; i < regAccounts.Count / 5 + regAccounts.Count % 5; i++)
             {
-                message += $"{regAccounts[i].ToString()}\n";
+                try
+                {
+                    message.Add("");
+
+                    for (int j = lastIndex; j < lastIndex + 5 && j < regAccounts.Count && regAccounts[j] != null; j++)
+                    {
+                        try
+                        {
+                            message[i] += $"{regAccounts[j].ToString()}\n";
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                            throw;
+                        }
+                    }
+
+                    lastIndex += 5;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
             }
 
             return message;
         }
 
-        public string AccountsList(string nomFichier)
+        public List<string> AccountsList(string nomFichier)
             => new BankAccount("").AccountsListAsync(nomFichier).GetAwaiter().GetResult();
 
         public override string ToString()
         {
-            string message = ($"**{this.Name}:** {this.Amount} couronnes");
+            string message = ($"**{this.Name+ ":**"} {this.Amount} couronne(s)\n{"Salaire" + ":"} {this.Salaire} couronne(s)");
+            //string message = string.Format("**{0}:** {this.Amount} couronne(s)\nsalaire: {this.Salaire} couronne(s)", this.Name);
             return message;
         }
     }

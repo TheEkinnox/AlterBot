@@ -51,7 +51,6 @@ namespace AlterBotNet.Core.Commands
                 // ====================================
                 if (input == "help")
                 {
-                    message += "**Infos sur la commande stuff**\n";
                     message += "Aide sur la commande: `stuff help`\n";
                     message += "(staff) Afficher la liste des comptes: `stuff list`\n";
                     message += "Afficher les objets d'un personnage: `stuff info (nom_Personnage)`\n";
@@ -61,10 +60,23 @@ namespace AlterBotNet.Core.Commands
                     message += "Créer un nouveau compte: `stuff create (nomPersonnage)`\n";
                     message += "(staff) Supprimer un compte: `stuff delete (nomPersonnage)`\n";
                     message += "Trier la liste des comptes (par ordre alphabétique): `stuff sort`\n";
-                    await ReplyAsync("Aide envoyée en mp");
-                    Console.WriteLine($"Aide envoyée à {this.Context.User.Username} en mp");
-                    await this.Context.User.SendMessageAsync(message);
-                    Console.WriteLine(message);
+                    try
+                    {
+                        await ReplyAsync("Aide envoyée en mp");
+                        Console.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
+                        EmbedBuilder eb = new EmbedBuilder();
+                        eb.WithTitle(("**Aide de la commande stuff (stf,inv)**"))
+                            .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
+                            .AddField("=============================================================", message);
+                        //await this.Context.User.SendMessageAsync(infoAccount.ToString());
+                        await this.Context.User.SendMessageAsync("", false, eb.Build());
+                        Console.WriteLine(message);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        return;
+                    }
                 }
                 // =============================================
                 // = Gestion de la commande (staff) stuff list =

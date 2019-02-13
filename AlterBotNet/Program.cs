@@ -109,7 +109,14 @@ namespace AlterBotNet
                     {
                         await message.DeleteAsync();
                     }
-                    await banque.SendMessageAsync(await methodes.AccountsListAsync(nomFichier));
+                    foreach (string msg in await methodes.AccountsListAsync(nomFichier))
+                    {
+                        if (!string.IsNullOrEmpty(msg))
+                        {
+                            await banque.SendMessageAsync(msg);
+                            Console.WriteLine(msg);
+                        }
+                    }
                 }
             }
             catch (Exception e)
