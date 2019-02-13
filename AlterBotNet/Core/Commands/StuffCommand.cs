@@ -191,30 +191,22 @@ namespace AlterBotNet.Core.Commands
                                         argus[1] = argus[1].Replace("_", " ");
                                     if (argus[1].Contains('-'))
                                         argus[1] = argus[1].Replace("-", " ");
-                                    if (!dpItems.Contains(argus[1]))
+                                    try
                                     {
-                                        try
-                                        {
-                                            dpItems.Add(argus[1]);
-                                            stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
-                                            StuffAccount newAccount = new StuffAccount(dpName, dpItems, dpUserId);
-                                            stuffAccounts.Add(newAccount);
-                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
-                                            await ReplyAsync($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
-                                            Console.WriteLine($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
-                                            Console.WriteLine(newAccount.ToString());
-                                        }
-                                        catch (Exception e)
-                                        {
-                                            Console.WriteLine(e);
-                                            return;
-                                        }
+                                        dpItems.Add(argus[1]);
+                                        stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
+                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        StuffAccount newAccount = new StuffAccount(dpName, dpItems, dpUserId);
+                                        stuffAccounts.Add(newAccount);
+                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        await ReplyAsync($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
+                                        Console.WriteLine($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
+                                        Console.WriteLine(newAccount.ToString());
                                     }
-                                    else
+                                    catch (Exception e)
                                     {
-                                        await ReplyAsync($"{error} \"**{dpName}**\" possède déjà l'objet \"**{argus[1]}**\"");
-                                        Console.WriteLine($"{error} \"**{dpName}**\" possède déjà l'objet \"**{argus[1]}**\"");
+                                        Console.WriteLine(e);
+                                        return;
                                     }
                                 }
                                 else
@@ -384,7 +376,7 @@ namespace AlterBotNet.Core.Commands
                                     argus[1] = argus[1].Replace("-", " ");
                                 if (int.TryParse(argus[1], out int indexObj))
                                 {
-                                    if (!string.IsNullOrEmpty(wdItems[indexObj]) && string.IsNullOrEmpty(dpItems[indexObj]))
+                                    if (!string.IsNullOrEmpty(wdItems[indexObj]))
                                     {
                                         string nomObj = wdItems[indexObj];
                                         wdItems.RemoveAt(indexObj);
@@ -413,7 +405,7 @@ namespace AlterBotNet.Core.Commands
                                         Console.WriteLine($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
                                     }
                                 }
-                                else if (wdItems.Contains(argus[1]) && !dpItems.Contains(argus[1]))
+                                else if (wdItems.Contains(argus[1]))
                                 {
                                     try
                                     {
