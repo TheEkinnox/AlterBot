@@ -270,21 +270,37 @@ namespace AlterBotNet.Core.Commands
                                     {
                                         if (!string.IsNullOrEmpty(wdItems[indexObj]))
                                         {
-                                            string nomObj = wdItems[indexObj];
-                                            wdItems.RemoveAt(indexObj);
-                                            stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
-                                            StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
-                                            stuffAccounts.Add(newAccount);
-                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
-                                            await ReplyAsync($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
-                                            Console.WriteLine($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
-                                            Console.WriteLine(newAccount.ToString());
+                                            try
+                                            {
+                                                string nomObj = wdItems[indexObj];
+                                                wdItems.RemoveAt(indexObj);
+                                                stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
+                                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                                StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
+                                                stuffAccounts.Add(newAccount);
+                                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                                await ReplyAsync($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
+                                                Console.WriteLine($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
+                                                Console.WriteLine(newAccount.ToString());
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                Console.WriteLine(e);
+                                                throw;
+                                            }
                                         }
                                         else
                                         {
-                                            await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
-                                            Console.WriteLine($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                            try
+                                            {
+                                                await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                                Console.WriteLine($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                Console.WriteLine(e);
+                                                throw;
+                                            }
                                         }
                                     }
                                     else if (wdItems.Contains(argus[1]))

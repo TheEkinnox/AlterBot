@@ -13,6 +13,7 @@ namespace AlterBotNet.Core.Data.Classes
         public string Name { get; set; }
         public decimal Amount { get; set; }
         public ulong UserId { get; set; }
+        public decimal Salaire { get; set; }
 
         /// <summary>
         /// Constructeur permettant l'initialisation d'un compte en banque
@@ -35,14 +36,6 @@ namespace AlterBotNet.Core.Data.Classes
         public void Withdraw(decimal montant)
         {
             this.Amount -= montant;
-        }
-
-        public void Salaire()
-        {
-            if (System.DateTime.Today.DayOfWeek == System.DayOfWeek.Friday && System.DateTime.Today.Hour == 6)
-            {
-                this.Amount += BankAccount.salaire;
-            }
         }
 
         public void EnregistrerDonneesPersos(string cheminFichier, List<BankAccount> savedBankAccounts)
