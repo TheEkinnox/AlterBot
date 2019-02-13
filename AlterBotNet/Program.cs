@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
+using AlterBotNet.Core.Commands;
 using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
@@ -61,11 +62,10 @@ namespace AlterBotNet
             }
                 await this._client.LoginAsync(TokenType.Bot, token);
                 await this._client.StartAsync();
-
+                Global.Client = this._client;
                 await Task.Delay(-1);
         }
-
-        // Todo: Tester le système de salaires
+        
         /// <summary>
         /// Méthode permettant d'ajouter le salaire défini pour un personnage au dit personnage
         /// </summary>
@@ -74,25 +74,49 @@ namespace AlterBotNet
             string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
             BankAccount methodes = new BankAccount("");
             List<BankAccount> bankAccounts = (await methodes.ChargerDonneesPersosAsync(nomFichier));
-            //    foreach (BankAccount bankAccount in bankAccounts)
-            //    {
             if (bankAccount != null)
-                {
-                    string bankName = bankAccount.Name;
-                    decimal ancienMontant = bankAccount.Amount;
-                    ulong bankUserId = bankAccount.UserId;
-                    decimal bankSalaire = bankAccount.Salaire;
-                    decimal nvMontant = ancienMontant + bankSalaire;
-                    bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, bankName));
-                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                    BankAccount newAccount = new BankAccount(bankName, nvMontant, bankUserId);
-                    bankAccounts.Add(newAccount);
-                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                    Console.WriteLine($"Salaire de {bankName} ({bankSalaire} couronnes) versé");
-                    Console.WriteLine(newAccount.ToString());
-                }
-            //}
+            {
+                string bankName = bankAccount.Name;
+                decimal ancienMontant = bankAccount.Amount;
+                ulong bankUserId = bankAccount.UserId;
+                decimal bankSalaire = bankAccount.Salaire;
+                decimal nvMontant = ancienMontant + bankSalaire;
+                bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, bankName));
+                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                BankAccount newAccount = new BankAccount(bankName, nvMontant, bankUserId);
+                bankAccounts.Add(newAccount);
+                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                Console.WriteLine($"Salaire de {bankName} ({bankSalaire} couronnes) versé");
+                Console.WriteLine(newAccount.ToString());
+            }
 
+        }
+
+        /// <summary>
+        /// Mise à jour des channels banque
+        /// </summary>
+        public static async Task UpdateBank(SocketTextChannel[] banques)
+        {
+            try
+            {
+                BankAccount methodes = new BankAccount("");
+                string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
+                
+
+                foreach (var banque in banques)
+                {
+                    foreach (var message in await banque.GetMessagesAsync().FlattenAsync())
+                    {
+                        await message.DeleteAsync();
+                    }
+                    await banque.SendMessageAsync(await methodes.AccountsListAsync(nomFichier));
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         private async Task AnnounceUserJoined(SocketGuildUser user)
