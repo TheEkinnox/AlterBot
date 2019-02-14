@@ -86,7 +86,7 @@ namespace AlterBotNet.Core.Data.Classes
             {
                 RepeatingTimer.ticksPasses++;
                 Console.WriteLine(RepeatingTimer.ticksPasses);
-                if (RepeatingTimer.ticksPasses == 4)
+                if (RepeatingTimer.ticksPasses >= 4)
                 {
                     try
                     {
