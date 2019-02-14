@@ -51,7 +51,7 @@ namespace AlterBotNet.Core.Data.Classes
         private const int heureSalaire = 23;
         private const int minuteSalaire = 59;
 
-        private static int ticksPasses = 0;
+        private static int ticksPasses = 120;
         //static List<BankAccount> _initialBankAccounts = RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque).GetAwaiter().GetResult();
 
         private static async Task OnTimerTickedAsync(object sender, ElapsedEventArgs e)
