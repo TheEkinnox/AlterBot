@@ -32,7 +32,7 @@ namespace AlterBotNet.Core.Data.Classes
 
             RepeatingTimer._loopingTimer = new Timer()
             {
-                 Interval = 30000,
+                 Interval = 15000,
                  AutoReset = true,
                  Enabled=true
             };
@@ -79,20 +79,26 @@ namespace AlterBotNet.Core.Data.Classes
             // =============================================
             // = Actualise la liste dans le channel banque =
             // =============================================
+            int ticksPasses = 1;
             List<BankAccount> updatedBankAccounts = RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque).GetAwaiter().GetResult();
             if (!updatedBankAccounts.Equals(RepeatingTimer._initialBankAccounts))
             {
-                try
+                ticksPasses++;
+                if (ticksPasses == 4)
                 {
-                    RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, updatedBankAccounts);
-                    RepeatingTimer._initialBankAccounts = updatedBankAccounts;
-                    Console.WriteLine("Comptes en banque mis à jour");
-                    await Program.UpdateBank(RepeatingTimer.banques);
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception);
-                    return;
+
+                    try
+                    {
+                        RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, updatedBankAccounts);
+                        RepeatingTimer._initialBankAccounts = updatedBankAccounts;
+                        Console.WriteLine("Comptes en banque mis à jour");
+                        await Program.UpdateBank(RepeatingTimer.banques);
+                    }
+                    catch (Exception exception)
+                    {
+                        Console.WriteLine(exception);
+                        return;
+                    }
                 }
             }
 
