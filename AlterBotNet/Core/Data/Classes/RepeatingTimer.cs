@@ -79,7 +79,7 @@ namespace AlterBotNet.Core.Data.Classes
             // =============================================
             // = Actualise la liste dans le channel banque =
             // =============================================
-            int ticksPasses = 1;
+            int ticksPasses = 0;
             List<BankAccount> updatedBankAccounts = RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque).GetAwaiter().GetResult();
             if (!updatedBankAccounts.Equals(RepeatingTimer._initialBankAccounts))
             {
@@ -99,6 +99,8 @@ namespace AlterBotNet.Core.Data.Classes
                         Console.WriteLine(exception);
                         return;
                     }
+
+                    ticksPasses = 0;
                 }
             }
 
