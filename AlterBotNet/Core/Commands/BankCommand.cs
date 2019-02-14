@@ -3,7 +3,7 @@
 // Nom du fichier : BankCommand.cs
 // Auteur : Loick OBIANG (1832960)
 // Date de création : 2019-02-07
-// Date de modification : 2019-02-11
+// Date de modification : 2019-02-13
 
 #endregion
 
@@ -28,12 +28,18 @@ namespace AlterBotNet.Core.Commands
     /// </summary>
     public class BankCommand : ModuleBase<SocketCommandContext>
     {
-        #region MÉTHODES
+        #region ATTRIBUTS
 
         private Random _rand = new Random();
+
+        #endregion
+
+        #region MÉTHODES
+
         [Command("bank"), Alias("bnk", "money", "bk"), Summary("Affiche l'argent en banque d'un utilisateur")]
         public async Task SendBank([Remainder] string input = "none")
         {
+            var mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
             BankAccount methodes = new BankAccount("");
             string[] argus;
             ulong userId = this.Context.User.Id;
@@ -58,16 +64,17 @@ namespace AlterBotNet.Core.Commands
                     message += "(staff) Retirer de l'argent sur le compte d'un personnage: `bank withdraw (montant) (nom_Personnage)`\n";
                     message += "(staff) Définir le montant sur le compte d'un personnage: `bank set (montant) (nom_Personnage)`\n";
                     message += "Transférer de l'argent d'un compte à un autre: `bank pay (montant) (nom_Personnage1) (nom_Personnage2)`\n";
-                    message += "Créer un nouveau compte: `bank add (nomPersonnage)`\n";
+                    message += "Créer un nouveau compte: `bank add (nomPersonnage) {@propriétaire}`\n";
                     message += "(staff) Supprimer un compte: `bank delete (nomPersonnage)`\n";
                     message += "Trier la liste des comptes (par ordre alphabétique): `bank sort`\n";
                     message += "(staff) Définir le salaire d'un personnage: `bank setsal (nom_personnage)`\n";
+                    message += "(staff) Définir le propriétaire d'un personnage: `bank setowner (nom_personnage) (@propriétaire)`\n";
                     try
                     {
                         await ReplyAsync("Aide envoyée en mp");
                         Console.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
                         EmbedBuilder eb = new EmbedBuilder();
-                        eb.WithTitle(("**Aide de la commande bank (bnk,money)**"))
+                        eb.WithTitle("**Aide de la commande bank (bnk,money)**")
                             .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
                             .AddField("=============================================================", message);
                         //await this.Context.User.SendMessageAsync(infoAccount.ToString());
@@ -280,15 +287,18 @@ namespace AlterBotNet.Core.Commands
                                 BankAccount setAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]);
                                 if (setAccount != null)
                                 {
+                                    string setName = setAccount.Name;
                                     decimal nvMontant = montant;
+                                    ulong setuserId = setAccount.UserId;
+                                    decimal setSalaire = setAccount.Salaire;
                                     nvMontant = nvMontant < 0 ? 0 : nvMontant;
-                                    bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[2]));
+                                    bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, setName));
                                     methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                                    BankAccount newAccount = new BankAccount(argus[2], nvMontant, userId);
+                                    BankAccount newAccount = new BankAccount(setName, nvMontant, setuserId, setSalaire);
                                     bankAccounts.Add(newAccount);
                                     methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                                    await ReplyAsync($"Le montant sur le compte de {argus[2]} est désormais de {nvMontant} couronnes");
-                                    Console.WriteLine($"Le montant sur le compte de {argus[2]} est désormais de {nvMontant} couronnes");
+                                    await ReplyAsync($"Le montant sur le compte de \"**{setName}**\" est désormais de \"**{setName}**\" couronnes");
+                                    Console.WriteLine($"Le montant sur le compte de {setName} est désormais de \"**{nvMontant}**\" couronnes");
                                     Console.WriteLine(newAccount.ToString());
                                 }
                                 else
@@ -380,7 +390,7 @@ namespace AlterBotNet.Core.Commands
                     // Sert à s'assurer qu'argus[0] == toujours add
                     if (argus[0] == "add")
                     {
-                        if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                        if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
                         {
                             await ReplyAsync($"{error} Nombre max d'arguments dépassé");
                             Console.WriteLine($"{error} Nombre max d'arguments dépassé");
@@ -392,7 +402,17 @@ namespace AlterBotNet.Core.Commands
                         }
                         else if (await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]) == null)
                         {
-                            BankAccount newAccount = new BankAccount(argus[1], 500, userId);
+                            BankAccount newAccount;
+                            if (mentionedUser != null)
+                            {
+                                ulong soUserId = mentionedUser.Id;
+                                newAccount = new BankAccount(argus[1], 500, soUserId);
+                            }
+                            else
+                            {
+                                newAccount = new BankAccount(argus[1], 500, userId);
+                            }
+
                             bankAccounts.Add(newAccount);
                             methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
                             await ReplyAsync($"Compte de {argus[1]} créé");
@@ -473,7 +493,7 @@ namespace AlterBotNet.Core.Commands
                 // =========================================================================
                 else if (input.StartsWith("setsal") || input.StartsWith("sts"))
                 {
-                    if (IsStaff((SocketGuildUser)this.Context.User))
+                    if (IsStaff((SocketGuildUser) this.Context.User))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours setsal
@@ -508,6 +528,79 @@ namespace AlterBotNet.Core.Commands
                                     await ReplyAsync($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
                                     Console.WriteLine($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
                                     Console.WriteLine(newAccount.ToString());
+                                }
+                                else
+                                {
+                                    await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (this.Context.Guild.Name == "ServeurTest")
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                        else
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                    }
+                }
+                // Todo: tester la commande setowner
+                // ==============================================================================
+                // = Gestion de la commande (admin) bank setowner (nom_Personnage) @utilisateur =
+                // ==============================================================================
+                else if (input.StartsWith("setowner") || input.StartsWith("setown") || input.StartsWith("so"))
+                {
+                    if (IsStaff((SocketGuildUser) this.Context.User))
+                    {
+                        argus = input.Split(' ');
+                        // Sert à s'assurer qu'argus[0] == toujours setowner
+                        if (argus[0] == "setowner" || argus[0] == "setown" || argus[0] == "so")
+                        {
+                            if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            }
+                            else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            }
+                            else
+                            {
+                                BankAccount setAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]);
+                                if (setAccount != null)
+                                {
+                                    if (mentionedUser != null)
+                                    {
+                                        try
+                                        {
+                                            string soName = setAccount.Name;
+                                            decimal soMontant = setAccount.Amount;
+                                            decimal soSalaire = setAccount.Salaire;
+                                            ulong soUserId = mentionedUser.Id;
+
+                                            bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, soName));
+                                            methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                            BankAccount newAccount = new BankAccount(soName, soMontant, soUserId, soSalaire);
+                                            bankAccounts.Add(newAccount);
+                                            methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                            await ReplyAsync($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
+                                            Console.WriteLine($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
+                                            Console.WriteLine(newAccount.ToString());
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            Console.WriteLine(e);
+                                            throw;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        await ReplyAsync($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
+                                        Console.WriteLine($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
+                                    }
                                 }
                                 else
                                 {
