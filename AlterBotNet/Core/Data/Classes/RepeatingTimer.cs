@@ -50,6 +50,8 @@ namespace AlterBotNet.Core.Data.Classes
         private const DayOfWeek jourSalaire = DayOfWeek.Sunday;
         private const int heureSalaire = 23;
         private const int minuteSalaire = 59;
+
+        private static int ticksPasses = 0;
         //static List<BankAccount> _initialBankAccounts = RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque).GetAwaiter().GetResult();
 
         private static async Task OnTimerTickedAsync(object sender, ElapsedEventArgs e)
@@ -79,14 +81,13 @@ namespace AlterBotNet.Core.Data.Classes
             // =============================================
             // = Actualise la liste dans le channel banque =
             // =============================================
-            int ticksPasses = 0;
             List<BankAccount> updatedBankAccounts = RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque).GetAwaiter().GetResult();
             if (!updatedBankAccounts.Equals(RepeatingTimer._initialBankAccounts))
             {
-                ticksPasses++;
-                if (ticksPasses == 4)
+                RepeatingTimer.ticksPasses++;
+                Console.WriteLine(RepeatingTimer.ticksPasses);
+                if (RepeatingTimer.ticksPasses == 4)
                 {
-
                     try
                     {
                         RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, updatedBankAccounts);
@@ -100,7 +101,7 @@ namespace AlterBotNet.Core.Data.Classes
                         return;
                     }
 
-                    ticksPasses = 0;
+                    RepeatingTimer.ticksPasses = 0;
                 }
             }
 
