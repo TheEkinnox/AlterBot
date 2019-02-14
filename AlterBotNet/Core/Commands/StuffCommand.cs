@@ -34,6 +34,7 @@ namespace AlterBotNet.Core.Commands
         [Command("stuff"), Alias("stf","inv"), Summary("Affiche le stuff d'un personnage")]
         public async Task SendStuff([Remainder]string input = "none")
         {
+            var mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
             StuffAccount methodes = new StuffAccount("");
             string[] argus;
             ulong userId = this.Context.User.Id;
@@ -60,6 +61,7 @@ namespace AlterBotNet.Core.Commands
                     message += "Créer un nouveau compte: `stuff create (nomPersonnage)`\n";
                     message += "(staff) Supprimer un compte: `stuff delete (nomPersonnage)`\n";
                     message += "Trier la liste des comptes (par ordre alphabétique): `stuff sort`\n";
+                    message += "(staff) Définir le propriétaire d'un personnage: `stuff setowner (nom_personnage) (@propriétaire)`\n";
                     try
                     {
                         await ReplyAsync("Aide envoyée en mp");
@@ -486,7 +488,7 @@ namespace AlterBotNet.Core.Commands
                     // Sert à s'assurer qu'argus[0] == toujours create
                     if (argus[0] == "create" || argus[0] == "cr")
                     {
-                        if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                        if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
                         {
                             await ReplyAsync($"{error} Nombre max d'arguments dépassé");
                             Console.WriteLine($"{error} Nombre max d'arguments dépassé");
@@ -499,7 +501,16 @@ namespace AlterBotNet.Core.Commands
                         else if (await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1]) == null)
                         {
                             List<string> items = new List<string>();
-                            StuffAccount newAccount = new StuffAccount(argus[1], items, userId);
+                            StuffAccount newAccount;
+                            if (mentionedUser != null)
+                            {
+                                ulong crUserId = mentionedUser.Id;
+                                newAccount = new StuffAccount(argus[1], items, crUserId);
+                            }
+                            else
+                            {
+                                newAccount = new StuffAccount(argus[1], items, userId);
+                            }
                             stuffAccounts.Add(newAccount);
                             methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
                             await ReplyAsync($"Compte de {argus[1]} créé");
@@ -574,6 +585,77 @@ namespace AlterBotNet.Core.Commands
                     {
                         Console.WriteLine(e);
                         return;
+                    }
+                }
+                // ===============================================================================
+                // = Gestion de la commande (admin) stuff setowner (nom_Personnage) @utilisateur =
+                // ===============================================================================
+                else if (input.StartsWith("setowner") || input.StartsWith("setown") || input.StartsWith("so"))
+                {
+                    if (IsStaff((SocketGuildUser)this.Context.User))
+                    {
+                        argus = input.Split(' ');
+                        // Sert à s'assurer qu'argus[0] == toujours setowner
+                        if (argus[0] == "setowner" || argus[0] == "setown" || argus[0] == "so")
+                        {
+                            if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            }
+                            else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            }
+                            else
+                            {
+                                StuffAccount setAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1]);
+                                if (setAccount != null)
+                                {
+                                    if (mentionedUser != null)
+                                    {
+                                        try
+                                        {
+                                            string soName = setAccount.Name;
+                                            ulong soUserId = mentionedUser.Id;
+                                            List<string> soItems = setAccount.Items;
+
+                                            stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, soName));
+                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                            StuffAccount newAccount = new StuffAccount(soName, soItems, soUserId);
+                                            stuffAccounts.Add(newAccount);
+                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                            await ReplyAsync($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
+                                            Console.WriteLine($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
+                                            Console.WriteLine(newAccount.ToString());
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            Console.WriteLine(e);
+                                            throw;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        await ReplyAsync($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
+                                        Console.WriteLine($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
+                                    }
+                                }
+                                else
+                                {
+                                    await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (this.Context.Guild.Name == "ServeurTest")
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                        else
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
                     }
                 }
                 else
