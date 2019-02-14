@@ -181,7 +181,7 @@ namespace AlterBotNet.Core.Data.Classes
 
         public override string ToString()
         {
-            string message = ($"**{this.Name+ ":**"} {this.Amount} couronne(s)\n{"Salaire" + ":"} {this.Salaire} couronne(s)\nPropriétaire: <@{this.UserId}>");
+            string message = ($"**{this.Name+ ":**"} {this.Amount} couronne(s)\n{"Salaire" + ":"} {this.Salaire} couronne(s)\n");
             //string message = string.Format("**{0}:** {this.Amount} couronne(s)\nsalaire: {this.Salaire} couronne(s)", this.Name);
             return message;
         }
