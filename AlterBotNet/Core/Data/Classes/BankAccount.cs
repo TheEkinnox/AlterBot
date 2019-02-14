@@ -151,7 +151,7 @@ namespace AlterBotNet.Core.Data.Classes
                 {
                     message.Add("");
 
-                    for (int j = lastIndex; j < lastIndex + 5 && j < regAccounts.Count && regAccounts[j] != null; j++)
+                    for (int j = lastIndex; j < lastIndex + (regAccounts.Count / 5 + regAccounts.Count % 5) && j < regAccounts.Count && regAccounts[j] != null; j++)
                     {
                         try
                         {
@@ -164,7 +164,7 @@ namespace AlterBotNet.Core.Data.Classes
                         }
                     }
 
-                    lastIndex += 5;
+                    lastIndex += regAccounts.Count / 5 + regAccounts.Count % 5;
                 }
                 catch (Exception e)
                 {
