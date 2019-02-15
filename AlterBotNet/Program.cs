@@ -103,9 +103,9 @@ namespace AlterBotNet
                 string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
                 
 
-                foreach (var banque in banques)
+                foreach (SocketTextChannel banque in banques)
                 {
-                    foreach (var message in await banque.GetMessagesAsync().FlattenAsync())
+                    foreach (IMessage message in await banque.GetMessagesAsync().FlattenAsync())
                     {
                         await message.DeleteAsync();
                     }
@@ -126,10 +126,15 @@ namespace AlterBotNet
             }
         }
 
+        /// <summary>
+        /// Envoie un message de bienvenue
+        /// </summary>
+        /// <param name="user">Utilisateur qui a rejoins(destinataire du message)</param>
+        /// <returns></returns>
         private async Task AnnounceUserJoined(SocketGuildUser user)
         {
-            var guild = user.Guild;
-            var channel = guild.SystemChannel;
+            SocketGuild guild = user.Guild;
+            SocketTextChannel channel = guild.SystemChannel;
             string guildName = guild.Name;
             if (guildName == "ServeurTest")
             {
@@ -145,21 +150,28 @@ namespace AlterBotNet
             }
         }
 
+        /// <summary>
+        /// Affiche les logs à la console
+        /// </summary>
+        /// <param name="message">Message de log</param>
         private async Task Client_Log(LogMessage message)
         {
             Console.WriteLine($"{DateTime.Now} at {message.Source} {message.Message}");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private async Task Client_Ready()
         {
             await this._client.SetGameAsync("prefix: a! ^^ @AlterBot");
-            RepeatingTimer.StartTimer();
+            await RepeatingTimer.StartTimer();
         }
 
         private async Task Client_MessageReceived(SocketMessage messageParam)
         {
-            var message = messageParam as SocketUserMessage;
-            var context = new SocketCommandContext(this._client, message);
+            SocketUserMessage message = messageParam as SocketUserMessage;
+            SocketCommandContext context = new SocketCommandContext(this._client, message);
 
             if (context.Message == null || context.Message.Content == "") return;
             if (context.User.IsBot) return;
@@ -167,7 +179,7 @@ namespace AlterBotNet
             int argPos = 0;
             if (!(message.HasStringPrefix("^^", ref argPos) || message.HasStringPrefix("a!", ref argPos) || message.HasMentionPrefix(this._client.CurrentUser, ref argPos))) return;
 
-            var result = await this._commands.ExecuteAsync(context, argPos, null);
+            IResult result = await this._commands.ExecuteAsync(context, argPos, null);
             if (!result.IsSuccess)
             {
                 Console.WriteLine($"{DateTime.Now} at Commands] Une erreur s'est produite en exécutant une commande. Texte: {context.Message.Content} | Erreur: {result.ErrorReason}");
