@@ -63,6 +63,7 @@ namespace AlterBotNet.Core.Commands
                     message += "Trier la liste des comptes (par ordre alphabétique): `stuff sort`\n";
                     message += "(staff) Définir le propriétaire d'un personnage: `stuff setowner (nom_personnage) (@propriétaire)`\n";
                     message += "(staff) Changer le nom d'un personnage: `bank rename (nom_personnage) (nouveauNom)`\n";
+                    message += "(staff) Remplacer un objet dans l'inventaire d'un personnage: `bank replace (nom_personnage) (objet) (nouvel-objet)`\n";
                     try
                     {
                         await ReplyAsync("Aide envoyée en mp");
@@ -727,6 +728,108 @@ namespace AlterBotNet.Core.Commands
                                 {
                                     await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                                     Console.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (this.Context.Guild.Name == "ServeurTest")
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                        else
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                    }
+                }
+                // ========================================================================
+                // = Gestion de la commande (admin) stuff replace (objet) (nom_Personnage) =
+                // ========================================================================
+                else if (input.StartsWith("replace") || input.StartsWith("rep"))
+                {
+                    if (IsStaff((SocketGuildUser)this.Context.User))
+                    {
+                        argus = input.Split(' ');
+                        // Sert à s'assurer qu'argus[0] == toujours remove
+                        if (argus[0] == "replace" || argus[0] == "rep")
+                        {
+                            if (argus.Length > 4) // Sert à s'assurer qu'il n'y a que 3 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            }
+                            else if (argus.Length < 4) // Sert à s'assurer qu'il n'y a que 3 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            }
+                            else
+                            {
+                                StuffAccount repAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1]);
+                                if (repAccount != null)// Sert à s'assurer que le compte existe bien
+                                {
+                                    string repAccountName = repAccount.Name;
+                                    List<string> repAccountItems = repAccount.Items;
+                                    ulong repAccountUserId = repAccount.UserId;
+                                    if (argus[2].Contains('_') || argus[3].Contains('_'))
+                                    {
+                                        argus[2] = argus[2].Replace("_", " ");
+                                        argus[3] = argus[3].Replace("_", " ");
+                                    }
+                                    if (argus[2].Contains('-') || argus[3].Contains('-'))
+                                    {
+                                        argus[2] = argus[2].Replace("-", " ");
+                                        argus[3] = argus[3].Replace("-", " ");
+                                    }
+                                    if (int.TryParse(argus[2], out int indexObj))
+                                    {
+                                        if (!string.IsNullOrEmpty(repAccountItems[indexObj]))
+                                        {
+                                            try
+                                            {
+                                                string nomObj = repAccountItems[indexObj];
+                                                repAccountItems[indexObj] = argus[3];
+                                                stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, repAccountName));
+                                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                                StuffAccount newAccount = new StuffAccount(repAccountName, repAccountItems, repAccountUserId);
+                                                stuffAccounts.Add(newAccount);
+                                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                                await ReplyAsync($"Objet \"**{nomObj}**\" remplacé par l'objet \"**{argus[3]}**\" sur le compte de \"**{repAccountName}**\"");
+                                                Console.WriteLine($"Objet \"**{nomObj}**\" remplacé par l'objet \"**{argus[3]}**\" sur le compte de \"**{repAccountName}**\"");
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                Console.WriteLine(e);
+                                                throw;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            try
+                                            {
+                                                await ReplyAsync($"{error} \"**{repAccountName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                                Console.WriteLine($"{error} \"**{repAccountName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                Console.WriteLine(e);
+                                                throw;
+                                            }
+                                        }
+                                    }
+                                    else if (!int.TryParse(argus[2], out indexObj))
+                                    {
+                                        await ReplyAsync($"{error} Vous devez utiliser le numéro de l'objet pour le remplacer");
+                                        Console.WriteLine($"{error} Vous devez utiliser le numéro de l'objet pour le remplacer");
+                                    }
+                                    else
+                                    {
+                                        await ReplyAsync($"{error} \"**{repAccountName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
+                                        Console.WriteLine($"{error} \"**{repAccountName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
+                                    }
+                                }
+                                else
+                                {
+                                    await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                                 }
                             }
                         }
