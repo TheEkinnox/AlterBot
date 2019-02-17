@@ -17,12 +17,12 @@ namespace AlterBotNet.Core.Data.Classes
     {
         private static Timer _loopingTimer;
         private static List<BankAccount> _initialBankAccounts;
-        private static SocketTextChannel[] banques;
+        private static SocketTextChannel[] _banques;
 
         internal static Task StartTimer()
         {
             RepeatingTimer._initialBankAccounts = RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque).GetAwaiter().GetResult();
-            RepeatingTimer.banques = new SocketTextChannel[]
+            RepeatingTimer._banques = new SocketTextChannel[]
             {
                 //Alternia
                 Global.Client.GetGuild(399539166364303380).GetTextChannel(411969883673329665),
@@ -51,7 +51,7 @@ namespace AlterBotNet.Core.Data.Classes
         private const int heureSalaire = 23;
         private const int minuteSalaire = 59;
 
-        private static int ticksPasses = 120;
+        private static int _ticksPasses = 120;
         //static List<BankAccount> _initialBankAccounts = RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque).GetAwaiter().GetResult();
 
         private static async Task OnTimerTickedAsync(object sender, ElapsedEventArgs e)
@@ -84,16 +84,16 @@ namespace AlterBotNet.Core.Data.Classes
             List<BankAccount> updatedBankAccounts = RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque).GetAwaiter().GetResult();
             if (!updatedBankAccounts.Equals(RepeatingTimer._initialBankAccounts))
             {
-                RepeatingTimer.ticksPasses++;
-                Console.WriteLine(RepeatingTimer.ticksPasses);
-                if (RepeatingTimer.ticksPasses >= 120)
+                RepeatingTimer._ticksPasses++;
+                Console.WriteLine(RepeatingTimer._ticksPasses);
+                if (RepeatingTimer._ticksPasses >= 120)
                 {
                     try
                     {
                         RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, updatedBankAccounts);
                         RepeatingTimer._initialBankAccounts = updatedBankAccounts;
                         Console.WriteLine("Comptes en banque mis à jour");
-                        await Program.UpdateBank(RepeatingTimer.banques);
+                        await Program.UpdateBank(RepeatingTimer._banques);
                     }
                     catch (Exception exception)
                     {
@@ -101,7 +101,7 @@ namespace AlterBotNet.Core.Data.Classes
                         return;
                     }
 
-                    RepeatingTimer.ticksPasses = 0;
+                    RepeatingTimer._ticksPasses = 0;
                 }
             }
 
