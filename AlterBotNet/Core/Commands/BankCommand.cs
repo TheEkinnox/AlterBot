@@ -679,8 +679,8 @@ namespace AlterBotNet.Core.Commands
                                 }
                                 else if ((await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]) != null))
                                 {
-                                    await ReplyAsync($"{error} Le compte \"**{argus[2]}**\" existe déja");
-                                    Console.WriteLine($"{error} Le compte \"**{argus[2]}**\" existe déja");
+                                    await ReplyAsync($"{error} Le compte \"**{argus[2]}**\" existe déjà");
+                                    Console.WriteLine($"{error} Le compte \"**{argus[2]}**\" existe déjà");
                                 }
                                 else
                                 {

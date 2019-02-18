@@ -11,7 +11,7 @@ using Discord.WebSocket;
 namespace AlterBotNet.Core.Data.Classes
 {
     /// <summary>
-    /// 
+    /// Classe permettant la génération d'une horloge
     /// </summary>
     public static class RepeatingTimer
     {
