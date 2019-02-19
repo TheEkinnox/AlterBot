@@ -67,7 +67,7 @@ namespace AlterBotNet.Core.Commands
                     message += "(stuff) (RP) Créer un nouveau compte: `bank add (nomPersonnage) {@propriétaire}`\n";
                     message += "(staff) Supprimer un compte: `bank delete (nomPersonnage)`\n";
                     message += "Trier la liste des comptes (par ordre alphabétique): `bank sort`\n";
-                    message += "(staff) Définir le salaire d'un personnage: `bank setsal (nom_personnage)`\n";
+                    message += "(staff) Définir le salaire d'un personnage: `bank sts (nom_personnage)`\n";
                     message += "(staff) Définir le propriétaire d'un personnage: `bank setowner (nom_personnage) (@propriétaire)`\n";
                     message += "(staff) Changer le nom d'un personnage: `bank rename (nom_personnage) (nouveauNom)`\n";
                     try
@@ -502,50 +502,66 @@ namespace AlterBotNet.Core.Commands
                 // =========================================================================
                 // = Gestion de la commande (admin) bank setsal (montant) (nom_Personnage) =
                 // =========================================================================
-                else if (input.StartsWith("setsal") || input.StartsWith("sts"))
+                else if (input.StartsWith("sts"))
                 {
                     if (IsStaff((SocketGuildUser) this.Context.User))
                     {
-                        argus = input.Split(' ');
-                        // Sert à s'assurer qu'argus[0] == toujours setsal
-                        if (argus[0] == "setsal" || argus[0] == "sts")
+                        try
                         {
-                            if (argus.Length > 3 && !decimal.TryParse(argus[1], out decimal montant)) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                            argus = input.Split(' ');
+                            // Sert à s'assurer qu'argus[0] == toujours setsal
+                            if (argus[0] == "sts")
                             {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else
-                            {
-                                decimal.TryParse(argus[1], out montant);
-                                BankAccount setAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]);
-                                if (setAccount != null)
+                                try
                                 {
-                                    string stsName = setAccount.Name;
-                                    decimal stsMontant = setAccount.Amount;
-                                    ulong stsUserId = setAccount.UserId;
-                                    decimal nvMontant = montant;
-                                    nvMontant = nvMontant < 0 ? 0 : nvMontant;
-                                    bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[2]));
-                                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                                    BankAccount newAccount = new BankAccount(stsName, stsMontant, stsUserId, nvMontant);
-                                    bankAccounts.Add(newAccount);
-                                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                                    await ReplyAsync($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
-                                    Console.WriteLine($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
-                                    Console.WriteLine(newAccount.ToString());
+                                    if (argus.Length > 3 && !decimal.TryParse(argus[1], out decimal montant)) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                        Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                    }
+                                    else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                        Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                    }
+                                    else
+                                    {
+                                        decimal.TryParse(argus[1], out montant);
+                                        BankAccount setAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]);
+                                        if (setAccount != null)
+                                        {
+                                            string stsName = setAccount.Name;
+                                            decimal stsMontant = setAccount.Amount;
+                                            ulong stsUserId = setAccount.UserId;
+                                            decimal nvMontant = montant;
+                                            nvMontant = nvMontant < 0 ? 0 : nvMontant;
+                                            bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[2]));
+                                            methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                            BankAccount newAccount = new BankAccount(stsName, stsMontant, stsUserId, nvMontant);
+                                            bankAccounts.Add(newAccount);
+                                            methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                            await ReplyAsync($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
+                                            Console.WriteLine($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
+                                            Console.WriteLine(newAccount.ToString());
+                                        }
+                                        else
+                                        {
+                                            await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                            Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                        }
+                                    }
                                 }
-                                else
+                                catch (Exception e)
                                 {
-                                    await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Console.WriteLine(e);
+                                    throw;
                                 }
                             }
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                            throw;
                         }
                     }
                     else

@@ -73,7 +73,7 @@ namespace AlterBotNet.Core.Data.Classes
                 RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, sortedList);
                 RepeatingTimer._salaireVerse = true;
             }
-            else if (DateTime.Now.Hour == RepeatingTimer.heureSalaire && DateTime.Now.Minute == RepeatingTimer.minuteSalaire+1)
+            else if (DateTime.Now.DayOfWeek == RepeatingTimer.jourSalaire && DateTime.Now.Hour == RepeatingTimer.heureSalaire && DateTime.Now.Minute == RepeatingTimer.minuteSalaire+1)
             {
                 RepeatingTimer._salaireVerse = false;
             }

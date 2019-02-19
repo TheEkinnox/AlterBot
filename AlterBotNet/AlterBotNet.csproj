@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Logs\" />
     <Folder Include="Ressources\Datatypes\" />
     <Folder Include="Ressources\Extensions\" />
   </ItemGroup>
