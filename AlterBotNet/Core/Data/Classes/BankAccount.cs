@@ -159,7 +159,7 @@ namespace AlterBotNet.Core.Data.Classes
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine(e);
+                            Logs.WriteLine(e.ToString());
                             throw;
                         }
                     }
@@ -168,7 +168,7 @@ namespace AlterBotNet.Core.Data.Classes
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
+                    Logs.WriteLine(e.ToString());
                     throw;
                 }
             }

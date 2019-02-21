@@ -60,14 +60,14 @@ namespace AlterBotNet.Core.Commands
                 if (int.TryParse(input.Replace("d", ""), out max))
                 {
                     resultat[0] = this.rand.Next(max + 1);
-                    Console.WriteLine($"{this.Context.User.Mention} a roll {resultat[0]}");
+                    Logs.WriteLine($"{this.Context.User.Mention} a roll {resultat[0]}");
                     await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
                     //return;
                 }
                 else
                 {
                     await this.Context.Channel.SendMessageAsync("Valeur invalide");
-                    Console.WriteLine("Valeur invalide");
+                    Logs.WriteLine("Valeur invalide");
                     valide = false;
                     //return;
                 }
@@ -75,7 +75,7 @@ namespace AlterBotNet.Core.Commands
             else if (char.IsDigit(input[0]) && !(input.Contains("d")) && int.TryParse(input, out max))
             {
                 resultat[0] = this.rand.Next(max + 1);
-                Console.WriteLine($"{this.Context.User.Mention} a roll {resultat[0]}");
+                Logs.WriteLine($"{this.Context.User.Mention} a roll {resultat[0]}");
                 await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
             }
             else if (char.IsDigit(input[0]) && input.Contains("d"))
@@ -102,7 +102,7 @@ namespace AlterBotNet.Core.Commands
                     //    // Vérifie la position des opérateurs et l'enregistre dans un vecteur d'entier
                     //    for (int i = 0; i < input.Length; i++)
                     //    {
-                    //        Console.WriteLine(input[i]);
+                    //        Logs.WriteLine(input[i]);
                     //        switch (input[i])
                     //        {
                     //            case '+':
@@ -150,7 +150,7 @@ namespace AlterBotNet.Core.Commands
                     //                    break;
                     //                }
                     //            default:
-                    //                Console.WriteLine(".");
+                    //                Logs.WriteLine(".");
                     //                break;
                     //        }
                     //    }
@@ -186,51 +186,51 @@ namespace AlterBotNet.Core.Commands
                     //        }
                     //        //else
                     //        //{
-                    //        //    Console.WriteLine("Entrée invalide");
+                    //        //    Logs.WriteLine("Entrée invalide");
                     //        //    valide = false;
                     //        //}
 
-                    //        Console.WriteLine($"====>{sortedOperat[i - 2]}");
+                    //        Logs.WriteLine($"====>{sortedOperat[i - 2]}");
                     //    }
 
                     //}
-                    Console.WriteLine(argus.Length);
+                    Logs.WriteLine(argus.Length.ToString());
                     for (int i = 0; i < argus.Length; i++)
                     {
-                        Console.WriteLine(argus[i]);
+                        Logs.WriteLine(argus[i]);
                     }
                     if (nbDes > 1 && valide)
                     {
-                        Console.WriteLine($"{this.Context.User.Mention} a roll {sumResultats} ({msgResultat})");
+                        Logs.WriteLine($"{this.Context.User.Mention} a roll {sumResultats} ({msgResultat})");
                         await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {sumResultats} ({msgResultat})");
                     }
                     //else if (operat[0] != ' ')
                     //{
-                    //    Console.WriteLine($"{User} a roll {sumResultats} ({msgResultat} +-");
+                    //    Logs.WriteLine($"{User} a roll {sumResultats} ({msgResultat} +-");
                     //    await this.Context.Channel.SendMessageAsync($"{User} a roll {sumResultats} ({msgResultat} +-");
                     //}
                     else if (valide)
                     {
-                        Console.WriteLine($"{this.Context.User.Mention} a roll {sumResultats}");
+                        Logs.WriteLine($"{this.Context.User.Mention} a roll {sumResultats}");
                         await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {sumResultats}");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Entrée invalide");
+                    Logs.WriteLine("Entrée invalide");
                     await this.Context.Channel.SendMessageAsync("Entrée invalide");
                 }
             }
             else if (input.ToLower() == "none")
             {
                 resultat[0] = this.rand.Next(max);
-                Console.WriteLine($"{this.Context.User.Mention} a roll {resultat[0]}");
+                Logs.WriteLine($"{this.Context.User.Mention} a roll {resultat[0]}");
                 await ReplyAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
             }
             else
             {
                 await this.Context.Channel.SendMessageAsync("Valeur invalide\n");
-                Console.WriteLine("Valeur invalide\n");
+                Logs.WriteLine("Valeur invalide\n");
             }
         }
 

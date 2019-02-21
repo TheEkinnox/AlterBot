@@ -83,11 +83,11 @@ namespace AlterBotNet
                 decimal nvMontant = ancienMontant + bankSalaire;
                 bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, bankName));
                 methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                BankAccount newAccount = new BankAccount(bankName, nvMontant, bankUserId);
+                BankAccount newAccount = new BankAccount(bankName, nvMontant, bankUserId, bankSalaire);
                 bankAccounts.Add(newAccount);
                 methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                Console.WriteLine($"Salaire de {bankName} ({bankSalaire} couronnes) versé");
-                Console.WriteLine(newAccount.ToString());
+                Logs.WriteLine($"Salaire de {bankName} ({bankSalaire} couronnes) versé");
+                Logs.WriteLine(newAccount.ToString());
             }
 
         }
@@ -114,14 +114,14 @@ namespace AlterBotNet
                         if (!string.IsNullOrEmpty(msg))
                         {
                             await banque.SendMessageAsync(msg);
-                            Console.WriteLine(msg);
+                            Logs.WriteLine(msg);
                         }
                     }
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logs.WriteLine(e.ToString());
                 throw;
             }
         }
@@ -151,12 +151,12 @@ namespace AlterBotNet
         }
 
         /// <summary>
-        /// Affiche les logs à la console
+        /// Affiche les logs à la Logs
         /// </summary>
         /// <param name="message">Message de log</param>
         private async Task Client_Log(LogMessage message)
         {
-            Console.WriteLine($"{DateTime.Now} at {message.Source} {message.Message}");
+            Logs.WriteLine($"at {message.Source} {message.Message}");
         }
         /// <summary>
         /// 
@@ -182,7 +182,7 @@ namespace AlterBotNet
             IResult result = await this._commands.ExecuteAsync(context, argPos, null);
             if (!result.IsSuccess)
             {
-                Console.WriteLine($"{DateTime.Now} at Commands] Une erreur s'est produite en exécutant une commande. Texte: {context.Message.Content} | Erreur: {result.ErrorReason}");
+                Logs.WriteLine($"at Commands] Une erreur s'est produite en exécutant une commande. Texte: {context.Message.Content} | Erreur: {result.ErrorReason}");
             }
 
             if (!result.IsSuccess && result.ErrorReason.Contains("Unknown command"))

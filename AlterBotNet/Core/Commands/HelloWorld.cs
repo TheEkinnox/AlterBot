@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Text;
-
+using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
 
@@ -65,12 +65,11 @@ namespace AlterBotNet.Core.Commands
             };
             try
             {
-                //await this.Context.Channel.SendFileAsync((@"C:\Users\1832960\source\repos\AlterBotNet\AlterBotNet\Data\Plop\p6.jpg"));
                 await this.Context.Channel.SendFileAsync(vectImgs[this._rand.Next(vectImgs.Length)], $"{vectCapt[this._rand.Next(vectCapt.Length)]}");
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logs.WriteLine(e.ToString());
                 return;
             }
         }
@@ -98,18 +97,18 @@ namespace AlterBotNet.Core.Commands
             try
             {
                 await ReplyAsync("Infos envoyées en mp");
-                Console.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
+                Logs.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
                 EmbedBuilder eb = new EmbedBuilder();
                 eb.WithTitle(("**Liste des commandes disponibles**"))
                     .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
                     .AddField("==============================================", message);
                 //await this.Context.User.SendMessageAsync(infoAccount.ToString());
                 await this.Context.User.SendMessageAsync("", false, eb.Build());
-                Console.WriteLine(message);
+                Logs.WriteLine(message);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logs.WriteLine(e.ToString());
                 return;
             }
         }

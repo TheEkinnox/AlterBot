@@ -37,7 +37,7 @@ namespace AlterBotNet.Core.Data.Classes
                  Enabled=true
             };
             RepeatingTimer._loopingTimer.Elapsed += RepeatingTimer.OnTimerTicked;
-            Console.WriteLine("StartTimer");
+            Logs.WriteLine("StartTimer");
             return Task.CompletedTask;
         }
 
@@ -46,7 +46,7 @@ namespace AlterBotNet.Core.Data.Classes
 
         static string _cheminComptesEnBanque = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
         static BankAccount _methodes = new BankAccount("");
-        private static bool _salaireVerse;
+        private static bool _salaireVerse = false;
         private const DayOfWeek jourSalaire = DayOfWeek.Sunday;
         private const int heureSalaire = 23;
         private const int minuteSalaire = 59;
@@ -56,26 +56,34 @@ namespace AlterBotNet.Core.Data.Classes
 
         private static async Task OnTimerTickedAsync(object sender, ElapsedEventArgs e)
         {
-            Console.WriteLine("Timer ticked");
+            Logs.WriteLine("Timer ticked");
 
             // =========================================
             // = Verse les salaires à la date indiquée =
             // =========================================
-            if (DateTime.Now.DayOfWeek == RepeatingTimer.jourSalaire && DateTime.Now.Hour == RepeatingTimer.heureSalaire && DateTime.Now.Minute == RepeatingTimer.minuteSalaire && !RepeatingTimer._salaireVerse)
+            try
             {
-                List<BankAccount> bankAccounts = (await RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque));
-                foreach (BankAccount bankAccount in bankAccounts)
+                if (DateTime.Now.DayOfWeek == RepeatingTimer.jourSalaire && DateTime.Now.Hour == RepeatingTimer.heureSalaire && DateTime.Now.Minute == RepeatingTimer.minuteSalaire && !RepeatingTimer._salaireVerse)
                 {
-                    await Program.VerserSalaireAsync(bankAccount);
-                }
+                    List<BankAccount> bankAccounts = (await RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque));
+                    foreach (BankAccount bankAccount in bankAccounts)
+                    {
+                        await Program.VerserSalaireAsync(bankAccount);
+                    }
 
-                List<BankAccount> sortedList = bankAccounts.OrderBy(o => o.Name).ToList();
-                RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, sortedList);
-                RepeatingTimer._salaireVerse = true;
+                    List<BankAccount> sortedList = bankAccounts.OrderBy(o => o.Name).ToList();
+                    RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, sortedList);
+                    RepeatingTimer._salaireVerse = true;
+                }
+                else if (DateTime.Now.Hour != RepeatingTimer.heureSalaire)
+                {
+                    RepeatingTimer._salaireVerse = false;
+                }
             }
-            else if (DateTime.Now.DayOfWeek == RepeatingTimer.jourSalaire && DateTime.Now.Hour == RepeatingTimer.heureSalaire && DateTime.Now.Minute == RepeatingTimer.minuteSalaire+1)
+            catch (Exception exception)
             {
-                RepeatingTimer._salaireVerse = false;
+                Logs.WriteLine(exception.ToString());
+                throw;
             }
 
             // =============================================
@@ -85,20 +93,20 @@ namespace AlterBotNet.Core.Data.Classes
             if (!updatedBankAccounts.Equals(RepeatingTimer._initialBankAccounts))
             {
                 RepeatingTimer._ticksPasses++;
-                Console.WriteLine(RepeatingTimer._ticksPasses);
+                Logs.WriteLine(RepeatingTimer._ticksPasses.ToString());
                 if (RepeatingTimer._ticksPasses >= 120)
                 {
                     try
                     {
                         RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, updatedBankAccounts);
                         RepeatingTimer._initialBankAccounts = updatedBankAccounts;
-                        Console.WriteLine("Comptes en banque mis à jour");
+                        Logs.WriteLine("Comptes en banque mis à jour");
                         await Program.UpdateBank(RepeatingTimer._banques);
                     }
                     catch (Exception exception)
                     {
-                        Console.WriteLine(exception);
-                        return;
+                        Logs.WriteLine(exception.ToString());
+                        throw;
                     }
 
                     RepeatingTimer._ticksPasses = 0;

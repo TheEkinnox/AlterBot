@@ -70,21 +70,22 @@ namespace AlterBotNet.Core.Commands
                     message += "(staff) Définir le salaire d'un personnage: `bank sts (nom_personnage)`\n";
                     message += "(staff) Définir le propriétaire d'un personnage: `bank setowner (nom_personnage) (@propriétaire)`\n";
                     message += "(staff) Changer le nom d'un personnage: `bank rename (nom_personnage) (nouveauNom)`\n";
+                    message += "(staff) Verser son salaire à un personnage: `bank givesal (nom_personnage)`\n";
                     try
                     {
                         await ReplyAsync("Aide envoyée en mp");
-                        Console.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
+                        Logs.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
                         EmbedBuilder eb = new EmbedBuilder();
                         eb.WithTitle("**Aide de la commande bank (bnk,money)**")
                             .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
-                            .AddField("=============================================================", message);
+                            .AddField("===================================", message);
                         //await this.Context.User.SendMessageAsync(infoAccount.ToString());
                         await this.Context.User.SendMessageAsync("", false, eb.Build());
-                        Console.WriteLine(message);
+                        Logs.WriteLine(message);
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine(e);
+                        Logs.WriteLine(e.ToString());
                         throw;
                     }
                 }
@@ -95,19 +96,19 @@ namespace AlterBotNet.Core.Commands
                 {
                     try
                     {
-                        Console.WriteLine((await methodes.AccountsListAsync(nomFichier)).Count);
+                        Logs.WriteLine((await methodes.AccountsListAsync(nomFichier)).Count.ToString());
                         foreach (string msg in await methodes.AccountsListAsync(nomFichier))
                         {
                             if (!string.IsNullOrEmpty(msg))
                             {
                                 await ReplyAsync(msg);
-                                Console.WriteLine($"Liste envoyée sur le channel {this.Context.Channel.Name}");
+                                Logs.WriteLine($"Liste envoyée sur le channel {this.Context.Channel.Name}");
                             }
                         }
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine(e);
+                        Logs.WriteLine(e.ToString());
                         throw;
                     }
                 }
@@ -123,12 +124,12 @@ namespace AlterBotNet.Core.Commands
                         if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
                         {
                             await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                            Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                         }
                         else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
                         {
                             await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                            Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                         }
                         else
                         {
@@ -136,12 +137,12 @@ namespace AlterBotNet.Core.Commands
                             if (infoAccount != null)
                             {
                                 await ReplyAsync(infoAccount.ToString());
-                                Console.WriteLine(infoAccount.ToString());
+                                Logs.WriteLine(infoAccount.ToString());
                             }
                             else
                             {
                                 await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                Console.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                Logs.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                             }
                         }
                     }
@@ -160,12 +161,12 @@ namespace AlterBotNet.Core.Commands
                             if (argus.Length > 3 && !decimal.TryParse(argus[1], out decimal montant)) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                             }
                             else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                             }
                             else
                             {
@@ -184,13 +185,13 @@ namespace AlterBotNet.Core.Commands
                                     bankAccounts.Add(newAccount);
                                     methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
                                     await ReplyAsync($"{montant} couronnes ajoutée(s) sur le compte de {dpName}");
-                                    Console.WriteLine($"{montant} couronnes ajoutée(s) sur le compte de {dpName}");
-                                    Console.WriteLine(newAccount.ToString());
+                                    Logs.WriteLine($"{montant} couronnes ajoutée(s) sur le compte de {dpName}");
+                                    Logs.WriteLine(newAccount.ToString());
                                 }
                                 else
                                 {
                                     await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                                 }
                             }
                         }
@@ -217,12 +218,12 @@ namespace AlterBotNet.Core.Commands
                             if (argus.Length > 3 && !decimal.TryParse(argus[1], out decimal montant)) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                             }
                             else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                             }
                             else
                             {
@@ -242,13 +243,13 @@ namespace AlterBotNet.Core.Commands
                                     bankAccounts.Add(newAccount);
                                     methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
                                     await ReplyAsync($"{montant} couronnes retirée(s) sur le compte de {wdName}");
-                                    Console.WriteLine($"{montant} couronnes retirée(s) sur le compte de {wdName}");
-                                    Console.WriteLine(newAccount.ToString());
+                                    Logs.WriteLine($"{montant} couronnes retirée(s) sur le compte de {wdName}");
+                                    Logs.WriteLine(newAccount.ToString());
                                 }
                                 else
                                 {
                                     await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                                 }
                             }
                         }
@@ -275,12 +276,12 @@ namespace AlterBotNet.Core.Commands
                             if (argus.Length > 3 && !decimal.TryParse(argus[1], out decimal montant)) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                             }
                             else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                             }
                             else
                             {
@@ -299,13 +300,13 @@ namespace AlterBotNet.Core.Commands
                                     bankAccounts.Add(newAccount);
                                     methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
                                     await ReplyAsync($"Le montant sur le compte de \"**{setName}**\" est désormais de \"**{setName}**\" couronnes");
-                                    Console.WriteLine($"Le montant sur le compte de {setName} est désormais de \"**{nvMontant}**\" couronnes");
-                                    Console.WriteLine(newAccount.ToString());
+                                    Logs.WriteLine($"Le montant sur le compte de {setName} est désormais de \"**{nvMontant}**\" couronnes");
+                                    Logs.WriteLine(newAccount.ToString());
                                 }
                                 else
                                 {
                                     await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                                 }
                             }
                         }
@@ -330,12 +331,12 @@ namespace AlterBotNet.Core.Commands
                         if (argus.Length > 4 && !decimal.TryParse(argus[1], out decimal montant)) // Sert à s'assurer que argus[1] == forcément montant (et qu'il n'y a que 4 paramètres)
                         {
                             await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                            Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                         }
                         else if (argus.Length < 4) // Sert à s'assurer que argus[1] == forcément montant (et qu'il n'y a que 4 paramètres)
                         {
                             await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                            Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                         }
                         else
                         {
@@ -356,8 +357,8 @@ namespace AlterBotNet.Core.Commands
                                 BankAccount newAccount = new BankAccount(wdName, nvMontant, wdUserId, wdSalaire);
                                 bankAccounts.Add(newAccount);
                                 methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                                Console.WriteLine($"{ancienMontant - nvMontant} couronnes retirée(s) sur le compte de {wdName}");
-                                Console.WriteLine(newAccount.ToString());
+                                Logs.WriteLine($"{ancienMontant - nvMontant} couronnes retirée(s) sur le compte de {wdName}");
+                                Logs.WriteLine(newAccount.ToString());
                                 // Ajoute l'argent sur le 2eme compte
                                 string dpName = depositAccount.Name;
                                 decimal dpSalaire = depositAccount.Salaire;
@@ -370,14 +371,14 @@ namespace AlterBotNet.Core.Commands
                                 BankAccount newAccountDeposit = new BankAccount(dpName, depositAccountNewAmount, dpUserId, dpSalaire);
                                 bankAccounts.Add(newAccountDeposit);
                                 methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                                Console.WriteLine($"{montantTr} couronnes ajoutée(s) sur le compte de {dpName}");
-                                Console.WriteLine(newAccountDeposit.ToString());
+                                Logs.WriteLine($"{montantTr} couronnes ajoutée(s) sur le compte de {dpName}");
+                                Logs.WriteLine(newAccountDeposit.ToString());
                                 await ReplyAsync($"{montantTr} couronnes transférées du compte de {wdName} vers le compte de {dpName}");
                             }
                             else
                             {
                                 await ReplyAsync($"{error} Comptes \"**{argus[2]}**\" et/ou \"**{argus[3]}**\" inexistants: bank add (nom_Personnage) pour créer un nouveau compte");
-                                Console.WriteLine($"{error} Comptes \"**{argus[2]}**\" et/ou \"**{argus[3]}**\" inexistants: bank add (nom_Personnage) pour créer un nouveau compte");
+                                Logs.WriteLine($"{error} Comptes \"**{argus[2]}**\" et/ou \"**{argus[3]}**\" inexistants: bank add (nom_Personnage) pour créer un nouveau compte");
                             }
                         }
                     }
@@ -396,12 +397,12 @@ namespace AlterBotNet.Core.Commands
                             if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                             }
                             else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                             }
                             else if (await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]) == null)
                             {
@@ -419,13 +420,13 @@ namespace AlterBotNet.Core.Commands
                                 bankAccounts.Add(newAccount);
                                 methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
                                 await ReplyAsync($"Compte de {argus[1]} créé");
-                                Console.WriteLine($"Compte de {argus[1]} créé");
-                                Console.WriteLine(await methodes.AccountsListAsync(nomFichier));
+                                Logs.WriteLine($"Compte de {argus[1]} créé");
+                                Logs.WriteLine((await methodes.AccountsListAsync(nomFichier)).ToString());
                             }
                             else if (await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]) != null)
                             {
                                 await ReplyAsync($"{error} Le compte \"**{argus[1]}**\" existe déjà");
-                                Console.WriteLine($"{error} Le compte \"**{argus[1]}**\" existe déjà");
+                                Logs.WriteLine($"{error} Le compte \"**{argus[1]}**\" existe déjà");
                             }
                         }
                     }
@@ -451,12 +452,12 @@ namespace AlterBotNet.Core.Commands
                             if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                             }
                             else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                             }
                             else if (await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) != -1)
                             {
@@ -464,13 +465,13 @@ namespace AlterBotNet.Core.Commands
                                 bankAccounts.RemoveAt(toRemIndex);
                                 methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
                                 await ReplyAsync($"Compte de {argus[1]} supprimé");
-                                Console.WriteLine($"Compte de {argus[1]} supprimé");
-                                Console.WriteLine(await methodes.AccountsListAsync(nomFichier));
+                                Logs.WriteLine($"Compte de {argus[1]} supprimé");
+                                Logs.WriteLine((await methodes.AccountsListAsync(nomFichier)).ToString());
                             }
                             else if (await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) == -1)
                             {
                                 await ReplyAsync($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                Console.WriteLine($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                Logs.WriteLine($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                             }
                         }
                     }
@@ -495,7 +496,7 @@ namespace AlterBotNet.Core.Commands
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine(e);
+                        Logs.WriteLine(e.ToString());
                         throw;
                     }
                 }
@@ -517,12 +518,12 @@ namespace AlterBotNet.Core.Commands
                                     if (argus.Length > 3 && !decimal.TryParse(argus[1], out decimal montant)) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                                     {
                                         await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                        Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                        Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                                     }
                                     else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                                     {
                                         await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                        Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                        Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                                     }
                                     else
                                     {
@@ -541,26 +542,26 @@ namespace AlterBotNet.Core.Commands
                                             bankAccounts.Add(newAccount);
                                             methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
                                             await ReplyAsync($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
-                                            Console.WriteLine($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
-                                            Console.WriteLine(newAccount.ToString());
+                                            Logs.WriteLine($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
+                                            Logs.WriteLine(newAccount.ToString());
                                         }
                                         else
                                         {
                                             await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                            Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                            Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                                         }
                                     }
                                 }
                                 catch (Exception e)
                                 {
-                                    Console.WriteLine(e);
+                                    Logs.WriteLine(e.ToString());
                                     throw;
                                 }
                             }
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine(e);
+                            Logs.WriteLine(e.ToString());
                             throw;
                         }
                     }
@@ -586,12 +587,12 @@ namespace AlterBotNet.Core.Commands
                             if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                             }
                             else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                             }
                             else
                             {
@@ -613,25 +614,25 @@ namespace AlterBotNet.Core.Commands
                                             bankAccounts.Add(newAccount);
                                             methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
                                             await ReplyAsync($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
-                                            Console.WriteLine($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
-                                            Console.WriteLine(newAccount.ToString());
+                                            Logs.WriteLine($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
+                                            Logs.WriteLine(newAccount.ToString());
                                         }
                                         catch (Exception e)
                                         {
-                                            Console.WriteLine(e);
+                                            Logs.WriteLine(e.ToString());
                                             throw;
                                         }
                                     }
                                     else
                                     {
                                         await ReplyAsync($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
-                                        Console.WriteLine($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
+                                        Logs.WriteLine($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
                                     }
                                 }
                                 else
                                 {
                                     await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Console.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                                 }
                             }
                         }
@@ -658,12 +659,12 @@ namespace AlterBotNet.Core.Commands
                             if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Console.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
                             }
                             else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Console.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                             }
                             else
                             {
@@ -684,24 +685,71 @@ namespace AlterBotNet.Core.Commands
                                         bankAccounts.Add(newAccount);
                                         methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
                                         await ReplyAsync($"Le nom du compte de \"**{rnName}**\" est désormais \"**{newRnName}**\"");
-                                        Console.WriteLine($"Le nom du compte de \"**{rnName}**\" est désormais \"**{newRnName}**\"");
-                                        Console.WriteLine(newAccount.ToString());
+                                        Logs.WriteLine($"Le nom du compte de \"**{rnName}**\" est désormais \"**{newRnName}**\"");
+                                        Logs.WriteLine(newAccount.ToString());
                                     }
                                     catch (Exception e)
                                     {
-                                        Console.WriteLine(e);
+                                        Logs.WriteLine(e.ToString());
                                         throw;
                                     }
                                 }
                                 else if ((await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]) != null))
                                 {
                                     await ReplyAsync($"{error} Le compte \"**{argus[2]}**\" existe déjà");
-                                    Console.WriteLine($"{error} Le compte \"**{argus[2]}**\" existe déjà");
+                                    Logs.WriteLine($"{error} Le compte \"**{argus[2]}**\" existe déjà");
                                 }
                                 else
                                 {
                                     await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Console.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Logs.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (this.Context.Guild.Name == "ServeurTest")
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                        else
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                    }
+                }
+                // ================================================================
+                // = Gestion de la commande (admin) bank givesal (nom_Personnage) =
+                // ================================================================
+                else if (input.StartsWith("givesal") || input.StartsWith("gs"))
+                {
+                    if (IsStaff((SocketGuildUser)this.Context.User))
+                    {
+                        argus = input.Split(' ');
+                        // Sert à s'assurer qu'argus[0] == toujours deposit
+                        if (argus[0] == "givesal" || argus[0] == "gs")
+                        {
+                            if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            }
+                            else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            }
+                            else
+                            {
+                                BankAccount depositAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]);
+                                if (depositAccount != null)
+                                {
+                                    string dpName = depositAccount.Name;
+                                    decimal dpSalaire = depositAccount.Salaire;
+                                    await ReplyAsync($"Salaire de {dpSalaire} couronnes versé sur le compte de {dpName}");
+                                    await Program.VerserSalaireAsync(depositAccount);
+                                }
+                                else
+                                {
+                                    await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    Logs.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
                                 }
                             }
                         }
@@ -722,7 +770,7 @@ namespace AlterBotNet.Core.Commands
             else if (input == "none")
             {
                 await ReplyAsync(error);
-                Console.WriteLine(error);
+                Logs.WriteLine(error);
             }
         }
 
