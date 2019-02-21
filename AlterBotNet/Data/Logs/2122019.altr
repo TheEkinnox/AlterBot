@@ -1,4 +1,3 @@
-
 21/02/2019 00:20:45 at Gateway Latency = 125 ms
 21/02/2019 00:22:54 at Discord Discord.Net v2.0.1 (API v6)
 21/02/2019 00:22:54 at Rest GET voice/regions: 350,9 ms
@@ -236,3 +235,128 @@ Salaire: 0 couronne(s)
 21/02/2019 00:27:56 19
 21/02/2019 00:28:11 Timer ticked
 21/02/2019 00:28:11 20
+21/02/2019 00:28:25 at Gateway Sent Heartbeat
+21/02/2019 00:28:25 at Gateway Received HeartbeatAck
+21/02/2019 00:28:25 at Gateway Latency = 46 ms
+21/02/2019 00:28:26 Timer ticked
+21/02/2019 00:28:26 21
+21/02/2019 00:28:41 Timer ticked
+21/02/2019 00:28:41 22
+21/02/2019 00:28:56 Timer ticked
+21/02/2019 00:28:56 23
+21/02/2019 00:29:06 at Gateway Sent Heartbeat
+21/02/2019 00:29:06 at Gateway Received HeartbeatAck
+21/02/2019 00:29:06 at Gateway Latency = 47 ms
+21/02/2019 00:29:11 Timer ticked
+21/02/2019 00:29:11 24
+21/02/2019 00:29:26 Timer ticked
+21/02/2019 00:29:26 25
+21/02/2019 00:29:41 Timer ticked
+21/02/2019 00:29:41 26
+21/02/2019 00:29:48 at Gateway Sent Heartbeat
+21/02/2019 00:29:48 at Gateway Received HeartbeatAck
+21/02/2019 00:29:48 at Gateway Latency = 47 ms
+21/02/2019 00:29:56 Timer ticked
+21/02/2019 00:29:56 27
+21/02/2019 00:30:11 Timer ticked
+21/02/2019 00:30:11 28
+21/02/2019 00:30:26 Timer ticked
+21/02/2019 00:30:26 29
+21/02/2019 00:30:29 at Gateway Sent Heartbeat
+21/02/2019 00:30:29 at Gateway Received HeartbeatAck
+21/02/2019 00:30:29 at Gateway Latency = 62 ms
+21/02/2019 00:30:41 Timer ticked
+21/02/2019 00:30:41 30
+21/02/2019 00:30:56 Timer ticked
+21/02/2019 00:30:56 31
+21/02/2019 00:31:10 at Gateway Sent Heartbeat
+21/02/2019 00:31:10 at Gateway Received HeartbeatAck
+21/02/2019 00:31:10 at Gateway Latency = 47 ms
+21/02/2019 00:31:11 Timer ticked
+21/02/2019 00:31:11 32
+21/02/2019 00:31:26 Timer ticked
+21/02/2019 00:31:26 33
+21/02/2019 00:31:41 Timer ticked
+21/02/2019 00:31:41 34
+21/02/2019 00:31:51 at Gateway Sent Heartbeat
+21/02/2019 00:31:51 at Gateway Received HeartbeatAck
+21/02/2019 00:31:51 at Gateway Latency = 47 ms
+21/02/2019 00:31:56 Timer ticked
+21/02/2019 00:31:56 35
+21/02/2019 00:32:11 Timer ticked
+21/02/2019 00:32:11 36
+21/02/2019 00:32:26 Timer ticked
+21/02/2019 00:32:26 37
+21/02/2019 00:32:33 at Gateway Sent Heartbeat
+21/02/2019 00:32:33 at Gateway Received HeartbeatAck
+21/02/2019 00:32:33 at Gateway Latency = 47 ms
+21/02/2019 00:32:41 Timer ticked
+21/02/2019 00:32:41 38
+21/02/2019 00:32:56 Timer ticked
+21/02/2019 00:32:56 39
+21/02/2019 00:33:11 Timer ticked
+21/02/2019 00:33:11 40
+21/02/2019 00:33:14 at Gateway Sent Heartbeat
+21/02/2019 00:33:14 at Gateway Received HeartbeatAck
+21/02/2019 00:33:14 at Gateway Latency = 47 ms
+21/02/2019 00:33:26 Timer ticked
+21/02/2019 00:33:26 41
+21/02/2019 00:33:41 Timer ticked
+21/02/2019 00:33:41 42
+21/02/2019 00:33:55 at Gateway Sent Heartbeat
+21/02/2019 00:33:55 at Gateway Received HeartbeatAck
+21/02/2019 00:33:55 at Gateway Latency = 47 ms
+21/02/2019 00:33:56 Timer ticked
+21/02/2019 00:33:56 43
+21/02/2019 00:34:11 Timer ticked
+21/02/2019 00:34:11 44
+21/02/2019 00:34:26 Timer ticked
+21/02/2019 00:34:26 45
+21/02/2019 00:34:36 at Gateway Sent Heartbeat
+21/02/2019 00:34:36 at Gateway Received HeartbeatAck
+21/02/2019 00:34:36 at Gateway Latency = 47 ms
+21/02/2019 00:34:41 Timer ticked
+21/02/2019 00:34:41 46
+21/02/2019 00:34:56 Timer ticked
+21/02/2019 00:34:56 47
+21/02/2019 00:35:11 Timer ticked
+21/02/2019 00:35:11 48
+21/02/2019 00:35:18 at Gateway Sent Heartbeat
+21/02/2019 00:35:18 at Gateway Received HeartbeatAck
+21/02/2019 00:35:18 at Gateway Latency = 47 ms
+21/02/2019 00:35:26 Timer ticked
+21/02/2019 00:35:26 49
+21/02/2019 00:35:41 Timer ticked
+21/02/2019 00:35:41 50
+21/02/2019 00:35:56 Timer ticked
+21/02/2019 00:35:56 51
+21/02/2019 00:35:59 at Gateway Sent Heartbeat
+21/02/2019 00:35:59 at Gateway Received HeartbeatAck
+21/02/2019 00:35:59 at Gateway Latency = 47 ms
+21/02/2019 00:36:11 Timer ticked
+21/02/2019 00:36:11 52
+21/02/2019 00:36:26 Timer ticked
+21/02/2019 00:36:26 53
+21/02/2019 00:36:40 at Gateway Sent Heartbeat
+21/02/2019 00:36:40 at Gateway Received HeartbeatAck
+21/02/2019 00:36:40 at Gateway Latency = 46 ms
+21/02/2019 00:36:41 Timer ticked
+21/02/2019 00:36:41 54
+21/02/2019 00:36:56 Timer ticked
+21/02/2019 00:36:56 55
+21/02/2019 00:37:11 Timer ticked
+21/02/2019 00:37:11 56
+21/02/2019 00:37:21 at Gateway Sent Heartbeat
+21/02/2019 00:37:21 at Gateway Received HeartbeatAck
+21/02/2019 00:37:21 at Gateway Latency = 47 ms
+21/02/2019 00:37:26 Timer ticked
+21/02/2019 00:37:26 57
+21/02/2019 00:37:41 Timer ticked
+21/02/2019 00:37:41 58
+21/02/2019 00:37:56 Timer ticked
+21/02/2019 00:37:56 59
+21/02/2019 00:38:03 at Gateway Sent Heartbeat
+21/02/2019 00:38:03 at Gateway Received HeartbeatAck
+21/02/2019 00:38:03 at Gateway Latency = 47 ms
+21/02/2019 00:38:11 Timer ticked
+21/02/2019 00:38:11 60
