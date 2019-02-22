@@ -57,20 +57,20 @@ namespace AlterBotNet.Core.Commands
                 // ====================================
                 if (input == "help")
                 {
+                    string staff = "";
                     message += "Aide sur la commande: `bank help`\n";
-                    message += "Afficher la liste des comptes: `bank list`\n";
+                    staff += "(staff) Afficher la liste des comptes: `bank list`\n";
                     message += "Afficher le montant sur le compte d'un personnage: `bank info (nom_Personnage)`\n";
-                    message += "(staff) Ajouter de l'argent sur le compte d'un personnage: `bank deposit (montant) (nom_Personnage)`\n";
-                    message += "(staff) Retirer de l'argent sur le compte d'un personnage: `bank withdraw (montant) (nom_Personnage)`\n";
-                    message += "(staff) Définir le montant sur le compte d'un personnage: `bank set (montant) (nom_Personnage)`\n";
+                    staff += "(staff) Ajouter de l'argent sur le compte d'un personnage: `bank deposit (montant) (nom_Personnage)`\n";
+                    staff += "(staff) Retirer de l'argent sur le compte d'un personnage: `bank withdraw (montant) (nom_Personnage)`\n";
+                    staff += "(staff) Définir le montant sur le compte d'un personnage: `bank set (montant) (nom_Personnage)`\n";
                     message += "Transférer de l'argent d'un compte à un autre: `bank pay (montant) (nom_Personnage1) (nom_Personnage2)`\n";
-                    message += "(stuff) (RP) Créer un nouveau compte: `bank add (nomPersonnage) {@propriétaire}`\n";
-                    message += "(staff) Supprimer un compte: `bank delete (nomPersonnage)`\n";
+                    staff += "(staff) (RP) Créer un nouveau compte: `bank add (nomPersonnage) {@propriétaire}`\n";
+                    staff += "(staff) Supprimer un compte: `bank delete (nomPersonnage)`\n";
                     message += "Trier la liste des comptes (par ordre alphabétique): `bank sort`\n";
-                    message += "(staff) Définir le salaire d'un personnage: `bank sts (nom_personnage)`\n";
-                    message += "(staff) Définir le propriétaire d'un personnage: `bank setowner (nom_personnage) (@propriétaire)`\n";
-                    message += "(staff) Changer le nom d'un personnage: `bank rename (nom_personnage) (nouveauNom)`\n";
-                    message += "(staff) Verser son salaire à un personnage: `bank givesal (nom_personnage)`\n";
+                    staff += "(staff) Définir le salaire d'un personnage: `bank sts (nom_personnage)`\n";
+                    staff += "(staff) Définir le propriétaire d'un personnage: `bank setowner (nom_personnage) (@propriétaire)`\n";
+                    staff += "(staff) Changer le nom d'un personnage: `bank rename (nom_personnage) (nouveauNom)`\n";
                     try
                     {
                         await ReplyAsync("Aide envoyée en mp");
@@ -78,7 +78,8 @@ namespace AlterBotNet.Core.Commands
                         EmbedBuilder eb = new EmbedBuilder();
                         eb.WithTitle("**Aide de la commande bank (bnk,money)**")
                             .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
-                            .AddField("===================================", message);
+                            .AddField("========== Commandes Staff ==========", staff)
+                            .AddField("========== Commandes Publiques ==========", message);
                         //await this.Context.User.SendMessageAsync(infoAccount.ToString());
                         await this.Context.User.SendMessageAsync("", false, eb.Build());
                         Logs.WriteLine(message);

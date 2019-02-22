@@ -52,18 +52,19 @@ namespace AlterBotNet.Core.Commands
                 // ====================================
                 if (input == "help")
                 {
+                    string staff = "";
                     message += "Aide sur la commande: `stuff help`\n";
-                    message += "(staff) Afficher la liste des comptes: `stuff list`\n";
+                    staff += "(staff) Afficher la liste des comptes: `stuff list`\n";
                     message += "Afficher les objets d'un personnage: `stuff info (nom_Personnage)`\n";
-                    message += "(staff) Ajouter un objet à un personnage: `stuff add (objet) (nom_Personnage)`\n";
-                    message += "(staff) Retirer un objet à un personnage: `stuff remove (objet) (nom_Personnage)`\n";
+                    staff += "(staff) Ajouter un objet à un personnage: `stuff add (objet) (nom_Personnage)`\n";
+                    staff += "(staff) Retirer un objet à un personnage: `stuff remove (objet) (nom_Personnage)`\n";
                     message += "Transférer un objet d'un compte à un autre: `stuff give (objet) (nom_Personnage1) (nom_Personnage2)`\n";
-                    message += "(stuff) (RP) Créer un nouveau compte: `stuff create (nomPersonnage)`\n";
-                    message += "(staff) Supprimer un compte: `stuff delete (nomPersonnage)`\n";
+                    staff += "(staff) (RP) Créer un nouveau compte: `stuff create (nomPersonnage)`\n";
+                    staff += "(staff) Supprimer un compte: `stuff delete (nomPersonnage)`\n";
                     message += "Trier la liste des comptes (par ordre alphabétique): `stuff sort`\n";
-                    message += "(staff) Définir le propriétaire d'un personnage: `stuff setowner (nom_personnage) (@propriétaire)`\n";
-                    message += "(staff) Changer le nom d'un personnage: `bank rename (nom_personnage) (nouveauNom)`\n";
-                    message += "(staff) Remplacer un objet dans l'inventaire d'un personnage: `bank replace (nom_personnage) (objet) (nouvel-objet)`\n";
+                    staff += "(staff) Définir le propriétaire d'un personnage: `stuff setowner (nom_personnage) (@propriétaire)`\n";
+                    staff += "(staff) Changer le nom d'un personnage: `bank rename (nom_personnage) (nouveauNom)`\n";
+                    staff += "(staff) Remplacer un objet dans l'inventaire d'un personnage: `bank replace (nom_personnage) (objet) (nouvel-objet)`\n";
                     try
                     {
                         await ReplyAsync("Aide envoyée en mp");
@@ -71,7 +72,8 @@ namespace AlterBotNet.Core.Commands
                         EmbedBuilder eb = new EmbedBuilder();
                         eb.WithTitle(("**Aide de la commande stuff (stf,inv)**"))
                             .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
-                            .AddField("=============================================================", message);
+                            .AddField("========== Staff ==========", staff)
+                            .AddField("========== Autre ==========", message);
                         //await this.Context.User.SendMessageAsync(infoAccount.ToString());
                         await this.Context.User.SendMessageAsync("", false, eb.Build());
                         Logs.WriteLine(message);

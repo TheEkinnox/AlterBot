@@ -84,16 +84,17 @@ namespace AlterBotNet.Core.Commands
         [Command("help"), Summary("Envoie la liste des commandes disponibles en mp")]
         public async Task SendHelp()
         {
-            string message = "";
-            message += "\n";
-            message += "Liste des commandes: `help`\n";
-            message += "Aide sur la commande bank: `bank help`\n";
-            message += "Aide sur la commande stuff: `stuff help`\n";
-            message += "Envoyer une image de poulpe avec un message aléatoire: `plop`\n";
-            message += "Lancer un dé: `roll 1d100`\n";
-            message += "Faire parler le bot (c useless): `say message`\n";
-            message += "Saluer l'utilisateur qui a envoyé la commande: `hello`\n";
-            message += "Tester le message de bienvenue sur le serveur: `testjoin`\n";
+            string rp = "";
+            string autre = "";
+            rp += "\n";
+            rp += "Liste des commandes: `help`\n";
+            rp += "Aide sur la commande bank: `bank help`\n";
+            rp += "Aide sur la commande stuff: `stuff help`\n";
+            autre += "Envoyer une image de poulpe avec un message aléatoire: `plop`\n";
+            rp += "Lancer un dé: `roll 1d100`\n";
+            autre += "Faire parler le bot (c useless): `say message`\n";
+            autre += "Saluer l'utilisateur qui a envoyé la commande: `hello`\n";
+            autre += "Tester le message de bienvenue sur le serveur: `testjoin`\n";
             try
             {
                 await ReplyAsync("Infos envoyées en mp");
@@ -101,10 +102,11 @@ namespace AlterBotNet.Core.Commands
                 EmbedBuilder eb = new EmbedBuilder();
                 eb.WithTitle(("**Liste des commandes disponibles**"))
                     .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
-                    .AddField("==============================================", message);
+                    .AddField("=========== Commandes RP ===========", rp)
+                    .AddField("========= Autres Commandes =========", autre);
                 //await this.Context.User.SendMessageAsync(infoAccount.ToString());
                 await this.Context.User.SendMessageAsync("", false, eb.Build());
-                Logs.WriteLine(message);
+                Logs.WriteLine(rp);
             }
             catch (Exception e)
             {

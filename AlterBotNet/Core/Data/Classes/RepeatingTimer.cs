@@ -47,12 +47,11 @@ namespace AlterBotNet.Core.Data.Classes
         static string _cheminComptesEnBanque = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
         static BankAccount _methodes = new BankAccount("");
         private static bool _salaireVerse = false;
-        private const DayOfWeek jourSalaire = DayOfWeek.Sunday;
-        private const int heureSalaire = 23;
-        private const int minuteSalaire = 59;
+        private const DayOfWeek jourSalaire = DayOfWeek.Monday;
+        private const int heureSalaire = 00;
+        private const int minuteSalaire = 00;
 
         private static int _ticksPasses = 120;
-        //static List<BankAccount> _initialBankAccounts = RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque).GetAwaiter().GetResult();
 
         private static async Task OnTimerTickedAsync(object sender, ElapsedEventArgs e)
         {
@@ -69,13 +68,14 @@ namespace AlterBotNet.Core.Data.Classes
                     foreach (BankAccount bankAccount in bankAccounts)
                     {
                         await Program.VerserSalaireAsync(bankAccount);
+                        RepeatingTimer._ticksPasses = 120;
                     }
 
                     List<BankAccount> sortedList = bankAccounts.OrderBy(o => o.Name).ToList();
                     RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, sortedList);
                     RepeatingTimer._salaireVerse = true;
                 }
-                else if (DateTime.Now.Hour != RepeatingTimer.heureSalaire)
+                else if (DateTime.Now.Minute != RepeatingTimer.minuteSalaire)
                 {
                     RepeatingTimer._salaireVerse = false;
                 }
