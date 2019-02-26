@@ -77,9 +77,9 @@ namespace AlterBotNet
             if (bankAccount != null)
             {
                 string bankName = bankAccount.Name;
-                decimal ancienMontant = bankAccount.Amount;
-                ulong bankUserId = bankAccount.UserId;
                 decimal bankSalaire = bankAccount.Salaire;
+                ulong bankUserId = bankAccount.UserId;
+                decimal ancienMontant = bankAccount.Amount;
                 decimal nvMontant = ancienMontant + bankSalaire;
                 bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, bankName));
                 methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);

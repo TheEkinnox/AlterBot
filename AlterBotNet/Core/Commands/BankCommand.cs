@@ -60,6 +60,8 @@ namespace AlterBotNet.Core.Commands
                     string staff = "";
                     message += "Aide sur la commande: `bank help`\n";
                     staff += "(staff) Afficher la liste des comptes: `bank list`\n";
+                    // Todo: commande bank update
+                    message += "Actualiser le channel bank: `bank update`";
                     message += "Afficher le montant sur le compte d'un personnage: `bank info (nom_Personnage)`\n";
                     staff += "(staff) Ajouter de l'argent sur le compte d'un personnage: `bank deposit (montant) (nom_Personnage)`\n";
                     staff += "(staff) Retirer de l'argent sur le compte d'un personnage: `bank withdraw (montant) (nom_Personnage)`\n";

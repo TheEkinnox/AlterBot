@@ -47,44 +47,53 @@ namespace AlterBotNet.Core.Data.Classes
         static string _cheminComptesEnBanque = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
         static BankAccount _methodes = new BankAccount("");
         private static bool _salaireVerse = false;
-        private const DayOfWeek jourSalaire = DayOfWeek.Monday;
-        private const int heureSalaire = 00;
-        private const int minuteSalaire = 00;
+        private const DayOfWeek jourSalaire = DayOfWeek.Friday;
+        private static int _heureSalaire = DateTime.Now.Hour;
+        private static int _minuteSalaire = DateTime.Now.Minute;
 
-        private static int _ticksPasses = 120;
+        private static int _ticksPasses = 3;
 
         private static async Task OnTimerTickedAsync(object sender, ElapsedEventArgs e)
         {
             Logs.WriteLine("Timer ticked");
 
+            // Todo: Versement automatique des salaires tous les lundi à minuit (Dimanche 18h au Canada)
             // =========================================
             // = Verse les salaires à la date indiquée =
             // =========================================
-            try
-            {
-                if (DateTime.Now.DayOfWeek == RepeatingTimer.jourSalaire && DateTime.Now.Hour == RepeatingTimer.heureSalaire && DateTime.Now.Minute == RepeatingTimer.minuteSalaire && !RepeatingTimer._salaireVerse)
-                {
-                    List<BankAccount> bankAccounts = (await RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque));
-                    foreach (BankAccount bankAccount in bankAccounts)
-                    {
-                        await Program.VerserSalaireAsync(bankAccount);
-                        RepeatingTimer._ticksPasses = 120;
-                    }
+            //if (DateTime.Now.DayOfWeek == RepeatingTimer.jourSalaire && DateTime.Now.Hour == RepeatingTimer._heureSalaire && DateTime.Now.Minute == RepeatingTimer._minuteSalaire && !RepeatingTimer._salaireVerse && RepeatingTimer._ticksPasses >= 3)
+            //{
+            //    List<BankAccount> bankAccounts = await RepeatingTimer._methodes.ChargerDonneesPersosAsync(RepeatingTimer._cheminComptesEnBanque);
 
-                    List<BankAccount> sortedList = bankAccounts.OrderBy(o => o.Name).ToList();
-                    RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, sortedList);
-                    RepeatingTimer._salaireVerse = true;
-                }
-                else if (DateTime.Now.Minute != RepeatingTimer.minuteSalaire)
-                {
-                    RepeatingTimer._salaireVerse = false;
-                }
-            }
-            catch (Exception exception)
-            {
-                Logs.WriteLine(exception.ToString());
-                throw;
-            }
+            //    for (int i = 0; i < bankAccounts.Count; i++)
+            //    {
+            //        try
+            //        {
+            //            BankAccount bankAccount = bankAccounts[i];
+            //            if (bankAccount != null)
+            //            {
+            //                string dpName = bankAccount.Name;
+            //                decimal dpSalaire = bankAccount.Salaire;
+            //                await Program.VerserSalaireAsync(bankAccount);
+            //                Logs.WriteLine($"Salaire de {dpSalaire} couronnes versé sur le compte de {dpName}");
+            //            }
+            //        }
+            //        catch (Exception exception)
+            //        {
+            //            Logs.WriteLine(exception.ToString());
+            //            throw;
+            //        }
+            //    }
+
+            //    RepeatingTimer._ticksPasses = 120;
+            //    List<BankAccount> sortedList = bankAccounts.OrderBy(o => o.Name).ToList();
+            //    RepeatingTimer._methodes.EnregistrerDonneesPersos(RepeatingTimer._cheminComptesEnBanque, sortedList);
+            //    RepeatingTimer._salaireVerse = true;
+            //}
+            //else if (DateTime.Now.Minute != RepeatingTimer._minuteSalaire)
+            //{
+            //    RepeatingTimer._salaireVerse = false;
+            //}
 
             // =============================================
             // = Actualise la liste dans le channel banque =
