@@ -1,19 +1,42 @@
-﻿using System;
+﻿#region MÉTADONNÉES
+
+// Nom du fichier : BankAccount.cs
+// Auteur : Loick OBIANG (1832960)
+// Date de création : 2019-02-09
+// Date de modification : 2019-03-01
+
+#endregion
+
+#region USING
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
+#endregion
+
 namespace AlterBotNet.Core.Data.Classes
 {
     public class BankAccount
     {
+        #region CONSTANTES ET ATTRIBUTS STATIQUES
+
         private const decimal salaire = 0;
+
+        #endregion
+
+        #region PROPRIÉTÉS ET INDEXEURS
 
         public string Name { get; set; }
         public decimal Amount { get; set; }
         public ulong UserId { get; set; }
         public decimal Salaire { get; set; }
+
+        #endregion
+
+        #region CONSTRUCTEURS
 
         /// <summary>
         /// Constructeur permettant l'initialisation d'un compte en banque
@@ -29,6 +52,10 @@ namespace AlterBotNet.Core.Data.Classes
             this.UserId = userId;
             this.Salaire = salaire;
         }
+
+        #endregion
+
+        #region MÉTHODES
 
         public void Deposit(decimal montant)
         {
@@ -151,7 +178,7 @@ namespace AlterBotNet.Core.Data.Classes
                 {
                     message.Add("");
 
-                    for (int j = lastIndex; j < lastIndex + (regAccounts.Count / 5 + regAccounts.Count % 5) && j < regAccounts.Count && regAccounts[j] != null; j++)
+                    for (int j = lastIndex; j < lastIndex + regAccounts.Count / 5 + regAccounts.Count % 5 && j < regAccounts.Count && regAccounts[j] != null; j++)
                     {
                         try
                         {
@@ -181,9 +208,11 @@ namespace AlterBotNet.Core.Data.Classes
 
         public override string ToString()
         {
-            string message = ($"**{this.Name+ ":**"} {this.Amount} couronne(s)\n{"Salaire" + ":"} {this.Salaire} couronne(s)");
+            string message = $"**{this.Name + ":**"} {this.Amount} couronne(s)\n{"Salaire" + ":"} {this.Salaire} couronne(s)";
             //string message = string.Format("**{0}:** {this.Amount} couronne(s)\nsalaire: {this.Salaire} couronne(s)", this.Name);
             return message;
         }
+
+        #endregion
     }
 }
