@@ -7,12 +7,34 @@ using System.Text;
 using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
+using Discord.Rest;
+using Discord.WebSocket;
 
 namespace AlterBotNet.Core.Commands
 {
-    public class HelloWorld : ModuleBase<SocketCommandContext>
+    public class BaseCommands : ModuleBase<SocketCommandContext>
     {
         private Random _rand = new Random();
+
+        [Command("restart")]
+        public async Task RestartBot()
+        {
+            if (Global.IsStaff((SocketGuildUser)this.Context.User))
+            {
+                await this.Context.Message.DeleteAsync();
+                RestUserMessage restartMsg = await this.Context.Channel.SendMessageAsync("Redémarrage en cours...");
+                await Task.Delay(2000);
+                await restartMsg.ModifyAsync(msg => msg.Content = "Redémarrage effectué avec succès!");
+                await Global.Client.LogoutAsync();
+                await Global.Client.StopAsync();
+                Program.Main();
+            }
+            else
+            {
+                await ReplyAsync("Vous devez être membre du staff pour utiliser cette commande");
+                Logs.WriteLine($"{this.Context.User.Username} a tenté d'exécuter la commande {this.Context.Message.Content} et n'est pas membre du staff");
+            }
+        }
 
         [Command("hello"), Alias("helloworld", "world"), Summary("Commande hello world")]
         public async Task SendMessage()
@@ -28,7 +50,7 @@ namespace AlterBotNet.Core.Commands
             embed.WithColor(250, 125, 125);
             embed.WithFooter("Le proprio génial du discord", this.Context.Guild.Owner.GetAvatarUrl());
             embed.WithDescription("This is a **PEEEEERFECT** random desc with an `Awesome` link.\n" +
-                                  "[Le meilleur des wiki :heart::heart:](http://fr.alternia.wikia.com)");
+                                  "[Le meilleur des wiki :heart::heart:](https://alternia.fandom.com/fr/)");
 
             await this.Context.Channel.SendMessageAsync("", false, embed.Build());
         }
@@ -70,7 +92,7 @@ namespace AlterBotNet.Core.Commands
             catch (Exception e)
             {
                 Logs.WriteLine(e.ToString());
-                return;
+                throw;
             }
         }
 
@@ -78,7 +100,7 @@ namespace AlterBotNet.Core.Commands
         public async Task SendSayMessage([Remainder] string input = "")
         {
             await this.Context.Message.DeleteAsync();
-            await ReplyAsync(input);
+            await this.Context.Channel.SendMessageAsync(input);
         }
 
         [Command("help"), Summary("Envoie la liste des commandes disponibles en mp")]
@@ -90,6 +112,7 @@ namespace AlterBotNet.Core.Commands
             rp += "Liste des commandes: `help`\n";
             rp += "Aide sur la commande bank: `bank help`\n";
             rp += "Aide sur la commande stuff: `stuff help`\n";
+            rp += "Aide sur la commande stats: `stats help`\n";
             autre += "Envoyer une image de poulpe avec un message aléatoire: `plop`\n";
             rp += "Lancer un dé: `roll 1d100`\n";
             autre += "Faire parler le bot (c useless): `say message`\n";
@@ -111,7 +134,7 @@ namespace AlterBotNet.Core.Commands
             catch (Exception e)
             {
                 Logs.WriteLine(e.ToString());
-                return;
+                throw;
             }
         }
     }

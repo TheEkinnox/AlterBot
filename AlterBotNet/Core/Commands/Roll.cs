@@ -18,6 +18,7 @@ using System.Text;
 using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
+using MathParserTK;
 
 #endregion
 
@@ -36,32 +37,28 @@ namespace AlterBotNet.Core.Commands
         [Command("roll"), Alias("de", "dice", "r"), Summary("Lance 1 dé (par défaut 1d100) **:warning:LES PRIORITES D'OPERATEURS NE SONT PAS RESPECTEES:warning:**")]
         public async Task LancerDe([Remainder]string input = "none")
         {
+            MathParser parser = new MathParser();
+            const int bonusCaly = 8;
             int max = 100;
             int[] resultat = new int[99999999];
             int[] nbr = new int[20];
             string msgResultat = "";
-            string message;
+            string calcul = "";
             int sumResultats = 0;
             bool valide = true;
-            bool found = false;
-            char[] operat = new char[15];
-            for (int i = 0; i < operat.Length; i++)
-            {
-                operat[i] = ' ';
-            }
-
+            bool containsCalcul = false;
 
             if (input=="help")
             {
-                await this.Context.Channel.SendMessageAsync("Lance 1 dé (par défaut 1d100) **:warning:LES PRIORITES D'OPERATEURS NE SONT PAS RESPECTEES:warning:**");
+                await this.Context.Channel.SendMessageAsync("Lance le nombre indiqué de dés (par défaut 1d100)");
             }
             else if (input.StartsWith("d"))
             {
                 if (int.TryParse(input.Replace("d", ""), out max))
                 {
                     resultat[0] = this.rand.Next(max + 1);
-                    Logs.WriteLine($"{this.Context.User.Mention} a roll {resultat[0]}");
-                    await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
+                    Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
+                    await ReplyAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
                     //return;
                 }
                 else
@@ -75,12 +72,12 @@ namespace AlterBotNet.Core.Commands
             else if (char.IsDigit(input[0]) && !(input.Contains("d")) && int.TryParse(input, out max))
             {
                 resultat[0] = this.rand.Next(max + 1);
-                Logs.WriteLine($"{this.Context.User.Mention} a roll {resultat[0]}");
+                Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
                 await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
             }
             else if (char.IsDigit(input[0]) && input.Contains("d"))
             {
-                string[] argus = input.Split('d', '+', '-', '*', '/');
+                string[] argus = input.Split('d','+','-','*','/');
                 if (int.TryParse(argus[0], out int nbDes) && (!String.IsNullOrEmpty(argus[1]) && int.TryParse(argus[1], out max)))
                 {
                     for (int i = 0; i < nbDes; i++)
@@ -97,121 +94,33 @@ namespace AlterBotNet.Core.Commands
                             msgResultat += ($"{resultat[i]}");
                         }
                     }
-                    //if (argus[1].Contains('+') || argus[1].Contains('-') || argus[1].Contains('*') || argus[1].Contains('/'))
-                    //{
-                    //    // Vérifie la position des opérateurs et l'enregistre dans un vecteur d'entier
-                    //    for (int i = 0; i < input.Length; i++)
-                    //    {
-                    //        Logs.WriteLine(input[i]);
-                    //        switch (input[i])
-                    //        {
-                    //            case '+':
-                    //                {
-                    //                    for (int j = i; j > 0 && operat[i - j] != '+'; j--)
-                    //                    {
-                    //                        if (operat[i] != '/' && operat[i] != '-' && operat[i] != '*')
-                    //                        {
-                    //                            operat[i] = '+';
-                    //                        }
-                    //                    }
-                    //                    break;
-                    //                }
-                    //            case '-':
-                    //                {
-                    //                    for (int j = i; j > 0 && operat[i] != '-'; j--)
-                    //                    {
-                    //                        if (operat[i] != '+' && operat[i] != '/' && operat[i - j] != '*')
-                    //                        {
-                    //                            operat[i] = '-';
-                    //                        }
-                    //                    }
-                    //                    break;
-                    //                }
-                    //            case '*':
-                    //                {
-                    //                    for (int j = i; j > 0 && operat[i] != '*'; j--)
-                    //                    {
-                    //                        if (operat[i] != '+' && operat[i] != '-' && operat[i] != '/')
-                    //                        {
-                    //                            operat[i] = '*';
-                    //                        }
-                    //                    }
-                    //                    break;
-                    //                }
-                    //            case '/':
-                    //                {
-                    //                    for (int j = i; j > 0 && operat[i - j] != '/'; j--)
-                    //                    {
-                    //                        if (operat[i] != '+' && operat[i] != '-' && operat[i] != '*')
-                    //                        {
-                    //                            operat[i] = '/';
-                    //                        }
-                    //                    }
-                    //                    break;
-                    //                }
-                    //            default:
-                    //                Logs.WriteLine(".");
-                    //                break;
-                    //        }
-                    //    }
-
-                    //    // Trie les opérateurs dans un nouveau vecteur de chars
-                    //    Char[] sortedOperat = new char[operat.Length];
-                    //    for (int i = 0; i < operat.Length; i++)
-                    //    {
-                    //        int lastOpeIndex = 0;
-                    //        if (operat[i] == '+' || operat[i] == '-' || operat[i] == '*' || operat[i] == '/')
-                    //        {
-                    //            sortedOperat[lastOpeIndex] = operat[i];
-                    //        }
-                    //    }
-
-                    //    // Effectue le calcul prévue
-                    //    for (int i = 2; i < argus.Length && int.TryParse(argus[i], out nbr[i - 2]); i++)
-                    //    {
-                    //        switch (sortedOperat[i - 2])
-                    //        {
-                    //            case '+':
-                    //                sumResultats += nbr[i - 2];
-                    //                break;
-                    //            case '-':
-                    //                sumResultats -= nbr[i - 2];
-                    //                break;
-                    //            case '*':
-                    //                sumResultats *= nbr[i - 2];
-                    //                break;
-                    //            case '/':
-                    //                sumResultats /= nbr[i - 2];
-                    //                break;
-                    //        }
-                    //        //else
-                    //        //{
-                    //        //    Logs.WriteLine("Entrée invalide");
-                    //        //    valide = false;
-                    //        //}
-
-                    //        Logs.WriteLine($"====>{sortedOperat[i - 2]}");
-                    //    }
-
-                    //}
-                    Logs.WriteLine(argus.Length.ToString());
+                    if (input.Contains('+') || input.Contains('-') || input.Contains('*') || input.Contains('/'))
+                    {
+                        containsCalcul = true;
+                        calcul = input.Replace($"{nbDes}d{max}", "");
+                        Logs.WriteLine(sumResultats.ToString());
+                        sumResultats = (int)parser.Parse(sumResultats.ToString() + calcul,false);
+                        Logs.WriteLine("Calcul effectué");
+                        Logs.WriteLine(sumResultats.ToString());
+                        msgResultat += calcul;
+                    }
                     for (int i = 0; i < argus.Length; i++)
                     {
                         Logs.WriteLine(argus[i]);
                     }
-                    if (nbDes > 1 && valide)
+                    if (nbDes > 1 && valide && this.Context.User.Id != 298614183258488834)
                     {
-                        Logs.WriteLine($"{this.Context.User.Mention} a roll {sumResultats} ({msgResultat})");
+                        Logs.WriteLine($"{this.Context.User.Username} a roll {sumResultats} ({msgResultat})");
                         await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {sumResultats} ({msgResultat})");
                     }
-                    //else if (operat[0] != ' ')
-                    //{
-                    //    Logs.WriteLine($"{User} a roll {sumResultats} ({msgResultat} +-");
-                    //    await this.Context.Channel.SendMessageAsync($"{User} a roll {sumResultats} ({msgResultat} +-");
-                    //}
+                    else if (containsCalcul)
+                    {
+                        Logs.WriteLine($"{this.Context.User.Username} a roll {sumResultats} ({msgResultat}");
+                        await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {sumResultats} ({msgResultat} = {sumResultats})");
+                    }
                     else if (valide)
                     {
-                        Logs.WriteLine($"{this.Context.User.Mention} a roll {sumResultats}");
+                        Logs.WriteLine($"{this.Context.User.Username} a roll {sumResultats}");
                         await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {sumResultats}");
                     }
                 }
@@ -224,8 +133,18 @@ namespace AlterBotNet.Core.Commands
             else if (input.ToLower() == "none")
             {
                 resultat[0] = this.rand.Next(max);
-                Logs.WriteLine($"{this.Context.User.Mention} a roll {resultat[0]}");
-                await ReplyAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
+                if (this.Context.User.Id != 298614183258488834)
+                {
+                    Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
+                    await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
+                }
+                else if (this.Context.User.Id == 298614183258488834)
+                {
+                    if (resultat[0]-8<0)
+                        resultat[0] += 8;
+                    Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0] + "-" + bonusCaly}");
+                    await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {resultat[0] - bonusCaly}");
+                }
             }
             else
             {

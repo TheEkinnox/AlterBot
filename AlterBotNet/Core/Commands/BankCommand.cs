@@ -39,16 +39,15 @@ namespace AlterBotNet.Core.Commands
         [Command("bank"), Alias("bnk", "money", "bk"), Summary("Affiche l'argent en banque d'un utilisateur")]
         public async Task SendBank([Remainder] string input = "none")
         {
-            var mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
-            BankAccount methodes = new BankAccount("");
+            SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
             string[] argus;
             ulong userId = this.Context.User.Id;
             string error = "Valeur invalide, bank help pour plus d'information.";
             string message = "";
-            string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
+            string nomFichier = Global.CheminComptesEnBanque;
 
             //string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\testBank.exe", @"Ressources\Database\bank.altr");
-            List<BankAccount> bankAccounts = await methodes.ChargerDonneesPersosAsync(nomFichier);
+            List<BankAccount> bankAccounts = await Global.ChargerDonneesBankAsync(nomFichier);
 
             if (input != "none")
             {
@@ -60,7 +59,6 @@ namespace AlterBotNet.Core.Commands
                     string staff = "";
                     message += "Aide sur la commande: `bank help`\n";
                     staff += "(staff) Afficher la liste des comptes: `bank list`\n";
-                    // Todo: commande bank update
                     message += "Actualiser le channel bank: `bank update`";
                     message += "Afficher le montant sur le compte d'un personnage: `bank info (nom_Personnage)`\n";
                     staff += "(staff) Ajouter de l'argent sur le compte d'un personnage: `bank deposit (montant) (nom_Personnage)`\n";
@@ -82,7 +80,6 @@ namespace AlterBotNet.Core.Commands
                             .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
                             .AddField("========== Commandes Staff ==========", staff)
                             .AddField("========== Commandes Publiques ==========", message);
-                        //await this.Context.User.SendMessageAsync(infoAccount.ToString());
                         await this.Context.User.SendMessageAsync("", false, eb.Build());
                         Logs.WriteLine(message);
                     }
@@ -99,20 +96,133 @@ namespace AlterBotNet.Core.Commands
                 {
                     try
                     {
-                        Logs.WriteLine((await methodes.AccountsListAsync(nomFichier)).Count.ToString());
-                        foreach (string msg in await methodes.AccountsListAsync(nomFichier))
+                        Logs.WriteLine((await Global.BankAccountsListAsync(nomFichier)).Count.ToString());
+                        foreach (string msg in await Global.BankAccountsListAsync(nomFichier))
                         {
                             if (!string.IsNullOrEmpty(msg))
                             {
                                 await ReplyAsync(msg);
-                                Logs.WriteLine($"Liste envoyée sur le channel {this.Context.Channel.Name}");
                             }
                         }
+                        Logs.WriteLine($"Liste envoyée sur le channel {this.Context.Channel.Name}");
                     }
                     catch (Exception e)
                     {
                         Logs.WriteLine(e.ToString());
                         throw;
+                    }
+                }
+                // ======================================
+                // = Gestion de la commande bank update =
+                // ======================================
+                else if (input.StartsWith("update") || input.StartsWith("up"))
+                {
+                    argus = input.Split(' ');
+                    // Sert à s'assurer qu'argus[0] == toujours update
+                    if (argus[0] == "update" || argus[0] == "up")
+                    {
+                        await Global.UpdateBank();
+                        Logs.WriteLine("Actualisation réussie");
+                    }
+                }
+                // ===================================================
+                // = Gestion de la commande bank add (nomPersonnage) =
+                // ===================================================
+                else if (input.StartsWith("add"))
+                {
+                    if (Global.HasRole((SocketGuildUser)this.Context.User, "RP") || Global.IsStaff((SocketGuildUser)this.Context.User))
+                    {
+                        argus = input.Split(' ');
+                        // Sert à s'assurer qu'argus[0] == toujours add
+                        if (argus[0] == "add")
+                        {
+                            if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            }
+                            else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            }
+                            else if (await Global.GetBankAccountByNameAsync(nomFichier, argus[1]) == null)
+                            {
+                                BankAccount newAccount;
+                                if (mentionedUser != null)
+                                {
+                                    ulong soUserId = mentionedUser.Id;
+                                    newAccount = new BankAccount(argus[1], 500, soUserId);
+                                }
+                                else
+                                {
+                                    newAccount = new BankAccount(argus[1], 500, userId);
+                                }
+
+                                bankAccounts.Add(newAccount);
+                                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
+                                await ReplyAsync($"Compte de {argus[1]} créé");
+                                Logs.WriteLine($"Compte de {argus[1]} créé");
+                                await Global.UpdateBank();
+                            }
+                            else if (await Global.GetBankAccountByNameAsync(nomFichier, argus[1]) != null)
+                            {
+                                await ReplyAsync($"{error} Le compte \"**{argus[1]}**\" existe déjà");
+                                Logs.WriteLine($"{error} Le compte \"**{argus[1]}**\" existe déjà");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (this.Context.Guild.Name == "ServeurTest")
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} ou avoir le rôle {this.Context.Guild.GetRole(545753914998259715).Mention} pour utiliser cette commande");
+                        else
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} ou avoir le rôle {this.Context.Guild.GetRole(409787899761000449).Mention} pour utiliser cette commande");
+                    }
+                }
+                // ======================================================
+                // = Gestion de la commande bank delete (nomPersonnage) =
+                // ======================================================
+                else if (input.StartsWith("delete") || input.StartsWith("del"))
+                {
+                    argus = input.Split(' ');
+                    if (Global.IsStaff((SocketGuildUser)this.Context.User) || userId == (await Global.GetBankAccountByNameAsync(nomFichier, argus[1])).UserId)
+                    {
+                        // Sert à s'assurer qu'argus[0] == toujours add
+                        if (argus[0] == "delete" || argus[0] == "del")
+                        {
+                            if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            }
+                            else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                            {
+                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            }
+                            else if (await Global.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) != -1)
+                            {
+                                int toRemIndex = await Global.GetBankAccountIndexByNameAsync(nomFichier, argus[1]);
+                                bankAccounts.RemoveAt(toRemIndex);
+                                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
+                                await ReplyAsync($"Compte de {argus[1]} supprimé");
+                                Logs.WriteLine($"Compte de {argus[1]} supprimé");
+                                await Global.UpdateBank();
+                            }
+                            else if (await Global.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) == -1)
+                            {
+                                await ReplyAsync($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                Logs.WriteLine($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (this.Context.Guild.Name == "ServeurTest")
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} ou le propriétaire du compte pour utiliser cette commande");
+                        else
+                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} ou le propriétaire du compte pour utiliser cette commande");
                     }
                 }
                 // =====================================================
@@ -136,7 +246,7 @@ namespace AlterBotNet.Core.Commands
                         }
                         else
                         {
-                            BankAccount infoAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]);
+                            BankAccount infoAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[1]);
                             if (infoAccount != null)
                             {
                                 await ReplyAsync(infoAccount.ToString());
@@ -155,7 +265,7 @@ namespace AlterBotNet.Core.Commands
                 // ==========================================================================
                 else if (input.StartsWith("deposit") || input.StartsWith("dp"))
                 {
-                    if (IsStaff((SocketGuildUser) this.Context.User))
+                    if (Global.IsStaff((SocketGuildUser) this.Context.User))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours deposit
@@ -174,7 +284,7 @@ namespace AlterBotNet.Core.Commands
                             else
                             {
                                 decimal.TryParse(argus[1], out montant);
-                                BankAccount depositAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]);
+                                BankAccount depositAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[2]);
                                 if (depositAccount != null)
                                 {
                                     string dpName = depositAccount.Name;
@@ -182,14 +292,15 @@ namespace AlterBotNet.Core.Commands
                                     ulong dpUserId = depositAccount.UserId;
                                     decimal ancienMontant = depositAccount.Amount;
                                     decimal nvMontant = ancienMontant + montant;
-                                    bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, dpName));
-                                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                    bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, dpName));
+                                    Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                     BankAccount newAccount = new BankAccount(dpName, nvMontant, dpUserId, dpSalaire);
                                     bankAccounts.Add(newAccount);
-                                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                    Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                     await ReplyAsync($"{montant} couronnes ajoutée(s) sur le compte de {dpName}");
                                     Logs.WriteLine($"{montant} couronnes ajoutée(s) sur le compte de {dpName}");
                                     Logs.WriteLine(newAccount.ToString());
+                                    await Global.UpdateBank();
                                 }
                                 else
                                 {
@@ -212,7 +323,7 @@ namespace AlterBotNet.Core.Commands
                 // ===========================================================================
                 else if (input.StartsWith("withdraw") || input.StartsWith("wd"))
                 {
-                    if (IsStaff((SocketGuildUser) this.Context.User))
+                    if (Global.IsStaff((SocketGuildUser) this.Context.User))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours withdraw
@@ -231,7 +342,7 @@ namespace AlterBotNet.Core.Commands
                             else
                             {
                                 decimal.TryParse(argus[1], out montant);
-                                BankAccount withdrawAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]);
+                                BankAccount withdrawAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[2]);
                                 if (withdrawAccount != null)
                                 {
                                     string wdName = withdrawAccount.Name;
@@ -240,14 +351,15 @@ namespace AlterBotNet.Core.Commands
                                     decimal ancienMontant = withdrawAccount.Amount;
                                     decimal nvMontant = ancienMontant - montant;
                                     nvMontant = nvMontant < 0 ? 0 : nvMontant;
-                                    bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, wdName));
-                                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                    bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, wdName));
+                                    Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                     BankAccount newAccount = new BankAccount(wdName, nvMontant, wdUserId, wdSalaire);
                                     bankAccounts.Add(newAccount);
-                                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                    Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                     await ReplyAsync($"{montant} couronnes retirée(s) sur le compte de {wdName}");
                                     Logs.WriteLine($"{montant} couronnes retirée(s) sur le compte de {wdName}");
                                     Logs.WriteLine(newAccount.ToString());
+                                    await Global.UpdateBank();
                                 }
                                 else
                                 {
@@ -270,7 +382,7 @@ namespace AlterBotNet.Core.Commands
                 // ======================================================================
                 else if (input.StartsWith("set"))
                 {
-                    if (IsStaff((SocketGuildUser) this.Context.User))
+                    if (Global.IsStaff((SocketGuildUser) this.Context.User))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours set
@@ -289,7 +401,7 @@ namespace AlterBotNet.Core.Commands
                             else
                             {
                                 decimal.TryParse(argus[1], out montant);
-                                BankAccount setAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]);
+                                BankAccount setAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[2]);
                                 if (setAccount != null)
                                 {
                                     string setName = setAccount.Name;
@@ -297,14 +409,15 @@ namespace AlterBotNet.Core.Commands
                                     ulong setuserId = setAccount.UserId;
                                     decimal setSalaire = setAccount.Salaire;
                                     nvMontant = nvMontant < 0 ? 0 : nvMontant;
-                                    bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, setName));
-                                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                    bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, setName));
+                                    Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                     BankAccount newAccount = new BankAccount(setName, nvMontant, setuserId, setSalaire);
                                     bankAccounts.Add(newAccount);
-                                    methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                    Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                     await ReplyAsync($"Le montant sur le compte de \"**{setName}**\" est désormais de \"**{setName}**\" couronnes");
                                     Logs.WriteLine($"Le montant sur le compte de {setName} est désormais de \"**{nvMontant}**\" couronnes");
                                     Logs.WriteLine(newAccount.ToString());
+                                    await Global.UpdateBank();
                                 }
                                 else
                                 {
@@ -344,8 +457,8 @@ namespace AlterBotNet.Core.Commands
                         else
                         {
                             decimal.TryParse(argus[1], out montant);
-                            BankAccount withdrawAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]);
-                            BankAccount depositAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[3]);
+                            BankAccount withdrawAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[2]);
+                            BankAccount depositAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[3]);
                             if (withdrawAccount != null && depositAccount != null)
                             {
                                 //Retire l'argent du premier compte
@@ -355,11 +468,11 @@ namespace AlterBotNet.Core.Commands
                                 decimal ancienMontant = withdrawAccount.Amount;
                                 decimal nvMontant = ancienMontant - montant;
                                 nvMontant = nvMontant < 0 ? 0 : nvMontant;
-                                bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, wdName));
-                                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, wdName));
+                                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                 BankAccount newAccount = new BankAccount(wdName, nvMontant, wdUserId, wdSalaire);
                                 bankAccounts.Add(newAccount);
-                                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                 Logs.WriteLine($"{ancienMontant - nvMontant} couronnes retirée(s) sur le compte de {wdName}");
                                 Logs.WriteLine(newAccount.ToString());
                                 // Ajoute l'argent sur le 2eme compte
@@ -369,14 +482,15 @@ namespace AlterBotNet.Core.Commands
                                 decimal montantTr = nvMontant == 0 ? ancienMontant : montant;
                                 decimal depositAccountAmount = depositAccount.Amount;
                                 decimal depositAccountNewAmount = depositAccountAmount + montantTr;
-                                bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, dpName));
-                                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, dpName));
+                                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                 BankAccount newAccountDeposit = new BankAccount(dpName, depositAccountNewAmount, dpUserId, dpSalaire);
                                 bankAccounts.Add(newAccountDeposit);
-                                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                 Logs.WriteLine($"{montantTr} couronnes ajoutée(s) sur le compte de {dpName}");
                                 Logs.WriteLine(newAccountDeposit.ToString());
                                 await ReplyAsync($"{montantTr} couronnes transférées du compte de {wdName} vers le compte de {dpName}");
+                                await Global.UpdateBank();
                             }
                             else
                             {
@@ -384,106 +498,6 @@ namespace AlterBotNet.Core.Commands
                                 Logs.WriteLine($"{error} Comptes \"**{argus[2]}**\" et/ou \"**{argus[3]}**\" inexistants: bank add (nom_Personnage) pour créer un nouveau compte");
                             }
                         }
-                    }
-                }
-                // ===================================================
-                // = Gestion de la commande bank add (nomPersonnage) =
-                // ===================================================
-                else if (input.StartsWith("add"))
-                {
-                    if (HasRole((SocketGuildUser) this.Context.User, "RP") || IsStaff((SocketGuildUser)this.Context.User))
-                    {
-                        argus = input.Split(' ');
-                        // Sert à s'assurer qu'argus[0] == toujours add
-                        if (argus[0] == "add")
-                        {
-                            if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else if (await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]) == null)
-                            {
-                                BankAccount newAccount;
-                                if (mentionedUser != null)
-                                {
-                                    ulong soUserId = mentionedUser.Id;
-                                    newAccount = new BankAccount(argus[1], 500, soUserId);
-                                }
-                                else
-                                {
-                                    newAccount = new BankAccount(argus[1], 500, userId);
-                                }
-
-                                bankAccounts.Add(newAccount);
-                                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                                await ReplyAsync($"Compte de {argus[1]} créé");
-                                Logs.WriteLine($"Compte de {argus[1]} créé");
-                                Logs.WriteLine((await methodes.AccountsListAsync(nomFichier)).ToString());
-                            }
-                            else if (await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]) != null)
-                            {
-                                await ReplyAsync($"{error} Le compte \"**{argus[1]}**\" existe déjà");
-                                Logs.WriteLine($"{error} Le compte \"**{argus[1]}**\" existe déjà");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} ou avoir le rôle {this.Context.Guild.GetRole(545753914998259715).Mention} pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} ou avoir le rôle {this.Context.Guild.GetRole(409787899761000449).Mention} pour utiliser cette commande");
-                    }
-                }
-                // ======================================================
-                // = Gestion de la commande bank delete (nomPersonnage) =
-                // ======================================================
-                else if (input.StartsWith("delete") || input.StartsWith("del"))
-                {
-                    argus = input.Split(' ');
-                    if (IsStaff((SocketGuildUser) this.Context.User) || userId == (await methodes.GetBankAccountByNameAsync(nomFichier, argus[1])).UserId)
-                    {
-                        // Sert à s'assurer qu'argus[0] == toujours add
-                        if (argus[0] == "delete" || argus[0] == "del")
-                        {
-                            if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else if (await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) != -1)
-                            {
-                                int toRemIndex = await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]);
-                                bankAccounts.RemoveAt(toRemIndex);
-                                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
-                                await ReplyAsync($"Compte de {argus[1]} supprimé");
-                                Logs.WriteLine($"Compte de {argus[1]} supprimé");
-                                Logs.WriteLine((await methodes.AccountsListAsync(nomFichier)).ToString());
-                            }
-                            else if (await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[1]) == -1)
-                            {
-                                await ReplyAsync($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                Logs.WriteLine($"{error} Compte \"**{argus[1]}**\"  inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} ou le propriétaire du compte pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} ou le propriétaire du compte pour utiliser cette commande");
                     }
                 }
                 // ====================================
@@ -494,7 +508,7 @@ namespace AlterBotNet.Core.Commands
                     try
                     {
                         List<BankAccount> sortedList = bankAccounts.OrderBy(o => o.Name).ToList();
-                        methodes.EnregistrerDonneesPersos(nomFichier, sortedList);
+                        Global.EnregistrerDonneesBank(nomFichier, sortedList);
                         await ReplyAsync("La liste des comptes en banque a été triée par ordre alphabétique");
                     }
                     catch (Exception e)
@@ -502,19 +516,20 @@ namespace AlterBotNet.Core.Commands
                         Logs.WriteLine(e.ToString());
                         throw;
                     }
+                    await Global.UpdateBank();
                 }
                 // =========================================================================
                 // = Gestion de la commande (admin) bank setsal (montant) (nom_Personnage) =
                 // =========================================================================
                 else if (input.StartsWith("sts"))
                 {
-                    if (IsStaff((SocketGuildUser) this.Context.User))
+                    if (Global.IsStaff((SocketGuildUser) this.Context.User))
                     {
                         try
                         {
                             argus = input.Split(' ');
                             // Sert à s'assurer qu'argus[0] == toujours setsal
-                            if (argus[0] == "sts")
+                            if (argus[0] == "sts" || argus[0] == "setsal")
                             {
                                 try
                                 {
@@ -531,7 +546,7 @@ namespace AlterBotNet.Core.Commands
                                     else
                                     {
                                         decimal.TryParse(argus[1], out montant);
-                                        BankAccount setAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]);
+                                        BankAccount setAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[2]);
                                         if (setAccount != null)
                                         {
                                             string stsName = setAccount.Name;
@@ -539,14 +554,15 @@ namespace AlterBotNet.Core.Commands
                                             ulong stsUserId = setAccount.UserId;
                                             decimal nvMontant = montant;
                                             nvMontant = nvMontant < 0 ? 0 : nvMontant;
-                                            bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, argus[2]));
-                                            methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                            bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, argus[2]));
+                                            Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                             BankAccount newAccount = new BankAccount(stsName, stsMontant, stsUserId, nvMontant);
                                             bankAccounts.Add(newAccount);
-                                            methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                            Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                             await ReplyAsync($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
                                             Logs.WriteLine($"Le salaire de {stsName} est désormais de {nvMontant} couronnes");
                                             Logs.WriteLine(newAccount.ToString());
+                                            await Global.UpdateBank();
                                         }
                                         else
                                         {
@@ -581,7 +597,7 @@ namespace AlterBotNet.Core.Commands
                 // ==============================================================================
                 else if (input.StartsWith("setowner") || input.StartsWith("setown") || input.StartsWith("so"))
                 {
-                    if (IsStaff((SocketGuildUser) this.Context.User))
+                    if (Global.IsStaff((SocketGuildUser) this.Context.User))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours setowner
@@ -599,7 +615,7 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
-                                BankAccount setAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]);
+                                BankAccount setAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[1]);
                                 if (setAccount != null)
                                 {
                                     if (mentionedUser != null)
@@ -611,11 +627,11 @@ namespace AlterBotNet.Core.Commands
                                             decimal soSalaire = setAccount.Salaire;
                                             ulong soUserId = mentionedUser.Id;
 
-                                            bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, soName));
-                                            methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                            bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, soName));
+                                            Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                             BankAccount newAccount = new BankAccount(soName, soMontant, soUserId, soSalaire);
                                             bankAccounts.Add(newAccount);
-                                            methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                            Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                             await ReplyAsync($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
                                             Logs.WriteLine($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
                                             Logs.WriteLine(newAccount.ToString());
@@ -653,7 +669,7 @@ namespace AlterBotNet.Core.Commands
                 // ============================================================================
                 else if (input.StartsWith("rename") || input.StartsWith("setname") || input.StartsWith("rn"))
                 {
-                    if (IsStaff((SocketGuildUser)this.Context.User))
+                    if (Global.IsStaff((SocketGuildUser)this.Context.User))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours setowner
@@ -671,8 +687,8 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
-                                BankAccount setAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]);
-                                if (setAccount != null && await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]) == null)
+                                BankAccount setAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[1]);
+                                if (setAccount != null && await Global.GetBankAccountByNameAsync(nomFichier, argus[2]) == null)
                                 {
                                     try
                                     {
@@ -682,11 +698,11 @@ namespace AlterBotNet.Core.Commands
                                         decimal rnSalaire = setAccount.Salaire;
                                         ulong rnUserId = setAccount.UserId;
 
-                                        bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, rnName));
-                                        methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                        bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, rnName));
+                                        Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                         BankAccount newAccount = new BankAccount(newRnName, rnMontant, rnUserId, rnSalaire);
                                         bankAccounts.Add(newAccount);
-                                        methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                                        Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                                         await ReplyAsync($"Le nom du compte de \"**{rnName}**\" est désormais \"**{newRnName}**\"");
                                         Logs.WriteLine($"Le nom du compte de \"**{rnName}**\" est désormais \"**{newRnName}**\"");
                                         Logs.WriteLine(newAccount.ToString());
@@ -697,7 +713,7 @@ namespace AlterBotNet.Core.Commands
                                         throw;
                                     }
                                 }
-                                else if ((await methodes.GetBankAccountByNameAsync(nomFichier, argus[2]) != null))
+                                else if ((await Global.GetBankAccountByNameAsync(nomFichier, argus[2]) != null))
                                 {
                                     await ReplyAsync($"{error} Le compte \"**{argus[2]}**\" existe déjà");
                                     Logs.WriteLine($"{error} Le compte \"**{argus[2]}**\" existe déjà");
@@ -723,7 +739,7 @@ namespace AlterBotNet.Core.Commands
                 // ================================================================
                 else if (input.StartsWith("givesal") || input.StartsWith("gs"))
                 {
-                    if (IsStaff((SocketGuildUser)this.Context.User))
+                    if (Global.IsStaff((SocketGuildUser)this.Context.User))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours deposit
@@ -741,7 +757,7 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
-                                BankAccount depositAccount = await methodes.GetBankAccountByNameAsync(nomFichier, argus[1]);
+                                BankAccount depositAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[1]);
                                 if (depositAccount != null)
                                 {
                                     string dpName = depositAccount.Name;
@@ -775,41 +791,6 @@ namespace AlterBotNet.Core.Commands
                 await ReplyAsync(error);
                 Logs.WriteLine(error);
             }
-        }
-
-        /// <summary>
-        /// Vérifie si l'utilisateur est membre du Staff ou non
-        /// </summary>
-        /// <param name="user">Utilisateur à vérifier</param>
-        /// <returns>True si l'utilisateur est membre du Staff ou false sinon</returns>
-        private bool IsStaff(SocketGuildUser user)
-        {
-            string targetRoleName = "Staff";
-            IEnumerable<ulong> result = from r in user.Guild.Roles
-                where r.Name == targetRoleName
-                select r.Id;
-            ulong roleId = result.FirstOrDefault();
-            if (roleId == 0) return false;
-            SocketRole targetRole = user.Guild.GetRole(roleId);
-            return user.Roles.Contains(targetRole);
-        }
-
-        /// <summary>
-        /// Vérifie si l'utilisateur possède le role indiqué ou non
-        /// </summary>
-        /// <param name="user">Utilisateur à vérifier</param>
-        /// <param name="roleName">Nom du role à vérifier</param>
-        /// <returns>True si l'utilisateur est membre du role indiqué ou false sinon</returns>
-        private bool HasRole(SocketGuildUser user, string roleName)
-        {
-            string targetRoleName = roleName;
-            IEnumerable<ulong> result = from r in user.Guild.Roles
-                where r.Name == targetRoleName
-                select r.Id;
-            ulong roleId = result.FirstOrDefault();
-            if (roleId == 0) return false;
-            SocketRole targetRole = user.Guild.GetRole(roleId);
-            return user.Roles.Contains(targetRole);
         }
 
         #endregion

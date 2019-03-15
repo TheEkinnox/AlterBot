@@ -26,7 +26,7 @@ namespace AlterBotNet
         /// <summary>
         /// Version synchrone de la méthode MainAsync()
         /// </summary>
-        static void Main() 
+        public static void Main() 
             => new Program().MainAsync().GetAwaiter().GetResult();
 
         /// <summary>
@@ -72,8 +72,7 @@ namespace AlterBotNet
         public static async Task VerserSalaireAsync(BankAccount bankAccount)
         {
             string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
-            BankAccount methodes = new BankAccount("");
-            List<BankAccount> bankAccounts = (await methodes.ChargerDonneesPersosAsync(nomFichier));
+            List<BankAccount> bankAccounts = (await Global.ChargerDonneesBankAsync(nomFichier));
             if (bankAccount != null)
             {
                 string bankName = bankAccount.Name;
@@ -81,11 +80,11 @@ namespace AlterBotNet
                 ulong bankUserId = bankAccount.UserId;
                 decimal ancienMontant = bankAccount.Amount;
                 decimal nvMontant = ancienMontant + bankSalaire;
-                bankAccounts.RemoveAt(await methodes.GetBankAccountIndexByNameAsync(nomFichier, bankName));
-                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, bankName));
+                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                 BankAccount newAccount = new BankAccount(bankName, nvMontant, bankUserId, bankSalaire);
                 bankAccounts.Add(newAccount);
-                methodes.EnregistrerDonneesPersos(nomFichier, bankAccounts);
+                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
                 Logs.WriteLine($"Salaire de {bankName} ({bankSalaire} couronnes) versé");
                 Logs.WriteLine(newAccount.ToString());
             }
@@ -99,7 +98,6 @@ namespace AlterBotNet
         {
             try
             {
-                BankAccount methodes = new BankAccount("");
                 string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
                 
 
@@ -109,7 +107,7 @@ namespace AlterBotNet
                     {
                         await message.DeleteAsync();
                     }
-                    foreach (string msg in await methodes.AccountsListAsync(nomFichier))
+                    foreach (string msg in await Global.BankAccountsListAsync(nomFichier))
                     {
                         if (!string.IsNullOrEmpty(msg))
                         {
@@ -164,8 +162,29 @@ namespace AlterBotNet
         /// <returns></returns>
         private async Task Client_Ready()
         {
-            await this._client.SetGameAsync("prefix: a! ^^ @AlterBot");
+            await this._client.SetGameAsync("a! ^^");
             await RepeatingTimer.StartTimer();
+            Global.Banques = new SocketTextChannel[]
+                        {
+                            //Alternia
+                            Global.Client.GetGuild(399539166364303380).GetTextChannel(411969883673329665),
+                            //ServeurTest
+                            Global.Client.GetGuild(360639832017338368).GetTextChannel(541493264180707338)
+                        };
+            Global.StuffLists = new SocketTextChannel[]
+                        {
+                            //Alternia
+                            Global.Client.GetGuild(399539166364303380).GetTextChannel(411969883673329665),
+                            //ServeurTest
+                            Global.Client.GetGuild(360639832017338368).GetTextChannel(541493264180707338)
+                        };
+            Global.StatsLists = new SocketTextChannel[]
+            {
+                //Alternia
+                Global.Client.GetGuild(399539166364303380).GetTextChannel(501483086316568576),
+                //ServeurTest
+                Global.Client.GetGuild(360639832017338368).GetTextChannel(555896888805687323)
+            };
         }
 
         private async Task Client_MessageReceived(SocketMessage messageParam)
@@ -177,7 +196,7 @@ namespace AlterBotNet
             if (context.User.IsBot) return;
 
             int argPos = 0;
-            if (!(message.HasStringPrefix("^^", ref argPos) || message.HasStringPrefix("a!", ref argPos) || message.HasMentionPrefix(this._client.CurrentUser, ref argPos))) return;
+            if (!(message.HasStringPrefix("^^", ref argPos) || message.HasStringPrefix("a!", ref argPos))) return;
 
             IResult result = await this._commands.ExecuteAsync(context, argPos, null);
             if (!result.IsSuccess)
@@ -185,7 +204,7 @@ namespace AlterBotNet
                 Logs.WriteLine($"at Commands] Une erreur s'est produite en exécutant une commande. Texte: {context.Message.Content} | Erreur: {result.ErrorReason}");
             }
 
-            if (!result.IsSuccess && result.ErrorReason.Contains("Unknown command"))
+            if (!result.IsSuccess && result.ErrorReason.Contains("Unknown command") && context.Message.Content != "^^" && context.Message.Content != "a!")
             {
                 await context.Channel.SendMessageAsync($"La commande **{context.Message.Content}** n'existe pas");
             }

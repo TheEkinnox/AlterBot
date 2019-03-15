@@ -2,8 +2,8 @@
 
 // Nom du fichier : Logs.cs
 // Auteur : Loick OBIANG (1832960)
-// Date de création : 2019-02-18
-// Date de modification : 2019-02-21
+// Date de création : 2019-02-21
+// Date de modification : 2019-03-14
 
 #endregion
 
@@ -30,13 +30,12 @@ namespace AlterBotNet.Core.Data.Classes
 
         public static void WriteLine(string args)
         {
-            StreamWriter fluxEcriture = new StreamWriter(Logs._nomFichier + Logs._date, true);
-            fluxEcriture.Close();
+            if (!File.Exists(Logs._nomFichier + Logs._date))
+                File.Create(Logs._nomFichier + Logs._date);
             StreamReader fluxLecture = new StreamReader(Logs._nomFichier + Logs._date);
             string fichierTexte = fluxLecture.ReadToEnd();
             fluxLecture.Close();
-
-            fluxEcriture = new StreamWriter(Logs._nomFichier + Logs._date, false);
+            StreamWriter fluxEcriture = new StreamWriter(Logs._nomFichier + Logs._date, false);
             fichierTexte = fichierTexte.EndsWith('\n') ? fichierTexte.Remove(fichierTexte.Length - 1) : fichierTexte;
             fichierTexte += $"\n{DateTime.Now} {args}";
             fluxEcriture.WriteLine($"{fichierTexte}");

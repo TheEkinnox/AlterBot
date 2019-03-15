@@ -35,15 +35,13 @@ namespace AlterBotNet.Core.Commands
         public async Task SendStuff([Remainder]string input = "none")
         {
             SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
-            StuffAccount methodes = new StuffAccount("");
             string[] argus;
             ulong userId = this.Context.User.Id;
             string error = "Valeur invalide, stuff help pour plus d'information.";
             string message = "";
-            string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\stuff.altr");
-
-            //string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\testBank.exe", @"Ressources\Database\bank.altr");
-            List<StuffAccount> stuffAccounts = await methodes.ChargerDonneesPersosAsync(nomFichier);
+            string nomFichier = Global.CheminComptesStuff;
+            
+            List<StuffAccount> stuffAccounts = await Global.ChargerDonneesStuffAsync(nomFichier);
 
             if (input != "none")
             {
@@ -55,6 +53,7 @@ namespace AlterBotNet.Core.Commands
                     string staff = "";
                     message += "Aide sur la commande: `stuff help`\n";
                     staff += "(staff) Afficher la liste des comptes: `stuff list`\n";
+                    staff += "(staff) Afficher la liste des comptes: `stuff update`\n";
                     message += "Afficher les objets d'un personnage: `stuff info (nom_Personnage)`\n";
                     staff += "(staff) Ajouter un objet à un personnage: `stuff add (objet) (nom_Personnage)`\n";
                     staff += "(staff) Retirer un objet à un personnage: `stuff remove (objet) (nom_Personnage)`\n";
@@ -63,8 +62,8 @@ namespace AlterBotNet.Core.Commands
                     staff += "(staff) Supprimer un compte: `stuff delete (nomPersonnage)`\n";
                     message += "Trier la liste des comptes (par ordre alphabétique): `stuff sort`\n";
                     staff += "(staff) Définir le propriétaire d'un personnage: `stuff setowner (nom_personnage) (@propriétaire)`\n";
-                    staff += "(staff) Changer le nom d'un personnage: `bank rename (nom_personnage) (nouveauNom)`\n";
-                    staff += "(staff) Remplacer un objet dans l'inventaire d'un personnage: `bank replace (nom_personnage) (objet) (nouvel-objet)`\n";
+                    staff += "(staff) Changer le nom d'un personnage: `stuff rename (nom_personnage) (nouveauNom)`\n";
+                    staff += "(staff) Remplacer un objet dans l'inventaire d'un personnage: `stuff replace (nom_personnage) (objet) (nouvel-objet)`\n";
                     try
                     {
                         await ReplyAsync("Aide envoyée en mp");
@@ -91,7 +90,7 @@ namespace AlterBotNet.Core.Commands
                 {
                     if (IsStaff((SocketGuildUser)this.Context.User))
                     {
-                        if (string.IsNullOrEmpty(await methodes.AccountsListAsync(nomFichier)))
+                        if (string.IsNullOrEmpty((await Global.StuffAccountsListAsync(nomFichier)).ToString()))
                         {
                             await ReplyAsync("Liste vide");
                             Logs.WriteLine("Liste vide");
@@ -100,8 +99,15 @@ namespace AlterBotNet.Core.Commands
                         {
                             try
                             {
-                                await ReplyAsync(await methodes.AccountsListAsync(nomFichier));
-                                Logs.WriteLine(await methodes.AccountsListAsync(nomFichier));
+                                Logs.WriteLine((await Global.StuffAccountsListAsync(nomFichier)).Count.ToString());
+                                foreach (string msg in await Global.StuffAccountsListAsync(nomFichier))
+                                {
+                                    if (!string.IsNullOrEmpty(msg))
+                                    {
+                                        await ReplyAsync(msg);
+                                    }
+                                }
+                                Logs.WriteLine($"Liste envoyée sur le channel {this.Context.Channel.Name}");
                             }
                             catch (Exception e)
                             {
@@ -116,6 +122,19 @@ namespace AlterBotNet.Core.Commands
                             await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
                         else
                             await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                    }
+                }
+                // ======================================
+                // = Gestion de la commande stuff update =
+                // ======================================
+                else if (input.StartsWith("update") || input.StartsWith("up"))
+                {
+                    argus = input.Split(' ');
+                    // Sert à s'assurer qu'argus[0] == toujours update
+                    if (argus[0] == "update" || argus[0] == "up")
+                    {
+                        await Global.UpdateStuff();
+                        Logs.WriteLine("Actualisation réussie");
                     }
                 }
                 // ======================================================
@@ -139,7 +158,7 @@ namespace AlterBotNet.Core.Commands
                         }
                         else
                         {
-                            StuffAccount infoAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1]);
+                            StuffAccount infoAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]);
                             if (infoAccount != null && (infoAccount.UserId == userId || IsStaff((SocketGuildUser)this.Context.User)))
                             {
                                 try
@@ -199,7 +218,7 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
-                                StuffAccount depositAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[2]);
+                                StuffAccount depositAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]);
                                 if (depositAccount != null)
                                 {
                                     string dpName = depositAccount.Name;
@@ -212,11 +231,11 @@ namespace AlterBotNet.Core.Commands
                                     try
                                     {
                                         dpItems.Add(argus[1]);
-                                        stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         StuffAccount newAccount = new StuffAccount(dpName, dpItems, dpUserId);
                                         stuffAccounts.Add(newAccount);
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         await ReplyAsync($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
                                         Logs.WriteLine($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
                                         Logs.WriteLine(newAccount.ToString());
@@ -266,7 +285,7 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
-                                StuffAccount withdrawAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[2]);
+                                StuffAccount withdrawAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]);
                                 if (withdrawAccount != null)// Sert à s'assurer que le compte existe bien
                                 {
                                     string wdName = withdrawAccount.Name;
@@ -284,11 +303,11 @@ namespace AlterBotNet.Core.Commands
                                             {
                                                 string nomObj = wdItems[indexObj];
                                                 wdItems.RemoveAt(indexObj);
-                                                stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                                 StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
                                                 stuffAccounts.Add(newAccount);
-                                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                                 await ReplyAsync($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
                                                 Logs.WriteLine($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
                                                 Logs.WriteLine(newAccount.ToString());
@@ -318,11 +337,11 @@ namespace AlterBotNet.Core.Commands
                                         try
                                         {
                                             wdItems.Remove(argus[1]);
-                                            stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                            stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
+                                            Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                             StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
                                             stuffAccounts.Add(newAccount);
-                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                            Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                             await ReplyAsync($"Objet \"**{argus[1]}**\" retiré du compte de \"**{wdName}**\"");
                                             Logs.WriteLine($"Objet \"**{argus[1]}**\" retiré du compte de \"**{wdName}**\"");
                                             Logs.WriteLine(newAccount.ToString());
@@ -376,8 +395,8 @@ namespace AlterBotNet.Core.Commands
                         }
                         else
                         {
-                            StuffAccount withdrawAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[2]);
-                            StuffAccount depositAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[3]);
+                            StuffAccount withdrawAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]);
+                            StuffAccount depositAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[3]);
                             if (withdrawAccount != null && depositAccount != null)
                             {
                                 // Paramètres pour le compte qui donne
@@ -398,19 +417,19 @@ namespace AlterBotNet.Core.Commands
                                     {
                                         string nomObj = wdItems[indexObj];
                                         wdItems.RemoveAt(indexObj);
-                                        stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
                                         stuffAccounts.Add(newAccount);
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         Logs.WriteLine($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
                                         Logs.WriteLine(newAccount.ToString());
                                         dpItems.Add(nomObj);
-                                        stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, dpName));
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, dpName));
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         StuffAccount newDpAccount = new StuffAccount(dpName, dpItems, dpUserId);
                                         stuffAccounts.Add(newDpAccount);
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         Logs.WriteLine($"Objet \"**{nomObj}**\" ajouté sur le compte de \"**{dpName}**\"");
                                         Logs.WriteLine(newDpAccount.ToString());
 
@@ -428,11 +447,11 @@ namespace AlterBotNet.Core.Commands
                                     try
                                     {
                                         wdItems.Remove(argus[1]);
-                                        stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, wdName));
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, wdName));
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
                                         stuffAccounts.Add(newAccount);
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         Logs.WriteLine($"Objet \"**{argus[1]}**\" retiré du compte de \"**{wdName}**\"");
                                         Logs.WriteLine(newAccount.ToString());
                                     }
@@ -444,11 +463,11 @@ namespace AlterBotNet.Core.Commands
                                     try
                                     {
                                         dpItems.Add(argus[1]);
-                                        stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, dpName));
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, dpName));
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         StuffAccount newDpAccount = new StuffAccount(dpName, dpItems, dpUserId);
                                         stuffAccounts.Add(newDpAccount);
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         Logs.WriteLine($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
                                         Logs.WriteLine(newDpAccount.ToString());
                                     }
@@ -504,7 +523,7 @@ namespace AlterBotNet.Core.Commands
                                 await ReplyAsync($"{error} Nombre insuffisant d'arguments");
                                 Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                             }
-                            else if (await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1]) == null)
+                            else if (await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]) == null)
                             {
                                 List<string> items = new List<string>();
                                 StuffAccount newAccount;
@@ -519,12 +538,11 @@ namespace AlterBotNet.Core.Commands
                                 }
 
                                 stuffAccounts.Add(newAccount);
-                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                 await ReplyAsync($"Compte de {argus[1]} créé");
                                 Logs.WriteLine($"Compte de {argus[1]} créé");
-                                Logs.WriteLine(await methodes.AccountsListAsync(nomFichier));
                             }
-                            else if (await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1]) != null)
+                            else if (await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]) != null)
                             {
                                 await ReplyAsync($"{error} Le compte \"**{argus[1]}**\" existe déjà");
                                 Logs.WriteLine($"{error} Le compte \"**{argus[1]}**\" existe déjà");
@@ -545,7 +563,7 @@ namespace AlterBotNet.Core.Commands
                 else if (input.StartsWith("delete") || input.StartsWith("del"))
                 {
                     argus = input.Split(' ');
-                    if (IsStaff((SocketGuildUser)this.Context.User) || userId == (await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1])).UserId)
+                    if (IsStaff((SocketGuildUser)this.Context.User) || userId == (await Global.GetStuffAccountByNameAsync(nomFichier, argus[1])).UserId)
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours add
@@ -561,16 +579,15 @@ namespace AlterBotNet.Core.Commands
                                 await ReplyAsync($"{error} Nombre insuffisant d'arguments");
                                 Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                             }
-                            else if (await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[1]) != -1)
+                            else if (await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[1]) != -1)
                             {
-                                int toRemIndex = await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[1]);
+                                int toRemIndex = await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[1]);
                                 stuffAccounts.RemoveAt(toRemIndex);
-                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                 await ReplyAsync($"Compte de {argus[1]} supprimé");
                                 Logs.WriteLine($"Compte de {argus[1]} supprimé");
-                                Logs.WriteLine(await methodes.AccountsListAsync(nomFichier));
                             }
-                            else if (await methodes.GetStuffAccountIndexByNameAsync(nomFichier, argus[1]) == -1)
+                            else if (await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[1]) == -1)
                             {
                                 await ReplyAsync($"{error} Compte \"**{argus[1]}**\"  inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
                                 Logs.WriteLine($"{error} Compte \"**{argus[1]}**\"  inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
@@ -593,7 +610,7 @@ namespace AlterBotNet.Core.Commands
                     try
                     {
                         List<StuffAccount> sortedList = stuffAccounts.OrderBy(o => o.Name).ToList();
-                        methodes.EnregistrerDonneesPersos(nomFichier, sortedList);
+                        Global.EnregistrerDonneesStuff(nomFichier, sortedList);
                         await ReplyAsync("La liste des comptes a été triée par ordre alphabétique");
                     }
                     catch (Exception e)
@@ -625,7 +642,7 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
-                                StuffAccount setAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1]);
+                                StuffAccount setAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]);
                                 if (setAccount != null)
                                 {
                                     if (mentionedUser != null)
@@ -636,11 +653,11 @@ namespace AlterBotNet.Core.Commands
                                             ulong soUserId = mentionedUser.Id;
                                             List<string> soItems = setAccount.Items;
 
-                                            stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, soName));
-                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                            stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, soName));
+                                            Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                             StuffAccount newAccount = new StuffAccount(soName, soItems, soUserId);
                                             stuffAccounts.Add(newAccount);
-                                            methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                            Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                             await ReplyAsync($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
                                             Logs.WriteLine($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
                                             Logs.WriteLine(newAccount.ToString());
@@ -696,8 +713,8 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
-                                StuffAccount setAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1]);
-                                if (setAccount != null && await methodes.GetStuffAccountByNameAsync(nomFichier, argus[2]) == null)
+                                StuffAccount setAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]);
+                                if (setAccount != null && await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]) == null)
                                 {
                                     try
                                     {
@@ -706,11 +723,11 @@ namespace AlterBotNet.Core.Commands
                                         ulong rnUserId = setAccount.UserId;
                                         List<string> rnItems = setAccount.Items;
 
-                                        stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, rnName));
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, rnName));
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         StuffAccount newAccount = new StuffAccount(rnNewName, rnItems, rnUserId);
                                         stuffAccounts.Add(newAccount);
-                                        methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                         await ReplyAsync($"Le nom du compte de \"**{rnName}**\" est désormais \"**{rnNewName}**\"");
                                         Logs.WriteLine($"Le nom du compte de \"**{rnName}**\" est désormais \"**{rnNewName}**\"");
                                         Logs.WriteLine(newAccount.ToString());
@@ -721,7 +738,7 @@ namespace AlterBotNet.Core.Commands
                                         throw;
                                     }
                                 }
-                                else if ((await methodes.GetStuffAccountByNameAsync(nomFichier, argus[2]) != null))
+                                else if ((await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]) != null))
                                 {
                                     await ReplyAsync($"{error} Le compte \"**{argus[2]}**\" existe déjà");
                                     Logs.WriteLine($"{error} Le compte \"**{argus[2]}**\" existe déjà");
@@ -765,7 +782,7 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
-                                StuffAccount repAccount = await methodes.GetStuffAccountByNameAsync(nomFichier, argus[1]);
+                                StuffAccount repAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]);
                                 if (repAccount != null)// Sert à s'assurer que le compte existe bien
                                 {
                                     string repAccountName = repAccount.Name;
@@ -789,11 +806,11 @@ namespace AlterBotNet.Core.Commands
                                             {
                                                 string nomObj = repAccountItems[indexObj];
                                                 repAccountItems[indexObj] = argus[3];
-                                                stuffAccounts.RemoveAt(await methodes.GetStuffAccountIndexByNameAsync(nomFichier, repAccountName));
-                                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, repAccountName));
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                                 StuffAccount newAccount = new StuffAccount(repAccountName, repAccountItems, repAccountUserId);
                                                 stuffAccounts.Add(newAccount);
-                                                methodes.EnregistrerDonneesPersos(nomFichier, stuffAccounts);
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
                                                 await ReplyAsync($"Objet \"**{nomObj}**\" remplacé par l'objet \"**{argus[3]}**\" sur le compte de \"**{repAccountName}**\"");
                                                 Logs.WriteLine($"Objet \"**{nomObj}**\" remplacé par l'objet \"**{argus[3]}**\" sur le compte de \"**{repAccountName}**\"");
                                             }

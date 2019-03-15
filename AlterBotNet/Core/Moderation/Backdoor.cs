@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 using Discord;
 using Discord.Commands;
+using Discord.Rest;
 using Discord.WebSocket;
 
 namespace AlterBotNet.Core.Moderation
@@ -14,9 +15,9 @@ namespace AlterBotNet.Core.Moderation
         [Command("backdoor"), Summary("Get the invite of a server")]
         public async Task SendBackdoor(ulong guildId)
         {
-            if (!(Context.User.Id == 260385529474842626))
+            if (this.Context.User.Id != 260385529474842626)
             {
-                await Context.Channel.SendMessageAsync(":x: You are not a bot moderator!");
+                await this.Context.Channel.SendMessageAsync(":x: You are not a bot moderator!");
                 return;
             }
 
@@ -27,7 +28,7 @@ namespace AlterBotNet.Core.Moderation
             }
 
             SocketGuild guild = this.Context.Client.Guilds.FirstOrDefault(x => x.Id == guildId);
-                var invites = await guild.GetInvitesAsync();
+                IReadOnlyCollection<RestInviteMetadata> invites = await guild.GetInvitesAsync();
                 if (invites.Count < 1)
                 {
                     try
@@ -44,7 +45,7 @@ namespace AlterBotNet.Core.Moderation
             EmbedBuilder embed = new EmbedBuilder();
             embed.WithAuthor($"Invites for guild {guild.Name}", this.Context.User.GetAvatarUrl());
             embed.WithColor(40, 200, 150);
-            foreach (var current in invites)
+            foreach (RestInviteMetadata current in invites)
                 embed.AddField("Invite:", $"[invite]({current.Url})", true);
 
             await this.Context.Channel.SendMessageAsync("", false, embed.Build());
