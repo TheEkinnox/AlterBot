@@ -172,7 +172,7 @@ namespace AlterBotNet.Core.Commands
                                     EmbedBuilder eb = new EmbedBuilder();
                                     eb.WithTitle($"Statistiques de **{infoAccount.Name}**")
                                         .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
-                                        .AddField("==============================================", infoAccount.ToString() + $"\nPropriétaire: {((SocketGuild)this.Context.Guild).GetUser(infoAccount.UserId).Username}");
+                                        .AddField("==============================================", infoAccount.ToString() + $"\nPropriétaire: {this.Context.Guild.GetUser(infoAccount.UserId).Username}");
                                     await this.Context.User.SendMessageAsync("", false, eb.Build());
                                     Logs.WriteLine(infoAccount.ToString());
                                 }
@@ -442,6 +442,129 @@ namespace AlterBotNet.Core.Commands
                             await ReplyAsync($"Vous devez être admin pour utiliser cette commande");
                         else
                             await ReplyAsync($"Vous devez être admin pour utiliser cette commande");
+                    }
+                }
+                // =============================================================================
+                // = Gestion de la commande (admin) stats set (stat) (nom_Personnage) (valeur) =
+                // =============================================================================
+                else if (input.StartsWith("set"))
+                {
+                    if (HasRole((SocketGuildUser)this.Context.User, "Admin"))
+                    {
+                        argus = input.Split(' ');
+                        // Sert à s'assurer qu'argus[0] == toujours add
+                        if (argus[0] == "set")
+                        {
+                            if (argus.Length > 4) // Sert à s'assurer qu'il y a - de 5 paramètres
+                            {
+                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                            }
+                            else if (argus.Length < 4) // Sert à s'assurer qu'il y a + de 3 paramètres
+                            {
+                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                            }
+                            else
+                            {
+                                StatsAccount depositAccount = await Global.GetStatsAccountByNameAsync(nomFichier, argus[2]);
+                                if (depositAccount != null)
+                                {
+                                    string dpName = depositAccount.Name;
+                                    uint dpForce = depositAccount.Force;
+                                    uint dpAgilité = depositAccount.Agilite;
+                                    uint dpTechnique = depositAccount.Technique;
+                                    uint dpMagie = depositAccount.Magie;
+                                    uint dpResistance = depositAccount.Resistance;
+                                    uint dpIntelligence = depositAccount.Intelligence;
+                                    uint dpEsprit = depositAccount.Esprit;
+                                    ulong dpUserId = depositAccount.UserId;
+                                    string stat = argus[1];
+                                    if (argus[2].Contains('_'))
+                                        argus[2] = argus[2].Replace("_", " ");
+                                    if (argus[2].Contains('-'))
+                                        argus[2] = argus[2].Replace("-", " ");
+                                    if (uint.TryParse(argus[3], out uint valeurAjout))
+                                    {
+                                        try
+                                        {
+                                            switch (stat.ToLower())
+                                            {
+                                                case "str":
+                                                case "force":
+                                                    dpForce = valeurAjout;
+                                                    stat = "force";
+                                                    break;
+                                                case "agi":
+                                                case "agilite":
+                                                case "agilité":
+                                                    dpAgilité = valeurAjout;
+                                                    stat = "agilité";
+                                                    break;
+                                                case "tec":
+                                                case "technique":
+                                                    dpTechnique = valeurAjout;
+                                                    stat = "technique";
+                                                    break;
+                                                case "mag":
+                                                case "magie":
+                                                    dpMagie = valeurAjout;
+                                                    stat = "magie";
+                                                    break;
+                                                case "res":
+                                                case "resi":
+                                                case "resistance":
+                                                    dpResistance = valeurAjout;
+                                                    stat = "resistance";
+                                                    break;
+                                                case "int":
+                                                case "intel":
+                                                case "intelligence":
+                                                    dpIntelligence = valeurAjout;
+                                                    stat = "intelligence";
+                                                    break;
+                                                case "esp":
+                                                case "esprit":
+                                                    dpEsprit = valeurAjout;
+                                                    stat = "esprit";
+                                                    break;
+                                            }
+
+                                            statsAccounts.RemoveAt(await Global.GetStatsAccountIndexByNameAsync(nomFichier, argus[2]));
+                                            Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
+                                            StatsAccount newAccount = new StatsAccount(dpName, dpForce, dpAgilité, dpTechnique, dpMagie, dpResistance, dpIntelligence, dpEsprit, dpUserId);
+                                            statsAccounts.Add(newAccount);
+                                            Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
+                                            await ReplyAsync($"\"**{dpName}**\" a désormais **{valeurAjout}** points en **{stat}**");
+                                            Logs.WriteLine($"\"**{dpName}**\" a désormais **{valeurAjout}** points en **{stat}**");
+                                            Logs.WriteLine(newAccount.ToString());
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            Logs.WriteLine(e.ToString());
+                                            throw;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        await ReplyAsync($"{error} la valeur entrée est invalide");
+                                        Logs.WriteLine($"{error} la valeur entrée est invalide");
+                                    }
+                                }
+                                else
+                                {
+                                    await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: stats create (nom_Personnage) pour créer un nouveau compte");
+                                    Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: stats create (nom_Personnage) pour créer un nouveau compte");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (this.Context.Guild.Name == "ServeurTest")
+                            await this.Context.Channel.SendMessageAsync($"Vous devez être admin pour utiliser cette commande");
+                        else
+                            await this.Context.Channel.SendMessageAsync($"Vous devez être admin pour utiliser cette commande");
                     }
                 }
                 // =======================================================
