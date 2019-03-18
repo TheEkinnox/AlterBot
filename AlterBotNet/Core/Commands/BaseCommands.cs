@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Text;
@@ -136,6 +137,39 @@ namespace AlterBotNet.Core.Commands
                 Logs.WriteLine(e.ToString());
                 throw;
             }
+        }
+
+        [Command("welcome"), Alias("wc"), Summary("Envoie un message de bienvenue à l'utilisateur mentionné")]
+        public async Task SendWelcome([Remainder] string input = "none")
+        {
+            await this.Context.Message.DeleteAsync();
+            SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault() ?? this.Context.User;
+            string guildName = this.Context.Guild.Name;
+            if (guildName == "ServeurTest")
+            {
+                //await this.Context.Channel.SendMessageAsync("Bienvenue sur Alternia " + this.Context.User.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#" + GetChannelByName("contexte-rp", guildName) + ">\n<#" + GetChannelByName("geographie-de-alternia", guildName) + ">\n" + GetChannelByName("banque", guildName) + "\n" + GetChannelByName("regles", guildName) + "\n" + GetChannelByName("liens-utiles", guildName) + "\n" + GetChannelByName("fiche-prototype", guildName) + "\n" + GetChannelByName("les-races-disponibles", guildName) +
+                //                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(541492279894999080).Mention + "!", false, null, null);
+                await this.Context.Channel.SendMessageAsync("Bienvenue sur Alternia " + mentionedUser.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#542072451324968972>\n<#542070741504360458>\n<#541493264180707338>\n<#542070805236940837>\n<#542072285033660437>\n<#542073013722546218>\n<#542073051790049302>" +
+                                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(541492279894999080).Mention + " !", false, null, null);
+            }
+            else
+            {
+                await this.Context.Channel.SendMessageAsync("Bienvenue sur Alternia " + mentionedUser.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#410438433849212928>\n<#410531350102147072>\n<#411969883673329665>\n<#409789542825197568>\n<#409849626988904459>\n<#410424057050300427>\n<#410487492463165440>" +
+                                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(420536907525652482).Mention + " !", false, null, null);
+            }
+        }
+
+        [Command("ban"), Summary("Ban l'utilisateur mentionné")]
+        [RequireBotPermission(GuildPermission.Administrator), RequireUserPermission(GuildPermission.Administrator)]
+        public async Task BanUser([Remainder] string input = "none")
+        {
+            SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
+            if (input == "none" || mentionedUser == null)
+            {
+                await ReplyAsync("Vous devez au moins mentionner un utilisateur");
+                return;
+            }
+            await this.Context.Guild.AddBanAsync(mentionedUser.Id);
         }
     }
 }

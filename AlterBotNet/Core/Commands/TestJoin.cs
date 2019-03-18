@@ -43,8 +43,6 @@ namespace AlterBotNet.Core.Commands
             }
         }
 
-        
-
         public IChannel GetChannelByName(string name, string guildName)
         {
             IChannel message = null;
