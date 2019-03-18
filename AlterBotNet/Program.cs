@@ -1,32 +1,53 @@
-﻿using System;
+﻿#region MÉTADONNÉES
+
+// Nom du fichier : Program.cs
+// Auteur : Loick OBIANG (1832960)
+// Date de création : 2019-02-04
+// Date de modification : 2019-03-18
+
+#endregion
+
+#region USING
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
-using AlterBotNet.Core.Commands;
 using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+
+#endregion
+
+#pragma warning disable 1998
 
 
 namespace AlterBotNet
 {
     class Program
     {
+        #region ATTRIBUTS
+
         /// <summary>
         /// Client discord (ici, le bot)
         /// </summary>
         private DiscordSocketClient _client;
+
         /// <summary>
         /// Attribut permettant l'utilisation du service de commandes discord.net
         /// </summary>
         private CommandService _commands;
 
+        #endregion
+
+        #region MÉTHODES
+
         /// <summary>
         /// Version synchrone de la méthode MainAsync()
         /// </summary>
-        public static void Main() 
+        public static void Main()
             => new Program().MainAsync().GetAwaiter().GetResult();
 
         /// <summary>
@@ -55,24 +76,25 @@ namespace AlterBotNet
             this._client.UserJoined += AnnounceUserJoined;
 
             string token;
-            using (FileStream stream = new FileStream((Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)).Replace(@"bin\Debug\netcoreapp2.1", @"Data\Token.txt"), FileMode.Open, FileAccess.Read))
+            using (FileStream stream = new FileStream(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location).Replace(@"bin\Debug\netcoreapp2.1", @"Data\Token.txt"), FileMode.Open, FileAccess.Read))
             using (StreamReader readToken = new StreamReader(stream))
             {
                 token = readToken.ReadToEnd();
             }
-                await this._client.LoginAsync(TokenType.Bot, token);
-                await this._client.StartAsync();
-                Global.Client = this._client;
-                await Task.Delay(-1);
+
+            await this._client.LoginAsync(TokenType.Bot, token);
+            await this._client.StartAsync();
+            Global.Client = this._client;
+            await Task.Delay(-1);
         }
-        
+
         /// <summary>
         /// Méthode permettant d'ajouter le salaire défini pour un personnage au dit personnage
         /// </summary>
         public static async Task VerserSalaireAsync(BankAccount bankAccount)
         {
             string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
-            List<BankAccount> bankAccounts = (await Global.ChargerDonneesBankAsync(nomFichier));
+            List<BankAccount> bankAccounts = await Global.ChargerDonneesBankAsync(nomFichier);
             if (bankAccount != null)
             {
                 string bankName = bankAccount.Name;
@@ -88,7 +110,6 @@ namespace AlterBotNet
                 Logs.WriteLine($"Salaire de {bankName} ({bankSalaire} couronnes) versé");
                 Logs.WriteLine(newAccount.ToString());
             }
-
         }
 
         /// <summary>
@@ -99,7 +120,7 @@ namespace AlterBotNet
             try
             {
                 string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
-                
+
 
                 foreach (SocketTextChannel banque in banques)
                 {
@@ -107,6 +128,7 @@ namespace AlterBotNet
                     {
                         await message.DeleteAsync();
                     }
+
                     foreach (string msg in await Global.BankAccountsListAsync(nomFichier))
                     {
                         if (!string.IsNullOrEmpty(msg))
@@ -139,12 +161,12 @@ namespace AlterBotNet
                 //await this.Context.Channel.SendMessageAsync("Bienvenue sur Alternia " + this.Context.User.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#" + GetChannelByName("contexte-rp", guildName) + ">\n<#" + GetChannelByName("geographie-de-alternia", guildName) + ">\n" + GetChannelByName("banque", guildName) + "\n" + GetChannelByName("regles", guildName) + "\n" + GetChannelByName("liens-utiles", guildName) + "\n" + GetChannelByName("fiche-prototype", guildName) + "\n" + GetChannelByName("les-races-disponibles", guildName) +
                 //                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(541492279894999080).Mention + "!", false, null, null);
                 await channel.SendMessageAsync("Bienvenue sur Alternia " + user.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#542072451324968972>\n<#542070741504360458>\n<#541493264180707338>\n<#542070805236940837>\n<#542072285033660437>\n<#542073013722546218>\n<#542073051790049302>" +
-                                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + guild.GetRole(541492279894999080).Mention + " !");
+                                               "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + guild.GetRole(541492279894999080).Mention + " !");
             }
             else
             {
                 await channel.SendMessageAsync("Bienvenue sur Alternia " + user.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#410438433849212928>\n<#410531350102147072>\n<#411969883673329665>\n<#409789542825197568>\n<#409849626988904459>\n<#410424057050300427>\n<#410487492463165440>" +
-                                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + guild.GetRole(420536907525652482).Mention + " !");
+                                               "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + guild.GetRole(420536907525652482).Mention + " !");
             }
         }
 
@@ -156,29 +178,30 @@ namespace AlterBotNet
         {
             Logs.WriteLine($"at {message.Source} {message.Message}");
         }
+
         /// <summary>
-        /// 
+        /// Actions à effectuer lorsque le client est prêt
         /// </summary>
         /// <returns></returns>
         private async Task Client_Ready()
         {
             await this._client.SetGameAsync("a! ^^");
             await RepeatingTimer.StartTimer();
-            Global.Banques = new SocketTextChannel[]
-                        {
-                            //Alternia
-                            Global.Client.GetGuild(399539166364303380).GetTextChannel(411969883673329665),
-                            //ServeurTest
-                            Global.Client.GetGuild(360639832017338368).GetTextChannel(541493264180707338)
-                        };
-            Global.StuffLists = new SocketTextChannel[]
-                        {
-                            //Alternia
-                            Global.Client.GetGuild(399539166364303380).GetTextChannel(411969883673329665),
-                            //ServeurTest
-                            Global.Client.GetGuild(360639832017338368).GetTextChannel(541493264180707338)
-                        };
-            Global.StatsLists = new SocketTextChannel[]
+            Global.Banques = new[]
+            {
+                //Alternia
+                Global.Client.GetGuild(399539166364303380).GetTextChannel(411969883673329665),
+                //ServeurTest
+                Global.Client.GetGuild(360639832017338368).GetTextChannel(541493264180707338)
+            };
+            Global.StuffLists = new[]
+            {
+                //Alternia
+                Global.Client.GetGuild(399539166364303380).GetTextChannel(553713542721962004),
+                //ServeurTest
+                Global.Client.GetGuild(360639832017338368).GetTextChannel(557201110566174743)
+            };
+            Global.StatsLists = new[]
             {
                 //Alternia
                 Global.Client.GetGuild(399539166364303380).GetTextChannel(501483086316568576),
@@ -208,7 +231,8 @@ namespace AlterBotNet
             {
                 await context.Channel.SendMessageAsync($"La commande **{context.Message.Content}** n'existe pas");
             }
-
         }
+
+        #endregion
     }
 }
