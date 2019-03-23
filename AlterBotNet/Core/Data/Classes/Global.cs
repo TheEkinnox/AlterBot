@@ -29,6 +29,7 @@ namespace AlterBotNet.Core.Data.Classes
         internal static string CheminComptesEnBanque = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
         internal static string CheminComptesStuff = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\stuff.altr");
         internal static string CheminComptesStats = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\stats.altr");
+        internal static string CheminComptesSpell = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\spells.altr");
 
         #endregion
 
@@ -38,6 +39,7 @@ namespace AlterBotNet.Core.Data.Classes
         internal static SocketTextChannel[] Banques { get; set; }
         internal static SocketTextChannel[] StuffLists { get; set; }
         internal static SocketTextChannel[] StatsLists { get; set; }
+        internal static SocketTextChannel[] SpellsLists { get; set; }
 
         #endregion
 
@@ -644,5 +646,214 @@ namespace AlterBotNet.Core.Data.Classes
 
         public static List<string> StatsAccountsList(string nomFichier)
             => Global.StatsAccountsListAsync(nomFichier).GetAwaiter().GetResult();
+
+        // ==================
+        // = Méthodes spell =
+        // ==================
+        /// <summary>
+        /// Mise à jour des channels SpellList
+        /// </summary>
+        public static async Task UpdateSpell()
+        {
+            try
+            {
+                foreach (SocketTextChannel spellList in Global.SpellsLists)
+                {
+                    foreach (IMessage message in await spellList.GetMessagesAsync().FlattenAsync())
+                    {
+                        await message.DeleteAsync();
+                    }
+
+                    foreach (string msg in await Global.SpellAccountsListAsync(Global.CheminComptesSpell))
+                    {
+                        if (!string.IsNullOrEmpty(msg))
+                        {
+                            await spellList.SendMessageAsync(msg);
+                            Logs.WriteLine(msg);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Logs.WriteLine(e.ToString());
+                throw;
+            }
+
+            Logs.WriteLine("Comptes de spell mis à jour");
+        }
+
+        public static void EnregistrerDonneesSpell(string cheminFichier, List<SpellAccount> savedSpellAccounts)
+        {
+            StreamWriter fluxEcriture = new StreamWriter(cheminFichier, false);
+
+            String personneTexte;
+            for (int i = 0; i < savedSpellAccounts.Count; i++)
+            {
+                if (savedSpellAccounts[i] != null)
+                {
+                    personneTexte = $"{savedSpellAccounts[i].ToString()}";
+
+                    fluxEcriture.WriteLine(personneTexte);
+                }
+            }
+
+            fluxEcriture.Close();
+        }
+
+        public static async Task<List<SpellAccount>> ChargerDonneesSpellAsync(string cheminFichier)
+        {
+            StreamReader fluxLecture = new StreamReader(cheminFichier);
+
+            String fichierTexte = fluxLecture.ReadToEnd();
+            fluxLecture.Close();
+
+            fichierTexte = fichierTexte.Replace("\r", "");
+
+            String[] vectLignes = fichierTexte.Split('\n');
+
+            int nbLignes = vectLignes.Length;
+
+            if (vectLignes[vectLignes.Length - 1] == "")
+            {
+                nbLignes = vectLignes.Length - 1;
+            }
+
+            SpellAccount[] spellAccounts = new SpellAccount[nbLignes];
+
+
+            String[] vectChamps;
+            string name;
+            ulong userId;
+
+            for (int i = 0; i < spellAccounts.Length; i++)
+            {
+                List<Spell> spells = new List<Spell>();
+                vectChamps = vectLignes[i].Split(',');
+                name = vectChamps[0].Trim();
+                Spell spell;
+                string spellName;
+                SpellType type = SpellType.Sortilege;
+                string spellIncant;
+                string spellEffects;
+                SpellLevel level = SpellLevel.Base;
+                for (int j = 1; !ulong.TryParse(vectChamps[j], out userId) && vectChamps[j] != null; j++)
+                {
+                    string[] vectChampsSpell = vectChamps[j].Split(";");
+                    spellName = vectChampsSpell[0].Trim();
+                    switch (vectChampsSpell[1].Trim())
+                    {
+                        case "Sortilège":
+                            type = SpellType.Sortilege;
+                            break;
+                        case "Enchantement":
+                            type = SpellType.Enchantement;
+                            break;
+                    }
+
+                    spellIncant = vectChampsSpell[2].Trim();
+                    spellEffects = vectChampsSpell[3].Trim();
+                    switch (vectChampsSpell[4].Trim())
+                    {
+                        case "Base":
+                            level = SpellLevel.Base;
+                            break;
+                        case "Avancé":
+                            level = SpellLevel.Avance;
+                            break;
+                        case "Expert":
+                            level = SpellLevel.Expert;
+                            break;
+                    }
+                    spell = new Spell(spellName,type,spellIncant,spellEffects,level);
+                    spells.Add(spell);
+                }
+
+                spellAccounts[i] = new SpellAccount(name, spells, userId);
+            }
+
+            return spellAccounts.ToList();
+        }
+
+        public static List<SpellAccount> ChargerDonneesSpell(string cheminFichier)
+            => Global.ChargerDonneesSpellAsync(cheminFichier).GetAwaiter().GetResult();
+
+
+        public static async Task<SpellAccount> GetSpellAccountByNameAsync(string nomFichier, string nomPerso)
+        {
+            List<SpellAccount> regAccounts = Global.ChargerDonneesSpell(nomFichier);
+            SpellAccount userAccount = null;
+            for (int i = 0; i < regAccounts.Count; i++)
+            {
+                if (regAccounts[i].Name.ToLower().Equals(nomPerso.ToLower()))
+                {
+                    userAccount = regAccounts[i];
+                }
+            }
+
+            return userAccount;
+        }
+
+        public static SpellAccount GetSpellAccountByName(string nomFichier, string nomPerso)
+            => Global.GetSpellAccountByNameAsync(nomFichier, nomPerso).GetAwaiter().GetResult();
+
+        public static async Task<int> GetSpellAccountIndexByNameAsync(string nomFichier, string nomPerso)
+        {
+            List<SpellAccount> regAccounts = Global.ChargerDonneesSpell(nomFichier);
+            int userAccountIndex = -1;
+            for (int i = 0; i < regAccounts.Count; i++)
+            {
+                if (regAccounts[i].Name.ToLower() == nomPerso.ToLower())
+                {
+                    userAccountIndex = i;
+                }
+            }
+
+            return userAccountIndex;
+        }
+
+        public static int GetSpellAccountIndexByName(string nomFichier, string nomPerso)
+            => Global.GetSpellAccountIndexByNameAsync(nomFichier, nomPerso).GetAwaiter().GetResult();
+
+        public static async Task<List<string>> SpellAccountsListAsync(string nomFichier)
+        {
+            List<SpellAccount> regAccounts = Global.ChargerDonneesSpell(nomFichier);
+            List<string> message = new List<string>();
+            int lastIndex = 0;
+            for (int i = 0; i < regAccounts.Count / 5 + regAccounts.Count % 5; i++)
+            {
+                try
+                {
+                    message.Add("");
+
+                    for (int j = lastIndex; j < lastIndex + regAccounts.Count / 5 + regAccounts.Count % 5 && j < regAccounts.Count && regAccounts[j] != null; j++)
+                    {
+                        try
+                        {
+                            message[i] += $"{regAccounts[j].ToString()}\n";
+                        }
+                        catch (Exception e)
+                        {
+                            Logs.WriteLine(e.ToString());
+                            throw;
+                        }
+                    }
+
+                    lastIndex += regAccounts.Count / 5 + regAccounts.Count % 5;
+                }
+                catch (Exception e)
+                {
+                    Logs.WriteLine(e.ToString());
+                    throw;
+                }
+            }
+
+            return message;
+        }
+
+        public static List<string> SpellAccountsList(string nomFichier)
+            => Global.SpellAccountsListAsync(nomFichier).GetAwaiter().GetResult();
+
+
     }
 }

@@ -1,31 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿#region MÉTADONNÉES
+
+// Nom du fichier : BaseCommands.cs
+// Auteur : Loick OBIANG (1832960)
+// Date de création : 2019-02-04
+// Date de modification : 2019-03-22
+
+#endregion
+
+#region USING
+
+using System;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using System.Text;
 using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
 using Discord.Rest;
 using Discord.WebSocket;
 
+#endregion
+
 namespace AlterBotNet.Core.Commands
 {
     public class BaseCommands : ModuleBase<SocketCommandContext>
     {
+        #region ATTRIBUTS
+
         private Random _rand = new Random();
+
+        #endregion
+
+        #region MÉTHODES
 
         [Command("restart")]
         public async Task RestartBot()
         {
-            if (Global.IsStaff((SocketGuildUser)this.Context.User))
+            if (Global.IsStaff((SocketGuildUser) this.Context.User))
             {
                 await this.Context.Message.DeleteAsync();
                 RestUserMessage restartMsg = await this.Context.Channel.SendMessageAsync("Redémarrage en cours...");
                 await Task.Delay(2000);
                 await restartMsg.ModifyAsync(msg => msg.Content = "Redémarrage effectué avec succès!");
+                this.Context.Client.Dispose();
                 await Global.Client.LogoutAsync();
                 await Global.Client.StopAsync();
                 Program.Main();
@@ -44,7 +61,7 @@ namespace AlterBotNet.Core.Commands
         }
 
         [Command("testembed"), Alias("embed", "te", "emb")]
-        public async Task SendEmbed([Remainder]string input = "None")
+        public async Task SendEmbed([Remainder] string input = "None")
         {
             EmbedBuilder embed = new EmbedBuilder();
             embed.WithAuthor("Test embed", this.Context.User.GetAvatarUrl());
@@ -63,14 +80,14 @@ namespace AlterBotNet.Core.Commands
             string imgsPath = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Data\Plop\");
             string[] vectImgs = new string[]
             {
-                ($"{imgsPath}p0.jpg"),
-                ($"{imgsPath}p1.jpg"),
-                ($"{imgsPath}p2.jpg"),
-                ($"{imgsPath}p3.jpg"),
-                ($"{imgsPath}p4.jpg"),
-                ($"{imgsPath}p5.jpg"),
-                ($"{imgsPath}p6.jpg"),
-                ($"{imgsPath}p7.jpg"),
+                $"{imgsPath}p0.jpg",
+                $"{imgsPath}p1.jpg",
+                $"{imgsPath}p2.jpg",
+                $"{imgsPath}p3.jpg",
+                $"{imgsPath}p4.jpg",
+                $"{imgsPath}p5.jpg",
+                $"{imgsPath}p6.jpg",
+                $"{imgsPath}p7.jpg",
             };
             string[] vectCapt = new String[]
             {
@@ -124,7 +141,7 @@ namespace AlterBotNet.Core.Commands
                 await ReplyAsync("Infos envoyées en mp");
                 Logs.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
                 EmbedBuilder eb = new EmbedBuilder();
-                eb.WithTitle(("**Liste des commandes disponibles**"))
+                eb.WithTitle("**Liste des commandes disponibles**")
                     .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
                     .AddField("=========== Commandes RP ===========", rp)
                     .AddField("========= Autres Commandes =========", autre);
@@ -150,12 +167,12 @@ namespace AlterBotNet.Core.Commands
                 //await this.Context.Channel.SendMessageAsync("Bienvenue sur Alternia " + this.Context.User.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#" + GetChannelByName("contexte-rp", guildName) + ">\n<#" + GetChannelByName("geographie-de-alternia", guildName) + ">\n" + GetChannelByName("banque", guildName) + "\n" + GetChannelByName("regles", guildName) + "\n" + GetChannelByName("liens-utiles", guildName) + "\n" + GetChannelByName("fiche-prototype", guildName) + "\n" + GetChannelByName("les-races-disponibles", guildName) +
                 //                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(541492279894999080).Mention + "!", false, null, null);
                 await this.Context.Channel.SendMessageAsync("Bienvenue sur Alternia " + mentionedUser.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#542072451324968972>\n<#542070741504360458>\n<#541493264180707338>\n<#542070805236940837>\n<#542072285033660437>\n<#542073013722546218>\n<#542073051790049302>" +
-                                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(541492279894999080).Mention + " !", false, null, null);
+                                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(541492279894999080).Mention + " !");
             }
             else
             {
                 await this.Context.Channel.SendMessageAsync("Bienvenue sur Alternia " + mentionedUser.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#410438433849212928>\n<#410531350102147072>\n<#411969883673329665>\n<#409789542825197568>\n<#409849626988904459>\n<#410424057050300427>\n<#410487492463165440>" +
-                                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(420536907525652482).Mention + " !", false, null, null);
+                                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(420536907525652482).Mention + " !");
             }
         }
 
@@ -163,13 +180,78 @@ namespace AlterBotNet.Core.Commands
         [RequireBotPermission(GuildPermission.Administrator), RequireUserPermission(GuildPermission.Administrator)]
         public async Task BanUser([Remainder] string input = "none")
         {
-            SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
-            if (input == "none" || mentionedUser == null)
+            try
             {
-                await ReplyAsync("Vous devez au moins mentionner un utilisateur");
-                return;
+                SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
+                if (input == "none" || mentionedUser == null)
+                {
+                    await ReplyAsync("Vous devez au moins mentionner un utilisateur");
+                    return;
+                }
+
+                string toRemove = input.Split(' ')[0];
+                string raison = input.Replace(toRemove, "");
+                if (!mentionedUser.IsBot)
+                    await mentionedUser.SendMessageAsync($"Vous avez été banni du serveur {this.Context.Guild.Name} pour la raison suivante: {raison}");
+                await this.Context.Guild.GetUser(260385529474842626).SendMessageAsync($"{mentionedUser.Username} a été banni du serveur {this.Context.Guild.Name} pour la raison suivante: {raison}");
+                Logs.WriteLine($"{mentionedUser} a été banni du serveur {this.Context.Guild.Name} pour la raison suivante: {raison}");
+                await ((IGuildChannel) this.Context.Channel).Guild.AddBanAsync(mentionedUser, 7, raison);
             }
-            await this.Context.Guild.AddBanAsync(mentionedUser.Id);
+            catch (Exception e)
+            {
+                Logs.WriteLine(e.ToString());
+                throw;
+            }
         }
+
+        [Command("deban"), Summary("Deban l'utilisateur mentionné")]
+        [RequireBotPermission(GuildPermission.Administrator), RequireUserPermission(GuildPermission.Administrator)]
+        public async Task UnbanUser(ulong userId)
+        {
+            try
+            {
+                SocketUser mentionedUser = this.Context.Client.GetUser(userId);
+                if (!mentionedUser.IsBot)
+                    await mentionedUser.SendMessageAsync($"Vous avez été de-banni du serveur {this.Context.Guild.Name}");
+                    await this.Context.Guild.GetUser(260385529474842626).SendMessageAsync($"{mentionedUser.Username} a été de-banni du serveur {this.Context.Guild.Name}");
+                    Logs.WriteLine($"{mentionedUser.Username} a été de-banni du serveur {this.Context.Guild.Name}");
+                await this.Context.Guild.RemoveBanAsync(mentionedUser);
+            }
+            catch (Exception e)
+            {
+                Logs.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
+        [Command("kick"), Summary("Kick l'utilisateur mentionné")]
+        [RequireBotPermission(GuildPermission.Administrator), RequireUserPermission(GuildPermission.Administrator)]
+        public async Task KickUser([Remainder] string input = "none")
+        {
+            try
+            {
+                SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
+                if (input == "none" || mentionedUser == null)
+                {
+                    await ReplyAsync("Vous devez au moins mentionner un utilisateur");
+                    return;
+                }
+
+                string toRemove = input.Split(' ')[0];
+                string raison = input.Replace(toRemove, "");
+                if (!mentionedUser.IsBot)
+                    await mentionedUser.SendMessageAsync($"Vous avez été éjecté (kick) du serveur {this.Context.Guild.Name} pour la raison suivante: {raison}");
+                    await this.Context.Guild.GetUser(260385529474842626).SendMessageAsync($"{mentionedUser.Username} a été éjecté (kick) du serveur {this.Context.Guild.Name} pour la raison suivante: {raison}");
+                    Logs.WriteLine($"{mentionedUser.Username} a été éjecté (kick) du serveur {this.Context.Guild.Name} pour la raison suivante: {raison}");
+                await ((SocketGuildUser) mentionedUser).KickAsync(raison);
+            }
+            catch (Exception e)
+            {
+                Logs.WriteLine(e.ToString());
+                throw;
+            }
+        }
+
+        #endregion
     }
 }

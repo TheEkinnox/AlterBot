@@ -34,7 +34,7 @@ namespace AlterBotNet.Core.Moderation
                 {
                     if (ban.User.Id == this.Context.User.Id)
                     {
-                        await guild.RemoveBanAsync(this.Context.User.Id);
+                        await guild.RemoveBanAsync(this.Context.User);
                     }
                 }
                 IReadOnlyCollection<RestInviteMetadata> invites = await guild.GetInvitesAsync();

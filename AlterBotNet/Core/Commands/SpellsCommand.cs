@@ -4,7 +4,8 @@ using System.Text;
 
 namespace AlterBotNet.Core.Commands
 {
-    class SpellsCommand
+    public class SpellsCommand
     {
+
     }
 }
