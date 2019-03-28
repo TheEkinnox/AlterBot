@@ -1,0 +1,104 @@
+
+27/03/2019 14:14:11 at Discord Discord.Net v2.0.1 (API v6)
+27/03/2019 14:14:59 at Discord Discord.Net v2.0.1 (API v6)
+27/03/2019 14:15:14 at Rest GET voice/regions: 14731,94 ms
+27/03/2019 14:15:15 at Gateway Connecting
+27/03/2019 14:15:15 at Gateway Connecting ApiClient
+27/03/2019 14:15:18 at Rest GET gateway: 3320,52 ms
+27/03/2019 14:15:33 at Gateway 
+27/03/2019 14:15:33 at Gateway Disconnecting
+27/03/2019 14:15:33 at Gateway Disconnecting ApiClient
+27/03/2019 14:15:33 at Gateway Waiting for heartbeater
+27/03/2019 14:15:33 at Gateway Waiting for guild downloader
+27/03/2019 14:15:33 at Gateway Clearing large guild queue
+27/03/2019 14:15:33 at Gateway Raising virtual GuildUnavailables
+27/03/2019 14:15:33 at Gateway Disconnected
+27/03/2019 14:15:34 at Gateway Connecting
+27/03/2019 14:15:34 at Gateway Connecting ApiClient
+27/03/2019 14:15:39 at Rest GET gateway: 5621,94 ms
+27/03/2019 14:17:04 at Gateway 
+27/03/2019 14:17:04 at Gateway Disconnecting
+27/03/2019 14:17:04 at Gateway Disconnecting ApiClient
+27/03/2019 14:17:04 at Gateway Waiting for heartbeater
+27/03/2019 14:17:04 at Gateway Waiting for guild downloader
+27/03/2019 14:17:04 at Gateway Clearing large guild queue
+27/03/2019 14:17:04 at Gateway Raising virtual GuildUnavailables
+27/03/2019 14:17:04 at Gateway Disconnected
+27/03/2019 14:17:06 at Gateway Connecting
+27/03/2019 14:17:06 at Gateway Connecting ApiClient
+27/03/2019 14:17:16 at Rest GET gateway: 9820,96 ms
+27/03/2019 14:17:26 at Gateway 
+27/03/2019 14:17:26 at Gateway Disconnecting
+27/03/2019 14:17:26 at Gateway Disconnecting ApiClient
+27/03/2019 14:17:26 at Gateway Waiting for heartbeater
+27/03/2019 14:17:26 at Gateway Waiting for guild downloader
+27/03/2019 14:17:26 at Gateway Clearing large guild queue
+27/03/2019 14:17:26 at Gateway Raising virtual GuildUnavailables
+27/03/2019 14:17:26 at Gateway Disconnected
+27/03/2019 14:17:30 at Gateway Connecting
+27/03/2019 14:17:30 at Gateway Connecting ApiClient
+27/03/2019 14:17:47 at Rest GET gateway: 16481,25 ms
+27/03/2019 14:18:04 at Gateway 
+27/03/2019 14:18:04 at Gateway Disconnecting
+27/03/2019 14:18:04 at Gateway Disconnecting ApiClient
+27/03/2019 14:18:04 at Gateway Waiting for heartbeater
+27/03/2019 14:18:04 at Gateway Waiting for guild downloader
+27/03/2019 14:18:04 at Gateway Clearing large guild queue
+27/03/2019 14:18:04 at Gateway Raising virtual GuildUnavailables
+27/03/2019 14:18:04 at Gateway Disconnected
+27/03/2019 14:18:12 at Gateway Connecting
+27/03/2019 14:18:12 at Gateway Connecting ApiClient
+27/03/2019 14:18:15 at Rest GET gateway: 3021,53 ms
+27/03/2019 14:18:38 at Gateway 
+27/03/2019 14:18:38 at Gateway Disconnecting
+27/03/2019 14:18:38 at Gateway Disconnecting ApiClient
+27/03/2019 14:18:38 at Gateway Waiting for heartbeater
+27/03/2019 14:18:38 at Gateway Waiting for guild downloader
+27/03/2019 14:18:38 at Gateway Clearing large guild queue
+27/03/2019 14:18:38 at Gateway Raising virtual GuildUnavailables
+27/03/2019 14:18:38 at Gateway Disconnected
+27/03/2019 14:18:56 at Gateway Connecting
+27/03/2019 14:18:56 at Gateway Connecting ApiClient
+27/03/2019 14:19:27 at Rest GET gateway: 31163,79 ms
+27/03/2019 14:20:01 at Gateway 
+27/03/2019 14:20:01 at Gateway Disconnecting
+27/03/2019 14:20:01 at Gateway Disconnecting ApiClient
+27/03/2019 14:20:01 at Gateway Waiting for heartbeater
+27/03/2019 14:20:01 at Gateway Waiting for guild downloader
+27/03/2019 14:20:01 at Gateway Clearing large guild queue
+27/03/2019 14:20:01 at Gateway Raising virtual GuildUnavailables
+27/03/2019 14:20:01 at Gateway Disconnected
+27/03/2019 14:20:36 at Gateway Connecting
+27/03/2019 14:20:36 at Gateway Connecting ApiClient
+27/03/2019 14:20:42 at Rest GET gateway: 5825,21 ms
+27/03/2019 14:20:57 at Gateway 
+27/03/2019 14:20:57 at Gateway Disconnecting
+27/03/2019 14:20:57 at Gateway Disconnecting ApiClient
+27/03/2019 14:20:57 at Gateway Waiting for heartbeater
+27/03/2019 14:20:57 at Gateway Waiting for guild downloader
+27/03/2019 14:20:57 at Gateway Clearing large guild queue
+27/03/2019 14:20:57 at Gateway Raising virtual GuildUnavailables
+27/03/2019 14:20:57 at Gateway Disconnected
+27/03/2019 14:21:57 at Gateway Connecting
+27/03/2019 14:21:57 at Gateway Connecting ApiClient
+27/03/2019 14:22:13 at Rest GET gateway: 15601,05 ms
+27/03/2019 14:24:28 at Gateway 
+27/03/2019 14:24:28 at Gateway Disconnecting
+27/03/2019 14:24:28 at Gateway Disconnecting ApiClient
+27/03/2019 14:24:28 at Gateway Waiting for heartbeater
+27/03/2019 14:24:28 at Gateway Waiting for guild downloader
+27/03/2019 14:24:28 at Gateway Clearing large guild queue
+27/03/2019 14:24:28 at Gateway Raising virtual GuildUnavailables
+27/03/2019 14:24:28 at Gateway Disconnected
+27/03/2019 14:25:28 at Gateway Connecting
+27/03/2019 14:25:28 at Gateway Connecting ApiClient
+27/03/2019 14:27:08 at Gateway Disconnecting
+27/03/2019 14:27:08 at Gateway Disconnecting ApiClient
+27/03/2019 14:27:08 at Gateway Waiting for heartbeater
+27/03/2019 14:27:08 at Gateway Waiting for guild downloader
+27/03/2019 14:27:08 at Gateway Clearing large guild queue
+27/03/2019 14:27:08 at Gateway Raising virtual GuildUnavailables
+27/03/2019 14:27:08 at Gateway Disconnected
+27/03/2019 19:42:39 at Discord Discord.Net v2.0.1 (API v6)
+27/03/2019 21:39:28 at Discord Discord.Net v2.0.1 (API v6)
+27/03/2019 21:40:28 at Discord Discord.Net v2.0.1 (API v6)

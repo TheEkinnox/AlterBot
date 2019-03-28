@@ -1,0 +1,3794 @@
+
+23/03/2019 11:02:38 at Gateway Connecting
+23/03/2019 11:02:38 at Gateway Connecting ApiClient
+23/03/2019 11:02:38 at Rest GET gateway: 38,41 ms
+23/03/2019 11:02:39 at Gateway Received Hello
+23/03/2019 11:02:39 at Gateway Heartbeat Started
+23/03/2019 11:02:39 at Gateway Identifying
+23/03/2019 11:02:39 at Gateway Sent Heartbeat
+23/03/2019 11:02:39 at Gateway Latency = 328 ms
+23/03/2019 11:02:40 at Gateway Received Dispatch (READY)
+23/03/2019 11:02:40 at Gateway GuildDownloader Started
+23/03/2019 11:02:41 at Gateway Sending Status
+23/03/2019 11:02:41 at Gateway Sent StatusUpdate
+23/03/2019 11:02:41 at Gateway Connected
+23/03/2019 11:02:41 at Gateway Raising Event
+23/03/2019 11:02:41 at Gateway Received Dispatch (GUILD_AVAILABLE)
+23/03/2019 11:02:41 at Gateway Connected to ServeurTest
+23/03/2019 11:02:41 at Gateway Received Dispatch (GUILD_AVAILABLE)
+23/03/2019 11:02:41 at Gateway Connected to Alternia
+23/03/2019 11:02:41 at Gateway Received Dispatch (GUILD_AVAILABLE)
+23/03/2019 11:02:41 at Gateway Connected to plopotonie
+23/03/2019 11:02:41 at Gateway Received Dispatch (GUILD_AVAILABLE)
+23/03/2019 11:02:41 at Gateway Connected to test2
+23/03/2019 11:02:41 at Gateway Ignored Dispatch (PRESENCES_REPLACE)
+23/03/2019 11:02:42 at Gateway GuildDownloader Stopped
+23/03/2019 11:02:42 at Gateway Sent StatusUpdate
+23/03/2019 11:02:42 StartTimer
+23/03/2019 11:02:42 at Gateway Ready
+23/03/2019 11:02:57 Timer ticked
+23/03/2019 11:03:10 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:03:12 Timer ticked
+23/03/2019 11:03:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:03:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:03:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:03:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:03:20 at Gateway Sent Heartbeat
+23/03/2019 11:03:21 at Gateway Received HeartbeatAck
+23/03/2019 11:03:21 at Gateway Latency = 656 ms
+23/03/2019 11:03:22 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 11:03:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:03:27 Timer ticked
+23/03/2019 11:03:28 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:03:28 TheEkinnox a roll 78
+23/03/2019 11:03:29 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:03:29 at Rest POST channels/545366394510901268/messages: 221,21 ms
+23/03/2019 11:03:30 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 11:03:32 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:03:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:03:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:03:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:03:41 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 11:03:42 Timer ticked
+23/03/2019 11:03:49 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:03:50 at Gateway Received Dispatch (MESSAGE_DELETE)
+23/03/2019 11:03:50 at Rest DELETE channels/545366394510901268/messages/559029519768485918: 1353,88 ms
+23/03/2019 11:03:51 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:03:51 at Rest POST channels/545366394510901268/messages: 157,71 ms
+23/03/2019 11:03:55 at Gateway Received Dispatch (MESSAGE_DELETE)
+23/03/2019 11:03:57 Timer ticked
+23/03/2019 11:04:02 at Gateway Sent Heartbeat
+23/03/2019 11:04:02 at Gateway Received HeartbeatAck
+23/03/2019 11:04:02 at Gateway Latency = 282 ms
+23/03/2019 11:04:02 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 11:04:12 Timer ticked
+23/03/2019 11:04:13 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 11:04:14 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:04:15 at Gateway Received Dispatch (MESSAGE_DELETE)
+23/03/2019 11:04:15 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:04:15 at Rest POST channels/399539166364303382/messages: 137,61 ms
+23/03/2019 11:04:27 Timer ticked
+23/03/2019 11:04:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:04:42 Timer ticked
+23/03/2019 11:04:43 at Gateway Sent Heartbeat
+23/03/2019 11:04:43 at Gateway Received HeartbeatAck
+23/03/2019 11:04:43 at Gateway Latency = 63 ms
+23/03/2019 11:04:49 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:04:57 Timer ticked
+23/03/2019 11:05:07 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:05:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:05:12 Timer ticked
+23/03/2019 11:05:24 at Gateway Sent Heartbeat
+23/03/2019 11:05:24 at Gateway Received HeartbeatAck
+23/03/2019 11:05:24 at Gateway Latency = 312 ms
+23/03/2019 11:05:27 Timer ticked
+23/03/2019 11:05:30 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:05:42 Timer ticked
+23/03/2019 11:05:57 Timer ticked
+23/03/2019 11:05:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:05:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:05:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:05:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:06:05 at Gateway Sent Heartbeat
+23/03/2019 11:06:05 at Gateway Received HeartbeatAck
+23/03/2019 11:06:05 at Gateway Latency = 46 ms
+23/03/2019 11:06:12 Timer ticked
+23/03/2019 11:06:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:06:27 Timer ticked
+23/03/2019 11:06:42 Timer ticked
+23/03/2019 11:06:47 at Gateway Sent Heartbeat
+23/03/2019 11:06:47 at Gateway Received HeartbeatAck
+23/03/2019 11:06:47 at Gateway Latency = 438 ms
+23/03/2019 11:06:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:06:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:06:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:06:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:06:57 Timer ticked
+23/03/2019 11:07:12 Timer ticked
+23/03/2019 11:07:27 Timer ticked
+23/03/2019 11:07:28 at Gateway Sent Heartbeat
+23/03/2019 11:07:28 at Gateway Received HeartbeatAck
+23/03/2019 11:07:28 at Gateway Latency = 94 ms
+23/03/2019 11:07:42 Timer ticked
+23/03/2019 11:07:57 Timer ticked
+23/03/2019 11:08:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:08:09 at Gateway Sent Heartbeat
+23/03/2019 11:08:10 at Gateway Received HeartbeatAck
+23/03/2019 11:08:10 at Gateway Latency = 438 ms
+23/03/2019 11:08:12 Timer ticked
+23/03/2019 11:08:27 Timer ticked
+23/03/2019 11:08:35 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 11:08:39 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:08:42 Timer ticked
+23/03/2019 11:08:50 at Gateway Sent Heartbeat
+23/03/2019 11:08:50 at Gateway Received HeartbeatAck
+23/03/2019 11:08:51 at Gateway Latency = 109 ms
+23/03/2019 11:08:57 Timer ticked
+23/03/2019 11:09:12 Timer ticked
+23/03/2019 11:09:27 Timer ticked
+23/03/2019 11:09:32 at Gateway Sent Heartbeat
+23/03/2019 11:09:32 at Gateway Received HeartbeatAck
+23/03/2019 11:09:32 at Gateway Latency = 109 ms
+23/03/2019 11:09:42 Timer ticked
+23/03/2019 11:09:50 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:09:51 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 11:09:57 Timer ticked
+23/03/2019 11:09:59 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:09:59 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 11:09:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:10:08 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:10:12 Timer ticked
+23/03/2019 11:10:13 at Gateway Sent Heartbeat
+23/03/2019 11:10:13 at Gateway Received HeartbeatAck
+23/03/2019 11:10:13 at Gateway Latency = 78 ms
+23/03/2019 11:10:13 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 11:10:14 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 11:10:27 Timer ticked
+23/03/2019 11:10:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:10:42 Timer ticked
+23/03/2019 11:10:49 at Gateway Received Dispatch (CHANNEL_DELETE)
+23/03/2019 11:10:54 at Gateway Sent Heartbeat
+23/03/2019 11:10:54 at Gateway Received HeartbeatAck
+23/03/2019 11:10:54 at Gateway Latency = 47 ms
+23/03/2019 11:10:57 Timer ticked
+23/03/2019 11:11:06 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:11:07 at Gateway Received Dispatch (CHANNEL_UPDATE)
+23/03/2019 11:11:12 Timer ticked
+23/03/2019 11:11:27 Timer ticked
+23/03/2019 11:11:35 at Gateway Sent Heartbeat
+23/03/2019 11:11:36 at Gateway Received HeartbeatAck
+23/03/2019 11:11:36 at Gateway Latency = 62 ms
+23/03/2019 11:11:42 Timer ticked
+23/03/2019 11:11:51 at Gateway Received Dispatch (CHANNEL_DELETE)
+23/03/2019 11:11:57 Timer ticked
+23/03/2019 11:12:12 Timer ticked
+23/03/2019 11:12:17 at Gateway Sent Heartbeat
+23/03/2019 11:12:17 at Gateway Received HeartbeatAck
+23/03/2019 11:12:17 at Gateway Latency = 125 ms
+23/03/2019 11:12:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:12:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:12:27 Timer ticked
+23/03/2019 11:12:32 at Gateway Received Dispatch (CHANNEL_DELETE)
+23/03/2019 11:12:42 Timer ticked
+23/03/2019 11:12:57 Timer ticked
+23/03/2019 11:12:58 at Gateway Sent Heartbeat
+23/03/2019 11:12:58 at Gateway Received HeartbeatAck
+23/03/2019 11:12:58 at Gateway Latency = 94 ms
+23/03/2019 11:13:12 Timer ticked
+23/03/2019 11:13:27 Timer ticked
+23/03/2019 11:13:39 at Gateway Sent Heartbeat
+23/03/2019 11:13:41 at Gateway Received HeartbeatAck
+23/03/2019 11:13:41 at Gateway Latency = 1969 ms
+23/03/2019 11:13:42 Timer ticked
+23/03/2019 11:13:57 Timer ticked
+23/03/2019 11:14:12 Timer ticked
+23/03/2019 11:14:14 at Gateway Received Dispatch (MESSAGE_DELETE)
+23/03/2019 11:14:19 at Gateway Received Dispatch (MESSAGE_REACTION_REMOVE_ALL)
+23/03/2019 11:14:21 at Gateway Sent Heartbeat
+23/03/2019 11:14:21 at Gateway Received HeartbeatAck
+23/03/2019 11:14:21 at Gateway Latency = 78 ms
+23/03/2019 11:14:22 at Gateway Received Dispatch (MESSAGE_DELETE)
+23/03/2019 11:14:24 at Gateway Received Dispatch (MESSAGE_DELETE)
+23/03/2019 11:14:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:14:27 Timer ticked
+23/03/2019 11:14:27 at Gateway Received Dispatch (MESSAGE_DELETE)
+23/03/2019 11:14:28 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:14:29 at Gateway Received Dispatch (MESSAGE_DELETE)
+23/03/2019 11:14:42 Timer ticked
+23/03/2019 11:14:57 Timer ticked
+23/03/2019 11:15:02 at Gateway Sent Heartbeat
+23/03/2019 11:15:02 at Gateway Received HeartbeatAck
+23/03/2019 11:15:02 at Gateway Latency = 281 ms
+23/03/2019 11:15:12 Timer ticked
+23/03/2019 11:15:27 Timer ticked
+23/03/2019 11:15:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:15:42 Timer ticked
+23/03/2019 11:15:43 at Gateway Sent Heartbeat
+23/03/2019 11:15:44 at Gateway Received HeartbeatAck
+23/03/2019 11:15:44 at Gateway Latency = 938 ms
+23/03/2019 11:15:57 Timer ticked
+23/03/2019 11:16:12 Timer ticked
+23/03/2019 11:16:24 at Gateway Sent Heartbeat
+23/03/2019 11:16:24 at Gateway Received HeartbeatAck
+23/03/2019 11:16:24 at Gateway Latency = 125 ms
+23/03/2019 11:16:27 Timer ticked
+23/03/2019 11:16:42 Timer ticked
+23/03/2019 11:16:57 Timer ticked
+23/03/2019 11:17:06 at Gateway Sent Heartbeat
+23/03/2019 11:17:06 at Gateway Received HeartbeatAck
+23/03/2019 11:17:06 at Gateway Latency = 328 ms
+23/03/2019 11:17:10 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:17:12 Timer ticked
+23/03/2019 11:17:17 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:17:27 Timer ticked
+23/03/2019 11:17:42 Timer ticked
+23/03/2019 11:17:47 at Gateway Sent Heartbeat
+23/03/2019 11:17:47 at Gateway Received HeartbeatAck
+23/03/2019 11:17:47 at Gateway Latency = 47 ms
+23/03/2019 11:17:57 Timer ticked
+23/03/2019 11:18:12 Timer ticked
+23/03/2019 11:18:27 Timer ticked
+23/03/2019 11:18:28 at Gateway Sent Heartbeat
+23/03/2019 11:18:28 at Gateway Received HeartbeatAck
+23/03/2019 11:18:28 at Gateway Latency = 140 ms
+23/03/2019 11:18:42 Timer ticked
+23/03/2019 11:18:47 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:18:57 Timer ticked
+23/03/2019 11:19:09 at Gateway Sent Heartbeat
+23/03/2019 11:19:09 at Gateway Received HeartbeatAck
+23/03/2019 11:19:09 at Gateway Latency = 110 ms
+23/03/2019 11:19:12 Timer ticked
+23/03/2019 11:19:27 Timer ticked
+23/03/2019 11:19:27 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:19:36 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:19:42 Timer ticked
+23/03/2019 11:19:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:19:51 at Gateway Sent Heartbeat
+23/03/2019 11:19:51 at Gateway Received HeartbeatAck
+23/03/2019 11:19:51 at Gateway Latency = 109 ms
+23/03/2019 11:19:57 Timer ticked
+23/03/2019 11:20:12 Timer ticked
+23/03/2019 11:20:27 Timer ticked
+23/03/2019 11:20:32 at Gateway Sent Heartbeat
+23/03/2019 11:20:32 at Gateway Received HeartbeatAck
+23/03/2019 11:20:32 at Gateway Latency = 94 ms
+23/03/2019 11:20:40 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:20:42 Timer ticked
+23/03/2019 11:20:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:20:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:20:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:20:49 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:20:57 Timer ticked
+23/03/2019 11:20:57 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:21:08 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:21:12 Timer ticked
+23/03/2019 11:21:13 at Gateway Sent Heartbeat
+23/03/2019 11:21:13 at Gateway Received HeartbeatAck
+23/03/2019 11:21:13 at Gateway Latency = 94 ms
+23/03/2019 11:21:27 Timer ticked
+23/03/2019 11:21:42 Timer ticked
+23/03/2019 11:21:54 at Gateway Sent Heartbeat
+23/03/2019 11:21:54 at Gateway Received HeartbeatAck
+23/03/2019 11:21:55 at Gateway Latency = 47 ms
+23/03/2019 11:21:57 Timer ticked
+23/03/2019 11:22:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:22:12 Timer ticked
+23/03/2019 11:22:27 Timer ticked
+23/03/2019 11:22:36 at Gateway Sent Heartbeat
+23/03/2019 11:22:36 at Gateway Received HeartbeatAck
+23/03/2019 11:22:36 at Gateway Latency = 109 ms
+23/03/2019 11:22:42 Timer ticked
+23/03/2019 11:22:57 Timer ticked
+23/03/2019 11:23:12 Timer ticked
+23/03/2019 11:23:17 at Gateway Sent Heartbeat
+23/03/2019 11:23:17 at Gateway Received HeartbeatAck
+23/03/2019 11:23:17 at Gateway Latency = 46 ms
+23/03/2019 11:23:27 Timer ticked
+23/03/2019 11:23:42 Timer ticked
+23/03/2019 11:23:57 Timer ticked
+23/03/2019 11:23:58 at Gateway Sent Heartbeat
+23/03/2019 11:23:58 at Gateway Received HeartbeatAck
+23/03/2019 11:23:58 at Gateway Latency = 125 ms
+23/03/2019 11:24:12 Timer ticked
+23/03/2019 11:24:19 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:24:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:24:27 Timer ticked
+23/03/2019 11:24:29 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:24:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:24:39 at Gateway Sent Heartbeat
+23/03/2019 11:24:40 at Gateway Received HeartbeatAck
+23/03/2019 11:24:40 at Gateway Latency = 125 ms
+23/03/2019 11:24:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:24:42 Timer ticked
+23/03/2019 11:24:57 Timer ticked
+23/03/2019 11:25:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:25:12 Timer ticked
+23/03/2019 11:25:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:25:21 at Gateway Sent Heartbeat
+23/03/2019 11:25:21 at Gateway Received HeartbeatAck
+23/03/2019 11:25:21 at Gateway Latency = 47 ms
+23/03/2019 11:25:27 Timer ticked
+23/03/2019 11:25:42 Timer ticked
+23/03/2019 11:25:57 Timer ticked
+23/03/2019 11:26:02 at Gateway Sent Heartbeat
+23/03/2019 11:26:02 at Gateway Received HeartbeatAck
+23/03/2019 11:26:02 at Gateway Latency = 79 ms
+23/03/2019 11:26:12 Timer ticked
+23/03/2019 11:26:27 Timer ticked
+23/03/2019 11:26:42 Timer ticked
+23/03/2019 11:26:43 at Gateway Sent Heartbeat
+23/03/2019 11:26:43 at Gateway Received HeartbeatAck
+23/03/2019 11:26:43 at Gateway Latency = 94 ms
+23/03/2019 11:26:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:26:57 Timer ticked
+23/03/2019 11:26:57 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:27:12 Timer ticked
+23/03/2019 11:27:25 at Gateway Sent Heartbeat
+23/03/2019 11:27:25 at Gateway Received HeartbeatAck
+23/03/2019 11:27:25 at Gateway Latency = 313 ms
+23/03/2019 11:27:27 Timer ticked
+23/03/2019 11:27:42 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:27:42 Timer ticked
+23/03/2019 11:27:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:27:53 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:27:57 Timer ticked
+23/03/2019 11:28:06 at Gateway Sent Heartbeat
+23/03/2019 11:28:06 at Gateway Received HeartbeatAck
+23/03/2019 11:28:06 at Gateway Latency = 171 ms
+23/03/2019 11:28:12 Timer ticked
+23/03/2019 11:28:27 Timer ticked
+23/03/2019 11:28:42 Timer ticked
+23/03/2019 11:28:47 at Gateway Sent Heartbeat
+23/03/2019 11:28:47 at Gateway Received HeartbeatAck
+23/03/2019 11:28:47 at Gateway Latency = 78 ms
+23/03/2019 11:28:57 Timer ticked
+23/03/2019 11:29:12 Timer ticked
+23/03/2019 11:29:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:29:27 Timer ticked
+23/03/2019 11:29:28 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:29:29 at Gateway Sent Heartbeat
+23/03/2019 11:29:29 at Gateway Received HeartbeatAck
+23/03/2019 11:29:29 at Gateway Latency = 63 ms
+23/03/2019 11:29:42 Timer ticked
+23/03/2019 11:29:57 Timer ticked
+23/03/2019 11:30:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:30:10 at Gateway Sent Heartbeat
+23/03/2019 11:30:11 at Gateway Received HeartbeatAck
+23/03/2019 11:30:11 at Gateway Latency = 1062 ms
+23/03/2019 11:30:12 Timer ticked
+23/03/2019 11:30:27 Timer ticked
+23/03/2019 11:30:28 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:30:42 Timer ticked
+23/03/2019 11:30:51 at Gateway Sent Heartbeat
+23/03/2019 11:30:51 at Gateway Received HeartbeatAck
+23/03/2019 11:30:51 at Gateway Latency = 297 ms
+23/03/2019 11:30:57 Timer ticked
+23/03/2019 11:31:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:31:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:31:12 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:31:12 Timer ticked
+23/03/2019 11:31:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:31:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:31:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:31:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:31:27 Timer ticked
+23/03/2019 11:31:33 at Gateway Sent Heartbeat
+23/03/2019 11:31:33 at Gateway Received HeartbeatAck
+23/03/2019 11:31:33 at Gateway Latency = 78 ms
+23/03/2019 11:31:42 Timer ticked
+23/03/2019 11:31:57 Timer ticked
+23/03/2019 11:32:12 Timer ticked
+23/03/2019 11:32:14 at Gateway Sent Heartbeat
+23/03/2019 11:32:14 at Gateway Received HeartbeatAck
+23/03/2019 11:32:14 at Gateway Latency = 47 ms
+23/03/2019 11:32:27 Timer ticked
+23/03/2019 11:32:33 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:32:42 Timer ticked
+23/03/2019 11:32:55 at Gateway Sent Heartbeat
+23/03/2019 11:32:56 at Gateway Received HeartbeatAck
+23/03/2019 11:32:56 at Gateway Latency = 1078 ms
+23/03/2019 11:32:57 Timer ticked
+23/03/2019 11:32:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:33:02 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:33:12 Timer ticked
+23/03/2019 11:33:27 Timer ticked
+23/03/2019 11:33:37 at Gateway Sent Heartbeat
+23/03/2019 11:33:37 at Gateway Received HeartbeatAck
+23/03/2019 11:33:37 at Gateway Latency = 63 ms
+23/03/2019 11:33:42 Timer ticked
+23/03/2019 11:33:53 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:33:57 Timer ticked
+23/03/2019 11:34:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:34:12 Timer ticked
+23/03/2019 11:34:18 at Gateway Sent Heartbeat
+23/03/2019 11:34:18 at Gateway Received HeartbeatAck
+23/03/2019 11:34:18 at Gateway Latency = 47 ms
+23/03/2019 11:34:27 Timer ticked
+23/03/2019 11:34:42 Timer ticked
+23/03/2019 11:34:57 Timer ticked
+23/03/2019 11:34:59 at Gateway Sent Heartbeat
+23/03/2019 11:34:59 at Gateway Received HeartbeatAck
+23/03/2019 11:34:59 at Gateway Latency = 375 ms
+23/03/2019 11:35:12 Timer ticked
+23/03/2019 11:35:27 Timer ticked
+23/03/2019 11:35:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:35:40 at Gateway Sent Heartbeat
+23/03/2019 11:35:40 at Gateway Received HeartbeatAck
+23/03/2019 11:35:40 at Gateway Latency = 78 ms
+23/03/2019 11:35:42 Timer ticked
+23/03/2019 11:35:49 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:35:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:35:57 Timer ticked
+23/03/2019 11:35:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:36:12 Timer ticked
+23/03/2019 11:36:22 at Gateway Sent Heartbeat
+23/03/2019 11:36:22 at Gateway Received HeartbeatAck
+23/03/2019 11:36:22 at Gateway Latency = 63 ms
+23/03/2019 11:36:27 Timer ticked
+23/03/2019 11:36:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:36:42 Timer ticked
+23/03/2019 11:36:42 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:36:57 Timer ticked
+23/03/2019 11:37:03 at Gateway Sent Heartbeat
+23/03/2019 11:37:03 at Gateway Received HeartbeatAck
+23/03/2019 11:37:03 at Gateway Latency = 187 ms
+23/03/2019 11:37:03 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:37:12 Timer ticked
+23/03/2019 11:37:27 Timer ticked
+23/03/2019 11:37:42 Timer ticked
+23/03/2019 11:37:44 at Gateway Sent Heartbeat
+23/03/2019 11:37:44 at Gateway Received HeartbeatAck
+23/03/2019 11:37:44 at Gateway Latency = 188 ms
+23/03/2019 11:37:57 Timer ticked
+23/03/2019 11:38:12 Timer ticked
+23/03/2019 11:38:25 at Gateway Sent Heartbeat
+23/03/2019 11:38:26 at Gateway Received HeartbeatAck
+23/03/2019 11:38:26 at Gateway Latency = 266 ms
+23/03/2019 11:38:27 Timer ticked
+23/03/2019 11:38:42 Timer ticked
+23/03/2019 11:38:57 Timer ticked
+23/03/2019 11:39:07 at Gateway Sent Heartbeat
+23/03/2019 11:39:07 at Gateway Received HeartbeatAck
+23/03/2019 11:39:07 at Gateway Latency = 47 ms
+23/03/2019 11:39:12 Timer ticked
+23/03/2019 11:39:27 Timer ticked
+23/03/2019 11:39:42 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:39:42 Timer ticked
+23/03/2019 11:39:48 at Gateway Sent Heartbeat
+23/03/2019 11:39:49 at Gateway Received HeartbeatAck
+23/03/2019 11:39:49 at Gateway Latency = 906 ms
+23/03/2019 11:39:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:39:57 Timer ticked
+23/03/2019 11:40:12 Timer ticked
+23/03/2019 11:40:27 Timer ticked
+23/03/2019 11:40:30 at Gateway Sent Heartbeat
+23/03/2019 11:40:30 at Gateway Received HeartbeatAck
+23/03/2019 11:40:30 at Gateway Latency = 157 ms
+23/03/2019 11:40:42 Timer ticked
+23/03/2019 11:40:57 Timer ticked
+23/03/2019 11:41:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:41:06 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:41:11 at Gateway Sent Heartbeat
+23/03/2019 11:41:11 at Gateway Received HeartbeatAck
+23/03/2019 11:41:11 at Gateway Latency = 250 ms
+23/03/2019 11:41:12 Timer ticked
+23/03/2019 11:41:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:41:23 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:41:27 Timer ticked
+23/03/2019 11:41:42 Timer ticked
+23/03/2019 11:41:52 at Gateway Sent Heartbeat
+23/03/2019 11:41:52 at Gateway Received HeartbeatAck
+23/03/2019 11:41:52 at Gateway Latency = 188 ms
+23/03/2019 11:41:57 Timer ticked
+23/03/2019 11:42:12 Timer ticked
+23/03/2019 11:42:27 Timer ticked
+23/03/2019 11:42:33 at Gateway Sent Heartbeat
+23/03/2019 11:42:34 at Gateway Received HeartbeatAck
+23/03/2019 11:42:34 at Gateway Latency = 390 ms
+23/03/2019 11:42:42 Timer ticked
+23/03/2019 11:42:57 Timer ticked
+23/03/2019 11:43:12 Timer ticked
+23/03/2019 11:43:15 at Gateway Sent Heartbeat
+23/03/2019 11:43:15 at Gateway Received HeartbeatAck
+23/03/2019 11:43:15 at Gateway Latency = 141 ms
+23/03/2019 11:43:27 Timer ticked
+23/03/2019 11:43:42 Timer ticked
+23/03/2019 11:43:56 at Gateway Sent Heartbeat
+23/03/2019 11:43:56 at Gateway Received HeartbeatAck
+23/03/2019 11:43:56 at Gateway Latency = 47 ms
+23/03/2019 11:43:57 Timer ticked
+23/03/2019 11:44:03 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:44:12 Timer ticked
+23/03/2019 11:44:27 Timer ticked
+23/03/2019 11:44:37 at Gateway Sent Heartbeat
+23/03/2019 11:44:37 at Gateway Received HeartbeatAck
+23/03/2019 11:44:37 at Gateway Latency = 125 ms
+23/03/2019 11:44:42 Timer ticked
+23/03/2019 11:44:45 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:44:57 Timer ticked
+23/03/2019 11:45:12 Timer ticked
+23/03/2019 11:45:18 at Gateway Sent Heartbeat
+23/03/2019 11:45:18 at Gateway Received HeartbeatAck
+23/03/2019 11:45:19 at Gateway Latency = 46 ms
+23/03/2019 11:45:27 Timer ticked
+23/03/2019 11:45:42 Timer ticked
+23/03/2019 11:45:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:45:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:45:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:45:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:45:57 Timer ticked
+23/03/2019 11:46:00 at Gateway Sent Heartbeat
+23/03/2019 11:46:00 at Gateway Received HeartbeatAck
+23/03/2019 11:46:00 at Gateway Latency = 141 ms
+23/03/2019 11:46:07 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:46:12 Timer ticked
+23/03/2019 11:46:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:46:27 Timer ticked
+23/03/2019 11:46:41 at Gateway Sent Heartbeat
+23/03/2019 11:46:41 at Gateway Received HeartbeatAck
+23/03/2019 11:46:41 at Gateway Latency = 219 ms
+23/03/2019 11:46:42 Timer ticked
+23/03/2019 11:46:57 Timer ticked
+23/03/2019 11:47:12 Timer ticked
+23/03/2019 11:47:22 at Gateway Sent Heartbeat
+23/03/2019 11:47:23 at Gateway Received HeartbeatAck
+23/03/2019 11:47:23 at Gateway Latency = 234 ms
+23/03/2019 11:47:27 Timer ticked
+23/03/2019 11:47:42 Timer ticked
+23/03/2019 11:47:47 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:47:55 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:47:57 Timer ticked
+23/03/2019 11:48:04 at Gateway Sent Heartbeat
+23/03/2019 11:48:04 at Gateway Received HeartbeatAck
+23/03/2019 11:48:04 at Gateway Latency = 125 ms
+23/03/2019 11:48:12 Timer ticked
+23/03/2019 11:48:27 Timer ticked
+23/03/2019 11:48:42 Timer ticked
+23/03/2019 11:48:45 at Gateway Sent Heartbeat
+23/03/2019 11:48:45 at Gateway Received HeartbeatAck
+23/03/2019 11:48:45 at Gateway Latency = 47 ms
+23/03/2019 11:48:57 Timer ticked
+23/03/2019 11:49:12 Timer ticked
+23/03/2019 11:49:26 at Gateway Sent Heartbeat
+23/03/2019 11:49:26 at Gateway Received HeartbeatAck
+23/03/2019 11:49:26 at Gateway Latency = 203 ms
+23/03/2019 11:49:27 Timer ticked
+23/03/2019 11:49:28 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:49:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:49:42 Timer ticked
+23/03/2019 11:49:57 Timer ticked
+23/03/2019 11:50:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:50:07 at Gateway Sent Heartbeat
+23/03/2019 11:50:07 at Gateway Received HeartbeatAck
+23/03/2019 11:50:07 at Gateway Latency = 140 ms
+23/03/2019 11:50:12 Timer ticked
+23/03/2019 11:50:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:50:27 Timer ticked
+23/03/2019 11:50:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:50:42 Timer ticked
+23/03/2019 11:50:49 at Gateway Sent Heartbeat
+23/03/2019 11:50:49 at Gateway Received HeartbeatAck
+23/03/2019 11:50:49 at Gateway Latency = 125 ms
+23/03/2019 11:50:57 Timer ticked
+23/03/2019 11:51:12 Timer ticked
+23/03/2019 11:51:27 Timer ticked
+23/03/2019 11:51:30 at Gateway Sent Heartbeat
+23/03/2019 11:51:30 at Gateway Received HeartbeatAck
+23/03/2019 11:51:30 at Gateway Latency = 109 ms
+23/03/2019 11:51:42 Timer ticked
+23/03/2019 11:51:57 Timer ticked
+23/03/2019 11:51:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:52:11 at Gateway Sent Heartbeat
+23/03/2019 11:52:11 at Gateway Received HeartbeatAck
+23/03/2019 11:52:11 at Gateway Latency = 235 ms
+23/03/2019 11:52:12 Timer ticked
+23/03/2019 11:52:27 Timer ticked
+23/03/2019 11:52:42 Timer ticked
+23/03/2019 11:52:52 at Gateway Sent Heartbeat
+23/03/2019 11:52:53 at Gateway Received HeartbeatAck
+23/03/2019 11:52:53 at Gateway Latency = 141 ms
+23/03/2019 11:52:57 Timer ticked
+23/03/2019 11:53:12 Timer ticked
+23/03/2019 11:53:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:53:27 Timer ticked
+23/03/2019 11:53:34 at Gateway Sent Heartbeat
+23/03/2019 11:53:34 at Gateway Received HeartbeatAck
+23/03/2019 11:53:34 at Gateway Latency = 234 ms
+23/03/2019 11:53:42 Timer ticked
+23/03/2019 11:53:57 Timer ticked
+23/03/2019 11:53:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:54:12 Timer ticked
+23/03/2019 11:54:15 at Gateway Sent Heartbeat
+23/03/2019 11:54:16 at Gateway Received HeartbeatAck
+23/03/2019 11:54:16 at Gateway Latency = 1453 ms
+23/03/2019 11:54:27 Timer ticked
+23/03/2019 11:54:42 Timer ticked
+23/03/2019 11:54:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:54:55 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:54:56 at Gateway Sent Heartbeat
+23/03/2019 11:54:56 at Gateway Received HeartbeatAck
+23/03/2019 11:54:56 at Gateway Latency = 46 ms
+23/03/2019 11:54:57 Timer ticked
+23/03/2019 11:55:12 Timer ticked
+23/03/2019 11:55:15 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:55:27 Timer ticked
+23/03/2019 11:55:37 at Gateway Sent Heartbeat
+23/03/2019 11:55:38 at Gateway Received HeartbeatAck
+23/03/2019 11:55:38 at Gateway Latency = 110 ms
+23/03/2019 11:55:42 Timer ticked
+23/03/2019 11:55:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:55:57 Timer ticked
+23/03/2019 11:56:06 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:56:12 Timer ticked
+23/03/2019 11:56:19 at Gateway Sent Heartbeat
+23/03/2019 11:56:19 at Gateway Received HeartbeatAck
+23/03/2019 11:56:19 at Gateway Latency = 282 ms
+23/03/2019 11:56:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:56:27 Timer ticked
+23/03/2019 11:56:42 Timer ticked
+23/03/2019 11:56:57 Timer ticked
+23/03/2019 11:57:00 at Gateway Sent Heartbeat
+23/03/2019 11:57:00 at Gateway Received HeartbeatAck
+23/03/2019 11:57:00 at Gateway Latency = 187 ms
+23/03/2019 11:57:12 Timer ticked
+23/03/2019 11:57:27 Timer ticked
+23/03/2019 11:57:38 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:57:41 at Gateway Sent Heartbeat
+23/03/2019 11:57:41 at Gateway Received HeartbeatAck
+23/03/2019 11:57:41 at Gateway Latency = 94 ms
+23/03/2019 11:57:42 Timer ticked
+23/03/2019 11:57:45 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:57:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:57:57 Timer ticked
+23/03/2019 11:58:12 Timer ticked
+23/03/2019 11:58:23 at Gateway Sent Heartbeat
+23/03/2019 11:58:23 at Gateway Received HeartbeatAck
+23/03/2019 11:58:23 at Gateway Latency = 62 ms
+23/03/2019 11:58:27 Timer ticked
+23/03/2019 11:58:42 Timer ticked
+23/03/2019 11:58:57 Timer ticked
+23/03/2019 11:58:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:59:04 at Gateway Sent Heartbeat
+23/03/2019 11:59:04 at Gateway Received HeartbeatAck
+23/03/2019 11:59:04 at Gateway Latency = 125 ms
+23/03/2019 11:59:10 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:59:12 Timer ticked
+23/03/2019 11:59:27 Timer ticked
+23/03/2019 11:59:33 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:59:42 Timer ticked
+23/03/2019 11:59:45 at Gateway Sent Heartbeat
+23/03/2019 11:59:45 at Gateway Received HeartbeatAck
+23/03/2019 11:59:45 at Gateway Latency = 157 ms
+23/03/2019 11:59:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:59:53 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 11:59:57 Timer ticked
+23/03/2019 11:59:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:00:03 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:00:08 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:00:12 Timer ticked
+23/03/2019 12:00:26 at Gateway Sent Heartbeat
+23/03/2019 12:00:26 at Gateway Received HeartbeatAck
+23/03/2019 12:00:26 at Gateway Latency = 63 ms
+23/03/2019 12:00:27 Timer ticked
+23/03/2019 12:00:42 Timer ticked
+23/03/2019 12:00:57 Timer ticked
+23/03/2019 12:01:08 at Gateway Sent Heartbeat
+23/03/2019 12:01:08 at Gateway Received HeartbeatAck
+23/03/2019 12:01:08 at Gateway Latency = 156 ms
+23/03/2019 12:01:12 Timer ticked
+23/03/2019 12:01:27 Timer ticked
+23/03/2019 12:01:42 Timer ticked
+23/03/2019 12:01:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:01:49 at Gateway Sent Heartbeat
+23/03/2019 12:01:49 at Gateway Received HeartbeatAck
+23/03/2019 12:01:49 at Gateway Latency = 47 ms
+23/03/2019 12:01:57 Timer ticked
+23/03/2019 12:02:12 Timer ticked
+23/03/2019 12:02:27 Timer ticked
+23/03/2019 12:02:30 at Gateway Sent Heartbeat
+23/03/2019 12:02:30 at Gateway Received HeartbeatAck
+23/03/2019 12:02:30 at Gateway Latency = 171 ms
+23/03/2019 12:02:42 Timer ticked
+23/03/2019 12:02:57 Timer ticked
+23/03/2019 12:03:11 at Gateway Sent Heartbeat
+23/03/2019 12:03:12 at Gateway Received HeartbeatAck
+23/03/2019 12:03:12 at Gateway Latency = 171 ms
+23/03/2019 12:03:12 Timer ticked
+23/03/2019 12:03:27 Timer ticked
+23/03/2019 12:03:42 Timer ticked
+23/03/2019 12:03:53 at Gateway Sent Heartbeat
+23/03/2019 12:03:53 at Gateway Received HeartbeatAck
+23/03/2019 12:03:53 at Gateway Latency = 62 ms
+23/03/2019 12:03:57 Timer ticked
+23/03/2019 12:04:12 Timer ticked
+23/03/2019 12:04:27 Timer ticked
+23/03/2019 12:04:34 at Gateway Sent Heartbeat
+23/03/2019 12:04:35 at Gateway Received HeartbeatAck
+23/03/2019 12:04:35 at Gateway Latency = 1438 ms
+23/03/2019 12:04:42 Timer ticked
+23/03/2019 12:04:49 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:04:57 Timer ticked
+23/03/2019 12:05:12 Timer ticked
+23/03/2019 12:05:15 at Gateway Sent Heartbeat
+23/03/2019 12:05:16 at Gateway Received HeartbeatAck
+23/03/2019 12:05:16 at Gateway Latency = 1063 ms
+23/03/2019 12:05:27 Timer ticked
+23/03/2019 12:05:42 Timer ticked
+23/03/2019 12:05:57 at Gateway Sent Heartbeat
+23/03/2019 12:05:57 at Gateway Received HeartbeatAck
+23/03/2019 12:05:57 at Gateway Latency = 47 ms
+23/03/2019 12:05:57 Timer ticked
+23/03/2019 12:06:12 Timer ticked
+23/03/2019 12:06:27 Timer ticked
+23/03/2019 12:06:38 at Gateway Sent Heartbeat
+23/03/2019 12:06:38 at Gateway Received HeartbeatAck
+23/03/2019 12:06:38 at Gateway Latency = 156 ms
+23/03/2019 12:06:42 Timer ticked
+23/03/2019 12:06:57 Timer ticked
+23/03/2019 12:07:12 Timer ticked
+23/03/2019 12:07:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:07:19 at Gateway Sent Heartbeat
+23/03/2019 12:07:19 at Gateway Received HeartbeatAck
+23/03/2019 12:07:19 at Gateway Latency = 140 ms
+23/03/2019 12:07:27 Timer ticked
+23/03/2019 12:07:42 Timer ticked
+23/03/2019 12:07:57 Timer ticked
+23/03/2019 12:08:00 at Gateway Sent Heartbeat
+23/03/2019 12:08:01 at Gateway Received HeartbeatAck
+23/03/2019 12:08:01 at Gateway Latency = 250 ms
+23/03/2019 12:08:12 Timer ticked
+23/03/2019 12:08:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:08:27 Timer ticked
+23/03/2019 12:08:42 at Gateway Sent Heartbeat
+23/03/2019 12:08:42 Timer ticked
+23/03/2019 12:08:42 at Gateway Received HeartbeatAck
+23/03/2019 12:08:42 at Gateway Latency = 359 ms
+23/03/2019 12:08:57 Timer ticked
+23/03/2019 12:09:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:09:12 Timer ticked
+23/03/2019 12:09:23 at Gateway Sent Heartbeat
+23/03/2019 12:09:23 at Gateway Received HeartbeatAck
+23/03/2019 12:09:23 at Gateway Latency = 157 ms
+23/03/2019 12:09:27 Timer ticked
+23/03/2019 12:09:42 Timer ticked
+23/03/2019 12:09:57 Timer ticked
+23/03/2019 12:10:04 at Gateway Sent Heartbeat
+23/03/2019 12:10:04 at Gateway Received HeartbeatAck
+23/03/2019 12:10:04 at Gateway Latency = 156 ms
+23/03/2019 12:10:12 Timer ticked
+23/03/2019 12:10:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:10:27 Timer ticked
+23/03/2019 12:10:42 Timer ticked
+23/03/2019 12:10:45 at Gateway Sent Heartbeat
+23/03/2019 12:10:46 at Gateway Received HeartbeatAck
+23/03/2019 12:10:46 at Gateway Latency = 250 ms
+23/03/2019 12:10:57 Timer ticked
+23/03/2019 12:11:12 Timer ticked
+23/03/2019 12:11:27 Timer ticked
+23/03/2019 12:11:27 at Gateway Sent Heartbeat
+23/03/2019 12:11:27 at Gateway Received HeartbeatAck
+23/03/2019 12:11:27 at Gateway Latency = 266 ms
+23/03/2019 12:11:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:11:35 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:11:42 Timer ticked
+23/03/2019 12:11:57 Timer ticked
+23/03/2019 12:12:08 at Gateway Sent Heartbeat
+23/03/2019 12:12:08 at Gateway Received HeartbeatAck
+23/03/2019 12:12:08 at Gateway Latency = 156 ms
+23/03/2019 12:12:12 Timer ticked
+23/03/2019 12:12:27 Timer ticked
+23/03/2019 12:12:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:12:42 Timer ticked
+23/03/2019 12:12:49 at Gateway Sent Heartbeat
+23/03/2019 12:12:49 at Gateway Received HeartbeatAck
+23/03/2019 12:12:49 at Gateway Latency = 78 ms
+23/03/2019 12:12:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:12:57 Timer ticked
+23/03/2019 12:13:12 Timer ticked
+23/03/2019 12:13:25 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:13:27 Timer ticked
+23/03/2019 12:13:30 at Gateway Sent Heartbeat
+23/03/2019 12:13:31 at Gateway Received HeartbeatAck
+23/03/2019 12:13:31 at Gateway Latency = 47 ms
+23/03/2019 12:13:42 Timer ticked
+23/03/2019 12:13:57 Timer ticked
+23/03/2019 12:14:12 Timer ticked
+23/03/2019 12:14:12 at Gateway Sent Heartbeat
+23/03/2019 12:14:12 at Gateway Received HeartbeatAck
+23/03/2019 12:14:12 at Gateway Latency = 265 ms
+23/03/2019 12:14:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:14:27 Timer ticked
+23/03/2019 12:14:42 Timer ticked
+23/03/2019 12:14:53 at Gateway Sent Heartbeat
+23/03/2019 12:14:53 at Gateway Received HeartbeatAck
+23/03/2019 12:14:53 at Gateway Latency = 141 ms
+23/03/2019 12:14:55 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:14:57 Timer ticked
+23/03/2019 12:15:12 Timer ticked
+23/03/2019 12:15:27 Timer ticked
+23/03/2019 12:15:34 at Gateway Sent Heartbeat
+23/03/2019 12:15:34 at Gateway Received HeartbeatAck
+23/03/2019 12:15:34 at Gateway Latency = 140 ms
+23/03/2019 12:15:42 Timer ticked
+23/03/2019 12:15:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:15:57 Timer ticked
+23/03/2019 12:16:12 Timer ticked
+23/03/2019 12:16:15 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:16:16 at Gateway Sent Heartbeat
+23/03/2019 12:16:16 at Gateway Received HeartbeatAck
+23/03/2019 12:16:16 at Gateway Latency = 157 ms
+23/03/2019 12:16:27 Timer ticked
+23/03/2019 12:16:42 Timer ticked
+23/03/2019 12:16:57 Timer ticked
+23/03/2019 12:16:57 at Gateway Sent Heartbeat
+23/03/2019 12:16:57 at Gateway Received HeartbeatAck
+23/03/2019 12:16:57 at Gateway Latency = 141 ms
+23/03/2019 12:17:12 Timer ticked
+23/03/2019 12:17:27 Timer ticked
+23/03/2019 12:17:38 at Gateway Sent Heartbeat
+23/03/2019 12:17:38 at Gateway Received HeartbeatAck
+23/03/2019 12:17:38 at Gateway Latency = 156 ms
+23/03/2019 12:17:42 Timer ticked
+23/03/2019 12:17:57 Timer ticked
+23/03/2019 12:18:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:18:12 Timer ticked
+23/03/2019 12:18:19 at Gateway Sent Heartbeat
+23/03/2019 12:18:21 at Gateway Received HeartbeatAck
+23/03/2019 12:18:21 at Gateway Latency = 1390 ms
+23/03/2019 12:18:27 Timer ticked
+23/03/2019 12:18:42 Timer ticked
+23/03/2019 12:18:57 Timer ticked
+23/03/2019 12:19:01 at Gateway Sent Heartbeat
+23/03/2019 12:19:01 at Gateway Received HeartbeatAck
+23/03/2019 12:19:01 at Gateway Latency = 157 ms
+23/03/2019 12:19:12 Timer ticked
+23/03/2019 12:19:27 Timer ticked
+23/03/2019 12:19:42 Timer ticked
+23/03/2019 12:19:42 at Gateway Sent Heartbeat
+23/03/2019 12:19:42 at Gateway Received HeartbeatAck
+23/03/2019 12:19:42 at Gateway Latency = 94 ms
+23/03/2019 12:19:57 Timer ticked
+23/03/2019 12:20:02 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:20:12 Timer ticked
+23/03/2019 12:20:23 at Gateway Sent Heartbeat
+23/03/2019 12:20:23 at Gateway Received HeartbeatAck
+23/03/2019 12:20:23 at Gateway Latency = 156 ms
+23/03/2019 12:20:27 Timer ticked
+23/03/2019 12:20:42 Timer ticked
+23/03/2019 12:20:57 Timer ticked
+23/03/2019 12:21:04 at Gateway Sent Heartbeat
+23/03/2019 12:21:05 at Gateway Received HeartbeatAck
+23/03/2019 12:21:05 at Gateway Latency = 156 ms
+23/03/2019 12:21:12 Timer ticked
+23/03/2019 12:21:27 Timer ticked
+23/03/2019 12:21:42 Timer ticked
+23/03/2019 12:21:46 at Gateway Sent Heartbeat
+23/03/2019 12:21:46 at Gateway Received HeartbeatAck
+23/03/2019 12:21:46 at Gateway Latency = 157 ms
+23/03/2019 12:21:57 Timer ticked
+23/03/2019 12:22:12 Timer ticked
+23/03/2019 12:22:27 Timer ticked
+23/03/2019 12:22:27 at Gateway Sent Heartbeat
+23/03/2019 12:22:27 at Gateway Received HeartbeatAck
+23/03/2019 12:22:27 at Gateway Latency = 63 ms
+23/03/2019 12:22:42 Timer ticked
+23/03/2019 12:22:47 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:22:57 Timer ticked
+23/03/2019 12:23:08 at Gateway Sent Heartbeat
+23/03/2019 12:23:08 at Gateway Received HeartbeatAck
+23/03/2019 12:23:08 at Gateway Latency = 172 ms
+23/03/2019 12:23:12 Timer ticked
+23/03/2019 12:23:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:23:27 Timer ticked
+23/03/2019 12:23:42 Timer ticked
+23/03/2019 12:23:49 at Gateway Sent Heartbeat
+23/03/2019 12:23:50 at Gateway Received HeartbeatAck
+23/03/2019 12:23:50 at Gateway Latency = 140 ms
+23/03/2019 12:23:57 Timer ticked
+23/03/2019 12:24:12 Timer ticked
+23/03/2019 12:24:27 Timer ticked
+23/03/2019 12:24:31 at Gateway Sent Heartbeat
+23/03/2019 12:24:31 at Gateway Received HeartbeatAck
+23/03/2019 12:24:31 at Gateway Latency = 78 ms
+23/03/2019 12:24:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:24:42 Timer ticked
+23/03/2019 12:24:57 Timer ticked
+23/03/2019 12:25:12 Timer ticked
+23/03/2019 12:25:12 at Gateway Sent Heartbeat
+23/03/2019 12:25:12 at Gateway Received HeartbeatAck
+23/03/2019 12:25:12 at Gateway Latency = 47 ms
+23/03/2019 12:25:27 Timer ticked
+23/03/2019 12:25:42 Timer ticked
+23/03/2019 12:25:53 at Gateway Sent Heartbeat
+23/03/2019 12:25:53 at Gateway Received HeartbeatAck
+23/03/2019 12:25:53 at Gateway Latency = 78 ms
+23/03/2019 12:25:57 Timer ticked
+23/03/2019 12:26:12 Timer ticked
+23/03/2019 12:26:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:26:27 Timer ticked
+23/03/2019 12:26:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:26:35 at Gateway Sent Heartbeat
+23/03/2019 12:26:35 at Gateway Received HeartbeatAck
+23/03/2019 12:26:35 at Gateway Latency = 78 ms
+23/03/2019 12:26:42 Timer ticked
+23/03/2019 12:26:52 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:26:57 Timer ticked
+23/03/2019 12:27:12 Timer ticked
+23/03/2019 12:27:16 at Gateway Sent Heartbeat
+23/03/2019 12:27:16 at Gateway Received HeartbeatAck
+23/03/2019 12:27:16 at Gateway Latency = 47 ms
+23/03/2019 12:27:27 Timer ticked
+23/03/2019 12:27:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:27:42 Timer ticked
+23/03/2019 12:27:45 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:27:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:27:57 Timer ticked
+23/03/2019 12:27:57 at Gateway Sent Heartbeat
+23/03/2019 12:27:57 at Gateway Received HeartbeatAck
+23/03/2019 12:27:57 at Gateway Latency = 141 ms
+23/03/2019 12:28:12 Timer ticked
+23/03/2019 12:28:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:28:27 Timer ticked
+23/03/2019 12:28:30 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:28:36 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:28:38 at Gateway Sent Heartbeat
+23/03/2019 12:28:38 at Gateway Received HeartbeatAck
+23/03/2019 12:28:38 at Gateway Latency = 62 ms
+23/03/2019 12:28:42 Timer ticked
+23/03/2019 12:28:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:28:57 Timer ticked
+23/03/2019 12:29:12 Timer ticked
+23/03/2019 12:29:20 at Gateway Sent Heartbeat
+23/03/2019 12:29:20 at Gateway Received HeartbeatAck
+23/03/2019 12:29:20 at Gateway Latency = 172 ms
+23/03/2019 12:29:27 Timer ticked
+23/03/2019 12:29:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:29:42 Timer ticked
+23/03/2019 12:29:57 Timer ticked
+23/03/2019 12:30:01 at Gateway Sent Heartbeat
+23/03/2019 12:30:01 at Gateway Received HeartbeatAck
+23/03/2019 12:30:01 at Gateway Latency = 125 ms
+23/03/2019 12:30:12 Timer ticked
+23/03/2019 12:30:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:30:27 Timer ticked
+23/03/2019 12:30:42 Timer ticked
+23/03/2019 12:30:42 at Gateway Sent Heartbeat
+23/03/2019 12:30:42 at Gateway Received HeartbeatAck
+23/03/2019 12:30:42 at Gateway Latency = 78 ms
+23/03/2019 12:30:57 Timer ticked
+23/03/2019 12:31:12 Timer ticked
+23/03/2019 12:31:23 at Gateway Sent Heartbeat
+23/03/2019 12:31:23 at Gateway Received HeartbeatAck
+23/03/2019 12:31:24 at Gateway Latency = 62 ms
+23/03/2019 12:31:27 Timer ticked
+23/03/2019 12:31:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:31:42 Timer ticked
+23/03/2019 12:31:57 Timer ticked
+23/03/2019 12:32:05 at Gateway Sent Heartbeat
+23/03/2019 12:32:05 at Gateway Received HeartbeatAck
+23/03/2019 12:32:05 at Gateway Latency = 94 ms
+23/03/2019 12:32:06 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:32:12 Timer ticked
+23/03/2019 12:32:27 Timer ticked
+23/03/2019 12:32:29 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:32:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:32:42 Timer ticked
+23/03/2019 12:32:46 at Gateway Sent Heartbeat
+23/03/2019 12:32:46 at Gateway Received HeartbeatAck
+23/03/2019 12:32:46 at Gateway Latency = 78 ms
+23/03/2019 12:32:57 Timer ticked
+23/03/2019 12:33:12 Timer ticked
+23/03/2019 12:33:27 Timer ticked
+23/03/2019 12:33:27 at Gateway Sent Heartbeat
+23/03/2019 12:33:27 at Gateway Received HeartbeatAck
+23/03/2019 12:33:27 at Gateway Latency = 125 ms
+23/03/2019 12:33:42 Timer ticked
+23/03/2019 12:33:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:33:57 Timer ticked
+23/03/2019 12:34:09 at Gateway Sent Heartbeat
+23/03/2019 12:34:09 at Gateway Received HeartbeatAck
+23/03/2019 12:34:09 at Gateway Latency = 109 ms
+23/03/2019 12:34:12 Timer ticked
+23/03/2019 12:34:12 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:34:27 Timer ticked
+23/03/2019 12:34:42 Timer ticked
+23/03/2019 12:34:50 at Gateway Sent Heartbeat
+23/03/2019 12:34:51 at Gateway Received HeartbeatAck
+23/03/2019 12:34:51 at Gateway Latency = 1047 ms
+23/03/2019 12:34:57 Timer ticked
+23/03/2019 12:35:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:35:12 Timer ticked
+23/03/2019 12:35:27 Timer ticked
+23/03/2019 12:35:31 at Gateway Sent Heartbeat
+23/03/2019 12:35:31 at Gateway Received HeartbeatAck
+23/03/2019 12:35:31 at Gateway Latency = 78 ms
+23/03/2019 12:35:42 Timer ticked
+23/03/2019 12:35:57 Timer ticked
+23/03/2019 12:36:12 Timer ticked
+23/03/2019 12:36:12 at Gateway Sent Heartbeat
+23/03/2019 12:36:12 at Gateway Received HeartbeatAck
+23/03/2019 12:36:12 at Gateway Latency = 141 ms
+23/03/2019 12:36:27 Timer ticked
+23/03/2019 12:36:42 Timer ticked
+23/03/2019 12:36:54 at Gateway Sent Heartbeat
+23/03/2019 12:36:54 at Gateway Received HeartbeatAck
+23/03/2019 12:36:54 at Gateway Latency = 109 ms
+23/03/2019 12:36:57 Timer ticked
+23/03/2019 12:37:12 Timer ticked
+23/03/2019 12:37:27 Timer ticked
+23/03/2019 12:37:35 at Gateway Sent Heartbeat
+23/03/2019 12:37:35 at Gateway Received HeartbeatAck
+23/03/2019 12:37:35 at Gateway Latency = 125 ms
+23/03/2019 12:37:42 Timer ticked
+23/03/2019 12:37:57 Timer ticked
+23/03/2019 12:38:12 Timer ticked
+23/03/2019 12:38:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:38:16 at Gateway Sent Heartbeat
+23/03/2019 12:38:16 at Gateway Received HeartbeatAck
+23/03/2019 12:38:16 at Gateway Latency = 313 ms
+23/03/2019 12:38:27 Timer ticked
+23/03/2019 12:38:42 Timer ticked
+23/03/2019 12:38:47 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:38:49 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:38:57 Timer ticked
+23/03/2019 12:38:57 at Gateway Sent Heartbeat
+23/03/2019 12:38:59 at Gateway Received HeartbeatAck
+23/03/2019 12:38:59 at Gateway Latency = 1437 ms
+23/03/2019 12:39:12 Timer ticked
+23/03/2019 12:39:27 Timer ticked
+23/03/2019 12:39:39 at Gateway Sent Heartbeat
+23/03/2019 12:39:39 at Gateway Received HeartbeatAck
+23/03/2019 12:39:39 at Gateway Latency = 94 ms
+23/03/2019 12:39:42 Timer ticked
+23/03/2019 12:39:57 Timer ticked
+23/03/2019 12:40:12 Timer ticked
+23/03/2019 12:40:20 at Gateway Sent Heartbeat
+23/03/2019 12:40:20 at Gateway Received HeartbeatAck
+23/03/2019 12:40:20 at Gateway Latency = 93 ms
+23/03/2019 12:40:27 Timer ticked
+23/03/2019 12:40:42 Timer ticked
+23/03/2019 12:40:57 Timer ticked
+23/03/2019 12:41:01 at Gateway Sent Heartbeat
+23/03/2019 12:41:01 at Gateway Received HeartbeatAck
+23/03/2019 12:41:01 at Gateway Latency = 78 ms
+23/03/2019 12:41:12 Timer ticked
+23/03/2019 12:41:27 Timer ticked
+23/03/2019 12:41:42 Timer ticked
+23/03/2019 12:41:43 at Gateway Sent Heartbeat
+23/03/2019 12:41:43 at Gateway Received HeartbeatAck
+23/03/2019 12:41:43 at Gateway Latency = 47 ms
+23/03/2019 12:41:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:41:57 Timer ticked
+23/03/2019 12:42:12 Timer ticked
+23/03/2019 12:42:24 at Gateway Sent Heartbeat
+23/03/2019 12:42:24 at Gateway Received HeartbeatAck
+23/03/2019 12:42:24 at Gateway Latency = 63 ms
+23/03/2019 12:42:27 Timer ticked
+23/03/2019 12:42:42 Timer ticked
+23/03/2019 12:42:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:42:57 Timer ticked
+23/03/2019 12:43:05 at Gateway Sent Heartbeat
+23/03/2019 12:43:05 at Gateway Received HeartbeatAck
+23/03/2019 12:43:05 at Gateway Latency = 78 ms
+23/03/2019 12:43:12 Timer ticked
+23/03/2019 12:43:27 Timer ticked
+23/03/2019 12:43:42 Timer ticked
+23/03/2019 12:43:46 at Gateway Sent Heartbeat
+23/03/2019 12:43:46 at Gateway Received HeartbeatAck
+23/03/2019 12:43:46 at Gateway Latency = 63 ms
+23/03/2019 12:43:57 Timer ticked
+23/03/2019 12:44:12 Timer ticked
+23/03/2019 12:44:27 Timer ticked
+23/03/2019 12:44:28 at Gateway Sent Heartbeat
+23/03/2019 12:44:28 at Gateway Received HeartbeatAck
+23/03/2019 12:44:28 at Gateway Latency = 78 ms
+23/03/2019 12:44:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:44:42 Timer ticked
+23/03/2019 12:44:57 Timer ticked
+23/03/2019 12:45:09 at Gateway Sent Heartbeat
+23/03/2019 12:45:09 at Gateway Received HeartbeatAck
+23/03/2019 12:45:09 at Gateway Latency = 203 ms
+23/03/2019 12:45:12 Timer ticked
+23/03/2019 12:45:27 Timer ticked
+23/03/2019 12:45:42 Timer ticked
+23/03/2019 12:45:50 at Gateway Sent Heartbeat
+23/03/2019 12:45:50 at Gateway Received HeartbeatAck
+23/03/2019 12:45:50 at Gateway Latency = 172 ms
+23/03/2019 12:45:57 Timer ticked
+23/03/2019 12:46:12 Timer ticked
+23/03/2019 12:46:27 Timer ticked
+23/03/2019 12:46:31 at Gateway Sent Heartbeat
+23/03/2019 12:46:31 at Gateway Received HeartbeatAck
+23/03/2019 12:46:31 at Gateway Latency = 47 ms
+23/03/2019 12:46:42 Timer ticked
+23/03/2019 12:46:57 Timer ticked
+23/03/2019 12:47:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:47:12 Timer ticked
+23/03/2019 12:47:13 at Gateway Sent Heartbeat
+23/03/2019 12:47:13 at Gateway Received HeartbeatAck
+23/03/2019 12:47:13 at Gateway Latency = 172 ms
+23/03/2019 12:47:27 Timer ticked
+23/03/2019 12:47:42 Timer ticked
+23/03/2019 12:47:54 at Gateway Sent Heartbeat
+23/03/2019 12:47:54 at Gateway Received HeartbeatAck
+23/03/2019 12:47:54 at Gateway Latency = 188 ms
+23/03/2019 12:47:57 Timer ticked
+23/03/2019 12:48:12 Timer ticked
+23/03/2019 12:48:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:48:27 Timer ticked
+23/03/2019 12:48:35 at Gateway Sent Heartbeat
+23/03/2019 12:48:35 at Gateway Received HeartbeatAck
+23/03/2019 12:48:35 at Gateway Latency = 62 ms
+23/03/2019 12:48:42 Timer ticked
+23/03/2019 12:48:57 Timer ticked
+23/03/2019 12:49:12 Timer ticked
+23/03/2019 12:49:16 at Gateway Sent Heartbeat
+23/03/2019 12:49:17 at Gateway Received HeartbeatAck
+23/03/2019 12:49:17 at Gateway Latency = 78 ms
+23/03/2019 12:49:27 Timer ticked
+23/03/2019 12:49:42 Timer ticked
+23/03/2019 12:49:57 Timer ticked
+23/03/2019 12:49:58 at Gateway Sent Heartbeat
+23/03/2019 12:49:58 at Gateway Received HeartbeatAck
+23/03/2019 12:49:58 at Gateway Latency = 188 ms
+23/03/2019 12:50:12 Timer ticked
+23/03/2019 12:50:27 Timer ticked
+23/03/2019 12:50:39 at Gateway Sent Heartbeat
+23/03/2019 12:50:39 at Gateway Received HeartbeatAck
+23/03/2019 12:50:39 at Gateway Latency = 62 ms
+23/03/2019 12:50:42 Timer ticked
+23/03/2019 12:50:57 Timer ticked
+23/03/2019 12:51:12 Timer ticked
+23/03/2019 12:51:20 at Gateway Sent Heartbeat
+23/03/2019 12:51:20 at Gateway Received HeartbeatAck
+23/03/2019 12:51:20 at Gateway Latency = 63 ms
+23/03/2019 12:51:27 Timer ticked
+23/03/2019 12:51:42 Timer ticked
+23/03/2019 12:51:57 Timer ticked
+23/03/2019 12:51:57 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:51:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:52:02 at Gateway Sent Heartbeat
+23/03/2019 12:52:02 at Gateway Received HeartbeatAck
+23/03/2019 12:52:02 at Gateway Latency = 94 ms
+23/03/2019 12:52:12 Timer ticked
+23/03/2019 12:52:27 Timer ticked
+23/03/2019 12:52:42 Timer ticked
+23/03/2019 12:52:43 at Gateway Sent Heartbeat
+23/03/2019 12:52:43 at Gateway Received HeartbeatAck
+23/03/2019 12:52:43 at Gateway Latency = 109 ms
+23/03/2019 12:52:57 Timer ticked
+23/03/2019 12:53:12 Timer ticked
+23/03/2019 12:53:17 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:53:24 at Gateway Sent Heartbeat
+23/03/2019 12:53:24 at Gateway Received HeartbeatAck
+23/03/2019 12:53:24 at Gateway Latency = 63 ms
+23/03/2019 12:53:27 Timer ticked
+23/03/2019 12:53:42 Timer ticked
+23/03/2019 12:53:57 Timer ticked
+23/03/2019 12:54:05 at Gateway Sent Heartbeat
+23/03/2019 12:54:05 at Gateway Received HeartbeatAck
+23/03/2019 12:54:06 at Gateway Latency = 187 ms
+23/03/2019 12:54:12 Timer ticked
+23/03/2019 12:54:27 Timer ticked
+23/03/2019 12:54:42 Timer ticked
+23/03/2019 12:54:47 at Gateway Sent Heartbeat
+23/03/2019 12:54:47 at Gateway Received HeartbeatAck
+23/03/2019 12:54:47 at Gateway Latency = 266 ms
+23/03/2019 12:54:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:54:57 Timer ticked
+23/03/2019 12:55:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:55:12 Timer ticked
+23/03/2019 12:55:27 Timer ticked
+23/03/2019 12:55:28 at Gateway Sent Heartbeat
+23/03/2019 12:55:28 at Gateway Received HeartbeatAck
+23/03/2019 12:55:28 at Gateway Latency = 109 ms
+23/03/2019 12:55:42 Timer ticked
+23/03/2019 12:55:57 Timer ticked
+23/03/2019 12:56:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:56:09 at Gateway Sent Heartbeat
+23/03/2019 12:56:09 at Gateway Received HeartbeatAck
+23/03/2019 12:56:09 at Gateway Latency = 63 ms
+23/03/2019 12:56:12 Timer ticked
+23/03/2019 12:56:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:56:27 Timer ticked
+23/03/2019 12:56:42 Timer ticked
+23/03/2019 12:56:50 at Gateway Sent Heartbeat
+23/03/2019 12:56:50 at Gateway Received HeartbeatAck
+23/03/2019 12:56:50 at Gateway Latency = 110 ms
+23/03/2019 12:56:57 Timer ticked
+23/03/2019 12:57:12 Timer ticked
+23/03/2019 12:57:27 Timer ticked
+23/03/2019 12:57:32 at Gateway Sent Heartbeat
+23/03/2019 12:57:32 at Gateway Received HeartbeatAck
+23/03/2019 12:57:32 at Gateway Latency = 141 ms
+23/03/2019 12:57:42 Timer ticked
+23/03/2019 12:57:57 Timer ticked
+23/03/2019 12:58:12 Timer ticked
+23/03/2019 12:58:13 at Gateway Sent Heartbeat
+23/03/2019 12:58:13 at Gateway Received HeartbeatAck
+23/03/2019 12:58:13 at Gateway Latency = 62 ms
+23/03/2019 12:58:27 Timer ticked
+23/03/2019 12:58:27 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:58:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:58:42 Timer ticked
+23/03/2019 12:58:54 at Gateway Sent Heartbeat
+23/03/2019 12:58:54 at Gateway Received HeartbeatAck
+23/03/2019 12:58:54 at Gateway Latency = 62 ms
+23/03/2019 12:58:57 Timer ticked
+23/03/2019 12:59:12 Timer ticked
+23/03/2019 12:59:27 Timer ticked
+23/03/2019 12:59:35 at Gateway Sent Heartbeat
+23/03/2019 12:59:36 at Gateway Received HeartbeatAck
+23/03/2019 12:59:36 at Gateway Latency = 62 ms
+23/03/2019 12:59:42 Timer ticked
+23/03/2019 12:59:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:59:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 12:59:57 Timer ticked
+23/03/2019 13:00:12 Timer ticked
+23/03/2019 13:00:17 at Gateway Sent Heartbeat
+23/03/2019 13:00:17 at Gateway Received HeartbeatAck
+23/03/2019 13:00:17 at Gateway Latency = 47 ms
+23/03/2019 13:00:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:00:27 Timer ticked
+23/03/2019 13:00:38 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:00:42 Timer ticked
+23/03/2019 13:00:57 Timer ticked
+23/03/2019 13:00:58 at Gateway Sent Heartbeat
+23/03/2019 13:00:58 at Gateway Received HeartbeatAck
+23/03/2019 13:00:58 at Gateway Latency = 78 ms
+23/03/2019 13:01:12 Timer ticked
+23/03/2019 13:01:27 Timer ticked
+23/03/2019 13:01:39 at Gateway Sent Heartbeat
+23/03/2019 13:01:41 at Gateway Received HeartbeatAck
+23/03/2019 13:01:41 at Gateway Latency = 1391 ms
+23/03/2019 13:01:42 Timer ticked
+23/03/2019 13:01:57 Timer ticked
+23/03/2019 13:02:12 Timer ticked
+23/03/2019 13:02:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:02:21 at Gateway Sent Heartbeat
+23/03/2019 13:02:21 at Gateway Received HeartbeatAck
+23/03/2019 13:02:21 at Gateway Latency = 78 ms
+23/03/2019 13:02:27 Timer ticked
+23/03/2019 13:02:42 Timer ticked
+23/03/2019 13:02:57 Timer ticked
+23/03/2019 13:03:02 at Gateway Sent Heartbeat
+23/03/2019 13:03:02 at Gateway Received HeartbeatAck
+23/03/2019 13:03:02 at Gateway Latency = 78 ms
+23/03/2019 13:03:12 Timer ticked
+23/03/2019 13:03:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:03:20 at Gateway Received Dispatch (CHANNEL_CREATE)
+23/03/2019 13:03:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:03:27 Timer ticked
+23/03/2019 13:03:39 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:03:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:03:42 Timer ticked
+23/03/2019 13:03:43 at Gateway Sent Heartbeat
+23/03/2019 13:03:43 at Gateway Received HeartbeatAck
+23/03/2019 13:03:43 at Gateway Latency = 78 ms
+23/03/2019 13:03:57 Timer ticked
+23/03/2019 13:04:12 Timer ticked
+23/03/2019 13:04:24 at Gateway Sent Heartbeat
+23/03/2019 13:04:26 at Gateway Received HeartbeatAck
+23/03/2019 13:04:26 at Gateway Latency = 1516 ms
+23/03/2019 13:04:27 Timer ticked
+23/03/2019 13:04:42 Timer ticked
+23/03/2019 13:04:45 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:04:57 Timer ticked
+23/03/2019 13:05:06 at Gateway Sent Heartbeat
+23/03/2019 13:05:06 at Gateway Received HeartbeatAck
+23/03/2019 13:05:06 at Gateway Latency = 63 ms
+23/03/2019 13:05:12 Timer ticked
+23/03/2019 13:05:27 Timer ticked
+23/03/2019 13:05:42 Timer ticked
+23/03/2019 13:05:47 at Gateway Sent Heartbeat
+23/03/2019 13:05:47 at Gateway Received HeartbeatAck
+23/03/2019 13:05:47 at Gateway Latency = 172 ms
+23/03/2019 13:05:57 Timer ticked
+23/03/2019 13:06:12 Timer ticked
+23/03/2019 13:06:27 Timer ticked
+23/03/2019 13:06:28 at Gateway Sent Heartbeat
+23/03/2019 13:06:28 at Gateway Received HeartbeatAck
+23/03/2019 13:06:28 at Gateway Latency = 219 ms
+23/03/2019 13:06:42 Timer ticked
+23/03/2019 13:06:57 Timer ticked
+23/03/2019 13:07:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:07:09 at Gateway Sent Heartbeat
+23/03/2019 13:07:09 at Gateway Received HeartbeatAck
+23/03/2019 13:07:09 at Gateway Latency = 63 ms
+23/03/2019 13:07:12 Timer ticked
+23/03/2019 13:07:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:07:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:07:27 Timer ticked
+23/03/2019 13:07:33 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:07:42 Timer ticked
+23/03/2019 13:07:51 at Gateway Sent Heartbeat
+23/03/2019 13:07:51 at Gateway Received HeartbeatAck
+23/03/2019 13:07:51 at Gateway Latency = 172 ms
+23/03/2019 13:07:57 Timer ticked
+23/03/2019 13:08:12 Timer ticked
+23/03/2019 13:08:25 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:08:27 Timer ticked
+23/03/2019 13:08:32 at Gateway Sent Heartbeat
+23/03/2019 13:08:32 at Gateway Received HeartbeatAck
+23/03/2019 13:08:32 at Gateway Latency = 172 ms
+23/03/2019 13:08:42 Timer ticked
+23/03/2019 13:08:57 Timer ticked
+23/03/2019 13:09:12 Timer ticked
+23/03/2019 13:09:13 at Gateway Sent Heartbeat
+23/03/2019 13:09:13 at Gateway Received HeartbeatAck
+23/03/2019 13:09:13 at Gateway Latency = 62 ms
+23/03/2019 13:09:27 Timer ticked
+23/03/2019 13:09:42 Timer ticked
+23/03/2019 13:09:54 at Gateway Sent Heartbeat
+23/03/2019 13:09:55 at Gateway Received HeartbeatAck
+23/03/2019 13:09:55 at Gateway Latency = 47 ms
+23/03/2019 13:09:57 Timer ticked
+23/03/2019 13:10:12 Timer ticked
+23/03/2019 13:10:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:10:27 Timer ticked
+23/03/2019 13:10:30 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:10:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:10:36 at Gateway Sent Heartbeat
+23/03/2019 13:10:36 at Gateway Received HeartbeatAck
+23/03/2019 13:10:36 at Gateway Latency = 141 ms
+23/03/2019 13:10:38 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:10:42 Timer ticked
+23/03/2019 13:10:57 Timer ticked
+23/03/2019 13:11:12 Timer ticked
+23/03/2019 13:11:12 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:11:17 at Gateway Sent Heartbeat
+23/03/2019 13:11:17 at Gateway Received HeartbeatAck
+23/03/2019 13:11:17 at Gateway Latency = 62 ms
+23/03/2019 13:11:27 Timer ticked
+23/03/2019 13:11:33 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:11:42 Timer ticked
+23/03/2019 13:11:57 Timer ticked
+23/03/2019 13:11:58 at Gateway Sent Heartbeat
+23/03/2019 13:11:58 at Gateway Received HeartbeatAck
+23/03/2019 13:11:58 at Gateway Latency = 125 ms
+23/03/2019 13:12:12 Timer ticked
+23/03/2019 13:12:27 Timer ticked
+23/03/2019 13:12:40 at Gateway Sent Heartbeat
+23/03/2019 13:12:40 at Gateway Received HeartbeatAck
+23/03/2019 13:12:40 at Gateway Latency = 141 ms
+23/03/2019 13:12:42 Timer ticked
+23/03/2019 13:12:57 Timer ticked
+23/03/2019 13:13:12 Timer ticked
+23/03/2019 13:13:21 at Gateway Sent Heartbeat
+23/03/2019 13:13:22 at Gateway Received HeartbeatAck
+23/03/2019 13:13:22 at Gateway Latency = 1062 ms
+23/03/2019 13:13:27 Timer ticked
+23/03/2019 13:13:42 Timer ticked
+23/03/2019 13:13:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:13:53 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:13:57 Timer ticked
+23/03/2019 13:14:02 at Gateway Sent Heartbeat
+23/03/2019 13:14:02 at Gateway Received HeartbeatAck
+23/03/2019 13:14:02 at Gateway Latency = 125 ms
+23/03/2019 13:14:12 Timer ticked
+23/03/2019 13:14:27 Timer ticked
+23/03/2019 13:14:42 Timer ticked
+23/03/2019 13:14:43 at Gateway Sent Heartbeat
+23/03/2019 13:14:43 at Gateway Received HeartbeatAck
+23/03/2019 13:14:44 at Gateway Latency = 140 ms
+23/03/2019 13:14:57 Timer ticked
+23/03/2019 13:15:08 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:15:12 Timer ticked
+23/03/2019 13:15:25 at Gateway Sent Heartbeat
+23/03/2019 13:15:25 at Gateway Received HeartbeatAck
+23/03/2019 13:15:25 at Gateway Latency = 78 ms
+23/03/2019 13:15:27 Timer ticked
+23/03/2019 13:15:42 Timer ticked
+23/03/2019 13:15:57 Timer ticked
+23/03/2019 13:16:06 at Gateway Sent Heartbeat
+23/03/2019 13:16:06 at Gateway Received HeartbeatAck
+23/03/2019 13:16:06 at Gateway Latency = 125 ms
+23/03/2019 13:16:12 Timer ticked
+23/03/2019 13:16:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:16:27 Timer ticked
+23/03/2019 13:16:42 Timer ticked
+23/03/2019 13:16:47 at Gateway Sent Heartbeat
+23/03/2019 13:16:49 at Gateway Received HeartbeatAck
+23/03/2019 13:16:49 at Gateway Latency = 1766 ms
+23/03/2019 13:16:57 Timer ticked
+23/03/2019 13:17:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:17:12 Timer ticked
+23/03/2019 13:17:27 Timer ticked
+23/03/2019 13:17:28 at Gateway Sent Heartbeat
+23/03/2019 13:17:29 at Gateway Received HeartbeatAck
+23/03/2019 13:17:29 at Gateway Latency = 125 ms
+23/03/2019 13:17:42 Timer ticked
+23/03/2019 13:17:57 Timer ticked
+23/03/2019 13:18:10 at Gateway Sent Heartbeat
+23/03/2019 13:18:11 at Gateway Received HeartbeatAck
+23/03/2019 13:18:11 at Gateway Latency = 1360 ms
+23/03/2019 13:18:12 Timer ticked
+23/03/2019 13:18:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:18:27 Timer ticked
+23/03/2019 13:18:42 Timer ticked
+23/03/2019 13:18:51 at Gateway Sent Heartbeat
+23/03/2019 13:18:51 at Gateway Received HeartbeatAck
+23/03/2019 13:18:51 at Gateway Latency = 47 ms
+23/03/2019 13:18:57 Timer ticked
+23/03/2019 13:19:08 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:19:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:19:12 Timer ticked
+23/03/2019 13:19:27 Timer ticked
+23/03/2019 13:19:32 at Gateway Sent Heartbeat
+23/03/2019 13:19:32 at Gateway Received HeartbeatAck
+23/03/2019 13:19:32 at Gateway Latency = 109 ms
+23/03/2019 13:19:42 Timer ticked
+23/03/2019 13:19:57 Timer ticked
+23/03/2019 13:20:12 Timer ticked
+23/03/2019 13:20:14 at Gateway Sent Heartbeat
+23/03/2019 13:20:14 at Gateway Received HeartbeatAck
+23/03/2019 13:20:14 at Gateway Latency = 218 ms
+23/03/2019 13:20:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:20:27 Timer ticked
+23/03/2019 13:20:42 Timer ticked
+23/03/2019 13:20:55 at Gateway Sent Heartbeat
+23/03/2019 13:20:55 at Gateway Received HeartbeatAck
+23/03/2019 13:20:55 at Gateway Latency = 219 ms
+23/03/2019 13:20:57 Timer ticked
+23/03/2019 13:21:12 Timer ticked
+23/03/2019 13:21:27 Timer ticked
+23/03/2019 13:21:36 at Gateway Sent Heartbeat
+23/03/2019 13:21:36 at Gateway Received HeartbeatAck
+23/03/2019 13:21:36 at Gateway Latency = 62 ms
+23/03/2019 13:21:42 Timer ticked
+23/03/2019 13:21:57 Timer ticked
+23/03/2019 13:22:12 Timer ticked
+23/03/2019 13:22:17 at Gateway Sent Heartbeat
+23/03/2019 13:22:17 at Gateway Received HeartbeatAck
+23/03/2019 13:22:17 at Gateway Latency = 110 ms
+23/03/2019 13:22:27 Timer ticked
+23/03/2019 13:22:38 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:22:42 Timer ticked
+23/03/2019 13:22:57 Timer ticked
+23/03/2019 13:22:59 at Gateway Sent Heartbeat
+23/03/2019 13:22:59 at Gateway Received HeartbeatAck
+23/03/2019 13:22:59 at Gateway Latency = 109 ms
+23/03/2019 13:23:03 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:23:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:23:12 Timer ticked
+23/03/2019 13:23:27 Timer ticked
+23/03/2019 13:23:40 at Gateway Sent Heartbeat
+23/03/2019 13:23:40 at Gateway Received HeartbeatAck
+23/03/2019 13:23:40 at Gateway Latency = 204 ms
+23/03/2019 13:23:42 Timer ticked
+23/03/2019 13:23:57 Timer ticked
+23/03/2019 13:24:12 Timer ticked
+23/03/2019 13:24:21 at Gateway Sent Heartbeat
+23/03/2019 13:24:22 at Gateway Received HeartbeatAck
+23/03/2019 13:24:22 at Gateway Latency = 438 ms
+23/03/2019 13:24:27 Timer ticked
+23/03/2019 13:24:42 Timer ticked
+23/03/2019 13:24:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:24:57 Timer ticked
+23/03/2019 13:25:02 at Gateway Sent Heartbeat
+23/03/2019 13:25:03 at Gateway Received HeartbeatAck
+23/03/2019 13:25:03 at Gateway Latency = 109 ms
+23/03/2019 13:25:12 Timer ticked
+23/03/2019 13:25:27 Timer ticked
+23/03/2019 13:25:42 Timer ticked
+23/03/2019 13:25:44 at Gateway Sent Heartbeat
+23/03/2019 13:25:44 at Gateway Received HeartbeatAck
+23/03/2019 13:25:44 at Gateway Latency = 125 ms
+23/03/2019 13:25:57 Timer ticked
+23/03/2019 13:26:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:26:12 Timer ticked
+23/03/2019 13:26:25 at Gateway Sent Heartbeat
+23/03/2019 13:26:25 at Gateway Received HeartbeatAck
+23/03/2019 13:26:25 at Gateway Latency = 62 ms
+23/03/2019 13:26:27 Timer ticked
+23/03/2019 13:26:42 Timer ticked
+23/03/2019 13:26:57 Timer ticked
+23/03/2019 13:27:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:27:06 at Gateway Sent Heartbeat
+23/03/2019 13:27:06 at Gateway Received HeartbeatAck
+23/03/2019 13:27:06 at Gateway Latency = 109 ms
+23/03/2019 13:27:12 Timer ticked
+23/03/2019 13:27:27 Timer ticked
+23/03/2019 13:27:42 Timer ticked
+23/03/2019 13:27:47 at Gateway Sent Heartbeat
+23/03/2019 13:27:50 at Gateway Received HeartbeatAck
+23/03/2019 13:27:50 at Gateway Latency = 2422 ms
+23/03/2019 13:27:57 Timer ticked
+23/03/2019 13:28:12 Timer ticked
+23/03/2019 13:28:27 Timer ticked
+23/03/2019 13:28:29 at Gateway Sent Heartbeat
+23/03/2019 13:28:29 at Gateway Received HeartbeatAck
+23/03/2019 13:28:29 at Gateway Latency = 110 ms
+23/03/2019 13:28:42 Timer ticked
+23/03/2019 13:28:57 Timer ticked
+23/03/2019 13:29:10 at Gateway Sent Heartbeat
+23/03/2019 13:29:10 at Gateway Received HeartbeatAck
+23/03/2019 13:29:10 at Gateway Latency = 47 ms
+23/03/2019 13:29:12 Timer ticked
+23/03/2019 13:29:27 Timer ticked
+23/03/2019 13:29:42 Timer ticked
+23/03/2019 13:29:51 at Gateway Sent Heartbeat
+23/03/2019 13:29:51 at Gateway Received HeartbeatAck
+23/03/2019 13:29:51 at Gateway Latency = 78 ms
+23/03/2019 13:29:57 Timer ticked
+23/03/2019 13:30:12 Timer ticked
+23/03/2019 13:30:27 Timer ticked
+23/03/2019 13:30:33 at Gateway Sent Heartbeat
+23/03/2019 13:30:33 at Gateway Received HeartbeatAck
+23/03/2019 13:30:33 at Gateway Latency = 187 ms
+23/03/2019 13:30:42 Timer ticked
+23/03/2019 13:30:57 Timer ticked
+23/03/2019 13:31:05 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:31:12 Timer ticked
+23/03/2019 13:31:14 at Gateway Sent Heartbeat
+23/03/2019 13:31:14 at Gateway Received HeartbeatAck
+23/03/2019 13:31:14 at Gateway Latency = 78 ms
+23/03/2019 13:31:27 Timer ticked
+23/03/2019 13:31:42 Timer ticked
+23/03/2019 13:31:55 at Gateway Sent Heartbeat
+23/03/2019 13:31:55 at Gateway Received HeartbeatAck
+23/03/2019 13:31:55 at Gateway Latency = 47 ms
+23/03/2019 13:31:57 Timer ticked
+23/03/2019 13:32:06 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:32:12 Timer ticked
+23/03/2019 13:32:27 Timer ticked
+23/03/2019 13:32:36 at Gateway Sent Heartbeat
+23/03/2019 13:32:36 at Gateway Received HeartbeatAck
+23/03/2019 13:32:36 at Gateway Latency = 94 ms
+23/03/2019 13:32:42 Timer ticked
+23/03/2019 13:32:57 Timer ticked
+23/03/2019 13:33:12 Timer ticked
+23/03/2019 13:33:18 at Gateway Sent Heartbeat
+23/03/2019 13:33:18 at Gateway Received HeartbeatAck
+23/03/2019 13:33:18 at Gateway Latency = 63 ms
+23/03/2019 13:33:27 Timer ticked
+23/03/2019 13:33:42 Timer ticked
+23/03/2019 13:33:57 Timer ticked
+23/03/2019 13:33:59 at Gateway Sent Heartbeat
+23/03/2019 13:33:59 at Gateway Received HeartbeatAck
+23/03/2019 13:33:59 at Gateway Latency = 62 ms
+23/03/2019 13:34:12 Timer ticked
+23/03/2019 13:34:27 Timer ticked
+23/03/2019 13:34:40 at Gateway Sent Heartbeat
+23/03/2019 13:34:40 at Gateway Received HeartbeatAck
+23/03/2019 13:34:40 at Gateway Latency = 94 ms
+23/03/2019 13:34:42 Timer ticked
+23/03/2019 13:34:57 Timer ticked
+23/03/2019 13:35:12 Timer ticked
+23/03/2019 13:35:21 at Gateway Sent Heartbeat
+23/03/2019 13:35:22 at Gateway Received HeartbeatAck
+23/03/2019 13:35:22 at Gateway Latency = 78 ms
+23/03/2019 13:35:27 Timer ticked
+23/03/2019 13:35:40 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:35:42 Timer ticked
+23/03/2019 13:35:52 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:35:57 Timer ticked
+23/03/2019 13:36:03 at Gateway Sent Heartbeat
+23/03/2019 13:36:03 at Gateway Received HeartbeatAck
+23/03/2019 13:36:03 at Gateway Latency = 46 ms
+23/03/2019 13:36:12 Timer ticked
+23/03/2019 13:36:27 Timer ticked
+23/03/2019 13:36:42 Timer ticked
+23/03/2019 13:36:44 at Gateway Sent Heartbeat
+23/03/2019 13:36:44 at Gateway Received HeartbeatAck
+23/03/2019 13:36:44 at Gateway Latency = 63 ms
+23/03/2019 13:36:57 Timer ticked
+23/03/2019 13:37:12 Timer ticked
+23/03/2019 13:37:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:37:21 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 13:37:25 at Gateway Sent Heartbeat
+23/03/2019 13:37:25 at Gateway Received HeartbeatAck
+23/03/2019 13:37:25 at Gateway Latency = 125 ms
+23/03/2019 13:37:27 Timer ticked
+23/03/2019 13:37:30 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 13:37:38 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 13:37:42 Timer ticked
+23/03/2019 13:37:57 Timer ticked
+23/03/2019 13:38:07 at Gateway Sent Heartbeat
+23/03/2019 13:38:07 at Gateway Received HeartbeatAck
+23/03/2019 13:38:07 at Gateway Latency = 188 ms
+23/03/2019 13:38:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:38:12 Timer ticked
+23/03/2019 13:38:27 Timer ticked
+23/03/2019 13:38:42 Timer ticked
+23/03/2019 13:38:48 at Gateway Sent Heartbeat
+23/03/2019 13:38:48 at Gateway Received HeartbeatAck
+23/03/2019 13:38:48 at Gateway Latency = 78 ms
+23/03/2019 13:38:49 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:38:57 Timer ticked
+23/03/2019 13:39:12 Timer ticked
+23/03/2019 13:39:27 Timer ticked
+23/03/2019 13:39:29 at Gateway Sent Heartbeat
+23/03/2019 13:39:29 at Gateway Received HeartbeatAck
+23/03/2019 13:39:29 at Gateway Latency = 203 ms
+23/03/2019 13:39:42 Timer ticked
+23/03/2019 13:39:57 Timer ticked
+23/03/2019 13:40:10 at Gateway Sent Heartbeat
+23/03/2019 13:40:11 at Gateway Received HeartbeatAck
+23/03/2019 13:40:11 at Gateway Latency = 343 ms
+23/03/2019 13:40:12 Timer ticked
+23/03/2019 13:40:27 Timer ticked
+23/03/2019 13:40:42 Timer ticked
+23/03/2019 13:40:52 at Gateway Sent Heartbeat
+23/03/2019 13:40:52 at Gateway Received HeartbeatAck
+23/03/2019 13:40:52 at Gateway Latency = 63 ms
+23/03/2019 13:40:57 Timer ticked
+23/03/2019 13:41:12 Timer ticked
+23/03/2019 13:41:27 Timer ticked
+23/03/2019 13:41:33 at Gateway Sent Heartbeat
+23/03/2019 13:41:33 at Gateway Received HeartbeatAck
+23/03/2019 13:41:33 at Gateway Latency = 156 ms
+23/03/2019 13:41:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:41:42 Timer ticked
+23/03/2019 13:41:57 Timer ticked
+23/03/2019 13:42:12 Timer ticked
+23/03/2019 13:42:14 at Gateway Sent Heartbeat
+23/03/2019 13:42:14 at Gateway Received HeartbeatAck
+23/03/2019 13:42:14 at Gateway Latency = 172 ms
+23/03/2019 13:42:27 Timer ticked
+23/03/2019 13:42:42 Timer ticked
+23/03/2019 13:42:55 at Gateway Sent Heartbeat
+23/03/2019 13:42:56 at Gateway Received HeartbeatAck
+23/03/2019 13:42:56 at Gateway Latency = 156 ms
+23/03/2019 13:42:57 Timer ticked
+23/03/2019 13:43:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:43:12 Timer ticked
+23/03/2019 13:43:27 Timer ticked
+23/03/2019 13:43:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:43:37 at Gateway Sent Heartbeat
+23/03/2019 13:43:37 at Gateway Received HeartbeatAck
+23/03/2019 13:43:37 at Gateway Latency = 250 ms
+23/03/2019 13:43:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:43:42 Timer ticked
+23/03/2019 13:43:57 Timer ticked
+23/03/2019 13:44:12 Timer ticked
+23/03/2019 13:44:18 at Gateway Sent Heartbeat
+23/03/2019 13:44:18 at Gateway Received HeartbeatAck
+23/03/2019 13:44:18 at Gateway Latency = 78 ms
+23/03/2019 13:44:27 Timer ticked
+23/03/2019 13:44:42 Timer ticked
+23/03/2019 13:44:57 Timer ticked
+23/03/2019 13:44:59 at Gateway Sent Heartbeat
+23/03/2019 13:44:59 at Gateway Received HeartbeatAck
+23/03/2019 13:44:59 at Gateway Latency = 141 ms
+23/03/2019 13:45:12 Timer ticked
+23/03/2019 13:45:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:45:27 Timer ticked
+23/03/2019 13:45:40 at Gateway Sent Heartbeat
+23/03/2019 13:45:41 at Gateway Received HeartbeatAck
+23/03/2019 13:45:41 at Gateway Latency = 359 ms
+23/03/2019 13:45:42 Timer ticked
+23/03/2019 13:45:42 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:45:52 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:45:57 Timer ticked
+23/03/2019 13:46:12 Timer ticked
+23/03/2019 13:46:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:46:19 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:46:22 at Gateway Sent Heartbeat
+23/03/2019 13:46:22 at Gateway Received HeartbeatAck
+23/03/2019 13:46:22 at Gateway Latency = 62 ms
+23/03/2019 13:46:27 Timer ticked
+23/03/2019 13:46:42 Timer ticked
+23/03/2019 13:46:57 Timer ticked
+23/03/2019 13:47:03 at Gateway Sent Heartbeat
+23/03/2019 13:47:03 at Gateway Received HeartbeatAck
+23/03/2019 13:47:03 at Gateway Latency = 156 ms
+23/03/2019 13:47:12 Timer ticked
+23/03/2019 13:47:15 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:47:27 Timer ticked
+23/03/2019 13:47:42 Timer ticked
+23/03/2019 13:47:44 at Gateway Sent Heartbeat
+23/03/2019 13:47:45 at Gateway Received HeartbeatAck
+23/03/2019 13:47:45 at Gateway Latency = 360 ms
+23/03/2019 13:47:57 Timer ticked
+23/03/2019 13:48:10 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:48:12 Timer ticked
+23/03/2019 13:48:26 at Gateway Sent Heartbeat
+23/03/2019 13:48:26 at Gateway Received HeartbeatAck
+23/03/2019 13:48:26 at Gateway Latency = 141 ms
+23/03/2019 13:48:27 Timer ticked
+23/03/2019 13:48:40 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:48:42 Timer ticked
+23/03/2019 13:48:57 Timer ticked
+23/03/2019 13:49:07 at Gateway Sent Heartbeat
+23/03/2019 13:49:07 at Gateway Received HeartbeatAck
+23/03/2019 13:49:07 at Gateway Latency = 156 ms
+23/03/2019 13:49:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:49:12 Timer ticked
+23/03/2019 13:49:25 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:49:27 Timer ticked
+23/03/2019 13:49:42 Timer ticked
+23/03/2019 13:49:48 at Gateway Sent Heartbeat
+23/03/2019 13:49:48 at Gateway Received HeartbeatAck
+23/03/2019 13:49:48 at Gateway Latency = 63 ms
+23/03/2019 13:49:57 Timer ticked
+23/03/2019 13:50:12 Timer ticked
+23/03/2019 13:50:27 Timer ticked
+23/03/2019 13:50:29 at Gateway Sent Heartbeat
+23/03/2019 13:50:31 at Gateway Received HeartbeatAck
+23/03/2019 13:50:31 at Gateway Latency = 1672 ms
+23/03/2019 13:50:42 Timer ticked
+23/03/2019 13:50:57 Timer ticked
+23/03/2019 13:50:57 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:51:02 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:51:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:51:11 at Gateway Sent Heartbeat
+23/03/2019 13:51:11 at Gateway Received HeartbeatAck
+23/03/2019 13:51:11 at Gateway Latency = 141 ms
+23/03/2019 13:51:12 Timer ticked
+23/03/2019 13:51:27 Timer ticked
+23/03/2019 13:51:42 Timer ticked
+23/03/2019 13:51:52 at Gateway Sent Heartbeat
+23/03/2019 13:51:52 at Gateway Received HeartbeatAck
+23/03/2019 13:51:52 at Gateway Latency = 63 ms
+23/03/2019 13:51:57 Timer ticked
+23/03/2019 13:52:12 Timer ticked
+23/03/2019 13:52:25 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:52:27 Timer ticked
+23/03/2019 13:52:33 at Gateway Sent Heartbeat
+23/03/2019 13:52:33 at Gateway Received HeartbeatAck
+23/03/2019 13:52:33 at Gateway Latency = 156 ms
+23/03/2019 13:52:42 Timer ticked
+23/03/2019 13:52:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:52:57 Timer ticked
+23/03/2019 13:53:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:53:12 Timer ticked
+23/03/2019 13:53:14 at Gateway Sent Heartbeat
+23/03/2019 13:53:15 at Gateway Received HeartbeatAck
+23/03/2019 13:53:15 at Gateway Latency = 141 ms
+23/03/2019 13:53:27 Timer ticked
+23/03/2019 13:53:42 Timer ticked
+23/03/2019 13:53:56 at Gateway Sent Heartbeat
+23/03/2019 13:53:56 at Gateway Received HeartbeatAck
+23/03/2019 13:53:56 at Gateway Latency = 156 ms
+23/03/2019 13:53:57 Timer ticked
+23/03/2019 13:54:12 Timer ticked
+23/03/2019 13:54:12 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:54:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:54:27 Timer ticked
+23/03/2019 13:54:37 at Gateway Sent Heartbeat
+23/03/2019 13:54:37 at Gateway Received HeartbeatAck
+23/03/2019 13:54:37 at Gateway Latency = 188 ms
+23/03/2019 13:54:42 Timer ticked
+23/03/2019 13:54:57 Timer ticked
+23/03/2019 13:55:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:55:12 Timer ticked
+23/03/2019 13:55:18 at Gateway Sent Heartbeat
+23/03/2019 13:55:18 at Gateway Received HeartbeatAck
+23/03/2019 13:55:18 at Gateway Latency = 141 ms
+23/03/2019 13:55:27 Timer ticked
+23/03/2019 13:55:42 Timer ticked
+23/03/2019 13:55:57 Timer ticked
+23/03/2019 13:56:00 at Gateway Sent Heartbeat
+23/03/2019 13:56:00 at Gateway Received HeartbeatAck
+23/03/2019 13:56:00 at Gateway Latency = 125 ms
+23/03/2019 13:56:12 Timer ticked
+23/03/2019 13:56:12 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:56:27 Timer ticked
+23/03/2019 13:56:41 at Gateway Sent Heartbeat
+23/03/2019 13:56:41 at Gateway Received HeartbeatAck
+23/03/2019 13:56:41 at Gateway Latency = 47 ms
+23/03/2019 13:56:42 Timer ticked
+23/03/2019 13:56:57 Timer ticked
+23/03/2019 13:57:12 Timer ticked
+23/03/2019 13:57:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:57:22 at Gateway Sent Heartbeat
+23/03/2019 13:57:22 at Gateway Received HeartbeatAck
+23/03/2019 13:57:22 at Gateway Latency = 47 ms
+23/03/2019 13:57:27 Timer ticked
+23/03/2019 13:57:42 Timer ticked
+23/03/2019 13:57:57 Timer ticked
+23/03/2019 13:58:03 at Gateway Sent Heartbeat
+23/03/2019 13:58:03 at Gateway Received HeartbeatAck
+23/03/2019 13:58:03 at Gateway Latency = 125 ms
+23/03/2019 13:58:12 Timer ticked
+23/03/2019 13:58:23 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 13:58:27 Timer ticked
+23/03/2019 13:58:42 Timer ticked
+23/03/2019 13:58:45 at Gateway Sent Heartbeat
+23/03/2019 13:58:45 at Gateway Received HeartbeatAck
+23/03/2019 13:58:45 at Gateway Latency = 141 ms
+23/03/2019 13:58:57 Timer ticked
+23/03/2019 13:59:12 Timer ticked
+23/03/2019 13:59:26 at Gateway Sent Heartbeat
+23/03/2019 13:59:26 at Gateway Received HeartbeatAck
+23/03/2019 13:59:26 at Gateway Latency = 78 ms
+23/03/2019 13:59:27 Timer ticked
+23/03/2019 13:59:42 Timer ticked
+23/03/2019 13:59:57 Timer ticked
+23/03/2019 14:00:07 at Gateway Sent Heartbeat
+23/03/2019 14:00:07 at Gateway Received HeartbeatAck
+23/03/2019 14:00:07 at Gateway Latency = 47 ms
+23/03/2019 14:00:12 Timer ticked
+23/03/2019 14:00:17 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:00:27 Timer ticked
+23/03/2019 14:00:42 Timer ticked
+23/03/2019 14:00:48 at Gateway Sent Heartbeat
+23/03/2019 14:00:48 at Gateway Received HeartbeatAck
+23/03/2019 14:00:48 at Gateway Latency = 63 ms
+23/03/2019 14:00:57 Timer ticked
+23/03/2019 14:01:08 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:01:12 Timer ticked
+23/03/2019 14:01:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:01:19 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:01:27 Timer ticked
+23/03/2019 14:01:30 at Gateway Sent Heartbeat
+23/03/2019 14:01:30 at Gateway Received HeartbeatAck
+23/03/2019 14:01:30 at Gateway Latency = 141 ms
+23/03/2019 14:01:42 Timer ticked
+23/03/2019 14:01:53 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:01:57 Timer ticked
+23/03/2019 14:02:10 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:02:11 at Gateway Sent Heartbeat
+23/03/2019 14:02:11 at Gateway Received HeartbeatAck
+23/03/2019 14:02:11 at Gateway Latency = 125 ms
+23/03/2019 14:02:12 Timer ticked
+23/03/2019 14:02:19 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:02:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:02:27 Timer ticked
+23/03/2019 14:02:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:02:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:02:42 Timer ticked
+23/03/2019 14:02:52 at Gateway Sent Heartbeat
+23/03/2019 14:02:52 at Gateway Received HeartbeatAck
+23/03/2019 14:02:52 at Gateway Latency = 141 ms
+23/03/2019 14:02:57 Timer ticked
+23/03/2019 14:03:12 Timer ticked
+23/03/2019 14:03:27 Timer ticked
+23/03/2019 14:03:33 at Gateway Sent Heartbeat
+23/03/2019 14:03:34 at Gateway Received HeartbeatAck
+23/03/2019 14:03:34 at Gateway Latency = 172 ms
+23/03/2019 14:03:42 Timer ticked
+23/03/2019 14:03:57 Timer ticked
+23/03/2019 14:04:12 Timer ticked
+23/03/2019 14:04:15 at Gateway Sent Heartbeat
+23/03/2019 14:04:15 at Gateway Received HeartbeatAck
+23/03/2019 14:04:15 at Gateway Latency = 125 ms
+23/03/2019 14:04:27 Timer ticked
+23/03/2019 14:04:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:04:42 Timer ticked
+23/03/2019 14:04:56 at Gateway Sent Heartbeat
+23/03/2019 14:04:56 at Gateway Received HeartbeatAck
+23/03/2019 14:04:56 at Gateway Latency = 62 ms
+23/03/2019 14:04:57 Timer ticked
+23/03/2019 14:05:12 Timer ticked
+23/03/2019 14:05:27 Timer ticked
+23/03/2019 14:05:37 at Gateway Sent Heartbeat
+23/03/2019 14:05:37 at Gateway Received HeartbeatAck
+23/03/2019 14:05:37 at Gateway Latency = 125 ms
+23/03/2019 14:05:42 Timer ticked
+23/03/2019 14:05:57 Timer ticked
+23/03/2019 14:06:12 Timer ticked
+23/03/2019 14:06:15 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:06:19 at Gateway Sent Heartbeat
+23/03/2019 14:06:19 at Gateway Received HeartbeatAck
+23/03/2019 14:06:19 at Gateway Latency = 109 ms
+23/03/2019 14:06:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:06:27 Timer ticked
+23/03/2019 14:06:42 Timer ticked
+23/03/2019 14:06:57 Timer ticked
+23/03/2019 14:07:00 at Gateway Sent Heartbeat
+23/03/2019 14:07:00 at Gateway Received HeartbeatAck
+23/03/2019 14:07:00 at Gateway Latency = 47 ms
+23/03/2019 14:07:12 Timer ticked
+23/03/2019 14:07:27 Timer ticked
+23/03/2019 14:07:41 at Gateway Sent Heartbeat
+23/03/2019 14:07:41 at Gateway Received HeartbeatAck
+23/03/2019 14:07:41 at Gateway Latency = 109 ms
+23/03/2019 14:07:42 Timer ticked
+23/03/2019 14:07:57 Timer ticked
+23/03/2019 14:08:12 Timer ticked
+23/03/2019 14:08:22 at Gateway Sent Heartbeat
+23/03/2019 14:08:22 at Gateway Received HeartbeatAck
+23/03/2019 14:08:22 at Gateway Latency = 46 ms
+23/03/2019 14:08:27 Timer ticked
+23/03/2019 14:08:42 Timer ticked
+23/03/2019 14:08:57 Timer ticked
+23/03/2019 14:09:04 at Gateway Sent Heartbeat
+23/03/2019 14:09:04 at Gateway Received HeartbeatAck
+23/03/2019 14:09:04 at Gateway Latency = 94 ms
+23/03/2019 14:09:12 Timer ticked
+23/03/2019 14:09:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:09:27 Timer ticked
+23/03/2019 14:09:42 Timer ticked
+23/03/2019 14:09:45 at Gateway Sent Heartbeat
+23/03/2019 14:09:45 at Gateway Received HeartbeatAck
+23/03/2019 14:09:45 at Gateway Latency = 94 ms
+23/03/2019 14:09:52 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:09:57 Timer ticked
+23/03/2019 14:09:57 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:10:12 Timer ticked
+23/03/2019 14:10:26 at Gateway Sent Heartbeat
+23/03/2019 14:10:26 at Gateway Received HeartbeatAck
+23/03/2019 14:10:26 at Gateway Latency = 93 ms
+23/03/2019 14:10:27 Timer ticked
+23/03/2019 14:10:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:10:42 Timer ticked
+23/03/2019 14:10:57 Timer ticked
+23/03/2019 14:11:07 at Gateway Sent Heartbeat
+23/03/2019 14:11:08 at Gateway Received HeartbeatAck
+23/03/2019 14:11:08 at Gateway Latency = 141 ms
+23/03/2019 14:11:12 Timer ticked
+23/03/2019 14:11:27 Timer ticked
+23/03/2019 14:11:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:11:42 Timer ticked
+23/03/2019 14:11:49 at Gateway Sent Heartbeat
+23/03/2019 14:11:49 at Gateway Received HeartbeatAck
+23/03/2019 14:11:49 at Gateway Latency = 171 ms
+23/03/2019 14:11:57 Timer ticked
+23/03/2019 14:12:12 Timer ticked
+23/03/2019 14:12:27 Timer ticked
+23/03/2019 14:12:30 at Gateway Sent Heartbeat
+23/03/2019 14:12:30 at Gateway Received HeartbeatAck
+23/03/2019 14:12:30 at Gateway Latency = 63 ms
+23/03/2019 14:12:42 Timer ticked
+23/03/2019 14:12:57 Timer ticked
+23/03/2019 14:13:11 at Gateway Sent Heartbeat
+23/03/2019 14:13:11 at Gateway Received HeartbeatAck
+23/03/2019 14:13:11 at Gateway Latency = 78 ms
+23/03/2019 14:13:12 Timer ticked
+23/03/2019 14:13:27 Timer ticked
+23/03/2019 14:13:42 Timer ticked
+23/03/2019 14:13:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:13:53 at Gateway Sent Heartbeat
+23/03/2019 14:13:53 at Gateway Received HeartbeatAck
+23/03/2019 14:13:53 at Gateway Latency = 188 ms
+23/03/2019 14:13:57 Timer ticked
+23/03/2019 14:14:12 Timer ticked
+23/03/2019 14:14:27 Timer ticked
+23/03/2019 14:14:29 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:14:34 at Gateway Sent Heartbeat
+23/03/2019 14:14:34 at Gateway Received HeartbeatAck
+23/03/2019 14:14:34 at Gateway Latency = 78 ms
+23/03/2019 14:14:42 Timer ticked
+23/03/2019 14:14:57 Timer ticked
+23/03/2019 14:15:12 Timer ticked
+23/03/2019 14:15:15 at Gateway Sent Heartbeat
+23/03/2019 14:15:15 at Gateway Received HeartbeatAck
+23/03/2019 14:15:15 at Gateway Latency = 63 ms
+23/03/2019 14:15:27 Timer ticked
+23/03/2019 14:15:42 Timer ticked
+23/03/2019 14:15:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:15:56 at Gateway Sent Heartbeat
+23/03/2019 14:15:56 at Gateway Received HeartbeatAck
+23/03/2019 14:15:56 at Gateway Latency = 62 ms
+23/03/2019 14:15:57 Timer ticked
+23/03/2019 14:16:12 Timer ticked
+23/03/2019 14:16:27 Timer ticked
+23/03/2019 14:16:29 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:16:38 at Gateway Sent Heartbeat
+23/03/2019 14:16:38 at Gateway Received HeartbeatAck
+23/03/2019 14:16:38 at Gateway Latency = 62 ms
+23/03/2019 14:16:42 Timer ticked
+23/03/2019 14:16:57 Timer ticked
+23/03/2019 14:17:12 Timer ticked
+23/03/2019 14:17:19 at Gateway Sent Heartbeat
+23/03/2019 14:17:19 at Gateway Received HeartbeatAck
+23/03/2019 14:17:19 at Gateway Latency = 188 ms
+23/03/2019 14:17:27 Timer ticked
+23/03/2019 14:17:42 Timer ticked
+23/03/2019 14:17:57 Timer ticked
+23/03/2019 14:18:00 at Gateway Sent Heartbeat
+23/03/2019 14:18:01 at Gateway Received HeartbeatAck
+23/03/2019 14:18:02 at Gateway Latency = 1375 ms
+23/03/2019 14:18:12 Timer ticked
+23/03/2019 14:18:27 Timer ticked
+23/03/2019 14:18:41 at Gateway Sent Heartbeat
+23/03/2019 14:18:42 at Gateway Received HeartbeatAck
+23/03/2019 14:18:42 at Gateway Latency = 156 ms
+23/03/2019 14:18:42 Timer ticked
+23/03/2019 14:18:57 Timer ticked
+23/03/2019 14:19:12 Timer ticked
+23/03/2019 14:19:23 at Gateway Sent Heartbeat
+23/03/2019 14:19:23 at Gateway Received HeartbeatAck
+23/03/2019 14:19:23 at Gateway Latency = 62 ms
+23/03/2019 14:19:27 Timer ticked
+23/03/2019 14:19:42 Timer ticked
+23/03/2019 14:19:57 Timer ticked
+23/03/2019 14:20:04 at Gateway Sent Heartbeat
+23/03/2019 14:20:05 at Gateway Received HeartbeatAck
+23/03/2019 14:20:05 at Gateway Latency = 1375 ms
+23/03/2019 14:20:12 Timer ticked
+23/03/2019 14:20:27 Timer ticked
+23/03/2019 14:20:29 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:20:42 Timer ticked
+23/03/2019 14:20:45 at Gateway Sent Heartbeat
+23/03/2019 14:20:45 at Gateway Received HeartbeatAck
+23/03/2019 14:20:45 at Gateway Latency = 46 ms
+23/03/2019 14:20:57 Timer ticked
+23/03/2019 14:21:12 Timer ticked
+23/03/2019 14:21:26 at Gateway Sent Heartbeat
+23/03/2019 14:21:27 at Gateway Received HeartbeatAck
+23/03/2019 14:21:27 at Gateway Latency = 47 ms
+23/03/2019 14:21:27 Timer ticked
+23/03/2019 14:21:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:21:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:21:42 Timer ticked
+23/03/2019 14:21:57 Timer ticked
+23/03/2019 14:22:08 at Gateway Sent Heartbeat
+23/03/2019 14:22:08 at Gateway Received HeartbeatAck
+23/03/2019 14:22:08 at Gateway Latency = 141 ms
+23/03/2019 14:22:12 Timer ticked
+23/03/2019 14:22:27 Timer ticked
+23/03/2019 14:22:42 Timer ticked
+23/03/2019 14:22:49 at Gateway Sent Heartbeat
+23/03/2019 14:22:49 at Gateway Received HeartbeatAck
+23/03/2019 14:22:49 at Gateway Latency = 141 ms
+23/03/2019 14:22:57 Timer ticked
+23/03/2019 14:23:12 Timer ticked
+23/03/2019 14:23:27 Timer ticked
+23/03/2019 14:23:30 at Gateway Sent Heartbeat
+23/03/2019 14:23:30 at Gateway Received HeartbeatAck
+23/03/2019 14:23:30 at Gateway Latency = 47 ms
+23/03/2019 14:23:42 Timer ticked
+23/03/2019 14:23:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:23:57 Timer ticked
+23/03/2019 14:24:12 at Gateway Sent Heartbeat
+23/03/2019 14:24:12 Timer ticked
+23/03/2019 14:24:12 at Gateway Received HeartbeatAck
+23/03/2019 14:24:12 at Gateway Latency = 125 ms
+23/03/2019 14:24:27 Timer ticked
+23/03/2019 14:24:42 Timer ticked
+23/03/2019 14:24:53 at Gateway Sent Heartbeat
+23/03/2019 14:24:53 at Gateway Received HeartbeatAck
+23/03/2019 14:24:53 at Gateway Latency = 125 ms
+23/03/2019 14:24:57 Timer ticked
+23/03/2019 14:25:12 Timer ticked
+23/03/2019 14:25:27 Timer ticked
+23/03/2019 14:25:34 at Gateway Sent Heartbeat
+23/03/2019 14:25:34 at Gateway Received HeartbeatAck
+23/03/2019 14:25:34 at Gateway Latency = 109 ms
+23/03/2019 14:25:42 Timer ticked
+23/03/2019 14:25:57 Timer ticked
+23/03/2019 14:26:12 Timer ticked
+23/03/2019 14:26:15 at Gateway Sent Heartbeat
+23/03/2019 14:26:15 at Gateway Received HeartbeatAck
+23/03/2019 14:26:15 at Gateway Latency = 63 ms
+23/03/2019 14:26:27 Timer ticked
+23/03/2019 14:26:42 Timer ticked
+23/03/2019 14:26:57 Timer ticked
+23/03/2019 14:26:57 at Gateway Sent Heartbeat
+23/03/2019 14:26:57 at Gateway Received HeartbeatAck
+23/03/2019 14:26:57 at Gateway Latency = 47 ms
+23/03/2019 14:27:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:27:12 Timer ticked
+23/03/2019 14:27:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:27:27 Timer ticked
+23/03/2019 14:27:29 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:27:38 at Gateway Sent Heartbeat
+23/03/2019 14:27:38 at Gateway Received HeartbeatAck
+23/03/2019 14:27:38 at Gateway Latency = 94 ms
+23/03/2019 14:27:42 Timer ticked
+23/03/2019 14:27:57 Timer ticked
+23/03/2019 14:28:08 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:28:12 Timer ticked
+23/03/2019 14:28:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:28:19 at Gateway Sent Heartbeat
+23/03/2019 14:28:19 at Gateway Received HeartbeatAck
+23/03/2019 14:28:19 at Gateway Latency = 125 ms
+23/03/2019 14:28:27 Timer ticked
+23/03/2019 14:28:42 Timer ticked
+23/03/2019 14:28:57 Timer ticked
+23/03/2019 14:29:00 at Gateway Sent Heartbeat
+23/03/2019 14:29:01 at Gateway Received HeartbeatAck
+23/03/2019 14:29:01 at Gateway Latency = 125 ms
+23/03/2019 14:29:12 Timer ticked
+23/03/2019 14:29:23 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:29:27 Timer ticked
+23/03/2019 14:29:38 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:29:42 Timer ticked
+23/03/2019 14:29:42 at Gateway Sent Heartbeat
+23/03/2019 14:29:43 at Gateway Received HeartbeatAck
+23/03/2019 14:29:43 at Gateway Latency = 1437 ms
+23/03/2019 14:29:57 Timer ticked
+23/03/2019 14:30:12 Timer ticked
+23/03/2019 14:30:23 at Gateway Sent Heartbeat
+23/03/2019 14:30:23 at Gateway Received HeartbeatAck
+23/03/2019 14:30:23 at Gateway Latency = 63 ms
+23/03/2019 14:30:27 Timer ticked
+23/03/2019 14:30:42 Timer ticked
+23/03/2019 14:30:57 Timer ticked
+23/03/2019 14:31:04 at Gateway Sent Heartbeat
+23/03/2019 14:31:05 at Gateway Received HeartbeatAck
+23/03/2019 14:31:05 at Gateway Latency = 1078 ms
+23/03/2019 14:31:12 Timer ticked
+23/03/2019 14:31:27 Timer ticked
+23/03/2019 14:31:42 Timer ticked
+23/03/2019 14:31:46 at Gateway Sent Heartbeat
+23/03/2019 14:31:46 at Gateway Received HeartbeatAck
+23/03/2019 14:31:46 at Gateway Latency = 47 ms
+23/03/2019 14:31:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:31:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:31:57 Timer ticked
+23/03/2019 14:32:12 Timer ticked
+23/03/2019 14:32:27 Timer ticked
+23/03/2019 14:32:27 at Gateway Sent Heartbeat
+23/03/2019 14:32:27 at Gateway Received HeartbeatAck
+23/03/2019 14:32:27 at Gateway Latency = 78 ms
+23/03/2019 14:32:42 Timer ticked
+23/03/2019 14:32:50 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:32:57 Timer ticked
+23/03/2019 14:33:08 at Gateway Sent Heartbeat
+23/03/2019 14:33:08 at Gateway Received HeartbeatAck
+23/03/2019 14:33:08 at Gateway Latency = 63 ms
+23/03/2019 14:33:12 Timer ticked
+23/03/2019 14:33:27 Timer ticked
+23/03/2019 14:33:42 Timer ticked
+23/03/2019 14:33:49 at Gateway Sent Heartbeat
+23/03/2019 14:33:49 at Gateway Received HeartbeatAck
+23/03/2019 14:33:49 at Gateway Latency = 109 ms
+23/03/2019 14:33:57 Timer ticked
+23/03/2019 14:34:12 Timer ticked
+23/03/2019 14:34:27 Timer ticked
+23/03/2019 14:34:27 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:34:31 at Gateway Sent Heartbeat
+23/03/2019 14:34:31 at Gateway Received HeartbeatAck
+23/03/2019 14:34:31 at Gateway Latency = 94 ms
+23/03/2019 14:34:42 Timer ticked
+23/03/2019 14:34:57 Timer ticked
+23/03/2019 14:35:12 Timer ticked
+23/03/2019 14:35:12 at Gateway Sent Heartbeat
+23/03/2019 14:35:12 at Gateway Received HeartbeatAck
+23/03/2019 14:35:12 at Gateway Latency = 94 ms
+23/03/2019 14:35:27 Timer ticked
+23/03/2019 14:35:42 Timer ticked
+23/03/2019 14:35:53 at Gateway Sent Heartbeat
+23/03/2019 14:35:53 at Gateway Received HeartbeatAck
+23/03/2019 14:35:53 at Gateway Latency = 328 ms
+23/03/2019 14:35:57 Timer ticked
+23/03/2019 14:36:12 Timer ticked
+23/03/2019 14:36:27 Timer ticked
+23/03/2019 14:36:34 at Gateway Sent Heartbeat
+23/03/2019 14:36:34 at Gateway Received HeartbeatAck
+23/03/2019 14:36:35 at Gateway Latency = 109 ms
+23/03/2019 14:36:42 Timer ticked
+23/03/2019 14:36:57 Timer ticked
+23/03/2019 14:37:12 Timer ticked
+23/03/2019 14:37:16 at Gateway Sent Heartbeat
+23/03/2019 14:37:16 at Gateway Received HeartbeatAck
+23/03/2019 14:37:16 at Gateway Latency = 109 ms
+23/03/2019 14:37:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:37:27 Timer ticked
+23/03/2019 14:37:42 Timer ticked
+23/03/2019 14:37:57 Timer ticked
+23/03/2019 14:37:57 at Gateway Sent Heartbeat
+23/03/2019 14:37:57 at Gateway Received HeartbeatAck
+23/03/2019 14:37:57 at Gateway Latency = 47 ms
+23/03/2019 14:38:12 Timer ticked
+23/03/2019 14:38:27 Timer ticked
+23/03/2019 14:38:38 at Gateway Sent Heartbeat
+23/03/2019 14:38:38 at Gateway Received HeartbeatAck
+23/03/2019 14:38:38 at Gateway Latency = 125 ms
+23/03/2019 14:38:42 Timer ticked
+23/03/2019 14:38:57 Timer ticked
+23/03/2019 14:39:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:39:12 Timer ticked
+23/03/2019 14:39:19 at Gateway Sent Heartbeat
+23/03/2019 14:39:20 at Gateway Received HeartbeatAck
+23/03/2019 14:39:20 at Gateway Latency = 46 ms
+23/03/2019 14:39:23 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:39:27 Timer ticked
+23/03/2019 14:39:42 Timer ticked
+23/03/2019 14:39:57 Timer ticked
+23/03/2019 14:39:57 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:40:01 at Gateway Sent Heartbeat
+23/03/2019 14:40:01 at Gateway Received HeartbeatAck
+23/03/2019 14:40:01 at Gateway Latency = 109 ms
+23/03/2019 14:40:12 Timer ticked
+23/03/2019 14:40:27 Timer ticked
+23/03/2019 14:40:42 Timer ticked
+23/03/2019 14:40:42 at Gateway Sent Heartbeat
+23/03/2019 14:40:42 at Gateway Received HeartbeatAck
+23/03/2019 14:40:42 at Gateway Latency = 94 ms
+23/03/2019 14:40:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:40:57 Timer ticked
+23/03/2019 14:40:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:41:12 Timer ticked
+23/03/2019 14:41:23 at Gateway Sent Heartbeat
+23/03/2019 14:41:23 at Gateway Received HeartbeatAck
+23/03/2019 14:41:23 at Gateway Latency = 204 ms
+23/03/2019 14:41:27 Timer ticked
+23/03/2019 14:41:42 Timer ticked
+23/03/2019 14:41:57 Timer ticked
+23/03/2019 14:42:05 at Gateway Sent Heartbeat
+23/03/2019 14:42:05 at Gateway Received HeartbeatAck
+23/03/2019 14:42:05 at Gateway Latency = 62 ms
+23/03/2019 14:42:12 Timer ticked
+23/03/2019 14:42:27 Timer ticked
+23/03/2019 14:42:42 Timer ticked
+23/03/2019 14:42:46 at Gateway Sent Heartbeat
+23/03/2019 14:42:46 at Gateway Received HeartbeatAck
+23/03/2019 14:42:46 at Gateway Latency = 125 ms
+23/03/2019 14:42:57 Timer ticked
+23/03/2019 14:43:12 Timer ticked
+23/03/2019 14:43:27 Timer ticked
+23/03/2019 14:43:27 at Gateway Sent Heartbeat
+23/03/2019 14:43:27 at Gateway Received HeartbeatAck
+23/03/2019 14:43:27 at Gateway Latency = 234 ms
+23/03/2019 14:43:42 Timer ticked
+23/03/2019 14:43:57 Timer ticked
+23/03/2019 14:44:08 at Gateway Sent Heartbeat
+23/03/2019 14:44:08 at Gateway Received HeartbeatAck
+23/03/2019 14:44:08 at Gateway Latency = 46 ms
+23/03/2019 14:44:12 Timer ticked
+23/03/2019 14:44:27 Timer ticked
+23/03/2019 14:44:42 Timer ticked
+23/03/2019 14:44:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:44:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:44:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:44:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:44:50 at Gateway Sent Heartbeat
+23/03/2019 14:44:50 at Gateway Received HeartbeatAck
+23/03/2019 14:44:50 at Gateway Latency = 110 ms
+23/03/2019 14:44:57 Timer ticked
+23/03/2019 14:45:12 Timer ticked
+23/03/2019 14:45:27 Timer ticked
+23/03/2019 14:45:31 at Gateway Sent Heartbeat
+23/03/2019 14:45:31 at Gateway Received HeartbeatAck
+23/03/2019 14:45:31 at Gateway Latency = 94 ms
+23/03/2019 14:45:42 Timer ticked
+23/03/2019 14:45:57 Timer ticked
+23/03/2019 14:46:12 Timer ticked
+23/03/2019 14:46:12 at Gateway Sent Heartbeat
+23/03/2019 14:46:12 at Gateway Received HeartbeatAck
+23/03/2019 14:46:12 at Gateway Latency = 94 ms
+23/03/2019 14:46:27 Timer ticked
+23/03/2019 14:46:38 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:46:42 Timer ticked
+23/03/2019 14:46:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:46:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:46:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:46:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:46:53 at Gateway Sent Heartbeat
+23/03/2019 14:46:54 at Gateway Received HeartbeatAck
+23/03/2019 14:46:54 at Gateway Latency = 109 ms
+23/03/2019 14:46:57 Timer ticked
+23/03/2019 14:47:12 Timer ticked
+23/03/2019 14:47:27 Timer ticked
+23/03/2019 14:47:35 at Gateway Sent Heartbeat
+23/03/2019 14:47:35 at Gateway Received HeartbeatAck
+23/03/2019 14:47:35 at Gateway Latency = 94 ms
+23/03/2019 14:47:42 Timer ticked
+23/03/2019 14:47:57 Timer ticked
+23/03/2019 14:48:12 Timer ticked
+23/03/2019 14:48:16 at Gateway Sent Heartbeat
+23/03/2019 14:48:16 at Gateway Received HeartbeatAck
+23/03/2019 14:48:16 at Gateway Latency = 297 ms
+23/03/2019 14:48:27 Timer ticked
+23/03/2019 14:48:42 Timer ticked
+23/03/2019 14:48:57 Timer ticked
+23/03/2019 14:48:57 at Gateway Sent Heartbeat
+23/03/2019 14:48:57 at Gateway Received HeartbeatAck
+23/03/2019 14:48:57 at Gateway Latency = 47 ms
+23/03/2019 14:49:12 Timer ticked
+23/03/2019 14:49:27 Timer ticked
+23/03/2019 14:49:39 at Gateway Sent Heartbeat
+23/03/2019 14:49:39 at Gateway Received HeartbeatAck
+23/03/2019 14:49:39 at Gateway Latency = 172 ms
+23/03/2019 14:49:42 Timer ticked
+23/03/2019 14:49:57 Timer ticked
+23/03/2019 14:50:12 Timer ticked
+23/03/2019 14:50:20 at Gateway Sent Heartbeat
+23/03/2019 14:50:20 at Gateway Received HeartbeatAck
+23/03/2019 14:50:20 at Gateway Latency = 47 ms
+23/03/2019 14:50:27 Timer ticked
+23/03/2019 14:50:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:50:42 Timer ticked
+23/03/2019 14:50:47 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:50:57 Timer ticked
+23/03/2019 14:51:01 at Gateway Sent Heartbeat
+23/03/2019 14:51:01 at Gateway Received HeartbeatAck
+23/03/2019 14:51:01 at Gateway Latency = 62 ms
+23/03/2019 14:51:12 Timer ticked
+23/03/2019 14:51:27 Timer ticked
+23/03/2019 14:51:42 Timer ticked
+23/03/2019 14:51:42 at Gateway Sent Heartbeat
+23/03/2019 14:51:42 at Gateway Received HeartbeatAck
+23/03/2019 14:51:42 at Gateway Latency = 156 ms
+23/03/2019 14:51:57 Timer ticked
+23/03/2019 14:52:12 Timer ticked
+23/03/2019 14:52:24 at Gateway Sent Heartbeat
+23/03/2019 14:52:24 at Gateway Received HeartbeatAck
+23/03/2019 14:52:24 at Gateway Latency = 171 ms
+23/03/2019 14:52:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 14:52:27 Timer ticked
+23/03/2019 14:52:42 Timer ticked
+23/03/2019 14:52:57 Timer ticked
+23/03/2019 14:53:05 at Gateway Sent Heartbeat
+23/03/2019 14:53:05 at Gateway Received HeartbeatAck
+23/03/2019 14:53:05 at Gateway Latency = 172 ms
+23/03/2019 14:53:12 Timer ticked
+23/03/2019 14:53:27 Timer ticked
+23/03/2019 14:53:42 Timer ticked
+23/03/2019 14:53:46 at Gateway Sent Heartbeat
+23/03/2019 14:53:46 at Gateway Received HeartbeatAck
+23/03/2019 14:53:46 at Gateway Latency = 157 ms
+23/03/2019 14:53:57 Timer ticked
+23/03/2019 14:54:12 Timer ticked
+23/03/2019 14:54:27 Timer ticked
+23/03/2019 14:54:27 at Gateway Sent Heartbeat
+23/03/2019 14:54:28 at Gateway Received HeartbeatAck
+23/03/2019 14:54:28 at Gateway Latency = 156 ms
+23/03/2019 14:54:42 Timer ticked
+23/03/2019 14:54:57 Timer ticked
+23/03/2019 14:55:09 at Gateway Sent Heartbeat
+23/03/2019 14:55:09 at Gateway Received HeartbeatAck
+23/03/2019 14:55:09 at Gateway Latency = 141 ms
+23/03/2019 14:55:12 Timer ticked
+23/03/2019 14:55:27 Timer ticked
+23/03/2019 14:55:42 Timer ticked
+23/03/2019 14:55:50 at Gateway Sent Heartbeat
+23/03/2019 14:55:50 at Gateway Received HeartbeatAck
+23/03/2019 14:55:50 at Gateway Latency = 46 ms
+23/03/2019 14:55:57 Timer ticked
+23/03/2019 14:56:12 Timer ticked
+23/03/2019 14:56:27 Timer ticked
+23/03/2019 14:56:31 at Gateway Sent Heartbeat
+23/03/2019 14:56:31 at Gateway Received HeartbeatAck
+23/03/2019 14:56:31 at Gateway Latency = 235 ms
+23/03/2019 14:56:42 Timer ticked
+23/03/2019 14:56:57 Timer ticked
+23/03/2019 14:57:12 Timer ticked
+23/03/2019 14:57:12 at Gateway Sent Heartbeat
+23/03/2019 14:57:13 at Gateway Received HeartbeatAck
+23/03/2019 14:57:13 at Gateway Latency = 125 ms
+23/03/2019 14:57:27 Timer ticked
+23/03/2019 14:57:42 Timer ticked
+23/03/2019 14:57:54 at Gateway Sent Heartbeat
+23/03/2019 14:57:54 at Gateway Received HeartbeatAck
+23/03/2019 14:57:54 at Gateway Latency = 141 ms
+23/03/2019 14:57:57 Timer ticked
+23/03/2019 14:58:12 Timer ticked
+23/03/2019 14:58:27 Timer ticked
+23/03/2019 14:58:35 at Gateway Sent Heartbeat
+23/03/2019 14:58:35 at Gateway Received HeartbeatAck
+23/03/2019 14:58:35 at Gateway Latency = 234 ms
+23/03/2019 14:58:42 Timer ticked
+23/03/2019 14:58:57 Timer ticked
+23/03/2019 14:59:12 Timer ticked
+23/03/2019 14:59:16 at Gateway Sent Heartbeat
+23/03/2019 14:59:16 at Gateway Received HeartbeatAck
+23/03/2019 14:59:16 at Gateway Latency = 140 ms
+23/03/2019 14:59:27 Timer ticked
+23/03/2019 14:59:42 Timer ticked
+23/03/2019 14:59:57 Timer ticked
+23/03/2019 14:59:58 at Gateway Sent Heartbeat
+23/03/2019 14:59:58 at Gateway Received HeartbeatAck
+23/03/2019 14:59:58 at Gateway Latency = 141 ms
+23/03/2019 15:00:12 Timer ticked
+23/03/2019 15:00:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:00:27 Timer ticked
+23/03/2019 15:00:39 at Gateway Sent Heartbeat
+23/03/2019 15:00:39 at Gateway Received HeartbeatAck
+23/03/2019 15:00:39 at Gateway Latency = 141 ms
+23/03/2019 15:00:42 Timer ticked
+23/03/2019 15:00:57 Timer ticked
+23/03/2019 15:01:12 Timer ticked
+23/03/2019 15:01:20 at Gateway Sent Heartbeat
+23/03/2019 15:01:20 at Gateway Received HeartbeatAck
+23/03/2019 15:01:20 at Gateway Latency = 140 ms
+23/03/2019 15:01:27 Timer ticked
+23/03/2019 15:01:42 Timer ticked
+23/03/2019 15:01:57 Timer ticked
+23/03/2019 15:02:01 at Gateway Sent Heartbeat
+23/03/2019 15:02:01 at Gateway Received HeartbeatAck
+23/03/2019 15:02:01 at Gateway Latency = 125 ms
+23/03/2019 15:02:12 Timer ticked
+23/03/2019 15:02:27 Timer ticked
+23/03/2019 15:02:42 Timer ticked
+23/03/2019 15:02:43 at Gateway Sent Heartbeat
+23/03/2019 15:02:43 at Gateway Received HeartbeatAck
+23/03/2019 15:02:43 at Gateway Latency = 125 ms
+23/03/2019 15:02:57 Timer ticked
+23/03/2019 15:03:12 Timer ticked
+23/03/2019 15:03:24 at Gateway Sent Heartbeat
+23/03/2019 15:03:24 at Gateway Received HeartbeatAck
+23/03/2019 15:03:24 at Gateway Latency = 94 ms
+23/03/2019 15:03:27 Timer ticked
+23/03/2019 15:03:42 Timer ticked
+23/03/2019 15:03:57 Timer ticked
+23/03/2019 15:04:05 at Gateway Sent Heartbeat
+23/03/2019 15:04:05 at Gateway Received HeartbeatAck
+23/03/2019 15:04:05 at Gateway Latency = 234 ms
+23/03/2019 15:04:12 Timer ticked
+23/03/2019 15:04:27 Timer ticked
+23/03/2019 15:04:42 Timer ticked
+23/03/2019 15:04:46 at Gateway Sent Heartbeat
+23/03/2019 15:04:47 at Gateway Received HeartbeatAck
+23/03/2019 15:04:47 at Gateway Latency = 109 ms
+23/03/2019 15:04:57 Timer ticked
+23/03/2019 15:05:12 Timer ticked
+23/03/2019 15:05:27 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:05:27 Timer ticked
+23/03/2019 15:05:28 at Gateway Sent Heartbeat
+23/03/2019 15:05:28 at Gateway Received HeartbeatAck
+23/03/2019 15:05:28 at Gateway Latency = 125 ms
+23/03/2019 15:05:42 Timer ticked
+23/03/2019 15:05:57 Timer ticked
+23/03/2019 15:06:09 at Gateway Sent Heartbeat
+23/03/2019 15:06:09 at Gateway Received HeartbeatAck
+23/03/2019 15:06:09 at Gateway Latency = 110 ms
+23/03/2019 15:06:12 Timer ticked
+23/03/2019 15:06:27 Timer ticked
+23/03/2019 15:06:42 Timer ticked
+23/03/2019 15:06:50 at Gateway Sent Heartbeat
+23/03/2019 15:06:50 at Gateway Received HeartbeatAck
+23/03/2019 15:06:50 at Gateway Latency = 125 ms
+23/03/2019 15:06:57 Timer ticked
+23/03/2019 15:07:12 Timer ticked
+23/03/2019 15:07:27 Timer ticked
+23/03/2019 15:07:32 at Gateway Sent Heartbeat
+23/03/2019 15:07:32 at Gateway Received HeartbeatAck
+23/03/2019 15:07:32 at Gateway Latency = 219 ms
+23/03/2019 15:07:42 Timer ticked
+23/03/2019 15:07:57 Timer ticked
+23/03/2019 15:08:12 Timer ticked
+23/03/2019 15:08:13 at Gateway Sent Heartbeat
+23/03/2019 15:08:13 at Gateway Received HeartbeatAck
+23/03/2019 15:08:13 at Gateway Latency = 94 ms
+23/03/2019 15:08:27 Timer ticked
+23/03/2019 15:08:42 Timer ticked
+23/03/2019 15:08:54 at Gateway Sent Heartbeat
+23/03/2019 15:08:54 at Gateway Received HeartbeatAck
+23/03/2019 15:08:54 at Gateway Latency = 94 ms
+23/03/2019 15:08:57 Timer ticked
+23/03/2019 15:09:12 Timer ticked
+23/03/2019 15:09:27 Timer ticked
+23/03/2019 15:09:35 at Gateway Sent Heartbeat
+23/03/2019 15:09:35 at Gateway Received HeartbeatAck
+23/03/2019 15:09:35 at Gateway Latency = 78 ms
+23/03/2019 15:09:39 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:09:42 Timer ticked
+23/03/2019 15:09:57 Timer ticked
+23/03/2019 15:10:12 Timer ticked
+23/03/2019 15:10:17 at Gateway Sent Heartbeat
+23/03/2019 15:10:17 at Gateway Received HeartbeatAck
+23/03/2019 15:10:17 at Gateway Latency = 78 ms
+23/03/2019 15:10:27 Timer ticked
+23/03/2019 15:10:42 Timer ticked
+23/03/2019 15:10:57 Timer ticked
+23/03/2019 15:10:58 at Gateway Sent Heartbeat
+23/03/2019 15:10:58 at Gateway Received HeartbeatAck
+23/03/2019 15:10:58 at Gateway Latency = 63 ms
+23/03/2019 15:11:12 Timer ticked
+23/03/2019 15:11:27 Timer ticked
+23/03/2019 15:11:39 at Gateway Sent Heartbeat
+23/03/2019 15:11:39 at Gateway Received HeartbeatAck
+23/03/2019 15:11:39 at Gateway Latency = 172 ms
+23/03/2019 15:11:42 Timer ticked
+23/03/2019 15:11:57 Timer ticked
+23/03/2019 15:12:12 Timer ticked
+23/03/2019 15:12:20 at Gateway Sent Heartbeat
+23/03/2019 15:12:21 at Gateway Received HeartbeatAck
+23/03/2019 15:12:21 at Gateway Latency = 172 ms
+23/03/2019 15:12:27 Timer ticked
+23/03/2019 15:12:42 Timer ticked
+23/03/2019 15:12:57 Timer ticked
+23/03/2019 15:13:02 at Gateway Sent Heartbeat
+23/03/2019 15:13:02 at Gateway Received HeartbeatAck
+23/03/2019 15:13:02 at Gateway Latency = 156 ms
+23/03/2019 15:13:12 Timer ticked
+23/03/2019 15:13:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:13:27 Timer ticked
+23/03/2019 15:13:30 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:13:42 Timer ticked
+23/03/2019 15:13:43 at Gateway Sent Heartbeat
+23/03/2019 15:13:43 at Gateway Received HeartbeatAck
+23/03/2019 15:13:43 at Gateway Latency = 171 ms
+23/03/2019 15:13:57 Timer ticked
+23/03/2019 15:14:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:14:12 Timer ticked
+23/03/2019 15:14:24 at Gateway Sent Heartbeat
+23/03/2019 15:14:24 at Gateway Received HeartbeatAck
+23/03/2019 15:14:24 at Gateway Latency = 156 ms
+23/03/2019 15:14:25 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:14:27 Timer ticked
+23/03/2019 15:14:35 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:14:42 Timer ticked
+23/03/2019 15:14:57 Timer ticked
+23/03/2019 15:15:06 at Gateway Sent Heartbeat
+23/03/2019 15:15:06 at Gateway Received HeartbeatAck
+23/03/2019 15:15:06 at Gateway Latency = 157 ms
+23/03/2019 15:15:12 Timer ticked
+23/03/2019 15:15:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:15:27 Timer ticked
+23/03/2019 15:15:42 Timer ticked
+23/03/2019 15:15:47 at Gateway Sent Heartbeat
+23/03/2019 15:15:47 at Gateway Received HeartbeatAck
+23/03/2019 15:15:47 at Gateway Latency = 141 ms
+23/03/2019 15:15:57 Timer ticked
+23/03/2019 15:16:12 Timer ticked
+23/03/2019 15:16:27 Timer ticked
+23/03/2019 15:16:28 at Gateway Sent Heartbeat
+23/03/2019 15:16:28 at Gateway Received HeartbeatAck
+23/03/2019 15:16:28 at Gateway Latency = 156 ms
+23/03/2019 15:16:42 Timer ticked
+23/03/2019 15:16:47 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:16:57 Timer ticked
+23/03/2019 15:17:09 at Gateway Sent Heartbeat
+23/03/2019 15:17:09 at Gateway Received HeartbeatAck
+23/03/2019 15:17:09 at Gateway Latency = 157 ms
+23/03/2019 15:17:10 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:17:12 Timer ticked
+23/03/2019 15:17:17 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:17:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:17:27 Timer ticked
+23/03/2019 15:17:42 Timer ticked
+23/03/2019 15:17:51 at Gateway Sent Heartbeat
+23/03/2019 15:17:51 at Gateway Received HeartbeatAck
+23/03/2019 15:17:51 at Gateway Latency = 172 ms
+23/03/2019 15:17:57 Timer ticked
+23/03/2019 15:18:12 Timer ticked
+23/03/2019 15:18:27 Timer ticked
+23/03/2019 15:18:32 at Gateway Sent Heartbeat
+23/03/2019 15:18:32 at Gateway Received HeartbeatAck
+23/03/2019 15:18:32 at Gateway Latency = 156 ms
+23/03/2019 15:18:42 Timer ticked
+23/03/2019 15:18:57 Timer ticked
+23/03/2019 15:19:12 Timer ticked
+23/03/2019 15:19:13 at Gateway Sent Heartbeat
+23/03/2019 15:19:13 at Gateway Received HeartbeatAck
+23/03/2019 15:19:13 at Gateway Latency = 172 ms
+23/03/2019 15:19:27 Timer ticked
+23/03/2019 15:19:42 Timer ticked
+23/03/2019 15:19:54 at Gateway Sent Heartbeat
+23/03/2019 15:19:54 at Gateway Received HeartbeatAck
+23/03/2019 15:19:54 at Gateway Latency = 62 ms
+23/03/2019 15:19:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:19:57 Timer ticked
+23/03/2019 15:20:12 Timer ticked
+23/03/2019 15:20:27 Timer ticked
+23/03/2019 15:20:36 at Gateway Sent Heartbeat
+23/03/2019 15:20:36 at Gateway Received HeartbeatAck
+23/03/2019 15:20:36 at Gateway Latency = 63 ms
+23/03/2019 15:20:42 Timer ticked
+23/03/2019 15:20:57 Timer ticked
+23/03/2019 15:20:57 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:21:12 Timer ticked
+23/03/2019 15:21:17 at Gateway Sent Heartbeat
+23/03/2019 15:21:17 at Gateway Received HeartbeatAck
+23/03/2019 15:21:17 at Gateway Latency = 94 ms
+23/03/2019 15:21:27 Timer ticked
+23/03/2019 15:21:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:21:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:21:42 Timer ticked
+23/03/2019 15:21:57 Timer ticked
+23/03/2019 15:21:58 at Gateway Sent Heartbeat
+23/03/2019 15:21:58 at Gateway Received HeartbeatAck
+23/03/2019 15:21:58 at Gateway Latency = 188 ms
+23/03/2019 15:22:05 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:22:12 Timer ticked
+23/03/2019 15:22:27 Timer ticked
+23/03/2019 15:22:39 at Gateway Sent Heartbeat
+23/03/2019 15:22:39 at Gateway Received HeartbeatAck
+23/03/2019 15:22:39 at Gateway Latency = 63 ms
+23/03/2019 15:22:42 Timer ticked
+23/03/2019 15:22:57 Timer ticked
+23/03/2019 15:23:12 Timer ticked
+23/03/2019 15:23:21 at Gateway Sent Heartbeat
+23/03/2019 15:23:21 at Gateway Received HeartbeatAck
+23/03/2019 15:23:21 at Gateway Latency = 172 ms
+23/03/2019 15:23:27 Timer ticked
+23/03/2019 15:23:42 Timer ticked
+23/03/2019 15:23:57 Timer ticked
+23/03/2019 15:24:02 at Gateway Sent Heartbeat
+23/03/2019 15:24:02 at Gateway Received HeartbeatAck
+23/03/2019 15:24:02 at Gateway Latency = 172 ms
+23/03/2019 15:24:12 Timer ticked
+23/03/2019 15:24:27 Timer ticked
+23/03/2019 15:24:42 Timer ticked
+23/03/2019 15:24:43 at Gateway Sent Heartbeat
+23/03/2019 15:24:43 at Gateway Received HeartbeatAck
+23/03/2019 15:24:43 at Gateway Latency = 172 ms
+23/03/2019 15:24:57 Timer ticked
+23/03/2019 15:25:12 Timer ticked
+23/03/2019 15:25:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:25:25 at Gateway Sent Heartbeat
+23/03/2019 15:25:25 at Gateway Received HeartbeatAck
+23/03/2019 15:25:25 at Gateway Latency = 172 ms
+23/03/2019 15:25:27 Timer ticked
+23/03/2019 15:25:42 Timer ticked
+23/03/2019 15:25:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:25:57 Timer ticked
+23/03/2019 15:26:06 at Gateway Sent Heartbeat
+23/03/2019 15:26:06 at Gateway Received HeartbeatAck
+23/03/2019 15:26:06 at Gateway Latency = 63 ms
+23/03/2019 15:26:12 Timer ticked
+23/03/2019 15:26:27 Timer ticked
+23/03/2019 15:26:42 Timer ticked
+23/03/2019 15:26:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:26:47 at Gateway Sent Heartbeat
+23/03/2019 15:26:47 at Gateway Received HeartbeatAck
+23/03/2019 15:26:47 at Gateway Latency = 47 ms
+23/03/2019 15:26:57 Timer ticked
+23/03/2019 15:27:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:27:12 Timer ticked
+23/03/2019 15:27:27 Timer ticked
+23/03/2019 15:27:28 at Gateway Sent Heartbeat
+23/03/2019 15:27:28 at Gateway Received HeartbeatAck
+23/03/2019 15:27:28 at Gateway Latency = 47 ms
+23/03/2019 15:27:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:27:42 Timer ticked
+23/03/2019 15:27:57 Timer ticked
+23/03/2019 15:28:10 at Gateway Sent Heartbeat
+23/03/2019 15:28:10 at Gateway Received HeartbeatAck
+23/03/2019 15:28:10 at Gateway Latency = 188 ms
+23/03/2019 15:28:12 Timer ticked
+23/03/2019 15:28:27 Timer ticked
+23/03/2019 15:28:42 Timer ticked
+23/03/2019 15:28:51 at Gateway Sent Heartbeat
+23/03/2019 15:28:51 at Gateway Received HeartbeatAck
+23/03/2019 15:28:51 at Gateway Latency = 94 ms
+23/03/2019 15:28:57 Timer ticked
+23/03/2019 15:29:07 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:29:12 Timer ticked
+23/03/2019 15:29:27 Timer ticked
+23/03/2019 15:29:32 at Gateway Sent Heartbeat
+23/03/2019 15:29:32 at Gateway Received HeartbeatAck
+23/03/2019 15:29:32 at Gateway Latency = 78 ms
+23/03/2019 15:29:39 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:29:42 Timer ticked
+23/03/2019 15:29:57 Timer ticked
+23/03/2019 15:30:12 Timer ticked
+23/03/2019 15:30:13 at Gateway Sent Heartbeat
+23/03/2019 15:30:13 at Gateway Received HeartbeatAck
+23/03/2019 15:30:13 at Gateway Latency = 78 ms
+23/03/2019 15:30:27 Timer ticked
+23/03/2019 15:30:42 Timer ticked
+23/03/2019 15:30:45 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:30:55 at Gateway Sent Heartbeat
+23/03/2019 15:30:55 at Gateway Received HeartbeatAck
+23/03/2019 15:30:55 at Gateway Latency = 78 ms
+23/03/2019 15:30:57 Timer ticked
+23/03/2019 15:31:12 Timer ticked
+23/03/2019 15:31:27 Timer ticked
+23/03/2019 15:31:36 at Gateway Sent Heartbeat
+23/03/2019 15:31:36 at Gateway Received HeartbeatAck
+23/03/2019 15:31:36 at Gateway Latency = 156 ms
+23/03/2019 15:31:42 Timer ticked
+23/03/2019 15:31:57 Timer ticked
+23/03/2019 15:32:12 Timer ticked
+23/03/2019 15:32:17 at Gateway Sent Heartbeat
+23/03/2019 15:32:17 at Gateway Received HeartbeatAck
+23/03/2019 15:32:17 at Gateway Latency = 47 ms
+23/03/2019 15:32:27 Timer ticked
+23/03/2019 15:32:42 Timer ticked
+23/03/2019 15:32:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:32:57 Timer ticked
+23/03/2019 15:32:58 at Gateway Sent Heartbeat
+23/03/2019 15:32:58 at Gateway Received HeartbeatAck
+23/03/2019 15:32:59 at Gateway Latency = 62 ms
+23/03/2019 15:33:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:33:12 Timer ticked
+23/03/2019 15:33:27 Timer ticked
+23/03/2019 15:33:40 at Gateway Sent Heartbeat
+23/03/2019 15:33:40 at Gateway Received HeartbeatAck
+23/03/2019 15:33:40 at Gateway Latency = 453 ms
+23/03/2019 15:33:42 Timer ticked
+23/03/2019 15:33:57 Timer ticked
+23/03/2019 15:34:12 Timer ticked
+23/03/2019 15:34:21 at Gateway Sent Heartbeat
+23/03/2019 15:34:21 at Gateway Received HeartbeatAck
+23/03/2019 15:34:21 at Gateway Latency = 94 ms
+23/03/2019 15:34:27 Timer ticked
+23/03/2019 15:34:42 Timer ticked
+23/03/2019 15:34:57 Timer ticked
+23/03/2019 15:35:02 at Gateway Sent Heartbeat
+23/03/2019 15:35:02 at Gateway Received HeartbeatAck
+23/03/2019 15:35:02 at Gateway Latency = 62 ms
+23/03/2019 15:35:12 Timer ticked
+23/03/2019 15:35:27 Timer ticked
+23/03/2019 15:35:42 Timer ticked
+23/03/2019 15:35:44 at Gateway Sent Heartbeat
+23/03/2019 15:35:44 at Gateway Received HeartbeatAck
+23/03/2019 15:35:44 at Gateway Latency = 47 ms
+23/03/2019 15:35:57 Timer ticked
+23/03/2019 15:36:12 Timer ticked
+23/03/2019 15:36:25 at Gateway Sent Heartbeat
+23/03/2019 15:36:25 at Gateway Received HeartbeatAck
+23/03/2019 15:36:25 at Gateway Latency = 219 ms
+23/03/2019 15:36:27 Timer ticked
+23/03/2019 15:36:42 Timer ticked
+23/03/2019 15:36:57 Timer ticked
+23/03/2019 15:37:06 at Gateway Sent Heartbeat
+23/03/2019 15:37:06 at Gateway Received HeartbeatAck
+23/03/2019 15:37:06 at Gateway Latency = 188 ms
+23/03/2019 15:37:12 Timer ticked
+23/03/2019 15:37:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:37:27 Timer ticked
+23/03/2019 15:37:42 Timer ticked
+23/03/2019 15:37:47 at Gateway Sent Heartbeat
+23/03/2019 15:37:47 at Gateway Received HeartbeatAck
+23/03/2019 15:37:48 at Gateway Latency = 218 ms
+23/03/2019 15:37:57 Timer ticked
+23/03/2019 15:38:12 Timer ticked
+23/03/2019 15:38:27 Timer ticked
+23/03/2019 15:38:29 at Gateway Sent Heartbeat
+23/03/2019 15:38:29 at Gateway Received HeartbeatAck
+23/03/2019 15:38:29 at Gateway Latency = 78 ms
+23/03/2019 15:38:42 Timer ticked
+23/03/2019 15:38:57 Timer ticked
+23/03/2019 15:39:10 at Gateway Sent Heartbeat
+23/03/2019 15:39:10 at Gateway Received HeartbeatAck
+23/03/2019 15:39:10 at Gateway Latency = 78 ms
+23/03/2019 15:39:12 Timer ticked
+23/03/2019 15:39:27 Timer ticked
+23/03/2019 15:39:42 Timer ticked
+23/03/2019 15:39:51 at Gateway Sent Heartbeat
+23/03/2019 15:39:51 at Gateway Received HeartbeatAck
+23/03/2019 15:39:51 at Gateway Latency = 62 ms
+23/03/2019 15:39:57 Timer ticked
+23/03/2019 15:40:12 Timer ticked
+23/03/2019 15:40:27 Timer ticked
+23/03/2019 15:40:32 at Gateway Sent Heartbeat
+23/03/2019 15:40:33 at Gateway Received HeartbeatAck
+23/03/2019 15:40:33 at Gateway Latency = 438 ms
+23/03/2019 15:40:42 Timer ticked
+23/03/2019 15:40:57 Timer ticked
+23/03/2019 15:41:12 Timer ticked
+23/03/2019 15:41:14 at Gateway Sent Heartbeat
+23/03/2019 15:41:14 at Gateway Received HeartbeatAck
+23/03/2019 15:41:14 at Gateway Latency = 62 ms
+23/03/2019 15:41:27 Timer ticked
+23/03/2019 15:41:42 Timer ticked
+23/03/2019 15:41:55 at Gateway Sent Heartbeat
+23/03/2019 15:41:55 at Gateway Received HeartbeatAck
+23/03/2019 15:41:55 at Gateway Latency = 47 ms
+23/03/2019 15:41:57 Timer ticked
+23/03/2019 15:42:12 Timer ticked
+23/03/2019 15:42:27 Timer ticked
+23/03/2019 15:42:36 at Gateway Sent Heartbeat
+23/03/2019 15:42:36 at Gateway Received HeartbeatAck
+23/03/2019 15:42:36 at Gateway Latency = 63 ms
+23/03/2019 15:42:42 Timer ticked
+23/03/2019 15:42:57 Timer ticked
+23/03/2019 15:43:12 Timer ticked
+23/03/2019 15:43:17 at Gateway Sent Heartbeat
+23/03/2019 15:43:17 at Gateway Received HeartbeatAck
+23/03/2019 15:43:17 at Gateway Latency = 62 ms
+23/03/2019 15:43:27 Timer ticked
+23/03/2019 15:43:42 Timer ticked
+23/03/2019 15:43:57 Timer ticked
+23/03/2019 15:43:59 at Gateway Sent Heartbeat
+23/03/2019 15:43:59 at Gateway Received HeartbeatAck
+23/03/2019 15:43:59 at Gateway Latency = 110 ms
+23/03/2019 15:44:12 Timer ticked
+23/03/2019 15:44:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:44:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:44:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:44:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:44:27 Timer ticked
+23/03/2019 15:44:40 at Gateway Sent Heartbeat
+23/03/2019 15:44:40 at Gateway Received HeartbeatAck
+23/03/2019 15:44:40 at Gateway Latency = 47 ms
+23/03/2019 15:44:42 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 15:44:42 Timer ticked
+23/03/2019 15:44:47 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 15:44:50 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 15:44:51 at Rest GET guilds/399539166364303380/bans: 483,15 ms
+23/03/2019 15:44:51 at Rest GET guilds/399539166364303380/invites: 109,37 ms
+23/03/2019 15:44:51 at Rest GET guilds/399539166364303380/invites: 105,61 ms
+23/03/2019 15:44:51 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 15:44:51 at Rest POST channels/360639832017338370/messages: 150,1 ms
+23/03/2019 15:44:51 at Gateway Received Dispatch (MESSAGE_UPDATE)
+23/03/2019 15:44:51 at Rest GET guilds/488410661383045151/bans: 71,45 ms
+23/03/2019 15:44:51 at Rest GET guilds/488410661383045151/invites: 129,5 ms
+23/03/2019 15:44:51 at Rest GET guilds/488410661383045151/invites: 67,2 ms
+23/03/2019 15:44:52 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 15:44:52 at Gateway Received Dispatch (MESSAGE_UPDATE)
+23/03/2019 15:44:52 at Rest POST channels/360639832017338370/messages: 221,31 ms
+23/03/2019 15:44:52 at Rest GET guilds/360639832017338368/bans: 79,45 ms
+23/03/2019 15:44:52 at Rest GET guilds/360639832017338368/invites: 98,89 ms
+23/03/2019 15:44:52 at Rest POST channels/542072285033660437/invites: 225,85 ms
+23/03/2019 15:44:52 at Rest GET guilds/360639832017338368/invites: 70,26 ms
+23/03/2019 15:44:52 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 15:44:52 at Rest POST channels/360639832017338370/messages: 136,82 ms
+23/03/2019 15:44:52 at Gateway Received Dispatch (MESSAGE_UPDATE)
+23/03/2019 15:44:52 at Rest GET guilds/557210144082100228/bans: 111,01 ms
+23/03/2019 15:44:53 at Rest GET guilds/557210144082100228/invites: 149,13 ms
+23/03/2019 15:44:53 at Rest POST channels/557210144082100238/invites: 406,17 ms
+23/03/2019 15:44:53 at Rest GET guilds/557210144082100228/invites: 141,44 ms
+23/03/2019 15:44:53 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 15:44:53 at Rest POST channels/360639832017338370/messages: 210,73 ms
+23/03/2019 15:44:53 at Gateway Received Dispatch (MESSAGE_UPDATE)
+23/03/2019 15:44:57 Timer ticked
+23/03/2019 15:45:12 Timer ticked
+23/03/2019 15:45:21 at Gateway Sent Heartbeat
+23/03/2019 15:45:21 at Gateway Received HeartbeatAck
+23/03/2019 15:45:21 at Gateway Latency = 78 ms
+23/03/2019 15:45:27 Timer ticked
+23/03/2019 15:45:42 Timer ticked
+23/03/2019 15:45:46 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 15:45:57 Timer ticked
+23/03/2019 15:46:03 at Gateway Sent Heartbeat
+23/03/2019 15:46:03 at Gateway Received HeartbeatAck
+23/03/2019 15:46:03 at Gateway Latency = 47 ms
+23/03/2019 15:46:05 at Gateway Received Dispatch (TYPING_START)
+23/03/2019 15:46:06 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 15:46:06 at Gateway Received Dispatch (MESSAGE_CREATE)
+23/03/2019 15:46:08 at Gateway Received Dispatch (MESSAGE_UPDATE)
+23/03/2019 15:46:08 at Gateway Received Dispatch (MESSAGE_DELETE_BULK)
+23/03/2019 15:46:08 at Gateway Received Dispatch (MESSAGE_UPDATE)
+23/03/2019 15:46:08 at Gateway Received Dispatch (MESSAGE_UPDATE)
+23/03/2019 15:46:12 Timer ticked
+23/03/2019 15:46:18 at Gateway Received Dispatch (MESSAGE_DELETE_BULK)
+23/03/2019 15:46:27 Timer ticked
+23/03/2019 15:46:42 Timer ticked
+23/03/2019 15:46:44 at Gateway Sent Heartbeat
+23/03/2019 15:46:44 at Gateway Received HeartbeatAck
+23/03/2019 15:46:44 at Gateway Latency = 109 ms
+23/03/2019 15:46:57 Timer ticked
+23/03/2019 15:47:12 Timer ticked
+23/03/2019 15:47:25 at Gateway Sent Heartbeat
+23/03/2019 15:47:25 at Gateway Received HeartbeatAck
+23/03/2019 15:47:25 at Gateway Latency = 125 ms
+23/03/2019 15:47:27 Timer ticked
+23/03/2019 15:47:42 Timer ticked
+23/03/2019 15:47:53 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:47:57 Timer ticked
+23/03/2019 15:48:06 at Gateway Sent Heartbeat
+23/03/2019 15:48:06 at Gateway Received HeartbeatAck
+23/03/2019 15:48:06 at Gateway Latency = 188 ms
+23/03/2019 15:48:12 Timer ticked
+23/03/2019 15:48:27 Timer ticked
+23/03/2019 15:48:42 Timer ticked
+23/03/2019 15:48:48 at Gateway Sent Heartbeat
+23/03/2019 15:48:48 at Gateway Received HeartbeatAck
+23/03/2019 15:48:48 at Gateway Latency = 78 ms
+23/03/2019 15:48:57 Timer ticked
+23/03/2019 15:49:12 Timer ticked
+23/03/2019 15:49:27 Timer ticked
+23/03/2019 15:49:29 at Gateway Sent Heartbeat
+23/03/2019 15:49:29 at Gateway Received HeartbeatAck
+23/03/2019 15:49:29 at Gateway Latency = 62 ms
+23/03/2019 15:49:42 Timer ticked
+23/03/2019 15:49:57 Timer ticked
+23/03/2019 15:50:10 at Gateway Sent Heartbeat
+23/03/2019 15:50:10 at Gateway Received HeartbeatAck
+23/03/2019 15:50:10 at Gateway Latency = 78 ms
+23/03/2019 15:50:12 Timer ticked
+23/03/2019 15:50:27 Timer ticked
+23/03/2019 15:50:42 Timer ticked
+23/03/2019 15:50:51 at Gateway Sent Heartbeat
+23/03/2019 15:50:51 at Gateway Received HeartbeatAck
+23/03/2019 15:50:51 at Gateway Latency = 94 ms
+23/03/2019 15:50:57 Timer ticked
+23/03/2019 15:51:12 Timer ticked
+23/03/2019 15:51:27 Timer ticked
+23/03/2019 15:51:33 at Gateway Sent Heartbeat
+23/03/2019 15:51:33 at Gateway Received HeartbeatAck
+23/03/2019 15:51:33 at Gateway Latency = 94 ms
+23/03/2019 15:51:42 Timer ticked
+23/03/2019 15:51:57 Timer ticked
+23/03/2019 15:52:12 Timer ticked
+23/03/2019 15:52:14 at Gateway Sent Heartbeat
+23/03/2019 15:52:14 at Gateway Received HeartbeatAck
+23/03/2019 15:52:14 at Gateway Latency = 94 ms
+23/03/2019 15:52:27 Timer ticked
+23/03/2019 15:52:42 Timer ticked
+23/03/2019 15:52:55 at Gateway Sent Heartbeat
+23/03/2019 15:52:55 at Gateway Received HeartbeatAck
+23/03/2019 15:52:55 at Gateway Latency = 109 ms
+23/03/2019 15:52:57 Timer ticked
+23/03/2019 15:53:12 Timer ticked
+23/03/2019 15:53:27 Timer ticked
+23/03/2019 15:53:36 at Gateway Sent Heartbeat
+23/03/2019 15:53:37 at Gateway Received HeartbeatAck
+23/03/2019 15:53:37 at Gateway Latency = 94 ms
+23/03/2019 15:53:42 Timer ticked
+23/03/2019 15:53:57 Timer ticked
+23/03/2019 15:54:12 Timer ticked
+23/03/2019 15:54:18 at Gateway Sent Heartbeat
+23/03/2019 15:54:18 at Gateway Received HeartbeatAck
+23/03/2019 15:54:18 at Gateway Latency = 94 ms
+23/03/2019 15:54:27 Timer ticked
+23/03/2019 15:54:42 Timer ticked
+23/03/2019 15:54:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:54:57 Timer ticked
+23/03/2019 15:54:59 at Gateway Sent Heartbeat
+23/03/2019 15:54:59 at Gateway Received HeartbeatAck
+23/03/2019 15:54:59 at Gateway Latency = 46 ms
+23/03/2019 15:55:12 Timer ticked
+23/03/2019 15:55:27 Timer ticked
+23/03/2019 15:55:40 at Gateway Sent Heartbeat
+23/03/2019 15:55:40 at Gateway Received HeartbeatAck
+23/03/2019 15:55:40 at Gateway Latency = 125 ms
+23/03/2019 15:55:42 Timer ticked
+23/03/2019 15:55:57 Timer ticked
+23/03/2019 15:56:12 Timer ticked
+23/03/2019 15:56:21 at Gateway Sent Heartbeat
+23/03/2019 15:56:22 at Gateway Received HeartbeatAck
+23/03/2019 15:56:22 at Gateway Latency = 359 ms
+23/03/2019 15:56:27 Timer ticked
+23/03/2019 15:56:42 Timer ticked
+23/03/2019 15:56:57 Timer ticked
+23/03/2019 15:57:03 at Gateway Sent Heartbeat
+23/03/2019 15:57:03 at Gateway Received HeartbeatAck
+23/03/2019 15:57:03 at Gateway Latency = 94 ms
+23/03/2019 15:57:12 Timer ticked
+23/03/2019 15:57:27 Timer ticked
+23/03/2019 15:57:42 Timer ticked
+23/03/2019 15:57:44 at Gateway Sent Heartbeat
+23/03/2019 15:57:44 at Gateway Received HeartbeatAck
+23/03/2019 15:57:44 at Gateway Latency = 94 ms
+23/03/2019 15:57:57 Timer ticked
+23/03/2019 15:58:12 Timer ticked
+23/03/2019 15:58:25 at Gateway Sent Heartbeat
+23/03/2019 15:58:25 at Gateway Received HeartbeatAck
+23/03/2019 15:58:25 at Gateway Latency = 62 ms
+23/03/2019 15:58:27 Timer ticked
+23/03/2019 15:58:38 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:58:42 Timer ticked
+23/03/2019 15:58:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:58:57 Timer ticked
+23/03/2019 15:59:07 at Gateway Sent Heartbeat
+23/03/2019 15:59:07 at Gateway Received HeartbeatAck
+23/03/2019 15:59:07 at Gateway Latency = 63 ms
+23/03/2019 15:59:10 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:59:12 Timer ticked
+23/03/2019 15:59:27 Timer ticked
+23/03/2019 15:59:36 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:59:42 Timer ticked
+23/03/2019 15:59:48 at Gateway Sent Heartbeat
+23/03/2019 15:59:48 at Gateway Received HeartbeatAck
+23/03/2019 15:59:48 at Gateway Latency = 109 ms
+23/03/2019 15:59:53 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 15:59:57 Timer ticked
+23/03/2019 16:00:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:00:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:00:12 Timer ticked
+23/03/2019 16:00:15 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:00:27 Timer ticked
+23/03/2019 16:00:29 at Gateway Sent Heartbeat
+23/03/2019 16:00:29 at Gateway Received HeartbeatAck
+23/03/2019 16:00:29 at Gateway Latency = 109 ms
+23/03/2019 16:00:30 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:00:42 Timer ticked
+23/03/2019 16:00:45 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:00:57 Timer ticked
+23/03/2019 16:01:10 at Gateway Sent Heartbeat
+23/03/2019 16:01:10 at Gateway Received HeartbeatAck
+23/03/2019 16:01:11 at Gateway Latency = 391 ms
+23/03/2019 16:01:12 Timer ticked
+23/03/2019 16:01:27 Timer ticked
+23/03/2019 16:01:42 Timer ticked
+23/03/2019 16:01:52 at Gateway Sent Heartbeat
+23/03/2019 16:01:52 at Gateway Received HeartbeatAck
+23/03/2019 16:01:52 at Gateway Latency = 47 ms
+23/03/2019 16:01:57 Timer ticked
+23/03/2019 16:02:12 Timer ticked
+23/03/2019 16:02:27 Timer ticked
+23/03/2019 16:02:33 at Gateway Sent Heartbeat
+23/03/2019 16:02:33 at Gateway Received HeartbeatAck
+23/03/2019 16:02:33 at Gateway Latency = 125 ms
+23/03/2019 16:02:42 Timer ticked
+23/03/2019 16:02:57 Timer ticked
+23/03/2019 16:03:12 Timer ticked
+23/03/2019 16:03:14 at Gateway Sent Heartbeat
+23/03/2019 16:03:15 at Gateway Received HeartbeatAck
+23/03/2019 16:03:15 at Gateway Latency = 1125 ms
+23/03/2019 16:03:27 Timer ticked
+23/03/2019 16:03:42 Timer ticked
+23/03/2019 16:03:55 at Gateway Sent Heartbeat
+23/03/2019 16:03:56 at Gateway Received HeartbeatAck
+23/03/2019 16:03:56 at Gateway Latency = 218 ms
+23/03/2019 16:03:57 Timer ticked
+23/03/2019 16:04:12 Timer ticked
+23/03/2019 16:04:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:04:27 Timer ticked
+23/03/2019 16:04:37 at Gateway Sent Heartbeat
+23/03/2019 16:04:37 at Gateway Received HeartbeatAck
+23/03/2019 16:04:37 at Gateway Latency = 234 ms
+23/03/2019 16:04:42 Timer ticked
+23/03/2019 16:04:57 Timer ticked
+23/03/2019 16:05:12 Timer ticked
+23/03/2019 16:05:18 at Gateway Sent Heartbeat
+23/03/2019 16:05:18 at Gateway Received HeartbeatAck
+23/03/2019 16:05:18 at Gateway Latency = 141 ms
+23/03/2019 16:05:27 Timer ticked
+23/03/2019 16:05:42 Timer ticked
+23/03/2019 16:05:57 Timer ticked
+23/03/2019 16:05:59 at Gateway Sent Heartbeat
+23/03/2019 16:05:59 at Gateway Received HeartbeatAck
+23/03/2019 16:05:59 at Gateway Latency = 62 ms
+23/03/2019 16:06:12 Timer ticked
+23/03/2019 16:06:27 Timer ticked
+23/03/2019 16:06:40 at Gateway Sent Heartbeat
+23/03/2019 16:06:41 at Gateway Received HeartbeatAck
+23/03/2019 16:06:41 at Gateway Latency = 62 ms
+23/03/2019 16:06:42 Timer ticked
+23/03/2019 16:06:57 Timer ticked
+23/03/2019 16:07:12 Timer ticked
+23/03/2019 16:07:22 at Gateway Sent Heartbeat
+23/03/2019 16:07:22 at Gateway Received HeartbeatAck
+23/03/2019 16:07:22 at Gateway Latency = 78 ms
+23/03/2019 16:07:27 Timer ticked
+23/03/2019 16:07:42 Timer ticked
+23/03/2019 16:07:57 Timer ticked
+23/03/2019 16:08:03 at Gateway Sent Heartbeat
+23/03/2019 16:08:03 at Gateway Received HeartbeatAck
+23/03/2019 16:08:03 at Gateway Latency = 140 ms
+23/03/2019 16:08:12 Timer ticked
+23/03/2019 16:08:27 Timer ticked
+23/03/2019 16:08:42 Timer ticked
+23/03/2019 16:08:44 at Gateway Sent Heartbeat
+23/03/2019 16:08:44 at Gateway Received HeartbeatAck
+23/03/2019 16:08:44 at Gateway Latency = 141 ms
+23/03/2019 16:08:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:08:57 Timer ticked
+23/03/2019 16:09:12 Timer ticked
+23/03/2019 16:09:26 at Gateway Sent Heartbeat
+23/03/2019 16:09:26 at Gateway Received HeartbeatAck
+23/03/2019 16:09:26 at Gateway Latency = 156 ms
+23/03/2019 16:09:27 Timer ticked
+23/03/2019 16:09:42 Timer ticked
+23/03/2019 16:09:57 Timer ticked
+23/03/2019 16:10:07 at Gateway Sent Heartbeat
+23/03/2019 16:10:07 at Gateway Received HeartbeatAck
+23/03/2019 16:10:07 at Gateway Latency = 140 ms
+23/03/2019 16:10:12 Timer ticked
+23/03/2019 16:10:27 Timer ticked
+23/03/2019 16:10:42 Timer ticked
+23/03/2019 16:10:48 at Gateway Sent Heartbeat
+23/03/2019 16:10:48 at Gateway Received HeartbeatAck
+23/03/2019 16:10:48 at Gateway Latency = 141 ms
+23/03/2019 16:10:57 Timer ticked
+23/03/2019 16:11:12 Timer ticked
+23/03/2019 16:11:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:11:27 Timer ticked
+23/03/2019 16:11:29 at Gateway Sent Heartbeat
+23/03/2019 16:11:29 at Gateway Received HeartbeatAck
+23/03/2019 16:11:29 at Gateway Latency = 141 ms
+23/03/2019 16:11:29 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:11:33 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:11:42 Timer ticked
+23/03/2019 16:11:57 Timer ticked
+23/03/2019 16:12:11 at Gateway Sent Heartbeat
+23/03/2019 16:12:11 at Gateway Received HeartbeatAck
+23/03/2019 16:12:11 at Gateway Latency = 156 ms
+23/03/2019 16:12:12 Timer ticked
+23/03/2019 16:12:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:12:27 Timer ticked
+23/03/2019 16:12:42 Timer ticked
+23/03/2019 16:12:52 at Gateway Sent Heartbeat
+23/03/2019 16:12:52 at Gateway Received HeartbeatAck
+23/03/2019 16:12:52 at Gateway Latency = 78 ms
+23/03/2019 16:12:57 Timer ticked
+23/03/2019 16:13:12 Timer ticked
+23/03/2019 16:13:27 Timer ticked
+23/03/2019 16:13:33 at Gateway Sent Heartbeat
+23/03/2019 16:13:33 at Gateway Received HeartbeatAck
+23/03/2019 16:13:33 at Gateway Latency = 62 ms
+23/03/2019 16:13:42 Timer ticked
+23/03/2019 16:13:57 Timer ticked
+23/03/2019 16:14:12 Timer ticked
+23/03/2019 16:14:14 at Gateway Sent Heartbeat
+23/03/2019 16:14:14 at Gateway Received HeartbeatAck
+23/03/2019 16:14:14 at Gateway Latency = 79 ms
+23/03/2019 16:14:27 Timer ticked
+23/03/2019 16:14:42 Timer ticked
+23/03/2019 16:14:56 at Gateway Sent Heartbeat
+23/03/2019 16:14:56 at Gateway Received HeartbeatAck
+23/03/2019 16:14:56 at Gateway Latency = 47 ms
+23/03/2019 16:14:57 Timer ticked
+23/03/2019 16:15:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:15:12 Timer ticked
+23/03/2019 16:15:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:15:27 Timer ticked
+23/03/2019 16:15:37 at Gateway Sent Heartbeat
+23/03/2019 16:15:37 at Gateway Received HeartbeatAck
+23/03/2019 16:15:37 at Gateway Latency = 47 ms
+23/03/2019 16:15:42 Timer ticked
+23/03/2019 16:15:57 Timer ticked
+23/03/2019 16:16:05 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:16:12 Timer ticked
+23/03/2019 16:16:18 at Gateway Sent Heartbeat
+23/03/2019 16:16:18 at Gateway Received HeartbeatAck
+23/03/2019 16:16:18 at Gateway Latency = 125 ms
+23/03/2019 16:16:27 Timer ticked
+23/03/2019 16:16:42 Timer ticked
+23/03/2019 16:16:57 Timer ticked
+23/03/2019 16:16:59 at Gateway Sent Heartbeat
+23/03/2019 16:16:59 at Gateway Received HeartbeatAck
+23/03/2019 16:17:00 at Gateway Latency = 78 ms
+23/03/2019 16:17:12 Timer ticked
+23/03/2019 16:17:27 Timer ticked
+23/03/2019 16:17:41 at Gateway Sent Heartbeat
+23/03/2019 16:17:41 at Gateway Received HeartbeatAck
+23/03/2019 16:17:41 at Gateway Latency = 78 ms
+23/03/2019 16:17:42 Timer ticked
+23/03/2019 16:17:57 Timer ticked
+23/03/2019 16:18:12 Timer ticked
+23/03/2019 16:18:15 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:18:22 at Gateway Sent Heartbeat
+23/03/2019 16:18:22 at Gateway Received HeartbeatAck
+23/03/2019 16:18:22 at Gateway Latency = 62 ms
+23/03/2019 16:18:27 Timer ticked
+23/03/2019 16:18:42 Timer ticked
+23/03/2019 16:18:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:18:57 Timer ticked
+23/03/2019 16:19:03 at Gateway Sent Heartbeat
+23/03/2019 16:19:03 at Gateway Received HeartbeatAck
+23/03/2019 16:19:03 at Gateway Latency = 63 ms
+23/03/2019 16:19:12 Timer ticked
+23/03/2019 16:19:27 Timer ticked
+23/03/2019 16:19:42 Timer ticked
+23/03/2019 16:19:44 at Gateway Sent Heartbeat
+23/03/2019 16:19:45 at Gateway Received HeartbeatAck
+23/03/2019 16:19:45 at Gateway Latency = 281 ms
+23/03/2019 16:19:57 Timer ticked
+23/03/2019 16:20:12 Timer ticked
+23/03/2019 16:20:26 at Gateway Sent Heartbeat
+23/03/2019 16:20:26 at Gateway Received HeartbeatAck
+23/03/2019 16:20:26 at Gateway Latency = 94 ms
+23/03/2019 16:20:27 Timer ticked
+23/03/2019 16:20:42 Timer ticked
+23/03/2019 16:20:57 Timer ticked
+23/03/2019 16:21:07 at Gateway Sent Heartbeat
+23/03/2019 16:21:07 at Gateway Received HeartbeatAck
+23/03/2019 16:21:07 at Gateway Latency = 47 ms
+23/03/2019 16:21:12 Timer ticked
+23/03/2019 16:21:27 Timer ticked
+23/03/2019 16:21:42 Timer ticked
+23/03/2019 16:21:48 at Gateway Sent Heartbeat
+23/03/2019 16:21:48 at Gateway Received HeartbeatAck
+23/03/2019 16:21:48 at Gateway Latency = 109 ms
+23/03/2019 16:21:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:21:57 Timer ticked
+23/03/2019 16:22:12 Timer ticked
+23/03/2019 16:22:27 Timer ticked
+23/03/2019 16:22:30 at Gateway Sent Heartbeat
+23/03/2019 16:22:30 at Gateway Received HeartbeatAck
+23/03/2019 16:22:30 at Gateway Latency = 47 ms
+23/03/2019 16:22:35 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:22:42 Timer ticked
+23/03/2019 16:22:57 Timer ticked
+23/03/2019 16:23:11 at Gateway Sent Heartbeat
+23/03/2019 16:23:11 at Gateway Received HeartbeatAck
+23/03/2019 16:23:11 at Gateway Latency = 94 ms
+23/03/2019 16:23:12 Timer ticked
+23/03/2019 16:23:27 Timer ticked
+23/03/2019 16:23:42 Timer ticked
+23/03/2019 16:23:52 at Gateway Sent Heartbeat
+23/03/2019 16:23:52 at Gateway Received HeartbeatAck
+23/03/2019 16:23:52 at Gateway Latency = 109 ms
+23/03/2019 16:23:57 Timer ticked
+23/03/2019 16:24:12 Timer ticked
+23/03/2019 16:24:27 Timer ticked
+23/03/2019 16:24:33 at Gateway Sent Heartbeat
+23/03/2019 16:24:33 at Gateway Received HeartbeatAck
+23/03/2019 16:24:34 at Gateway Latency = 360 ms
+23/03/2019 16:24:42 Timer ticked
+23/03/2019 16:24:57 Timer ticked
+23/03/2019 16:25:12 Timer ticked
+23/03/2019 16:25:15 at Gateway Sent Heartbeat
+23/03/2019 16:25:15 at Gateway Received HeartbeatAck
+23/03/2019 16:25:15 at Gateway Latency = 94 ms
+23/03/2019 16:25:27 Timer ticked
+23/03/2019 16:25:42 Timer ticked
+23/03/2019 16:25:56 at Gateway Sent Heartbeat
+23/03/2019 16:25:56 at Gateway Received HeartbeatAck
+23/03/2019 16:25:56 at Gateway Latency = 94 ms
+23/03/2019 16:25:57 Timer ticked
+23/03/2019 16:26:12 Timer ticked
+23/03/2019 16:26:27 Timer ticked
+23/03/2019 16:26:37 at Gateway Sent Heartbeat
+23/03/2019 16:26:37 at Gateway Received HeartbeatAck
+23/03/2019 16:26:37 at Gateway Latency = 94 ms
+23/03/2019 16:26:42 Timer ticked
+23/03/2019 16:26:57 Timer ticked
+23/03/2019 16:27:12 Timer ticked
+23/03/2019 16:27:18 at Gateway Sent Heartbeat
+23/03/2019 16:27:18 at Gateway Received HeartbeatAck
+23/03/2019 16:27:18 at Gateway Latency = 78 ms
+23/03/2019 16:27:27 Timer ticked
+23/03/2019 16:27:42 Timer ticked
+23/03/2019 16:27:57 Timer ticked
+23/03/2019 16:28:00 at Gateway Sent Heartbeat
+23/03/2019 16:28:00 at Gateway Received HeartbeatAck
+23/03/2019 16:28:00 at Gateway Latency = 94 ms
+23/03/2019 16:28:12 Timer ticked
+23/03/2019 16:28:27 Timer ticked
+23/03/2019 16:28:41 at Gateway Sent Heartbeat
+23/03/2019 16:28:41 at Gateway Received HeartbeatAck
+23/03/2019 16:28:41 at Gateway Latency = 94 ms
+23/03/2019 16:28:42 Timer ticked
+23/03/2019 16:28:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:28:57 Timer ticked
+23/03/2019 16:29:12 Timer ticked
+23/03/2019 16:29:22 at Gateway Sent Heartbeat
+23/03/2019 16:29:22 at Gateway Received HeartbeatAck
+23/03/2019 16:29:22 at Gateway Latency = 125 ms
+23/03/2019 16:29:27 Timer ticked
+23/03/2019 16:29:42 Timer ticked
+23/03/2019 16:29:57 Timer ticked
+23/03/2019 16:30:03 at Gateway Sent Heartbeat
+23/03/2019 16:30:04 at Gateway Received HeartbeatAck
+23/03/2019 16:30:04 at Gateway Latency = 219 ms
+23/03/2019 16:30:12 Timer ticked
+23/03/2019 16:30:27 Timer ticked
+23/03/2019 16:30:42 Timer ticked
+23/03/2019 16:30:45 at Gateway Sent Heartbeat
+23/03/2019 16:30:45 at Gateway Received HeartbeatAck
+23/03/2019 16:30:45 at Gateway Latency = 78 ms
+23/03/2019 16:30:57 Timer ticked
+23/03/2019 16:31:12 Timer ticked
+23/03/2019 16:31:26 at Gateway Sent Heartbeat
+23/03/2019 16:31:26 at Gateway Received HeartbeatAck
+23/03/2019 16:31:26 at Gateway Latency = 63 ms
+23/03/2019 16:31:27 Timer ticked
+23/03/2019 16:31:42 Timer ticked
+23/03/2019 16:31:57 Timer ticked
+23/03/2019 16:32:07 at Gateway Sent Heartbeat
+23/03/2019 16:32:07 at Gateway Received HeartbeatAck
+23/03/2019 16:32:07 at Gateway Latency = 109 ms
+23/03/2019 16:32:12 Timer ticked
+23/03/2019 16:32:27 Timer ticked
+23/03/2019 16:32:42 Timer ticked
+23/03/2019 16:32:49 at Gateway Sent Heartbeat
+23/03/2019 16:32:49 at Gateway Received HeartbeatAck
+23/03/2019 16:32:49 at Gateway Latency = 171 ms
+23/03/2019 16:32:57 Timer ticked
+23/03/2019 16:33:12 Timer ticked
+23/03/2019 16:33:27 Timer ticked
+23/03/2019 16:33:30 at Gateway Sent Heartbeat
+23/03/2019 16:33:30 at Gateway Received HeartbeatAck
+23/03/2019 16:33:30 at Gateway Latency = 63 ms
+23/03/2019 16:33:38 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:33:42 Timer ticked
+23/03/2019 16:33:57 Timer ticked
+23/03/2019 16:34:11 at Gateway Sent Heartbeat
+23/03/2019 16:34:11 at Gateway Received HeartbeatAck
+23/03/2019 16:34:11 at Gateway Latency = 172 ms
+23/03/2019 16:34:12 Timer ticked
+23/03/2019 16:34:27 Timer ticked
+23/03/2019 16:34:42 Timer ticked
+23/03/2019 16:34:52 at Gateway Sent Heartbeat
+23/03/2019 16:34:53 at Gateway Received HeartbeatAck
+23/03/2019 16:34:53 at Gateway Latency = 204 ms
+23/03/2019 16:34:57 Timer ticked
+23/03/2019 16:35:12 Timer ticked
+23/03/2019 16:35:27 Timer ticked
+23/03/2019 16:35:34 at Gateway Sent Heartbeat
+23/03/2019 16:35:34 at Gateway Received HeartbeatAck
+23/03/2019 16:35:34 at Gateway Latency = 47 ms
+23/03/2019 16:35:42 Timer ticked
+23/03/2019 16:35:57 Timer ticked
+23/03/2019 16:36:12 Timer ticked
+23/03/2019 16:36:15 at Gateway Sent Heartbeat
+23/03/2019 16:36:15 at Gateway Received HeartbeatAck
+23/03/2019 16:36:15 at Gateway Latency = 62 ms
+23/03/2019 16:36:27 Timer ticked
+23/03/2019 16:36:42 Timer ticked
+23/03/2019 16:36:56 at Gateway Sent Heartbeat
+23/03/2019 16:36:56 at Gateway Received HeartbeatAck
+23/03/2019 16:36:56 at Gateway Latency = 63 ms
+23/03/2019 16:36:57 Timer ticked
+23/03/2019 16:37:12 Timer ticked
+23/03/2019 16:37:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:37:27 Timer ticked
+23/03/2019 16:37:37 at Gateway Sent Heartbeat
+23/03/2019 16:37:37 at Gateway Received HeartbeatAck
+23/03/2019 16:37:38 at Gateway Latency = 62 ms
+23/03/2019 16:37:42 Timer ticked
+23/03/2019 16:37:49 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:37:57 Timer ticked
+23/03/2019 16:37:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:38:12 Timer ticked
+23/03/2019 16:38:19 at Gateway Sent Heartbeat
+23/03/2019 16:38:19 at Gateway Received HeartbeatAck
+23/03/2019 16:38:19 at Gateway Latency = 62 ms
+23/03/2019 16:38:27 Timer ticked
+23/03/2019 16:38:42 Timer ticked
+23/03/2019 16:38:57 Timer ticked
+23/03/2019 16:39:00 at Gateway Sent Heartbeat
+23/03/2019 16:39:00 at Gateway Received HeartbeatAck
+23/03/2019 16:39:00 at Gateway Latency = 47 ms
+23/03/2019 16:39:12 Timer ticked
+23/03/2019 16:39:27 Timer ticked
+23/03/2019 16:39:41 at Gateway Sent Heartbeat
+23/03/2019 16:39:41 at Gateway Received HeartbeatAck
+23/03/2019 16:39:41 at Gateway Latency = 109 ms
+23/03/2019 16:39:42 Timer ticked
+23/03/2019 16:39:57 Timer ticked
+23/03/2019 16:40:12 Timer ticked
+23/03/2019 16:40:23 at Gateway Sent Heartbeat
+23/03/2019 16:40:23 at Gateway Received HeartbeatAck
+23/03/2019 16:40:23 at Gateway Latency = 79 ms
+23/03/2019 16:40:27 Timer ticked
+23/03/2019 16:40:42 Timer ticked
+23/03/2019 16:40:55 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:40:57 Timer ticked
+23/03/2019 16:40:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:41:04 at Gateway Sent Heartbeat
+23/03/2019 16:41:04 at Gateway Received HeartbeatAck
+23/03/2019 16:41:04 at Gateway Latency = 203 ms
+23/03/2019 16:41:10 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:41:12 Timer ticked
+23/03/2019 16:41:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:41:23 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:41:27 Timer ticked
+23/03/2019 16:41:42 Timer ticked
+23/03/2019 16:41:45 at Gateway Sent Heartbeat
+23/03/2019 16:41:45 at Gateway Received HeartbeatAck
+23/03/2019 16:41:45 at Gateway Latency = 62 ms
+23/03/2019 16:41:57 Timer ticked
+23/03/2019 16:42:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:42:12 Timer ticked
+23/03/2019 16:42:15 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:42:26 at Gateway Sent Heartbeat
+23/03/2019 16:42:26 at Gateway Received HeartbeatAck
+23/03/2019 16:42:26 at Gateway Latency = 94 ms
+23/03/2019 16:42:27 Timer ticked
+23/03/2019 16:42:42 Timer ticked
+23/03/2019 16:42:57 Timer ticked
+23/03/2019 16:43:08 at Gateway Sent Heartbeat
+23/03/2019 16:43:08 at Gateway Received HeartbeatAck
+23/03/2019 16:43:08 at Gateway Latency = 172 ms
+23/03/2019 16:43:12 Timer ticked
+23/03/2019 16:43:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:43:27 Timer ticked
+23/03/2019 16:43:42 Timer ticked
+23/03/2019 16:43:49 at Gateway Sent Heartbeat
+23/03/2019 16:43:49 at Gateway Received HeartbeatAck
+23/03/2019 16:43:49 at Gateway Latency = 93 ms
+23/03/2019 16:43:57 Timer ticked
+23/03/2019 16:44:12 Timer ticked
+23/03/2019 16:44:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:44:27 Timer ticked
+23/03/2019 16:44:30 at Gateway Sent Heartbeat
+23/03/2019 16:44:30 at Gateway Received HeartbeatAck
+23/03/2019 16:44:30 at Gateway Latency = 94 ms
+23/03/2019 16:44:42 Timer ticked
+23/03/2019 16:44:57 Timer ticked
+23/03/2019 16:45:11 at Gateway Sent Heartbeat
+23/03/2019 16:45:11 at Gateway Received HeartbeatAck
+23/03/2019 16:45:11 at Gateway Latency = 79 ms
+23/03/2019 16:45:12 Timer ticked
+23/03/2019 16:45:27 Timer ticked
+23/03/2019 16:45:42 Timer ticked
+23/03/2019 16:45:53 at Gateway Sent Heartbeat
+23/03/2019 16:45:53 at Gateway Received HeartbeatAck
+23/03/2019 16:45:53 at Gateway Latency = 375 ms
+23/03/2019 16:45:57 Timer ticked
+23/03/2019 16:46:12 Timer ticked
+23/03/2019 16:46:27 Timer ticked
+23/03/2019 16:46:34 at Gateway Sent Heartbeat
+23/03/2019 16:46:34 at Gateway Received HeartbeatAck
+23/03/2019 16:46:34 at Gateway Latency = 187 ms
+23/03/2019 16:46:42 Timer ticked
+23/03/2019 16:46:57 Timer ticked
+23/03/2019 16:47:12 Timer ticked
+23/03/2019 16:47:15 at Gateway Sent Heartbeat
+23/03/2019 16:47:15 at Gateway Received HeartbeatAck
+23/03/2019 16:47:16 at Gateway Latency = 297 ms
+23/03/2019 16:47:27 Timer ticked
+23/03/2019 16:47:42 Timer ticked
+23/03/2019 16:47:53 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:47:56 at Gateway Sent Heartbeat
+23/03/2019 16:47:57 at Gateway Received HeartbeatAck
+23/03/2019 16:47:57 at Gateway Latency = 156 ms
+23/03/2019 16:47:57 Timer ticked
+23/03/2019 16:48:12 Timer ticked
+23/03/2019 16:48:27 Timer ticked
+23/03/2019 16:48:38 at Gateway Sent Heartbeat
+23/03/2019 16:48:38 at Gateway Received HeartbeatAck
+23/03/2019 16:48:38 at Gateway Latency = 156 ms
+23/03/2019 16:48:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:48:42 Timer ticked
+23/03/2019 16:48:57 Timer ticked
+23/03/2019 16:49:02 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:49:12 Timer ticked
+23/03/2019 16:49:19 at Gateway Sent Heartbeat
+23/03/2019 16:49:19 at Gateway Received HeartbeatAck
+23/03/2019 16:49:19 at Gateway Latency = 156 ms
+23/03/2019 16:49:27 Timer ticked
+23/03/2019 16:49:42 Timer ticked
+23/03/2019 16:49:52 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:49:53 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:49:57 Timer ticked
+23/03/2019 16:50:00 at Gateway Sent Heartbeat
+23/03/2019 16:50:00 at Gateway Received HeartbeatAck
+23/03/2019 16:50:00 at Gateway Latency = 63 ms
+23/03/2019 16:50:10 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:50:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:50:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:50:12 Timer ticked
+23/03/2019 16:50:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:50:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:50:27 Timer ticked
+23/03/2019 16:50:42 at Gateway Sent Heartbeat
+23/03/2019 16:50:42 Timer ticked
+23/03/2019 16:50:42 at Gateway Received HeartbeatAck
+23/03/2019 16:50:42 at Gateway Latency = 328 ms
+23/03/2019 16:50:57 Timer ticked
+23/03/2019 16:51:12 Timer ticked
+23/03/2019 16:51:23 at Gateway Sent Heartbeat
+23/03/2019 16:51:23 at Gateway Received HeartbeatAck
+23/03/2019 16:51:23 at Gateway Latency = 250 ms
+23/03/2019 16:51:27 Timer ticked
+23/03/2019 16:51:42 Timer ticked
+23/03/2019 16:51:57 Timer ticked
+23/03/2019 16:52:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:52:04 at Gateway Sent Heartbeat
+23/03/2019 16:52:04 at Gateway Received HeartbeatAck
+23/03/2019 16:52:04 at Gateway Latency = 140 ms
+23/03/2019 16:52:12 Timer ticked
+23/03/2019 16:52:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:52:27 Timer ticked
+23/03/2019 16:52:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:52:42 Timer ticked
+23/03/2019 16:52:45 at Gateway Sent Heartbeat
+23/03/2019 16:52:45 at Gateway Received HeartbeatAck
+23/03/2019 16:52:45 at Gateway Latency = 141 ms
+23/03/2019 16:52:57 Timer ticked
+23/03/2019 16:53:12 Timer ticked
+23/03/2019 16:53:27 at Gateway Sent Heartbeat
+23/03/2019 16:53:27 Timer ticked
+23/03/2019 16:53:27 at Gateway Received HeartbeatAck
+23/03/2019 16:53:27 at Gateway Latency = 140 ms
+23/03/2019 16:53:42 Timer ticked
+23/03/2019 16:53:57 Timer ticked
+23/03/2019 16:54:08 at Gateway Sent Heartbeat
+23/03/2019 16:54:08 at Gateway Received HeartbeatAck
+23/03/2019 16:54:08 at Gateway Latency = 125 ms
+23/03/2019 16:54:12 Timer ticked
+23/03/2019 16:54:27 Timer ticked
+23/03/2019 16:54:42 Timer ticked
+23/03/2019 16:54:49 at Gateway Sent Heartbeat
+23/03/2019 16:54:49 at Gateway Received HeartbeatAck
+23/03/2019 16:54:49 at Gateway Latency = 47 ms
+23/03/2019 16:54:57 Timer ticked
+23/03/2019 16:55:12 Timer ticked
+23/03/2019 16:55:27 Timer ticked
+23/03/2019 16:55:30 at Gateway Sent Heartbeat
+23/03/2019 16:55:30 at Gateway Received HeartbeatAck
+23/03/2019 16:55:30 at Gateway Latency = 47 ms
+23/03/2019 16:55:42 Timer ticked
+23/03/2019 16:55:57 Timer ticked
+23/03/2019 16:56:12 Timer ticked
+23/03/2019 16:56:12 at Gateway Sent Heartbeat
+23/03/2019 16:56:12 at Gateway Received HeartbeatAck
+23/03/2019 16:56:12 at Gateway Latency = 140 ms
+23/03/2019 16:56:27 Timer ticked
+23/03/2019 16:56:42 Timer ticked
+23/03/2019 16:56:53 at Gateway Sent Heartbeat
+23/03/2019 16:56:53 at Gateway Received HeartbeatAck
+23/03/2019 16:56:53 at Gateway Latency = 47 ms
+23/03/2019 16:56:57 Timer ticked
+23/03/2019 16:57:12 Timer ticked
+23/03/2019 16:57:27 Timer ticked
+23/03/2019 16:57:34 at Gateway Sent Heartbeat
+23/03/2019 16:57:34 at Gateway Received HeartbeatAck
+23/03/2019 16:57:34 at Gateway Latency = 125 ms
+23/03/2019 16:57:42 Timer ticked
+23/03/2019 16:57:57 Timer ticked
+23/03/2019 16:58:05 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:58:12 Timer ticked
+23/03/2019 16:58:15 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:58:15 at Gateway Sent Heartbeat
+23/03/2019 16:58:16 at Gateway Received HeartbeatAck
+23/03/2019 16:58:16 at Gateway Latency = 62 ms
+23/03/2019 16:58:27 Timer ticked
+23/03/2019 16:58:42 Timer ticked
+23/03/2019 16:58:57 Timer ticked
+23/03/2019 16:58:57 at Gateway Sent Heartbeat
+23/03/2019 16:58:57 at Gateway Received HeartbeatAck
+23/03/2019 16:58:57 at Gateway Latency = 109 ms
+23/03/2019 16:59:12 Timer ticked
+23/03/2019 16:59:27 Timer ticked
+23/03/2019 16:59:28 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:59:38 at Gateway Sent Heartbeat
+23/03/2019 16:59:38 at Gateway Received HeartbeatAck
+23/03/2019 16:59:38 at Gateway Latency = 234 ms
+23/03/2019 16:59:42 Timer ticked
+23/03/2019 16:59:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 16:59:57 Timer ticked
+23/03/2019 17:00:12 Timer ticked
+23/03/2019 17:00:19 at Gateway Sent Heartbeat
+23/03/2019 17:00:19 at Gateway Received HeartbeatAck
+23/03/2019 17:00:19 at Gateway Latency = 63 ms
+23/03/2019 17:00:27 Timer ticked
+23/03/2019 17:00:36 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:00:36 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:00:36 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:00:42 Timer ticked
+23/03/2019 17:00:50 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:00:57 Timer ticked
+23/03/2019 17:01:01 at Gateway Sent Heartbeat
+23/03/2019 17:01:01 at Gateway Received HeartbeatAck
+23/03/2019 17:01:01 at Gateway Latency = 109 ms
+23/03/2019 17:01:12 Timer ticked
+23/03/2019 17:01:27 Timer ticked
+23/03/2019 17:01:42 Timer ticked
+23/03/2019 17:01:42 at Gateway Sent Heartbeat
+23/03/2019 17:01:42 at Gateway Received HeartbeatAck
+23/03/2019 17:01:42 at Gateway Latency = 125 ms
+23/03/2019 17:01:57 Timer ticked
+23/03/2019 17:02:12 Timer ticked
+23/03/2019 17:02:23 at Gateway Sent Heartbeat
+23/03/2019 17:02:23 at Gateway Received HeartbeatAck
+23/03/2019 17:02:23 at Gateway Latency = 47 ms
+23/03/2019 17:02:27 Timer ticked
+23/03/2019 17:02:36 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:02:42 Timer ticked
+23/03/2019 17:02:57 Timer ticked
+23/03/2019 17:03:04 at Gateway Sent Heartbeat
+23/03/2019 17:03:05 at Gateway Received HeartbeatAck
+23/03/2019 17:03:05 at Gateway Latency = 203 ms
+23/03/2019 17:03:12 Timer ticked
+23/03/2019 17:03:27 Timer ticked
+23/03/2019 17:03:42 Timer ticked
+23/03/2019 17:03:46 at Gateway Sent Heartbeat
+23/03/2019 17:03:46 at Gateway Received HeartbeatAck
+23/03/2019 17:03:46 at Gateway Latency = 109 ms
+23/03/2019 17:03:57 Timer ticked
+23/03/2019 17:04:12 Timer ticked
+23/03/2019 17:04:27 Timer ticked
+23/03/2019 17:04:27 at Gateway Sent Heartbeat
+23/03/2019 17:04:27 at Gateway Received HeartbeatAck
+23/03/2019 17:04:27 at Gateway Latency = 63 ms
+23/03/2019 17:04:42 Timer ticked
+23/03/2019 17:04:57 Timer ticked
+23/03/2019 17:05:08 at Gateway Sent Heartbeat
+23/03/2019 17:05:08 at Gateway Received HeartbeatAck
+23/03/2019 17:05:08 at Gateway Latency = 109 ms
+23/03/2019 17:05:12 Timer ticked
+23/03/2019 17:05:27 Timer ticked
+23/03/2019 17:05:42 Timer ticked
+23/03/2019 17:05:49 at Gateway Sent Heartbeat
+23/03/2019 17:05:50 at Gateway Received HeartbeatAck
+23/03/2019 17:05:50 at Gateway Latency = 250 ms
+23/03/2019 17:05:57 Timer ticked
+23/03/2019 17:06:12 Timer ticked
+23/03/2019 17:06:27 Timer ticked
+23/03/2019 17:06:31 at Gateway Sent Heartbeat
+23/03/2019 17:06:31 at Gateway Received HeartbeatAck
+23/03/2019 17:06:31 at Gateway Latency = 219 ms
+23/03/2019 17:06:42 Timer ticked
+23/03/2019 17:06:57 Timer ticked
+23/03/2019 17:07:12 Timer ticked
+23/03/2019 17:07:12 at Gateway Sent Heartbeat
+23/03/2019 17:07:12 at Gateway Received HeartbeatAck
+23/03/2019 17:07:12 at Gateway Latency = 204 ms
+23/03/2019 17:07:27 Timer ticked
+23/03/2019 17:07:42 Timer ticked
+23/03/2019 17:07:53 at Gateway Sent Heartbeat
+23/03/2019 17:07:53 at Gateway Received HeartbeatAck
+23/03/2019 17:07:53 at Gateway Latency = 203 ms
+23/03/2019 17:07:57 Timer ticked
+23/03/2019 17:08:12 Timer ticked
+23/03/2019 17:08:27 Timer ticked
+23/03/2019 17:08:35 at Gateway Sent Heartbeat
+23/03/2019 17:08:35 at Gateway Received HeartbeatAck
+23/03/2019 17:08:35 at Gateway Latency = 78 ms
+23/03/2019 17:08:42 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:08:42 Timer ticked
+23/03/2019 17:08:57 Timer ticked
+23/03/2019 17:09:12 Timer ticked
+23/03/2019 17:09:16 at Gateway Sent Heartbeat
+23/03/2019 17:09:16 at Gateway Received HeartbeatAck
+23/03/2019 17:09:16 at Gateway Latency = 78 ms
+23/03/2019 17:09:27 Timer ticked
+23/03/2019 17:09:42 Timer ticked
+23/03/2019 17:09:57 Timer ticked
+23/03/2019 17:09:57 at Gateway Sent Heartbeat
+23/03/2019 17:09:57 at Gateway Received HeartbeatAck
+23/03/2019 17:09:57 at Gateway Latency = 63 ms
+23/03/2019 17:10:12 Timer ticked
+23/03/2019 17:10:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:10:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:10:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:10:27 Timer ticked
+23/03/2019 17:10:38 at Gateway Sent Heartbeat
+23/03/2019 17:10:39 at Gateway Received HeartbeatAck
+23/03/2019 17:10:39 at Gateway Latency = 266 ms
+23/03/2019 17:10:42 Timer ticked
+23/03/2019 17:10:57 Timer ticked
+23/03/2019 17:11:12 Timer ticked
+23/03/2019 17:11:20 at Gateway Sent Heartbeat
+23/03/2019 17:11:20 at Gateway Received HeartbeatAck
+23/03/2019 17:11:20 at Gateway Latency = 156 ms
+23/03/2019 17:11:27 Timer ticked
+23/03/2019 17:11:42 Timer ticked
+23/03/2019 17:11:57 Timer ticked
+23/03/2019 17:12:01 at Gateway Sent Heartbeat
+23/03/2019 17:12:01 at Gateway Received HeartbeatAck
+23/03/2019 17:12:01 at Gateway Latency = 47 ms
+23/03/2019 17:12:12 Timer ticked
+23/03/2019 17:12:27 Timer ticked
+23/03/2019 17:12:42 Timer ticked
+23/03/2019 17:12:42 at Gateway Sent Heartbeat
+23/03/2019 17:12:42 at Gateway Received HeartbeatAck
+23/03/2019 17:12:42 at Gateway Latency = 62 ms
+23/03/2019 17:12:57 Timer ticked
+23/03/2019 17:13:12 Timer ticked
+23/03/2019 17:13:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:13:23 at Gateway Sent Heartbeat
+23/03/2019 17:13:24 at Gateway Received HeartbeatAck
+23/03/2019 17:13:24 at Gateway Latency = 63 ms
+23/03/2019 17:13:27 Timer ticked
+23/03/2019 17:13:42 Timer ticked
+23/03/2019 17:13:57 Timer ticked
+23/03/2019 17:14:05 at Gateway Sent Heartbeat
+23/03/2019 17:14:05 at Gateway Received HeartbeatAck
+23/03/2019 17:14:05 at Gateway Latency = 219 ms
+23/03/2019 17:14:12 Timer ticked
+23/03/2019 17:14:27 Timer ticked
+23/03/2019 17:14:42 Timer ticked
+23/03/2019 17:14:46 at Gateway Sent Heartbeat
+23/03/2019 17:14:46 at Gateway Received HeartbeatAck
+23/03/2019 17:14:46 at Gateway Latency = 234 ms
+23/03/2019 17:14:57 Timer ticked
+23/03/2019 17:15:12 Timer ticked
+23/03/2019 17:15:27 Timer ticked
+23/03/2019 17:15:27 at Gateway Sent Heartbeat
+23/03/2019 17:15:27 at Gateway Received HeartbeatAck
+23/03/2019 17:15:27 at Gateway Latency = 125 ms
+23/03/2019 17:15:42 Timer ticked
+23/03/2019 17:15:57 Timer ticked
+23/03/2019 17:16:09 at Gateway Sent Heartbeat
+23/03/2019 17:16:09 at Gateway Received HeartbeatAck
+23/03/2019 17:16:09 at Gateway Latency = 47 ms
+23/03/2019 17:16:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:16:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:16:12 Timer ticked
+23/03/2019 17:16:17 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:16:27 Timer ticked
+23/03/2019 17:16:42 Timer ticked
+23/03/2019 17:16:50 at Gateway Sent Heartbeat
+23/03/2019 17:16:50 at Gateway Received HeartbeatAck
+23/03/2019 17:16:50 at Gateway Latency = 93 ms
+23/03/2019 17:16:57 Timer ticked
+23/03/2019 17:17:12 Timer ticked
+23/03/2019 17:17:27 Timer ticked
+23/03/2019 17:17:31 at Gateway Sent Heartbeat
+23/03/2019 17:17:31 at Gateway Received HeartbeatAck
+23/03/2019 17:17:31 at Gateway Latency = 125 ms
+23/03/2019 17:17:42 Timer ticked
+23/03/2019 17:17:57 Timer ticked
+23/03/2019 17:18:12 Timer ticked
+23/03/2019 17:18:12 at Gateway Sent Heartbeat
+23/03/2019 17:18:12 at Gateway Received HeartbeatAck
+23/03/2019 17:18:12 at Gateway Latency = 47 ms
+23/03/2019 17:18:27 Timer ticked
+23/03/2019 17:18:38 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:18:42 Timer ticked
+23/03/2019 17:18:54 at Gateway Sent Heartbeat
+23/03/2019 17:18:54 at Gateway Received HeartbeatAck
+23/03/2019 17:18:54 at Gateway Latency = 94 ms
+23/03/2019 17:18:57 Timer ticked
+23/03/2019 17:19:12 Timer ticked
+23/03/2019 17:19:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:19:27 Timer ticked
+23/03/2019 17:19:35 at Gateway Sent Heartbeat
+23/03/2019 17:19:35 at Gateway Received HeartbeatAck
+23/03/2019 17:19:35 at Gateway Latency = 109 ms
+23/03/2019 17:19:40 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:19:42 Timer ticked
+23/03/2019 17:19:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:19:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:19:57 Timer ticked
+23/03/2019 17:19:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:19:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:20:06 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:20:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:20:12 Timer ticked
+23/03/2019 17:20:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:20:16 at Gateway Sent Heartbeat
+23/03/2019 17:20:16 at Gateway Received HeartbeatAck
+23/03/2019 17:20:16 at Gateway Latency = 94 ms
+23/03/2019 17:20:19 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:20:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:20:27 Timer ticked
+23/03/2019 17:20:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:20:39 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:20:42 Timer ticked
+23/03/2019 17:20:57 Timer ticked
+23/03/2019 17:20:57 at Gateway Sent Heartbeat
+23/03/2019 17:20:58 at Gateway Received HeartbeatAck
+23/03/2019 17:20:58 at Gateway Latency = 78 ms
+23/03/2019 17:21:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:21:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:21:12 Timer ticked
+23/03/2019 17:21:27 Timer ticked
+23/03/2019 17:21:39 at Gateway Sent Heartbeat
+23/03/2019 17:21:39 at Gateway Received HeartbeatAck
+23/03/2019 17:21:39 at Gateway Latency = 94 ms
+23/03/2019 17:21:42 Timer ticked
+23/03/2019 17:21:57 Timer ticked
+23/03/2019 17:22:12 Timer ticked
+23/03/2019 17:22:20 at Gateway Sent Heartbeat
+23/03/2019 17:22:20 at Gateway Received HeartbeatAck
+23/03/2019 17:22:20 at Gateway Latency = 94 ms
+23/03/2019 17:22:27 Timer ticked
+23/03/2019 17:22:42 Timer ticked
+23/03/2019 17:22:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:22:57 Timer ticked
+23/03/2019 17:23:01 at Gateway Sent Heartbeat
+23/03/2019 17:23:01 at Gateway Received HeartbeatAck
+23/03/2019 17:23:01 at Gateway Latency = 94 ms
+23/03/2019 17:23:12 Timer ticked
+23/03/2019 17:23:27 Timer ticked
+23/03/2019 17:23:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:23:39 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:23:42 Timer ticked
+23/03/2019 17:23:43 at Gateway Sent Heartbeat
+23/03/2019 17:23:43 at Gateway Received HeartbeatAck
+23/03/2019 17:23:43 at Gateway Latency = 62 ms
+23/03/2019 17:23:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:23:49 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:23:57 Timer ticked
+23/03/2019 17:23:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:24:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:24:12 Timer ticked
+23/03/2019 17:24:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:24:19 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:24:24 at Gateway Sent Heartbeat
+23/03/2019 17:24:24 at Gateway Received HeartbeatAck
+23/03/2019 17:24:24 at Gateway Latency = 78 ms
+23/03/2019 17:24:27 Timer ticked
+23/03/2019 17:24:42 Timer ticked
+23/03/2019 17:24:45 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:24:49 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:24:57 Timer ticked
+23/03/2019 17:25:05 at Gateway Sent Heartbeat
+23/03/2019 17:25:05 at Gateway Received HeartbeatAck
+23/03/2019 17:25:05 at Gateway Latency = 47 ms
+23/03/2019 17:25:12 Timer ticked
+23/03/2019 17:25:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:25:19 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:25:27 Timer ticked
+23/03/2019 17:25:42 Timer ticked
+23/03/2019 17:25:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:25:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:25:46 at Gateway Sent Heartbeat
+23/03/2019 17:25:46 at Gateway Received HeartbeatAck
+23/03/2019 17:25:46 at Gateway Latency = 62 ms
+23/03/2019 17:25:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:25:57 Timer ticked
+23/03/2019 17:26:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:26:07 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:26:07 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:26:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:26:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:26:09 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:26:12 Timer ticked
+23/03/2019 17:26:19 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:26:27 Timer ticked
+23/03/2019 17:26:28 at Gateway Sent Heartbeat
+23/03/2019 17:26:28 at Gateway Received HeartbeatAck
+23/03/2019 17:26:28 at Gateway Latency = 62 ms
+23/03/2019 17:26:39 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:26:42 Timer ticked
+23/03/2019 17:26:50 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:26:57 Timer ticked
+23/03/2019 17:27:09 at Gateway Sent Heartbeat
+23/03/2019 17:27:09 at Gateway Received HeartbeatAck
+23/03/2019 17:27:09 at Gateway Latency = 157 ms
+23/03/2019 17:27:12 Timer ticked
+23/03/2019 17:27:27 Timer ticked
+23/03/2019 17:27:42 Timer ticked
+23/03/2019 17:27:50 at Gateway Sent Heartbeat
+23/03/2019 17:27:50 at Gateway Received HeartbeatAck
+23/03/2019 17:27:50 at Gateway Latency = 172 ms
+23/03/2019 17:27:57 Timer ticked
+23/03/2019 17:28:12 Timer ticked
+23/03/2019 17:28:27 Timer ticked
+23/03/2019 17:28:31 at Gateway Sent Heartbeat
+23/03/2019 17:28:31 at Gateway Received HeartbeatAck
+23/03/2019 17:28:31 at Gateway Latency = 63 ms
+23/03/2019 17:28:42 Timer ticked
+23/03/2019 17:28:57 Timer ticked
+23/03/2019 17:29:12 Timer ticked
+23/03/2019 17:29:13 at Gateway Sent Heartbeat
+23/03/2019 17:29:13 at Gateway Received HeartbeatAck
+23/03/2019 17:29:13 at Gateway Latency = 312 ms
+23/03/2019 17:29:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:29:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+23/03/2019 17:29:27 Timer ticked
+23/03/2019 17:29:42 Timer ticked
+23/03/2019 17:29:54 at Gateway Sent Heartbeat
+23/03/2019 17:29:54 at Gateway Received HeartbeatAck
+23/03/2019 17:29:54 at Gateway Latency = 62 ms
+23/03/2019 17:29:57 Timer ticked
