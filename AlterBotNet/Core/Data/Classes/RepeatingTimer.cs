@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using AlterBotNet;
+using Discord;
 using Discord.WebSocket;
 
 namespace AlterBotNet.Core.Data.Classes
@@ -83,6 +85,11 @@ namespace AlterBotNet.Core.Data.Classes
             else if (DateTime.Now.Minute != RepeatingTimer._minuteSalaire)
             {
                 RepeatingTimer._salaireVerse = false;
+            }
+
+            if (Global.Client.LoginState != Discord.LoginState.LoggedIn)
+            {
+                Program.Main();
             }
         }
     }

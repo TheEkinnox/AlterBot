@@ -32,6 +32,14 @@ namespace AlterBotNet.Core.Commands
         #endregion
 
         #region MÉTHODES
+        [Command("ping"),Summary("Envoie le temps de latence (en ms) entre le bot et discord")]
+        public async Task SendPing()
+        {
+            int latence = Global.Client.Latency;
+
+            await ReplyAsync($"Latence: {latence}ms");
+        }
+
 
         [Command("restart")]
         public async Task RestartBot()
@@ -40,7 +48,7 @@ namespace AlterBotNet.Core.Commands
             {
                 await this.Context.Message.DeleteAsync();
                 RestUserMessage restartMsg = await this.Context.Channel.SendMessageAsync("Redémarrage en cours...");
-                await Task.Delay(2000);
+                await Task.Delay(Global.Client.Latency*10*2);
                 await restartMsg.ModifyAsync(msg => msg.Content = "Redémarrage effectué avec succès!");
                 this.Context.Client.Dispose();
                 await Global.Client.LogoutAsync();
