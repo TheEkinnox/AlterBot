@@ -50,7 +50,6 @@ namespace AlterBotNet.Core.Commands
                 RestUserMessage restartMsg = await this.Context.Channel.SendMessageAsync("Redémarrage en cours...");
                 await Task.Delay(Global.Client.Latency*10*2);
                 await restartMsg.ModifyAsync(msg => msg.Content = "Redémarrage effectué avec succès!");
-                this.Context.Client.Dispose();
                 await Global.Client.LogoutAsync();
                 await Global.Client.StopAsync();
                 Program.Main();
