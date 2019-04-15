@@ -35,10 +35,8 @@ namespace AlterBotNet.Core.Data.Classes
             StreamReader fluxLecture = new StreamReader(Logs._nomFichier + Logs._date);
             string fichierTexte = fluxLecture.ReadToEnd();
             fluxLecture.Close();
-            StreamWriter fluxEcriture = new StreamWriter(Logs._nomFichier + Logs._date, false);
-            fichierTexte = fichierTexte.EndsWith('\n') ? fichierTexte.Remove(fichierTexte.Length - 1) : fichierTexte;
-            fichierTexte += $"\n{DateTime.Now} {args}";
-            fluxEcriture.WriteLine($"{fichierTexte}");
+            StreamWriter fluxEcriture = new StreamWriter(Logs._nomFichier + Logs._date, true);
+            fluxEcriture.WriteLine($"{DateTime.Now} {args}");
             fluxEcriture.Close();
             Console.WriteLine($"{DateTime.Now} {args}");
         }

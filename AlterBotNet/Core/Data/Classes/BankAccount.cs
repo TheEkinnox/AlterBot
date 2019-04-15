@@ -56,7 +56,7 @@ namespace AlterBotNet.Core.Data.Classes
         {
             string montant = $"{this.Amount:c0}";
             string salaire = $"{this.Salaire:c0}";
-            string message = $"**{this.Name + ":**"} {montant.Replace("$", "Couronnes")}\nSalaire: {salaire.Replace("$", "Couronnes")}";
+            string message = $"**{this.Name + ":**"} {montant.Replace("$", "Couronnes").Replace("€", "Couronnes")}\nSalaire: {salaire.Replace("€", "Couronnes").Replace("$", "Couronnes")}";
             return message;
         }
 

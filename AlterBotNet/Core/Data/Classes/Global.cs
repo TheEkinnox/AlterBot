@@ -16,6 +16,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Discord;
+using Discord.Commands;
 using Discord.WebSocket;
 
 #endregion
@@ -72,12 +73,28 @@ namespace AlterBotNet.Core.Data.Classes
         {
             string targetRoleName = roleName;
             IEnumerable<ulong> result = from r in user.Guild.Roles
-                where r.Name == targetRoleName
-                select r.Id;
+                                        where r.Name == targetRoleName
+                                        select r.Id;
             ulong roleId = result.FirstOrDefault();
             if (roleId == 0) return false;
             SocketRole targetRole = user.Guild.GetRole(roleId);
             return user.Roles.Contains(targetRole);
+        }
+
+        /// <summary>
+        /// Vérifie si l'utilisateur possède le role indiqué ou non
+        /// </summary>
+        /// <param name="roleName">Nom du role à vérifier</param>
+        /// <returns>True si l'utilisateur est membre du role indiqué ou false sinon</returns>
+        public static SocketRole GetRoleByName(SocketCommandContext context, string roleName)
+        {
+            string targetRoleName = roleName;
+            IEnumerable<ulong> result = from r in context.Guild.Roles
+                where r.Name == targetRoleName
+                select r.Id;
+            ulong roleId = result.FirstOrDefault();
+            if (roleId == 0) throw new ArgumentException("Le role recherché n'existe pas");
+            return context.Guild.GetRole(roleId);
         }
 
         // =================
@@ -116,26 +133,50 @@ namespace AlterBotNet.Core.Data.Classes
             Logs.WriteLine("Comptes en banque mis à jour");
         }
 
-        public static async Task VerserSalaireAsync()
+        /// <summary>
+        /// Méthode permettant d'ajouter le salaire défini pour un personnage au dit personnage
+        /// </summary>
+        public static async Task VerserSalaireAsync(BankAccount bankAccount)
+        {
+            string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
+            List<BankAccount> bankAccounts = await Global.ChargerDonneesBankAsync(nomFichier);
+            if (bankAccount != null)
+            {
+                string bankName = bankAccount.Name;
+                decimal bankSalaire = bankAccount.Salaire;
+                ulong bankUserId = bankAccount.UserId;
+                decimal ancienMontant = bankAccount.Amount;
+                decimal nvMontant = ancienMontant + bankSalaire;
+                bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, bankName));
+                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
+                BankAccount newAccount = new BankAccount(bankName, nvMontant, bankUserId, bankSalaire);
+                bankAccounts.Add(newAccount);
+                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
+                Logs.WriteLine($"Salaire de {bankName} ({bankSalaire} couronnes) versé");
+                Logs.WriteLine(newAccount.ToString());
+            }
+        }
+
+        public static async Task VerserSalairesAsync()
         {
             List<BankAccount> bankAccounts = await Global.ChargerDonneesBankAsync(Global.CheminComptesEnBanque);
 
-            foreach (BankAccount bankAccount in bankAccounts)
+            for (int i = 0; i < bankAccounts.Count; i++)
             {
                 try
                 {
-                    if (bankAccount != null)
+                    BankAccount depositAccount = await Global.GetBankAccountByNameAsync(Global.CheminComptesEnBanque, bankAccounts[i].Name);
+                    if (depositAccount != null)
                     {
-                        string dpName = bankAccount.Name;
-                        decimal dpSalaire = bankAccount.Salaire;
-                        await Program.VerserSalaireAsync(bankAccount);
+                        string dpName = depositAccount.Name;
+                        decimal dpSalaire = depositAccount.Salaire;
                         Logs.WriteLine($"Salaire de {dpSalaire} couronnes versé sur le compte de {dpName}");
+                        await Global.VerserSalaireAsync(depositAccount);
                     }
                 }
                 catch (Exception exception)
                 {
                     Logs.WriteLine(exception.ToString());
-                    throw;
                 }
             }
         }

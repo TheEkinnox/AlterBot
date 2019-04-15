@@ -87,31 +87,7 @@ namespace AlterBotNet
             Global.Client = this._client;
             await Task.Delay(-1);
         }
-
-        /// <summary>
-        /// Méthode permettant d'ajouter le salaire défini pour un personnage au dit personnage
-        /// </summary>
-        public static async Task VerserSalaireAsync(BankAccount bankAccount)
-        {
-            string nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
-            List<BankAccount> bankAccounts = await Global.ChargerDonneesBankAsync(nomFichier);
-            if (bankAccount != null)
-            {
-                string bankName = bankAccount.Name;
-                decimal bankSalaire = bankAccount.Salaire;
-                ulong bankUserId = bankAccount.UserId;
-                decimal ancienMontant = bankAccount.Amount;
-                decimal nvMontant = ancienMontant + bankSalaire;
-                bankAccounts.RemoveAt(await Global.GetBankAccountIndexByNameAsync(nomFichier, bankName));
-                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
-                BankAccount newAccount = new BankAccount(bankName, nvMontant, bankUserId, bankSalaire);
-                bankAccounts.Add(newAccount);
-                Global.EnregistrerDonneesBank(nomFichier, bankAccounts);
-                Logs.WriteLine($"Salaire de {bankName} ({bankSalaire} couronnes) versé");
-                Logs.WriteLine(newAccount.ToString());
-            }
-        }
-
+        
         /// <summary>
         /// Mise à jour des channels banque
         /// </summary>

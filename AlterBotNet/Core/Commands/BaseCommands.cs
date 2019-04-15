@@ -40,6 +40,20 @@ namespace AlterBotNet.Core.Commands
             await ReplyAsync($"Latence: {latence}ms");
         }
 
+        [Command("logout")]
+        public async Task LogoutBot()
+        {
+            if (Global.HasRole((SocketGuildUser)this.Context.User,"Fondateur"))
+            {
+                await Global.Client.LogoutAsync();
+                await Global.Client.StopAsync();
+            }
+            else
+            {
+                await ReplyAsync("Vous devez être fondateur ou dev pour utiliser cette commande");
+                Logs.WriteLine($"{this.Context.User.Username} a tenté d'exécuter la commande {this.Context.Message.Content} et n'est pas fondateur ou dev");
+            }
+        }
 
         [Command("restart")]
         public async Task RestartBot()

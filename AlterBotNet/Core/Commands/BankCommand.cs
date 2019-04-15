@@ -757,18 +757,25 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
-                                BankAccount depositAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[1]);
-                                if (depositAccount != null)
+                                if (argus[1] == "all")
                                 {
-                                    string dpName = depositAccount.Name;
-                                    decimal dpSalaire = depositAccount.Salaire;
-                                    await ReplyAsync($"Salaire de {dpSalaire} couronnes versé sur le compte de {dpName}");
-                                    await Program.VerserSalaireAsync(depositAccount);
+                                    await Global.VerserSalairesAsync();
                                 }
                                 else
                                 {
-                                    await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Logs.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    BankAccount depositAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[1]);
+                                    if (depositAccount != null)
+                                    {
+                                        string dpName = depositAccount.Name;
+                                        decimal dpSalaire = depositAccount.Salaire;
+                                        await ReplyAsync($"Salaire de {dpSalaire} couronnes versé sur le compte de {dpName}");
+                                        await Global.VerserSalaireAsync(depositAccount);
+                                    }
+                                    else
+                                    {
+                                        await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                        Logs.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                    }
                                 }
                             }
                         }

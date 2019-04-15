@@ -38,7 +38,7 @@ namespace AlterBotNet.Core.Data.Classes
         private static void OnTimerTicked(object sender, ElapsedEventArgs e)
             => RepeatingTimer.OnTimerTickedAsync(sender, e).GetAwaiter().GetResult();
 
-        static string _cheminComptesEnBanque = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
+        static string _cheminComptesEnBanque = Global.CheminComptesEnBanque;
         private static bool _salaireVerse = false;
         private const DayOfWeek jourSalaire = DayOfWeek.Sunday;
         private static int _heureSalaire = 18;
@@ -56,33 +56,31 @@ namespace AlterBotNet.Core.Data.Classes
             // =========================================
             if (DateTime.Now.DayOfWeek == RepeatingTimer.jourSalaire && DateTime.Now.Hour == RepeatingTimer._heureSalaire && DateTime.Now.Minute == RepeatingTimer._minuteSalaire && !RepeatingTimer._salaireVerse && RepeatingTimer._ticksPasses >= 3)
             {
+                Logs.WriteLine("Versement des salaires");
                 List<BankAccount> bankAccounts = await Global.ChargerDonneesBankAsync(RepeatingTimer._cheminComptesEnBanque);
-
-                foreach (var bankAccount in bankAccounts)
+                for (int i = 0; i < bankAccounts.Count; i++)
                 {
                     try
                     {
-                        if (bankAccount != null)
+                        BankAccount depositAccount = await Global.GetBankAccountByNameAsync(RepeatingTimer._cheminComptesEnBanque, bankAccounts[i].Name);
+                        if (depositAccount != null)
                         {
-                            string dpName = bankAccount.Name;
-                            decimal dpSalaire = bankAccount.Salaire;
-                            await Program.VerserSalaireAsync(bankAccount);
+                            string dpName = depositAccount.Name;
+                            decimal dpSalaire = depositAccount.Salaire;
                             Logs.WriteLine($"Salaire de {dpSalaire} couronnes versé sur le compte de {dpName}");
+                            await Global.VerserSalaireAsync(depositAccount);
                         }
                     }
                     catch (Exception exception)
                     {
                         Logs.WriteLine(exception.ToString());
-                        throw;
                     }
                 }
 
                 RepeatingTimer._ticksPasses = 120;
-                List<BankAccount> sortedList = bankAccounts.OrderBy(o => o.Name).ToList();
-                Global.EnregistrerDonneesBank(RepeatingTimer._cheminComptesEnBanque, sortedList);
                 RepeatingTimer._salaireVerse = true;
             }
-            else if (DateTime.Now.Minute != RepeatingTimer._minuteSalaire)
+            else if (DateTime.Now.Minute != RepeatingTimer._minuteSalaire && RepeatingTimer._salaireVerse)
             {
                 RepeatingTimer._salaireVerse = false;
             }
