@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace AlterBotNet.Core.Data.Classes
@@ -23,7 +24,7 @@ namespace AlterBotNet.Core.Data.Classes
 
         public string TextForm()
         {
-            string message = $"``` ```Nom: {this.SpellName}\n Type: {this.Type}\nFormule: {this.SpellFullIncantation}\nEffet: {this.SpellEffects}\nDifficulté: {this.Level}";
+            string message = $"\n*Nom*: {this.SpellName}\n*Type*: {this.Type}\n*Formule*: {this.SpellFullIncantation}\n*Effet*: {this.SpellEffects}\n*Difficulté*: {this.Level}\n";
             return message;
         }
 
@@ -61,23 +62,50 @@ namespace AlterBotNet.Core.Data.Classes
 
         public string TextForm()
         {
-            string message = $"**{this.Name}**\n";
-            foreach (Spell spell in this.Spells)
-            {
-                message += $"\n{spell.ToString()}";
-            }
+            string message = "";
+            if (this.Name != "Grimoire public")
+                message += $"**Enchantements et sortilèges de {this.Name}:**\n";
+            else
+                message += "**Grimoire Commun**\n";
             if (this.Spells.Count > 0)
             {
                 for (int j = 0; j < this.Spells.Count; j++)
                 {
                     if (this.Spells[j]!=null)
                     {
-                        message += $"\n[{j}] {this.Spells[j].TextForm()}";
+                        //    if (j == 0)
+                        //        message += "\n";
+                        message += $"__*Numéro {j}*__ {this.Spells[j].TextForm()}";
                     }
                 }
             }
-            else message += "\nInventaire vide";
+            else message += "\nGrimoire vide";
             return message;
         }
+
+        public bool PossedeSpell(string nomSpell)
+        {
+            for (int i = 0; i < this.Spells.Count; i++)
+            {
+                if (this.Spells[i].SpellName == nomSpell)
+                    return true;
+            }
+            return false;
+        }
+    }
+
+    public enum SpellType
+    {
+        [Description("Sortilège")] Sortilege,
+        Enchantement
+    }
+
+    public enum SpellLevel
+    {
+        Simple,
+        [Description("Basique")] Base,
+        [Description("Avancé")] Avance,
+        Expert,
+        Maitre
     }
 }

@@ -8858,3 +8858,17 @@ Salaire: 0 Couronnes
 15/04/2019 09:54:26 at Gateway Sent Heartbeat
 15/04/2019 09:54:26 at Gateway Received HeartbeatAck
 15/04/2019 09:54:26 at Gateway Latency = 63 ms
+15/04/2019 09:54:28 Timer ticked
+15/04/2019 09:54:41 at Gateway Received Dispatch (PRESENCE_UPDATE)
+15/04/2019 09:54:43 Timer ticked
+15/04/2019 09:54:58 Timer ticked
+15/04/2019 09:55:07 at Gateway Sent Heartbeat
+15/04/2019 09:55:07 at Gateway Received HeartbeatAck
+15/04/2019 09:55:07 at Gateway Latency = 203 ms
+15/04/2019 09:55:13 Timer ticked
+15/04/2019 09:55:28 Timer ticked
+15/04/2019 09:55:43 Timer ticked
+15/04/2019 09:55:49 at Gateway Sent Heartbeat
+15/04/2019 09:55:49 at Gateway Received HeartbeatAck
+15/04/2019 09:55:49 at Gateway Latency = 78 ms
+15/04/2019 09:55:58 Timer ticked
