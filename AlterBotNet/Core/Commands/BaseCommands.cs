@@ -10,6 +10,9 @@
 #region USING
 
 using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -55,35 +58,68 @@ namespace AlterBotNet.Core.Commands
             }
         }
 
-        [Command("restart")]
-        public async Task RestartBot()
-        {
-            if (Global.IsStaff((SocketGuildUser) this.Context.User))
-            {
-                await this.Context.Message.DeleteAsync();
-                RestUserMessage restartMsg = await this.Context.Channel.SendMessageAsync("Redémarrage en cours...");
-                await Task.Delay(Global.Client.Latency*10*2);
-                await restartMsg.ModifyAsync(msg => msg.Content = "Redémarrage effectué avec succès!");
-                try
-                {
-                    await Global.Client.LogoutAsync();
-                    await Global.Client.StopAsync();
-                }
-                catch (Exception e)
-                {
-                    Logs.WriteLine(e.Message);
-                }
-                finally
-                {
-                    Program.Main();
-                }
-            }
-            else
-            {
-                await ReplyAsync("Vous devez être membre du staff pour utiliser cette commande");
-                Logs.WriteLine($"{this.Context.User.Username} a tenté d'exécuter la commande {this.Context.Message.Content} et n'est pas membre du staff");
-            }
-        }
+        //[Command("restart")]
+        //public async Task RestartBot()
+        //{
+        //    if (Global.IsStaff((SocketGuildUser) this.Context.User))
+        //    {
+        //        bool restartFail = false;
+        //        await this.Context.Message.DeleteAsync();
+        //        RestUserMessage restartMsg = await this.Context.Channel.SendMessageAsync("Redémarrage en cours...");
+        //        string file = Assembly.GetEntryAssembly().Location;
+        //        Logs.WriteLine($"Fermeture du fichier {file}");
+        //        try
+        //        {
+        //            if (File.Exists(file))
+        //            {
+        //                Process p = new Process();
+        //                p.StartInfo.FileName = file;
+        //                p.Start();
+        //            }
+        //            else throw new FileNotFoundException($"Le fichier \"{file}\" n'existe pas");
+        //            await restartMsg.ModifyAsync(msg => msg.Content = "Redémarrage effectué avec succès!");
+        //        }
+        //        catch (System.IO.FileNotFoundException nfe)
+        //        {
+        //            restartFail = true;
+        //            Logs.WriteLine($"Une erreur s'est produite avec le message : {nfe.Message}");
+        //            await restartMsg.ModifyAsync(msg => msg.Content = "Une erreur s'est produite lors du redémarrage...");
+        //            throw;
+        //        }
+        //        catch (Win32Exception we)
+        //        {
+        //            restartFail = true;
+        //            Logs.WriteLine($"Une erreur s'est produite avec le message : {we.Message}");
+        //            await restartMsg.ModifyAsync(msg => msg.Content = "Une erreur s'est produite lors du redémarrage...");
+        //            throw;
+        //        }
+        //        catch (ObjectDisposedException ode)
+        //        {
+        //            restartFail = true;
+        //            Logs.WriteLine($"Une erreur s'est produite avec le message : {ode.Message}");
+        //            await restartMsg.ModifyAsync(msg => msg.Content = "Une erreur s'est produite lors du redémarrage...");
+        //            throw;
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            restartFail = true;
+        //            Logs.WriteLine($"Une erreur s'est produite avec le message : {e.Message}");
+        //            await restartMsg.ModifyAsync(msg => msg.Content = "Une erreur s'est produite lors du redémarrage...");
+        //            throw;
+        //        }
+        //        finally
+        //        {
+        //            if (!restartFail)
+        //                Environment.Exit(0);
+        //        }
+
+        //    }
+        //    else
+        //    {
+        //        await ReplyAsync("Vous devez être membre du staff pour utiliser cette commande");
+        //        Logs.WriteLine($"{this.Context.User.Username} a tenté d'exécuter la commande {this.Context.Message.Content} et n'est pas membre du staff");
+        //    }
+        //}
 
         [Command("hello"), Alias("helloworld", "world"), Summary("Commande hello world")]
         public async Task SendMessage()
@@ -162,6 +198,7 @@ namespace AlterBotNet.Core.Commands
             rp += "Aide sur la commande bank: `bank help`\n";
             rp += "Aide sur la commande stuff: `stuff help`\n";
             rp += "Aide sur la commande stats: `stats help`\n";
+            rp += "Aide sur la commande spell: `spell help`\n";
             autre += "Envoyer une image de poulpe avec un message aléatoire: `plop`\n";
             rp += "Lancer un dé: `roll 1d100`\n";
             autre += "Faire parler le bot (c useless): `say message`\n";

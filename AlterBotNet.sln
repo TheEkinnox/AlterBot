@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2003
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlterBotNet", "AlterBotNet\AlterBotNet.csproj", "{0FDC9661-2297-48EE-BAD8-F11BB40BF0B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlterBotNet", "AlterBotNet\AlterBotNet.csproj", "{0FDC9661-2297-48EE-BAD8-F11BB40BF0B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlterBotNetGUI", "AlterBotNetGUI\AlterBotNetGUI.csproj", "{4BEBDBA8-260C-4592-8A84-B161DB3D7E82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0FDC9661-2297-48EE-BAD8-F11BB40BF0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FDC9661-2297-48EE-BAD8-F11BB40BF0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FDC9661-2297-48EE-BAD8-F11BB40BF0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BEBDBA8-260C-4592-8A84-B161DB3D7E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BEBDBA8-260C-4592-8A84-B161DB3D7E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BEBDBA8-260C-4592-8A84-B161DB3D7E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BEBDBA8-260C-4592-8A84-B161DB3D7E82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

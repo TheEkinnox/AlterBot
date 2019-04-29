@@ -15,7 +15,7 @@ namespace AlterBotNet.Core.Commands
         private Random _rand = new Random();
         #region MÉTHODES
 
-        [Command("grim"), Alias("grm"), Summary("Affiche le contenu du grimmoire commun")]
+        [Command("grim"), Alias("grm"), Summary("Affiche le contenu du grimoire commun")]
         public async Task SendPublicGrim([Remainder]string input = "none")
         {
             SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
@@ -23,9 +23,9 @@ namespace AlterBotNet.Core.Commands
             ulong userId = this.Context.User.Id;
             string error = "Valeur invalide, grim help pour plus d'information.";
             string message = "";
-            string nomFichier = Global.CheminGrimoirePublic;
+            string nomFichierXml = Global.CheminGrimoirePublic;
 
-            List<SpellAccount> grimAccounts = await Global.ChargerDonneesSpellAsync(nomFichier);
+            List<SpellAccount> grimAccounts = await Global.ChargerDonneesSpellXmlAsync(nomFichierXml);
             Logs.WriteLine("Commande grim utilisée par " + this.Context.User.Username);
             if (input != "none")
             {
@@ -63,10 +63,11 @@ namespace AlterBotNet.Core.Commands
                 // =============================================
                 else if (input == "list")
                 {
+                    await this.Context.Message.DeleteAsync();
                     await ReplyAsync("**Grimoire Commun:**\n");
                     if (Global.IsStaff((SocketGuildUser)this.Context.User))
                     {
-                        if (string.IsNullOrEmpty((await Global.GrimSpellsListAsync(nomFichier)).ToString()))
+                        if (string.IsNullOrEmpty((await Global.XmlGrimSpellsListAsync(nomFichierXml)).ToString()))
                         {
                             await ReplyAsync("Liste vide");
                             Logs.WriteLine("Liste vide");
@@ -75,10 +76,7 @@ namespace AlterBotNet.Core.Commands
                         {
                             try
                             {
-                                Logs.WriteLine((await Global.GrimSpellsListAsync(nomFichier)).Count.ToString());
-                                Logs.WriteLine("**Grimoire Commun:**\n");
-                                await ReplyAsync("**Grimoire Commun:**\n");
-                                foreach (string msg in await Global.GrimSpellsListAsync(nomFichier))
+                                foreach (string msg in await Global.XmlGrimSpellsListAsync(nomFichierXml))
                                 {
                                     if (!string.IsNullOrEmpty(msg))
                                     {

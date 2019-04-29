@@ -1730,7 +1730,7 @@ Trier la liste des comptes (par ordre alphabétique): `spell sort`
 16/04/2019 19:55:06 at Gateway Received Dispatch (TYPING_START)
 16/04/2019 19:55:09 Timer ticked
 16/04/2019 19:55:13 at Gateway Received Dispatch (MESSAGE_CREATE)
-16/04/2019 19:55:13 Le sotilège/enchantement vehe n'est pas dans le grimmoire.
+16/04/2019 19:55:13 Le sotilège/enchantement vehe n'est pas dans le grimoire.
 16/04/2019 19:55:13 at Gateway Received Dispatch (MESSAGE_CREATE)
 16/04/2019 19:55:13 at Rest POST channels/360639832017338370/messages: 165,97 ms
 16/04/2019 19:55:18 at Gateway Sent Heartbeat

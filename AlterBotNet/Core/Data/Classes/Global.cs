@@ -2,8 +2,8 @@
 
 // Nom du fichier : Global.cs
 // Auteur : Loick OBIANG (1832960)
-// Date de création : 2019-02-13
-// Date de modification : 2019-03-14
+// Date de création : 2019-04-20
+// Date de modification : 2019-04-21
 
 #endregion
 
@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using System.Xml;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
@@ -30,8 +31,8 @@ namespace AlterBotNet.Core.Data.Classes
         internal static string CheminComptesEnBanque = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
         internal static string CheminComptesStuff = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\stuff.altr");
         internal static string CheminComptesStats = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\stats.altr");
-        internal static string CheminComptesSpell = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\spells.altr");
-        internal static string CheminGrimoirePublic = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\grimoire.altr");
+        internal static string CheminComptesSpellXml = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\spellsXML.altr");
+        internal static string CheminGrimoirePublic = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\grimoireXML.altr");
 
         #endregion
 
@@ -74,8 +75,8 @@ namespace AlterBotNet.Core.Data.Classes
         {
             string targetRoleName = roleName;
             IEnumerable<ulong> result = from r in user.Guild.Roles
-                                        where r.Name == targetRoleName
-                                        select r.Id;
+                where r.Name == targetRoleName
+                select r.Id;
             ulong roleId = result.FirstOrDefault();
             if (roleId == 0) return false;
             SocketRole targetRole = user.Guild.GetRole(roleId);
@@ -504,8 +505,6 @@ namespace AlterBotNet.Core.Data.Classes
         public static List<string> StuffAccountsList(string nomFichier)
             => Global.StuffAccountsListAsync(nomFichier).GetAwaiter().GetResult();
 
-        #endregion
-
         // ==================
         // = Méthodes stats =
         // ==================
@@ -689,13 +688,13 @@ namespace AlterBotNet.Core.Data.Classes
         public static List<string> StatsAccountsList(string nomFichier)
             => Global.StatsAccountsListAsync(nomFichier).GetAwaiter().GetResult();
 
-        // ==================
-        // = Méthodes spell =
-        // ==================
+        // ======================
+        // = Méthodes spell XML =
+        // ======================
         /// <summary>
-        /// Mise à jour des channels SpellList
+        /// Mise à jour des channels Statistiques
         /// </summary>
-        public static async Task UpdateSpell()
+        public static async Task UpdateSpellXml()
         {
             try
             {
@@ -706,7 +705,7 @@ namespace AlterBotNet.Core.Data.Classes
                         await message.DeleteAsync();
                     }
 
-                    foreach (string msg in await Global.SpellAccountsListAsync(Global.CheminComptesSpell))
+                    foreach (string msg in await Global.StatsAccountsListAsync(Global.CheminComptesStats))
                     {
                         if (!string.IsNullOrEmpty(msg))
                         {
@@ -722,113 +721,166 @@ namespace AlterBotNet.Core.Data.Classes
                 throw;
             }
 
-            Logs.WriteLine("Comptes de spell mis à jour");
+            Logs.WriteLine("Comptes de stats mis à jour");
         }
 
-        public static void EnregistrerDonneesSpell(string cheminFichier, List<SpellAccount> savedSpellAccounts)
+        /// <summary>
+        /// Mise à jour des channels SpellList
+        /// </summary>
+        public static void EnregistrerDonneesSpellXml(string cheminFichier, List<SpellAccount> savedSpellAccounts)
         {
-            StreamWriter fluxEcriture = new StreamWriter(cheminFichier, false);
+            XmlDocument spellXml = new XmlDocument();
 
-            String personneTexte;
-            for (int i = 0; i < savedSpellAccounts.Count; i++)
+            XmlDeclaration xmlDeclaration = spellXml.CreateXmlDeclaration("1.0", "utf-8", null);
+            spellXml.AppendChild(xmlDeclaration);
+
+            XmlElement elemGrimoires = spellXml.CreateElement("grimoires");
+            spellXml.AppendChild(elemGrimoires);
+            XmlElement elemGrimoire, elemNom, elemSpells, elemSpell, elemSpellName, elemSpellType, elemFormule, elemSpellEffect, elemSpellLevel, elemOwnerId;
+            foreach (SpellAccount spellAccount in savedSpellAccounts)
             {
-                if (savedSpellAccounts[i] != null)
+                elemGrimoire = spellXml.CreateElement("grimoire");
+
+                elemNom = spellXml.CreateElement("nom");
+                elemNom.InnerText = spellAccount.Name;
+                elemGrimoire.AppendChild(elemNom);
+                elemSpells = spellXml.CreateElement("spells");
+                elemGrimoire.AppendChild(elemSpells);
+
+                foreach (Spell spell in spellAccount.Spells)
                 {
-                    personneTexte = $"{savedSpellAccounts[i].ToString()}";
+                    elemSpell = spellXml.CreateElement("spell");
+                    elemSpellName = spellXml.CreateElement("spellname");
+                    elemSpellName.InnerText = spell.SpellName;
 
-                    fluxEcriture.WriteLine(personneTexte);
-                }
-            }
+                    elemSpellType = spellXml.CreateElement("type");
+                    elemSpellType.InnerText = spell.Type.ToString();
 
-            fluxEcriture.Close();
-        }
+                    elemFormule = spellXml.CreateElement("formule");
+                    elemFormule.InnerText = spell.SpellFullIncantation;
 
-        public static async Task<List<SpellAccount>> ChargerDonneesSpellAsync(string cheminFichier)
-        {
-            StreamReader fluxLecture = new StreamReader(cheminFichier);
+                    elemSpellEffect = spellXml.CreateElement("effets");
+                    elemSpellEffect.InnerText = spell.SpellEffects;
 
-            String fichierTexte = fluxLecture.ReadToEnd();
-            fluxLecture.Close();
-
-            fichierTexte = fichierTexte.Replace("\r", "").Trim();
-
-            String[] vectLignes = fichierTexte.Split('\n');
-
-            int nbLignes = vectLignes.Length;
-
-            if (vectLignes[vectLignes.Length - 1] == "")
-            {
-                nbLignes = vectLignes.Length - 1;
-            }
-
-            SpellAccount[] spellAccounts = new SpellAccount[nbLignes];
-
-
-            String[] vectChamps;
-            string name;
-            ulong userId;
-
-            for (int i = 0; i < spellAccounts.Length; i++)
-            {
-                List<Spell> spells = new List<Spell>();
-                vectChamps = vectLignes[i].Split(',');
-                name = vectChamps[0].Trim();
-                Spell spell;
-                string spellName;
-                SpellType type = SpellType.Sortilege;
-                string spellIncant;
-                string spellEffects;
-                SpellLevel level = SpellLevel.Base;
-                for (int j = 1; !ulong.TryParse(vectChamps[j], out userId) && vectChamps[j] != null; j++)
-                {
-                    string[] vectChampsSpell = vectChamps[j].Split(";");
-                    spellName = vectChampsSpell[0].Trim();
-                    switch (vectChampsSpell[1].Trim())
+                    elemSpellLevel = spellXml.CreateElement("niveau");
+                    switch (spell.Level)
                     {
-                        case "Sortilège":
-                            type = SpellType.Sortilege;
+                        case SpellLevel.Simple:
+                            elemSpellLevel.InnerText = "Simple";
                             break;
-                        case "Enchantement":
-                            type = SpellType.Enchantement;
+                        case SpellLevel.Basique:
+                            elemSpellLevel.InnerText = "Basique";
+                            break;
+                        case SpellLevel.Avance:
+                            elemSpellLevel.InnerText = "Avance";
+                            break;
+                        case SpellLevel.Expert:
+                            elemSpellLevel.InnerText = "Expert";
+                            break;
+                        case SpellLevel.Maitre:
+                            elemSpellLevel.InnerText = "Maitre";
                             break;
                     }
 
-                    spellIncant = vectChampsSpell[2].Trim();
-                    spellEffects = vectChampsSpell[3].Trim();
-                    switch (vectChampsSpell[4].Trim())
-                    {
-                        case "Simple":
-                            level = SpellLevel.Simple;
-                            break;
-                        case "Base":
-                            level = SpellLevel.Base;
-                            break;
-                        case "Avancé":
-                            level = SpellLevel.Avance;
-                            break;
-                        case "Expert":
-                            level = SpellLevel.Expert;
-                            break;
-                        case "Maitre":
-                            level = SpellLevel.Maitre;
-                            break;
-                    }
-                    spells.Add(new Spell(spellName, type, spellIncant, spellEffects, level));
+                    elemSpell.AppendChild(elemSpellName);
+                    elemSpell.AppendChild(elemSpellType);
+                    elemSpell.AppendChild(elemFormule);
+                    elemSpell.AppendChild(elemSpellEffect);
+                    elemSpell.AppendChild(elemSpellLevel);
+                    elemSpells.AppendChild(elemSpell);
                 }
 
-                spellAccounts[i] = new SpellAccount(name, spells, userId);
+                elemOwnerId = spellXml.CreateElement("ownerid");
+                elemOwnerId.InnerText = spellAccount.UserId.ToString();
+
+                elemGrimoire.AppendChild(elemOwnerId);
+                elemGrimoires.AppendChild(elemGrimoire);
+            }
+
+            spellXml.Save(cheminFichier);
+        }
+
+        public static async Task<List<SpellAccount>> ChargerDonneesSpellXmlAsync(string cheminFichier)
+        {
+            List<SpellAccount> spellAccounts = new List<SpellAccount>();
+            try
+            {
+                XmlDocument spellXml = new XmlDocument();
+                spellXml.Load(cheminFichier);
+                XmlNodeList listeElemGrimoire = spellXml.GetElementsByTagName("grimoire");
+
+                foreach (XmlElement grimoire in listeElemGrimoire)
+                {
+                    string name, spellName, incant, effects;
+                    List<Spell> spells = new List<Spell>();
+                    SpellType spellType;
+                    SpellLevel spellLevel;
+                    ulong userId;
+                    name = grimoire.GetElementsByTagName("nom")[0].InnerText;
+                    XmlNodeList listeElemSpells = grimoire.GetElementsByTagName("spells");
+                    if (listeElemSpells.Count > 0)
+                        foreach (XmlElement spell in ((XmlElement) listeElemSpells[0]).GetElementsByTagName("spell"))
+                        {
+                            spellName = spell.GetElementsByTagName("spellname")[0].InnerText;
+                            switch (spell.GetElementsByTagName("type")[0].InnerText)
+                            {
+                                case "Sortilege":
+                                    spellType = SpellType.Sortilege;
+                                    break;
+                                case "Enchantement":
+                                    spellType = SpellType.Enchantement;
+                                    break;
+                                default:
+                                    spellType = 0;
+                                    break;
+                            }
+
+                            incant = spell.GetElementsByTagName("formule")[0].InnerText;
+                            effects = spell.GetElementsByTagName("effets")[0].InnerText;
+                            switch (spell.GetElementsByTagName("niveau")[0].InnerText)
+                            {
+                                case "Simple":
+                                    spellLevel = SpellLevel.Simple;
+                                    break;
+                                case "Basique":
+                                    spellLevel = SpellLevel.Basique;
+                                    break;
+                                case "Avancé":
+                                    spellLevel = SpellLevel.Avance;
+                                    break;
+                                case "Expert":
+                                    spellLevel = SpellLevel.Expert;
+                                    break;
+                                case "Maitre":
+                                    spellLevel = SpellLevel.Maitre;
+                                    break;
+                                default:
+                                    spellLevel = 0;
+                                    break;
+                            }
+
+                            spells.Add(new Spell(spellName, spellType, incant, effects, spellLevel));
+                        }
+
+                    userId = ulong.Parse(grimoire.GetElementsByTagName("ownerid")[0].InnerText);
+                    spellAccounts.Add(new SpellAccount(name, spells, userId));
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
 
             return spellAccounts.ToList();
         }
 
-        public static List<SpellAccount> ChargerDonneesSpell(string cheminFichier)
-            => Global.ChargerDonneesSpellAsync(cheminFichier).GetAwaiter().GetResult();
+        public static List<SpellAccount> ChargerDonneesSpellXml(string cheminFichier)
+            => Global.ChargerDonneesSpellXmlAsync(cheminFichier).GetAwaiter().GetResult();
 
-
-        public static async Task<SpellAccount> GetSpellAccountByNameAsync(string nomFichier, string nomPerso)
+        public static async Task<SpellAccount> GetXmlSpellAccountByNameAsync(string nomFichier, string nomPerso)
         {
-            List<SpellAccount> regAccounts = Global.ChargerDonneesSpell(nomFichier);
+            List<SpellAccount> regAccounts = Global.ChargerDonneesSpellXml(nomFichier);
             SpellAccount userAccount = null;
             for (int i = 0; i < regAccounts.Count; i++)
             {
@@ -841,12 +893,12 @@ namespace AlterBotNet.Core.Data.Classes
             return userAccount;
         }
 
-        public static SpellAccount GetSpellAccountByName(string nomFichier, string nomPerso)
-            => Global.GetSpellAccountByNameAsync(nomFichier, nomPerso).GetAwaiter().GetResult();
+        public static SpellAccount GetXmlSpellAccountByName(string nomFichier, string nomPerso)
+            => Global.GetXmlSpellAccountByNameAsync(nomFichier, nomPerso).GetAwaiter().GetResult();
 
-        public static async Task<int> GetSpellAccountIndexByNameAsync(string nomFichier, string nomPerso)
+        public static async Task<int> GetXmlSpellAccountIndexByNameAsync(string nomFichier, string nomPerso)
         {
-            List<SpellAccount> regAccounts = Global.ChargerDonneesSpell(nomFichier);
+            List<SpellAccount> regAccounts = Global.ChargerDonneesSpellXml(nomFichier);
             int userAccountIndex = -1;
             for (int i = 0; i < regAccounts.Count; i++)
             {
@@ -859,12 +911,12 @@ namespace AlterBotNet.Core.Data.Classes
             return userAccountIndex;
         }
 
-        public static int GetSpellAccountIndexByName(string nomFichier, string nomPerso)
-            => Global.GetSpellAccountIndexByNameAsync(nomFichier, nomPerso).GetAwaiter().GetResult();
+        public static int GetXmlSpellAccountIndexByName(string nomFichier, string nomPerso)
+            => Global.GetXmlSpellAccountIndexByNameAsync(nomFichier, nomPerso).GetAwaiter().GetResult();
 
-        public static async Task<List<string>> SpellAccountsListAsync(string nomFichier)
+        public static async Task<List<string>> XmlSpellAccountsListAsync(string nomFichier)
         {
-            List<SpellAccount> regAccounts = Global.ChargerDonneesSpell(nomFichier);
+            List<SpellAccount> regAccounts = Global.ChargerDonneesSpellXml(nomFichier);
             List<string> message = new List<string>();
             int lastIndex = 0;
             for (int i = 0; i < regAccounts.Count / 5 + regAccounts.Count % 5; i++)
@@ -877,7 +929,7 @@ namespace AlterBotNet.Core.Data.Classes
                     {
                         try
                         {
-                            message[i] += $"{regAccounts[j].TextForm()}\n";
+                            message[i] += $"``` ```{regAccounts[j].TextForm()}\n";
                         }
                         catch (Exception e)
                         {
@@ -898,25 +950,25 @@ namespace AlterBotNet.Core.Data.Classes
             return message;
         }
 
-        public static List<string> SpellAccountsList(string nomFichier)
-            => Global.SpellAccountsListAsync(nomFichier).GetAwaiter().GetResult();
+        public static List<string> XmlSpellAccountsList(string nomFichier)
+            => Global.XmlSpellAccountsListAsync(nomFichier).GetAwaiter().GetResult();
 
-        public static async Task<List<string>> GrimSpellsListAsync(string nomFichier)
+        public static async Task<List<string>> XmlGrimSpellsListAsync(string nomFichier)
         {
-            List<Spell> grimSpells = Global.ChargerDonneesSpell(nomFichier)[0].Spells;
+            List<Spell> grimSpells = Global.ChargerDonneesSpellXml(nomFichier)[0].Spells;
             List<string> message = new List<string>();
             int lastIndex = 0;
-            for (int i = 0; i < grimSpells.Count / 6 + grimSpells.Count % 6; i++)
+            for (int i = 0; i < grimSpells.Count / 5 + grimSpells.Count % 5; i++)
             {
                 try
                 {
                     message.Add("");
 
-                    for (int j = lastIndex; j < lastIndex + grimSpells.Count / 6 + grimSpells.Count % 6 && j < grimSpells.Count && grimSpells[j] != null; j++)
+                    for (int j = lastIndex; j < lastIndex + grimSpells.Count / 5 + grimSpells.Count % 5 && j < grimSpells.Count && grimSpells[j] != null; j++)
                     {
                         try
                         {
-                            message[i] += $"{grimSpells[j].TextForm()}\n";
+                            message[i] += $"\n``` ```{grimSpells[j].TextForm()}";
                         }
                         catch (Exception e)
                         {
@@ -925,7 +977,7 @@ namespace AlterBotNet.Core.Data.Classes
                         }
                     }
 
-                    lastIndex += grimSpells.Count / 6 + grimSpells.Count % 6;
+                    lastIndex += grimSpells.Count / 5 + grimSpells.Count % 5;
                 }
                 catch (Exception e)
                 {
@@ -936,19 +988,41 @@ namespace AlterBotNet.Core.Data.Classes
 
             return message;
         }
-        public static int FindSpell(string nomSpell)
+
+        public static Spell FindXmlSpell(string nomSpell)
         {
             nomSpell = nomSpell.ToLower().Replace("é", "e").Replace("è", "e").Replace("ë", "e").Replace("ä", "a").Replace("ï", "i");
-            Spell spell = null;
-            for (int i = 0; i < Global.ChargerDonneesSpell(Global.CheminComptesSpell).Count && spell == null; i++)
+            Spell spell;
+            List<SpellAccount> spells = Global.ChargerDonneesSpellXml(Global.CheminComptesSpellXml);
+            for (int i = 0; i < spells.Count; i++)
             {
-                spell = (from s in Global.ChargerDonneesSpell(Global.CheminComptesSpell)[i].Spells
-                         where s.SpellName.ToLower().Replace("é", "e").Replace("è", "e").Replace("ë", "e").Replace("ä", "a").Replace("ï", "i") == nomSpell
-                         select s).FirstOrDefault();
+                spell = (from s in spells[i].Spells
+                    where s.SpellName.ToLower().Replace("é", "e").Replace("è", "e").Replace("ë", "e").Replace("ä", "a").Replace("ï", "i") == nomSpell
+                    select s).FirstOrDefault();
+                if (spell != null)
+                    return spell;
+            }
+
+            return null;
+        }
+
+        public static int FindXmlSpellIndex(string nomSpell)
+        {
+            nomSpell = nomSpell.ToLower().Replace("é", "e").Replace("è", "e").Replace("ë", "e").Replace("ä", "a").Replace("ï", "i");
+            Spell spell;
+            List<SpellAccount> spells = Global.ChargerDonneesSpellXml(Global.CheminComptesSpellXml);
+            for (int i = 0; i < spells.Count; i++)
+            {
+                spell = (from s in spells[i].Spells
+                    where s.SpellName.ToLower().Replace("é", "e").Replace("è", "e").Replace("ë", "e").Replace("ä", "a").Replace("ï", "i") == nomSpell
+                    select s).FirstOrDefault();
                 if (spell != null)
                     return i;
             }
+
             return -1;
         }
+
+        #endregion
     }
 }

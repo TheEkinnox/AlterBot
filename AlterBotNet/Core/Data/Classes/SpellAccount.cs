@@ -24,7 +24,7 @@ namespace AlterBotNet.Core.Data.Classes
 
         public string TextForm()
         {
-            string message = $"\n*Nom*: {this.SpellName}\n*Type*: {this.Type}\n*Formule*: {this.SpellFullIncantation}\n*Effet*: {this.SpellEffects}\n*Difficulté*: {this.Level}\n";
+            string message = $"\n*Nom* : {this.SpellName}\n*Type* : {this.Type}\n*Formule* : {this.SpellFullIncantation}\n*Effet* : {this.SpellEffects}\n*Difficulté* : {this.Level.ToString()}\n";
             return message;
         }
 
@@ -37,9 +37,9 @@ namespace AlterBotNet.Core.Data.Classes
 
     public class SpellAccount
     {
-        public string Name { get; set; }
-        public List<Spell> Spells { get; set; }
-        public ulong UserId { get; set; }
+        public string Name { get; }
+        public List<Spell> Spells { get; private set; }
+        public ulong UserId { get; }
 
         public SpellAccount(string name, List<Spell> spells, ulong userId = 0)
         {
@@ -73,8 +73,6 @@ namespace AlterBotNet.Core.Data.Classes
                 {
                     if (this.Spells[j]!=null)
                     {
-                        //    if (j == 0)
-                        //        message += "\n";
                         message += $"__*Numéro {j}*__ {this.Spells[j].TextForm()}";
                     }
                 }
@@ -85,27 +83,22 @@ namespace AlterBotNet.Core.Data.Classes
 
         public bool PossedeSpell(string nomSpell)
         {
-            for (int i = 0; i < this.Spells.Count; i++)
-            {
-                if (this.Spells[i].SpellName == nomSpell)
-                    return true;
-            }
-            return false;
+            return Global.FindXmlSpell(nomSpell) != null;
         }
     }
 
     public enum SpellType
     {
         [Description("Sortilège")] Sortilege,
-        Enchantement
+        [Description("Enchantement")] Enchantement
     }
 
     public enum SpellLevel
     {
-        Simple,
-        [Description("Basique")] Base,
+        [Description("Simple")] Simple,
+        [Description("Basique")] Basique,
         [Description("Avancé")] Avance,
-        Expert,
-        Maitre
+        [Description("Expert")] Expert,
+        [Description("Maître")] Maitre
     }
 }

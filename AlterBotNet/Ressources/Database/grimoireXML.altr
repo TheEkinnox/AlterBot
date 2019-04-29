@@ -1,1 +1,121 @@
-﻿Grimoire public,Écrito;Sortilege;Otiré Cherape Onimé Evrague Lotysé Écrito;Ce sort pertmet de mettre sous forme écrite un texte dit à l'oral.;Simple,Ejecto;Sortilege;Ejecto Esluporp Alé Enne Te Oye;Ce sort permet de repousser un objet ou  quelqu’un.;Simple,Acteïo;Sortilege;Acteïo Santeïès Acteïo;Ce sort permet d'attirer un objet jusqu'au lanceur.;Simple,Luminos;Sortilege;Lux Télos Luminos;Ce sort permet de créer un orbe lumineux.;Simple,Égrennore;Sortilege;Portas Éveroïar Paséar Égrennore;Il permet de déverrouiller le verrou d’une porte, si ce dernier est un simple verrou, et ne dispose pas de protection magique.;Simple,Ctallum;Sortilege;N/A;Ce sort permet à l'utilisateur d'amplifier grandement sa voix comme si il usait d'un haut-parleur.;Base,Feleckïa;Sortilege;Serecta Arkhéa Feleckïa;Ce sort permet de créer des flèches magiques. Si vous avez un élément dans la main peu importe la quantité vous pourrez créer une flèche magique avec ce dernier. Si vous n’en avez pas ce sera une flèche d'air. Vous ne pouvez en faire qu'une à la fois.;Base,Proétek;Sortilege;Shiero Lanceo Tempo Proétek;Ce sort permet de créer un bouclier de protection temporaire.;Avance,Caecus;Sortilege;Lux Télos Caecus Orbelus;Ce sort permet d’aveugler sa cible sur une certaine période. La victime du sort devient donc momentanément aveugle.;Avance,Akinito;Sortilege;Motus Consummavi Tempo Akinito;Ce sort permet d'immobilier sa cible durant une certaine periode.;Avance,Somneïa;Sortilege;Morphelïa Atracti Somneïa;La main du lanceur s'illumine et la personne qu'il touche avec s'endort de suite.;Avance,Ferelïo;Sortilege;Il permet au lanceur de se rendre invisible aux yeux de la cible du sort.;Avance,Exo Feleckia;Sortilege;Exo Serecta Arckéa Exo Feleckïa;Il permet de la même manière que le sort feleckia de créer des flèches d'un élément si on dispose de cet élément dans notre main. Mais cette fois ci il crée de nombreuses flèches simultanément. Le nombre dépend de la force du joueur.;Expert,0
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grimoires>
+	<grimoire>
+		<nom>Grimoire Commun</nom>
+		<spells>
+			<spell>
+				<spellname>Écrito</spellname>
+				<type>Sortilege</type>
+				<formule>Otiré Cherape Onimé Evrague Lotysé Ecrito</formule>
+				<effets>Ce sort permet de mettre sous forme écrite un texte dit à l'oral.</effets>
+				<niveau>Simple</niveau>
+			</spell>
+			<spell>
+				<spellname>Ejecto</spellname>
+				<type>Sortilege</type>
+				<formule>Noyar Ejecto Esluporp Alé Enne Té Oye</formule>
+				<effets>Ce sort permet de repousser un objet ou  quelqu’un.</effets>
+				<niveau>Simple</niveau>
+			</spell>
+			<spell>
+				<spellname>Acteïo</spellname>
+				<type>Sortilege</type>
+				<formule>Acteïo santeïès Acteïo</formule>
+				<effets>Ce sort permet d’attirer une objet jusqu’au lanceur.</effets>
+				<niveau>Simple</niveau>
+			</spell>
+			<spell>
+				<spellname>Luminos</spellname>
+				<type>Sortilege</type>
+				<formule>Lux télos luminos</formule>
+				<effets>Ce sort permet de créer une orbe lumineuse.</effets>
+				<niveau>Simple</niveau>
+			</spell>
+			<spell>
+				<spellname>Égrennore</spellname>
+				<type>Sortilege</type>
+				<formule>Portas Éveroïar Paséar Égrennore</formule>
+				<effets>Ce sort permet de déverrouiller le verrou d’une porte si ce dernier est un simple verrou et ne dispose pas de protection magique.</effets>
+				<niveau>Simple</niveau>
+			</spell>
+			<spell>
+				<spellname>Ctallum</spellname>
+				<type>Sortilege</type>
+				<formule>N/A</formule>
+				<effets>Il permet d’amplifier grandement sa voix comme si ont user d’un haut parleur.</effets>
+				<niveau>Basique</niveau>
+			</spell>
+			<spell>
+				<spellname>Ciselïo</spellname>
+				<type>Sortilege</type>
+				<formule>N/A</formule>
+				<effets>Ce sort permet de tirer un rayon lumineux depuis les mains ou la baguette/bâton du sorcier. Ce rayon aura comme effet de faire apparaitres des cordes autour de l’objet touché. Si il s’agit d’un être vivant et qu’il tente de se dégager en faisant céder les cordes elles se resserrent bien plus, mais si par contre la victime se détend les cordes glissent avant de tomber au sol d'elles même.</effets>
+				<niveau>Basique</niveau>
+			</spell>
+			<spell>
+				<spellname>Vreïtéhéo</spellname>
+				<type>Sortilege</type>
+				<formule>N/A</formule>
+				<effets>Ce sort permet de tirer un rayon lumineux, la cible touchée par ce dernier perdra alors temporairement son équilibre. Cela  ne dure que quelques dizaines secondes mais c’est largement suffisant pour faire chuter quelqu’un, ou alors fuir.</effets>
+				<niveau>Basique</niveau>
+			</spell>
+			<spell>
+				<spellname>Aparéhéo</spellname>
+				<type>Sortilege</type>
+				<formule>N/A</formule>
+				<effets>Ce sort permet de faire apparaître un objet disposant de l’enchantement Erpéhéo.</effets>
+				<niveau>Basique</niveau>
+			</spell>
+			<spell>
+				<spellname>Feleckïa</spellname>
+				<type>Sortilege</type>
+				<formule>Serecta Arckéa Feleckïa</formule>
+				<effets>Ce sort permet de créer des flèches magique. Si vous avez un élément dans la main peu importe la quantité vous pourrez créer une flèche magique avec ce dernier. Si vous en avez pas ce sera une flèche d'air. Vous ne pouvez en faire qu'une à la fois.</effets>
+				<niveau>Basique</niveau>
+			</spell>
+			<spell>
+				<spellname>Proétek</spellname>
+				<type>Sortilege</type>
+				<formule>Shiero Lanceo Tempo Proétek</formule>
+				<effets>Ce sort permet de créer un bouclier de protection temporaire.</effets>
+				<niveau>Avancé</niveau>
+			</spell>
+			<spell>
+				<spellname>Caecus</spellname>
+				<type>Sortilege</type>
+				<formule>Lux Télos Caecus Orbelus</formule>
+				<effets>Ce sort permet d’aveugler sa cible sur une certaine période. La victime du sort devient donc momentanément aveugle.</effets>
+				<niveau>Avancé</niveau>
+			</spell>
+			<spell>
+				<spellname>Akinito</spellname>
+				<type>Sortilege</type>
+				<formule>Motus Consummavi Tempo Akinito</formule>
+				<effets>Ce sort permet d’immobiliser sa cible durant une certaine période.</effets>
+				<niveau>Avancé</niveau>
+			</spell>
+			<spell>
+				<spellname>Somneïa</spellname>
+				<type>Sortilege</type>
+				<formule>Morphelïa Atracti Somneïa</formule>
+				<effets>La main du lanceur s'illumine et la personne qu'il touche avec s'endort de suite.</effets>
+				<niveau>Avancé</niveau>
+			</spell>
+			<spell>
+				<spellname>Ferelïo</spellname>
+				<type>Sortilege</type>
+				<formule>Soctera Momenteïa Ferelïo</formule>
+				<effets>Ce sort permet au lanceur de se rendre invisible aux yeux de la cible du sort.</effets>
+				<niveau>Avancé</niveau>
+			</spell>
+			<spell>
+				<spellname>Exo Feleckia</spellname>
+				<type>Sortilege</type>
+				<formule>Exo Serecta Arckéa Exo Feleckïa</formule>
+				<effets>Ce sort permet de la même manière que le sort feleckia de créer des flèche d'un élément si ont dispose de cet élément dans notre main. Mais cette fois ci il créer de nombreuse flèche simultanément, le nombre dépend de la force du joueur.</effets>
+				<niveau>Expert</niveau>
+			</spell>
+		</spells>
+		<ownerid>0</ownerid>
+	</grimoire>
+</grimoires>

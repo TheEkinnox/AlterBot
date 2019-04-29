@@ -33,7 +33,6 @@ namespace AlterBotNet.Core.Data.Classes
             if (!File.Exists(Logs._nomFichier + Logs._date))
                 File.Create(Logs._nomFichier + Logs._date);
             StreamReader fluxLecture = new StreamReader(Logs._nomFichier + Logs._date);
-            string fichierTexte = fluxLecture.ReadToEnd();
             fluxLecture.Close();
             StreamWriter fluxEcriture = new StreamWriter(Logs._nomFichier + Logs._date, true);
             fluxEcriture.WriteLine($"{DateTime.Now} {args}");
@@ -43,17 +42,14 @@ namespace AlterBotNet.Core.Data.Classes
 
         public static void Write(string args)
         {
-            StreamWriter fluxEcriture = new StreamWriter(Logs._nomFichier + Logs._date, true);
-            fluxEcriture.Close();
+            if (!File.Exists(Logs._nomFichier + Logs._date))
+                File.Create(Logs._nomFichier + Logs._date);
             StreamReader fluxLecture = new StreamReader(Logs._nomFichier + Logs._date);
-            string fichierTexte = fluxLecture.ReadToEnd().Replace("\r", "");
             fluxLecture.Close();
-            fluxEcriture = new StreamWriter(Logs._nomFichier + Logs._date, false);
-            fichierTexte = fichierTexte.EndsWith('\n') ? fichierTexte.Remove(fichierTexte.Length - 1) : fichierTexte;
-            fichierTexte += $"\n{DateTime.Now} {args}";
-            fluxEcriture.Write($"{fichierTexte}");
+            StreamWriter fluxEcriture = new StreamWriter(Logs._nomFichier + Logs._date, true);
+            fluxEcriture.Write($"{args}");
             fluxEcriture.Close();
-            Console.Write($"{DateTime.Now} {args}");
+            Console.Write($"{args}");
         }
 
         #endregion

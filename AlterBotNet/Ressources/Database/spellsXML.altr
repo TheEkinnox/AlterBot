@@ -1,1 +1,40 @@
-Test,test;Sortilege;test test test;Sortilège de test;Base,test;Sortilege;test test test;Sortilège de test;Basetest;Sortilege;test test test;Sortilège de test;Base260385529474842626
+﻿<?xml version="1.0" encoding="utf-8"?>
+<grimoires>
+  <grimoire>
+    <nom>Test</nom>
+    <spells>
+      <spell>
+        <spellname>Ejecto</spellname>
+        <type>Sortilege</type>
+        <formule>Noyar Ejecto Esluporp Alé Enne Té Oye</formule>
+        <effets>Ce sort permet de repousser un objet ou  quelqu’un.</effets>
+        <niveau>Simple</niveau>
+      </spell>
+      <spell>
+        <spellname>Exo Feleckia</spellname>
+        <type>Sortilege</type>
+        <formule>Exo Serecta Arckéa Exo Feleckïa</formule>
+        <effets>Ce sort permet de la même manière que le sort feleckia de créer des flèche d'un élément si ont dispose de cet élément dans notre main. Mais cette fois ci il créer de nombreuse flèche simultanément, le nombre dépend de la force du joueur.</effets>
+        <niveau>Expert</niveau>
+      </spell>
+      <spell>
+        <spellname>Écrito</spellname>
+        <type>Sortilege</type>
+        <formule>Otiré Cherape Onimé Evrague Lotysé Ecrito</formule>
+        <effets>Ce sort permet de mettre sous forme écrite un texte dit à l'oral.</effets>
+        <niveau>Simple</niveau>
+      </spell>
+    </spells>
+    <ownerid>260385529474842626</ownerid>
+  </grimoire>
+  <grimoire>
+    <nom>Test2</nom>
+    <spells />
+    <ownerid>260385529474842626</ownerid>
+  </grimoire>
+  <grimoire>
+    <nom>Test3</nom>
+    <spells />
+    <ownerid>260385529474842626</ownerid>
+  </grimoire>
+</grimoires>
