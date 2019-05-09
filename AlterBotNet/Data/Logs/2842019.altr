@@ -13379,3 +13379,7 @@ Salaire: 0 Couronnes
 2019-04-29 03:27:03 Timer ticked
 2019-04-29 03:27:18 Timer ticked
 2019-04-29 03:27:33 Timer ticked
+2019-04-29 03:27:35 at Gateway Sent Heartbeat
+2019-04-29 03:27:35 at Gateway Received HeartbeatAck
+2019-04-29 03:27:35 at Gateway Latency = 47 ms
+2019-04-29 03:27:48 Timer ticked
