@@ -3,7 +3,7 @@
 // Nom du fichier : Global.cs
 // Auteur : Loick OBIANG (1832960)
 // Date de création : 2019-04-20
-// Date de modification : 2019-04-21
+// Date de modification : 2019-05-24
 
 #endregion
 
@@ -28,6 +28,8 @@ namespace AlterBotNet.Core.Data.Classes
     {
         #region CONSTANTES ET ATTRIBUTS STATIQUES
 
+        internal static string CheminConfig = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Core\Data\config.altr");
+        internal static XmlDocument ConfigXml = Global.ChargerConfigXml();
         internal static string CheminComptesEnBanque = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\bank.altr");
         internal static string CheminComptesStuff = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\stuff.altr");
         internal static string CheminComptesStats = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\stats.altr");
@@ -43,7 +45,7 @@ namespace AlterBotNet.Core.Data.Classes
         internal static SocketTextChannel[] StuffLists { get; set; }
         internal static SocketTextChannel[] StatsLists { get; set; }
         internal static SocketTextChannel[] SpellsLists { get; set; }
-
+        
         #endregion
 
         #region MÉTHODES
@@ -864,6 +866,7 @@ namespace AlterBotNet.Core.Data.Classes
 
                     userId = ulong.Parse(grimoire.GetElementsByTagName("ownerid")[0].InnerText);
                     spellAccounts.Add(new SpellAccount(name, spells, userId));
+                    spellAccounts.TrimExcess();
                 }
             }
             catch (Exception e)
@@ -872,7 +875,7 @@ namespace AlterBotNet.Core.Data.Classes
                 throw;
             }
 
-            return spellAccounts.ToList();
+            return spellAccounts;
         }
 
         public static List<SpellAccount> ChargerDonneesSpellXml(string cheminFichier)
@@ -1021,6 +1024,31 @@ namespace AlterBotNet.Core.Data.Classes
             }
 
             return -1;
+        }
+
+        // Todo : Compléter les méthodes de configuration du bot
+        // ===================
+        // = Méthodes config =
+        // ===================
+        private static XmlDocument ChargerConfigXml()
+        {
+            XmlDocument configXml = new XmlDocument();
+            try
+            {
+                if (!File.Exists(Global.CheminConfig))
+                {
+                    File.Create(Global.CheminConfig);
+                    throw new NullReferenceException($"Le fichier est inexistant.");
+                }
+                configXml.Load(Global.CheminConfig);
+            }
+            catch (Exception e)
+            {
+                Logs.WriteLine("Une erreur s'est produite lors du chargement de la configuration du bot avec le message suivant : " + e.Message);
+                Environment.Exit(0);
+            }
+
+            return configXml;
         }
 
         #endregion

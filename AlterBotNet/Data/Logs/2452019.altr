@@ -1,0 +1,1029 @@
+2019-05-24 20:13:43 at Gateway GuildDownloader Started
+2019-05-24 20:13:43 at Gateway Sending Status
+2019-05-24 20:13:43 at Gateway Sent StatusUpdate
+2019-05-24 20:13:43 at Gateway Connected
+2019-05-24 20:13:43 at Gateway Raising Event
+2019-05-24 20:13:43 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-24 20:13:43 at Gateway Connected to ServeurTest
+2019-05-24 20:13:43 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-24 20:13:43 at Gateway Connected to Alternia
+2019-05-24 20:13:43 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-24 20:13:43 at Gateway Connected to plopotonie
+2019-05-24 20:13:43 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-24 20:13:43 at Gateway Connected to test2
+2019-05-24 20:13:43 at Gateway GuildDownloader Stopped
+2019-05-24 20:13:43 at Gateway Sent StatusUpdate
+2019-05-24 20:13:43 StartTimer
+2019-05-24 20:13:43 at Gateway Ready
+2019-05-24 20:13:58 Timer ticked
+2019-05-24 20:14:13 Timer ticked
+2019-05-24 20:14:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:14:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:14:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:14:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:14:24 at Gateway Sent Heartbeat
+2019-05-24 20:14:24 at Gateway Received HeartbeatAck
+2019-05-24 20:14:24 at Gateway Latency = 47 ms
+2019-05-24 20:14:28 Timer ticked
+2019-05-24 20:14:43 Timer ticked
+2019-05-24 20:14:58 Timer ticked
+2019-05-24 20:15:05 at Gateway Sent Heartbeat
+2019-05-24 20:15:05 at Gateway Received HeartbeatAck
+2019-05-24 20:15:05 at Gateway Latency = 47 ms
+2019-05-24 20:15:13 Timer ticked
+2019-05-24 20:15:24 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:15:28 Timer ticked
+2019-05-24 20:15:43 Timer ticked
+2019-05-24 20:15:46 at Gateway Sent Heartbeat
+2019-05-24 20:15:46 at Gateway Received HeartbeatAck
+2019-05-24 20:15:46 at Gateway Latency = 47 ms
+2019-05-24 20:15:58 Timer ticked
+2019-05-24 20:16:13 Timer ticked
+2019-05-24 20:16:28 at Gateway Sent Heartbeat
+2019-05-24 20:16:28 at Gateway Received HeartbeatAck
+2019-05-24 20:16:28 at Gateway Latency = 47 ms
+2019-05-24 20:16:28 Timer ticked
+2019-05-24 20:16:43 Timer ticked
+2019-05-24 20:16:58 Timer ticked
+2019-05-24 20:17:09 at Gateway Sent Heartbeat
+2019-05-24 20:17:09 at Gateway Received HeartbeatAck
+2019-05-24 20:17:09 at Gateway Latency = 47 ms
+2019-05-24 20:17:13 Timer ticked
+2019-05-24 20:17:23 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:17:23 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:17:23 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:17:23 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:17:28 Timer ticked
+2019-05-24 20:17:43 Timer ticked
+2019-05-24 20:17:50 at Gateway Sent Heartbeat
+2019-05-24 20:17:50 at Gateway Received HeartbeatAck
+2019-05-24 20:17:50 at Gateway Latency = 47 ms
+2019-05-24 20:17:58 Timer ticked
+2019-05-24 20:18:13 Timer ticked
+2019-05-24 20:18:28 Timer ticked
+2019-05-24 20:18:31 at Gateway Sent Heartbeat
+2019-05-24 20:18:31 at Gateway Received HeartbeatAck
+2019-05-24 20:18:31 at Gateway Latency = 47 ms
+2019-05-24 20:18:43 Timer ticked
+2019-05-24 20:18:58 Timer ticked
+2019-05-24 20:19:13 at Gateway Sent Heartbeat
+2019-05-24 20:19:13 at Gateway Received HeartbeatAck
+2019-05-24 20:19:13 at Gateway Latency = 47 ms
+2019-05-24 20:19:13 Timer ticked
+2019-05-24 20:19:28 Timer ticked
+2019-05-24 20:19:43 Timer ticked
+2019-05-24 20:19:54 at Gateway Sent Heartbeat
+2019-05-24 20:19:54 at Gateway Received HeartbeatAck
+2019-05-24 20:19:54 at Gateway Latency = 140 ms
+2019-05-24 20:19:58 Timer ticked
+2019-05-24 20:20:13 Timer ticked
+2019-05-24 20:20:28 Timer ticked
+2019-05-24 20:20:35 at Gateway Sent Heartbeat
+2019-05-24 20:20:35 at Gateway Received HeartbeatAck
+2019-05-24 20:20:35 at Gateway Latency = 47 ms
+2019-05-24 20:20:43 Timer ticked
+2019-05-24 20:20:58 Timer ticked
+2019-05-24 20:21:13 Timer ticked
+2019-05-24 20:21:16 at Gateway Sent Heartbeat
+2019-05-24 20:21:16 at Gateway Received HeartbeatAck
+2019-05-24 20:21:16 at Gateway Latency = 63 ms
+2019-05-24 20:21:28 Timer ticked
+2019-05-24 20:21:43 Timer ticked
+2019-05-24 20:21:58 at Gateway Sent Heartbeat
+2019-05-24 20:21:58 at Gateway Received HeartbeatAck
+2019-05-24 20:21:58 at Gateway Latency = 47 ms
+2019-05-24 20:21:58 Timer ticked
+2019-05-24 20:22:13 Timer ticked
+2019-05-24 20:22:28 Timer ticked
+2019-05-24 20:22:39 at Gateway Sent Heartbeat
+2019-05-24 20:22:39 at Gateway Received HeartbeatAck
+2019-05-24 20:22:39 at Gateway Latency = 46 ms
+2019-05-24 20:22:43 Timer ticked
+2019-05-24 20:22:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:22:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:22:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:22:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:22:58 Timer ticked
+2019-05-24 20:23:13 Timer ticked
+2019-05-24 20:23:20 at Gateway Sent Heartbeat
+2019-05-24 20:23:20 at Gateway Received HeartbeatAck
+2019-05-24 20:23:20 at Gateway Latency = 31 ms
+2019-05-24 20:23:28 Timer ticked
+2019-05-24 20:23:43 Timer ticked
+2019-05-24 20:23:58 Timer ticked
+2019-05-24 20:24:01 at Gateway Sent Heartbeat
+2019-05-24 20:24:01 at Gateway Received HeartbeatAck
+2019-05-24 20:24:01 at Gateway Latency = 47 ms
+2019-05-24 20:24:13 Timer ticked
+2019-05-24 20:24:28 Timer ticked
+2019-05-24 20:24:43 at Gateway Sent Heartbeat
+2019-05-24 20:24:43 at Gateway Received HeartbeatAck
+2019-05-24 20:24:43 at Gateway Latency = 31 ms
+2019-05-24 20:24:43 Timer ticked
+2019-05-24 20:24:58 Timer ticked
+2019-05-24 20:25:13 Timer ticked
+2019-05-24 20:25:24 at Gateway Sent Heartbeat
+2019-05-24 20:25:24 at Gateway Received HeartbeatAck
+2019-05-24 20:25:24 at Gateway Latency = 47 ms
+2019-05-24 20:25:28 Timer ticked
+2019-05-24 20:25:43 Timer ticked
+2019-05-24 20:25:58 Timer ticked
+2019-05-24 20:26:05 at Gateway Sent Heartbeat
+2019-05-24 20:26:05 at Gateway Received HeartbeatAck
+2019-05-24 20:26:05 at Gateway Latency = 31 ms
+2019-05-24 20:26:13 Timer ticked
+2019-05-24 20:26:28 Timer ticked
+2019-05-24 20:26:43 Timer ticked
+2019-05-24 20:26:46 at Gateway Sent Heartbeat
+2019-05-24 20:26:47 at Gateway Received HeartbeatAck
+2019-05-24 20:26:47 at Gateway Latency = 125 ms
+2019-05-24 20:26:58 Timer ticked
+2019-05-24 20:27:13 Timer ticked
+2019-05-24 20:27:28 at Gateway Sent Heartbeat
+2019-05-24 20:27:28 Timer ticked
+2019-05-24 20:27:28 at Gateway Received HeartbeatAck
+2019-05-24 20:27:28 at Gateway Latency = 562 ms
+2019-05-24 20:27:43 Timer ticked
+2019-05-24 20:27:58 Timer ticked
+2019-05-24 20:28:09 at Gateway Sent Heartbeat
+2019-05-24 20:28:09 at Gateway Received HeartbeatAck
+2019-05-24 20:28:09 at Gateway Latency = 375 ms
+2019-05-24 20:28:13 Timer ticked
+2019-05-24 20:28:28 Timer ticked
+2019-05-24 20:28:43 Timer ticked
+2019-05-24 20:28:50 at Gateway Sent Heartbeat
+2019-05-24 20:28:50 at Gateway Received HeartbeatAck
+2019-05-24 20:28:50 at Gateway Latency = 47 ms
+2019-05-24 20:28:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:28:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:28:57 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:28:57 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:28:58 Timer ticked
+2019-05-24 20:29:13 Timer ticked
+2019-05-24 20:29:28 Timer ticked
+2019-05-24 20:29:31 at Gateway Sent Heartbeat
+2019-05-24 20:29:32 at Gateway Received HeartbeatAck
+2019-05-24 20:29:32 at Gateway Latency = 47 ms
+2019-05-24 20:29:43 Timer ticked
+2019-05-24 20:29:58 Timer ticked
+2019-05-24 20:30:13 at Gateway Sent Heartbeat
+2019-05-24 20:30:13 at Gateway Received HeartbeatAck
+2019-05-24 20:30:13 at Gateway Latency = 156 ms
+2019-05-24 20:30:13 Timer ticked
+2019-05-24 20:30:28 Timer ticked
+2019-05-24 20:30:43 Timer ticked
+2019-05-24 20:30:54 at Gateway Sent Heartbeat
+2019-05-24 20:30:54 at Gateway Received HeartbeatAck
+2019-05-24 20:30:54 at Gateway Latency = 31 ms
+2019-05-24 20:30:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:30:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:30:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:30:56 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:30:58 Timer ticked
+2019-05-24 20:31:13 Timer ticked
+2019-05-24 20:31:28 Timer ticked
+2019-05-24 20:31:35 at Gateway Sent Heartbeat
+2019-05-24 20:31:35 at Gateway Received HeartbeatAck
+2019-05-24 20:31:35 at Gateway Latency = 47 ms
+2019-05-24 20:31:43 Timer ticked
+2019-05-24 20:31:58 Timer ticked
+2019-05-24 20:32:13 Timer ticked
+2019-05-24 20:32:17 at Gateway Sent Heartbeat
+2019-05-24 20:32:17 at Gateway Received HeartbeatAck
+2019-05-24 20:32:17 at Gateway Latency = 47 ms
+2019-05-24 20:32:28 Timer ticked
+2019-05-24 20:32:43 Timer ticked
+2019-05-24 20:32:58 at Gateway Sent Heartbeat
+2019-05-24 20:32:58 at Gateway Received HeartbeatAck
+2019-05-24 20:32:58 at Gateway Latency = 31 ms
+2019-05-24 20:32:58 Timer ticked
+2019-05-24 20:33:13 Timer ticked
+2019-05-24 20:33:28 Timer ticked
+2019-05-24 20:33:39 at Gateway Sent Heartbeat
+2019-05-24 20:33:39 at Gateway Received HeartbeatAck
+2019-05-24 20:33:39 at Gateway Latency = 32 ms
+2019-05-24 20:33:43 Timer ticked
+2019-05-24 20:33:58 Timer ticked
+2019-05-24 20:34:13 Timer ticked
+2019-05-24 20:34:20 at Gateway Sent Heartbeat
+2019-05-24 20:34:20 at Gateway Received HeartbeatAck
+2019-05-24 20:34:20 at Gateway Latency = 47 ms
+2019-05-24 20:34:28 Timer ticked
+2019-05-24 20:34:43 Timer ticked
+2019-05-24 20:34:58 Timer ticked
+2019-05-24 20:35:02 at Gateway Sent Heartbeat
+2019-05-24 20:35:02 at Gateway Received HeartbeatAck
+2019-05-24 20:35:02 at Gateway Latency = 31 ms
+2019-05-24 20:35:13 Timer ticked
+2019-05-24 20:35:28 Timer ticked
+2019-05-24 20:35:43 at Gateway Sent Heartbeat
+2019-05-24 20:35:43 at Gateway Received HeartbeatAck
+2019-05-24 20:35:43 at Gateway Latency = 250 ms
+2019-05-24 20:35:43 Timer ticked
+2019-05-24 20:35:58 Timer ticked
+2019-05-24 20:36:13 Timer ticked
+2019-05-24 20:36:24 at Gateway Sent Heartbeat
+2019-05-24 20:36:24 at Gateway Received HeartbeatAck
+2019-05-24 20:36:24 at Gateway Latency = 47 ms
+2019-05-24 20:36:28 Timer ticked
+2019-05-24 20:36:43 Timer ticked
+2019-05-24 20:36:58 Timer ticked
+2019-05-24 20:37:05 at Gateway Sent Heartbeat
+2019-05-24 20:37:05 at Gateway Received HeartbeatAck
+2019-05-24 20:37:05 at Gateway Latency = 47 ms
+2019-05-24 20:37:13 Timer ticked
+2019-05-24 20:37:28 Timer ticked
+2019-05-24 20:37:43 Timer ticked
+2019-05-24 20:37:47 at Gateway Sent Heartbeat
+2019-05-24 20:37:47 at Gateway Received HeartbeatAck
+2019-05-24 20:37:47 at Gateway Latency = 47 ms
+2019-05-24 20:37:58 Timer ticked
+2019-05-24 20:38:13 Timer ticked
+2019-05-24 20:38:28 at Gateway Sent Heartbeat
+2019-05-24 20:38:28 at Gateway Received HeartbeatAck
+2019-05-24 20:38:28 at Gateway Latency = 46 ms
+2019-05-24 20:38:28 Timer ticked
+2019-05-24 20:38:43 Timer ticked
+2019-05-24 20:38:58 Timer ticked
+2019-05-24 20:39:09 at Gateway Sent Heartbeat
+2019-05-24 20:39:09 at Gateway Received HeartbeatAck
+2019-05-24 20:39:09 at Gateway Latency = 47 ms
+2019-05-24 20:39:13 Timer ticked
+2019-05-24 20:39:28 Timer ticked
+2019-05-24 20:39:43 Timer ticked
+2019-05-24 20:39:50 at Gateway Sent Heartbeat
+2019-05-24 20:39:50 at Gateway Received HeartbeatAck
+2019-05-24 20:39:50 at Gateway Latency = 47 ms
+2019-05-24 20:39:58 Timer ticked
+2019-05-24 20:40:13 Timer ticked
+2019-05-24 20:40:28 Timer ticked
+2019-05-24 20:40:32 at Gateway Sent Heartbeat
+2019-05-24 20:40:32 at Gateway Received HeartbeatAck
+2019-05-24 20:40:32 at Gateway Latency = 47 ms
+2019-05-24 20:40:43 Timer ticked
+2019-05-24 20:40:58 Timer ticked
+2019-05-24 20:41:13 at Gateway Sent Heartbeat
+2019-05-24 20:41:13 Timer ticked
+2019-05-24 20:41:13 at Gateway Received HeartbeatAck
+2019-05-24 20:41:13 at Gateway Latency = 579 ms
+2019-05-24 20:41:28 Timer ticked
+2019-05-24 20:41:43 Timer ticked
+2019-05-24 20:41:54 at Gateway Sent Heartbeat
+2019-05-24 20:41:54 at Gateway Received HeartbeatAck
+2019-05-24 20:41:54 at Gateway Latency = 47 ms
+2019-05-24 20:41:58 Timer ticked
+2019-05-24 20:42:13 Timer ticked
+2019-05-24 20:42:28 Timer ticked
+2019-05-24 20:42:35 at Gateway Sent Heartbeat
+2019-05-24 20:42:35 at Gateway Received HeartbeatAck
+2019-05-24 20:42:35 at Gateway Latency = 31 ms
+2019-05-24 20:42:43 Timer ticked
+2019-05-24 20:42:58 Timer ticked
+2019-05-24 20:43:13 Timer ticked
+2019-05-24 20:43:17 at Gateway Sent Heartbeat
+2019-05-24 20:43:17 at Gateway Received HeartbeatAck
+2019-05-24 20:43:17 at Gateway Latency = 47 ms
+2019-05-24 20:43:28 Timer ticked
+2019-05-24 20:43:43 Timer ticked
+2019-05-24 20:43:58 at Gateway Sent Heartbeat
+2019-05-24 20:43:58 at Gateway Received HeartbeatAck
+2019-05-24 20:43:58 at Gateway Latency = 47 ms
+2019-05-24 20:43:58 Timer ticked
+2019-05-24 20:44:13 Timer ticked
+2019-05-24 20:44:28 Timer ticked
+2019-05-24 20:44:39 at Gateway Sent Heartbeat
+2019-05-24 20:44:39 at Gateway Received HeartbeatAck
+2019-05-24 20:44:39 at Gateway Latency = 219 ms
+2019-05-24 20:44:43 Timer ticked
+2019-05-24 20:44:58 Timer ticked
+2019-05-24 20:45:13 Timer ticked
+2019-05-24 20:45:20 at Gateway Sent Heartbeat
+2019-05-24 20:45:21 at Gateway Received HeartbeatAck
+2019-05-24 20:45:21 at Gateway Latency = 47 ms
+2019-05-24 20:45:28 Timer ticked
+2019-05-24 20:45:43 Timer ticked
+2019-05-24 20:45:58 Timer ticked
+2019-05-24 20:46:02 at Gateway Sent Heartbeat
+2019-05-24 20:46:02 at Gateway Received HeartbeatAck
+2019-05-24 20:46:02 at Gateway Latency = 31 ms
+2019-05-24 20:46:13 Timer ticked
+2019-05-24 20:46:28 Timer ticked
+2019-05-24 20:46:43 at Gateway Sent Heartbeat
+2019-05-24 20:46:43 at Gateway Received HeartbeatAck
+2019-05-24 20:46:43 at Gateway Latency = 46 ms
+2019-05-24 20:46:43 Timer ticked
+2019-05-24 20:46:58 Timer ticked
+2019-05-24 20:47:13 Timer ticked
+2019-05-24 20:47:24 at Gateway Sent Heartbeat
+2019-05-24 20:47:24 at Gateway Received HeartbeatAck
+2019-05-24 20:47:24 at Gateway Latency = 46 ms
+2019-05-24 20:47:28 Timer ticked
+2019-05-24 20:47:43 Timer ticked
+2019-05-24 20:47:58 Timer ticked
+2019-05-24 20:48:06 at Gateway Sent Heartbeat
+2019-05-24 20:48:06 at Gateway Received HeartbeatAck
+2019-05-24 20:48:06 at Gateway Latency = 47 ms
+2019-05-24 20:48:13 Timer ticked
+2019-05-24 20:48:28 Timer ticked
+2019-05-24 20:48:43 Timer ticked
+2019-05-24 20:48:47 at Gateway Sent Heartbeat
+2019-05-24 20:48:47 at Gateway Received HeartbeatAck
+2019-05-24 20:48:47 at Gateway Latency = 47 ms
+2019-05-24 20:48:58 Timer ticked
+2019-05-24 20:49:13 Timer ticked
+2019-05-24 20:49:28 at Gateway Sent Heartbeat
+2019-05-24 20:49:28 at Gateway Received HeartbeatAck
+2019-05-24 20:49:28 at Gateway Latency = 140 ms
+2019-05-24 20:49:28 Timer ticked
+2019-05-24 20:49:43 Timer ticked
+2019-05-24 20:49:58 Timer ticked
+2019-05-24 20:50:09 at Gateway Sent Heartbeat
+2019-05-24 20:50:09 at Gateway Received HeartbeatAck
+2019-05-24 20:50:09 at Gateway Latency = 32 ms
+2019-05-24 20:50:13 Timer ticked
+2019-05-24 20:50:28 Timer ticked
+2019-05-24 20:50:43 Timer ticked
+2019-05-24 20:50:51 at Gateway Sent Heartbeat
+2019-05-24 20:50:51 at Gateway Received HeartbeatAck
+2019-05-24 20:50:51 at Gateway Latency = 47 ms
+2019-05-24 20:50:58 Timer ticked
+2019-05-24 20:51:13 Timer ticked
+2019-05-24 20:51:28 Timer ticked
+2019-05-24 20:51:32 at Gateway Sent Heartbeat
+2019-05-24 20:51:32 at Gateway Received HeartbeatAck
+2019-05-24 20:51:32 at Gateway Latency = 47 ms
+2019-05-24 20:51:43 Timer ticked
+2019-05-24 20:51:58 Timer ticked
+2019-05-24 20:52:13 at Gateway Sent Heartbeat
+2019-05-24 20:52:13 at Gateway Received HeartbeatAck
+2019-05-24 20:52:13 at Gateway Latency = 47 ms
+2019-05-24 20:52:13 Timer ticked
+2019-05-24 20:52:28 Timer ticked
+2019-05-24 20:52:43 Timer ticked
+2019-05-24 20:52:54 at Gateway Sent Heartbeat
+2019-05-24 20:52:54 at Gateway Received HeartbeatAck
+2019-05-24 20:52:54 at Gateway Latency = 31 ms
+2019-05-24 20:52:58 Timer ticked
+2019-05-24 20:53:13 Timer ticked
+2019-05-24 20:53:28 Timer ticked
+2019-05-24 20:53:36 at Gateway Sent Heartbeat
+2019-05-24 20:53:36 at Gateway Received HeartbeatAck
+2019-05-24 20:53:36 at Gateway Latency = 47 ms
+2019-05-24 20:53:43 Timer ticked
+2019-05-24 20:53:58 Timer ticked
+2019-05-24 20:54:13 Timer ticked
+2019-05-24 20:54:17 at Gateway Sent Heartbeat
+2019-05-24 20:54:17 at Gateway Received HeartbeatAck
+2019-05-24 20:54:17 at Gateway Latency = 94 ms
+2019-05-24 20:54:28 Timer ticked
+2019-05-24 20:54:43 Timer ticked
+2019-05-24 20:54:58 at Gateway Sent Heartbeat
+2019-05-24 20:54:58 at Gateway Received HeartbeatAck
+2019-05-24 20:54:58 at Gateway Latency = 47 ms
+2019-05-24 20:54:58 Timer ticked
+2019-05-24 20:55:13 Timer ticked
+2019-05-24 20:55:28 Timer ticked
+2019-05-24 20:55:39 at Gateway Sent Heartbeat
+2019-05-24 20:55:39 at Gateway Received HeartbeatAck
+2019-05-24 20:55:39 at Gateway Latency = 31 ms
+2019-05-24 20:55:43 Timer ticked
+2019-05-24 20:55:58 Timer ticked
+2019-05-24 20:56:13 Timer ticked
+2019-05-24 20:56:21 at Gateway Sent Heartbeat
+2019-05-24 20:56:21 at Gateway Received HeartbeatAck
+2019-05-24 20:56:21 at Gateway Latency = 47 ms
+2019-05-24 20:56:25 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:56:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:56:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:56:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:56:28 Timer ticked
+2019-05-24 20:56:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:56:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:56:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:56:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 20:56:43 Timer ticked
+2019-05-24 20:56:58 Timer ticked
+2019-05-24 20:57:02 at Gateway Sent Heartbeat
+2019-05-24 20:57:02 at Gateway Received HeartbeatAck
+2019-05-24 20:57:02 at Gateway Latency = 47 ms
+2019-05-24 20:57:03 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:57:03 at Gateway Received Dispatch (TYPING_START)
+2019-05-24 20:57:06 at Gateway Received Dispatch (TYPING_START)
+2019-05-24 20:57:07 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:57:07 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:57:07 at Rest POST channels/360639832017338370/messages: 166,84 ms
+2019-05-24 20:57:13 Timer ticked
+2019-05-24 20:57:13 at Gateway Received Dispatch (TYPING_START)
+2019-05-24 20:57:21 at Gateway Received Dispatch (TYPING_START)
+2019-05-24 20:57:25 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Aby
+2019-05-24 20:57:25 Salaire de Aby (0 couronnes) versé
+2019-05-24 20:57:25 **Aby:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Alisto
+2019-05-24 20:57:25 Salaire de Alisto (0 couronnes) versé
+2019-05-24 20:57:25 **Alisto:** 525 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Alwine
+2019-05-24 20:57:25 Salaire de Alwine (0 couronnes) versé
+2019-05-24 20:57:25 **Alwine:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Alyssa
+2019-05-24 20:57:25 Salaire de Alyssa (0 couronnes) versé
+2019-05-24 20:57:25 **Alyssa:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Atyur
+2019-05-24 20:57:25 Salaire de Atyur (0 couronnes) versé
+2019-05-24 20:57:25 **Atyur:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Calywen
+2019-05-24 20:57:25 Salaire de Calywen (0 couronnes) versé
+2019-05-24 20:57:25 **Calywen:** 1 203 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 600 couronnes versé sur le compte de Edward
+2019-05-24 20:57:25 Salaire de Edward (600 couronnes) versé
+2019-05-24 20:57:25 **Edward:** 4 100 Couronnes
+Salaire: 600 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Emylia
+2019-05-24 20:57:25 Salaire de Emylia (0 couronnes) versé
+2019-05-24 20:57:25 **Emylia:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 2000 couronnes versé sur le compte de Eros
+2019-05-24 20:57:25 Salaire de Eros (2000 couronnes) versé
+2019-05-24 20:57:25 **Eros:** 37 292 Couronnes
+Salaire: 2 000 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Famille_Stock's
+2019-05-24 20:57:25 Salaire de Famille_Stock's (0 couronnes) versé
+2019-05-24 20:57:25 **Famille_Stock's:** 850 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Isaac
+2019-05-24 20:57:25 Salaire de Isaac (0 couronnes) versé
+2019-05-24 20:57:25 **Isaac:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Kyra
+2019-05-24 20:57:25 Salaire de Kyra (0 couronnes) versé
+2019-05-24 20:57:25 **Kyra:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Kyran
+2019-05-24 20:57:25 Salaire de Kyran (0 couronnes) versé
+2019-05-24 20:57:25 **Kyran:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Lotic
+2019-05-24 20:57:25 Salaire de Lotic (0 couronnes) versé
+2019-05-24 20:57:25 **Lotic:** 985 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Nero
+2019-05-24 20:57:25 Salaire de Nero (0 couronnes) versé
+2019-05-24 20:57:25 **Nero:** 0 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 2000 couronnes versé sur le compte de Onyx
+2019-05-24 20:57:25 Salaire de Onyx (2000 couronnes) versé
+2019-05-24 20:57:25 **Onyx:** 41 000 Couronnes
+Salaire: 2 000 Couronnes
+2019-05-24 20:57:25 Salaire de 1500 couronnes versé sur le compte de Rose
+2019-05-24 20:57:25 Salaire de Rose (1500 couronnes) versé
+2019-05-24 20:57:25 **Rose:** 15 792 Couronnes
+Salaire: 1 500 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Skiewe
+2019-05-24 20:57:25 Salaire de Skiewe (0 couronnes) versé
+2019-05-24 20:57:25 **Skiewe:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Tamiel
+2019-05-24 20:57:25 Salaire de Tamiel (0 couronnes) versé
+2019-05-24 20:57:25 **Tamiel:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Twelein
+2019-05-24 20:57:25 Salaire de Twelein (0 couronnes) versé
+2019-05-24 20:57:25 **Twelein:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Urthl
+2019-05-24 20:57:25 Salaire de Urthl (0 couronnes) versé
+2019-05-24 20:57:25 **Urthl:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:25 Salaire de 0 couronnes versé sur le compte de Wepan
+2019-05-24 20:57:25 Salaire de Wepan (0 couronnes) versé
+2019-05-24 20:57:25 **Wepan:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:57:28 Timer ticked
+2019-05-24 20:57:43 at Gateway Sent Heartbeat
+2019-05-24 20:57:43 at Gateway Received HeartbeatAck
+2019-05-24 20:57:43 at Gateway Latency = 47 ms
+2019-05-24 20:57:43 Timer ticked
+2019-05-24 20:57:58 Timer ticked
+2019-05-24 20:58:13 Timer ticked
+2019-05-24 20:58:24 at Gateway Sent Heartbeat
+2019-05-24 20:58:24 at Gateway Received HeartbeatAck
+2019-05-24 20:58:24 at Gateway Latency = 32 ms
+2019-05-24 20:58:28 Timer ticked
+2019-05-24 20:58:43 Timer ticked
+2019-05-24 20:58:58 Timer ticked
+2019-05-24 20:59:02 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Aby
+2019-05-24 20:59:02 Salaire de Aby (0 couronnes) versé
+2019-05-24 20:59:02 **Aby:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Alisto
+2019-05-24 20:59:02 Salaire de Alisto (0 couronnes) versé
+2019-05-24 20:59:02 **Alisto:** 525 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Alwine
+2019-05-24 20:59:02 Salaire de Alwine (0 couronnes) versé
+2019-05-24 20:59:02 **Alwine:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Alyssa
+2019-05-24 20:59:02 Salaire de Alyssa (0 couronnes) versé
+2019-05-24 20:59:02 **Alyssa:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Atyur
+2019-05-24 20:59:02 Salaire de Atyur (0 couronnes) versé
+2019-05-24 20:59:02 **Atyur:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Calywen
+2019-05-24 20:59:02 Salaire de Calywen (0 couronnes) versé
+2019-05-24 20:59:02 **Calywen:** 1 203 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 600 couronnes versé sur le compte de Edward
+2019-05-24 20:59:02 Salaire de Edward (600 couronnes) versé
+2019-05-24 20:59:02 **Edward:** 4 700 Couronnes
+Salaire: 600 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Emylia
+2019-05-24 20:59:02 Salaire de Emylia (0 couronnes) versé
+2019-05-24 20:59:02 **Emylia:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 2000 couronnes versé sur le compte de Eros
+2019-05-24 20:59:02 Salaire de Eros (2000 couronnes) versé
+2019-05-24 20:59:02 **Eros:** 39 292 Couronnes
+Salaire: 2 000 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Famille_Stock's
+2019-05-24 20:59:02 Salaire de Famille_Stock's (0 couronnes) versé
+2019-05-24 20:59:02 **Famille_Stock's:** 850 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Isaac
+2019-05-24 20:59:02 Salaire de Isaac (0 couronnes) versé
+2019-05-24 20:59:02 **Isaac:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Kyra
+2019-05-24 20:59:02 Salaire de Kyra (0 couronnes) versé
+2019-05-24 20:59:02 **Kyra:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Kyran
+2019-05-24 20:59:02 Salaire de Kyran (0 couronnes) versé
+2019-05-24 20:59:02 **Kyran:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Lotic
+2019-05-24 20:59:02 Salaire de Lotic (0 couronnes) versé
+2019-05-24 20:59:02 **Lotic:** 985 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Nero
+2019-05-24 20:59:02 Salaire de Nero (0 couronnes) versé
+2019-05-24 20:59:02 **Nero:** 0 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 2000 couronnes versé sur le compte de Onyx
+2019-05-24 20:59:02 Salaire de Onyx (2000 couronnes) versé
+2019-05-24 20:59:02 **Onyx:** 43 000 Couronnes
+Salaire: 2 000 Couronnes
+2019-05-24 20:59:02 Salaire de 1500 couronnes versé sur le compte de Rose
+2019-05-24 20:59:02 Salaire de Rose (1500 couronnes) versé
+2019-05-24 20:59:02 **Rose:** 17 292 Couronnes
+Salaire: 1 500 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Skiewe
+2019-05-24 20:59:02 Salaire de Skiewe (0 couronnes) versé
+2019-05-24 20:59:02 **Skiewe:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Tamiel
+2019-05-24 20:59:02 Salaire de Tamiel (0 couronnes) versé
+2019-05-24 20:59:02 **Tamiel:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Twelein
+2019-05-24 20:59:02 Salaire de Twelein (0 couronnes) versé
+2019-05-24 20:59:02 **Twelein:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Urthl
+2019-05-24 20:59:02 Salaire de Urthl (0 couronnes) versé
+2019-05-24 20:59:02 **Urthl:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:02 Salaire de 0 couronnes versé sur le compte de Wepan
+2019-05-24 20:59:02 Salaire de Wepan (0 couronnes) versé
+2019-05-24 20:59:02 **Wepan:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:06 at Gateway Sent Heartbeat
+2019-05-24 20:59:06 at Gateway Received HeartbeatAck
+2019-05-24 20:59:06 at Gateway Latency = 47 ms
+2019-05-24 20:59:08 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Aby
+2019-05-24 20:59:08 Salaire de Aby (0 couronnes) versé
+2019-05-24 20:59:08 **Aby:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Alisto
+2019-05-24 20:59:08 Salaire de Alisto (0 couronnes) versé
+2019-05-24 20:59:08 **Alisto:** 525 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Alwine
+2019-05-24 20:59:08 Salaire de Alwine (0 couronnes) versé
+2019-05-24 20:59:08 **Alwine:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Alyssa
+2019-05-24 20:59:08 Salaire de Alyssa (0 couronnes) versé
+2019-05-24 20:59:08 **Alyssa:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Atyur
+2019-05-24 20:59:08 Salaire de Atyur (0 couronnes) versé
+2019-05-24 20:59:08 **Atyur:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Calywen
+2019-05-24 20:59:08 Salaire de Calywen (0 couronnes) versé
+2019-05-24 20:59:08 **Calywen:** 1 203 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 600 couronnes versé sur le compte de Edward
+2019-05-24 20:59:08 Salaire de Edward (600 couronnes) versé
+2019-05-24 20:59:08 **Edward:** 5 300 Couronnes
+Salaire: 600 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Emylia
+2019-05-24 20:59:08 Salaire de Emylia (0 couronnes) versé
+2019-05-24 20:59:08 **Emylia:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 2000 couronnes versé sur le compte de Eros
+2019-05-24 20:59:08 Salaire de Eros (2000 couronnes) versé
+2019-05-24 20:59:08 **Eros:** 41 292 Couronnes
+Salaire: 2 000 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Famille_Stock's
+2019-05-24 20:59:08 Salaire de Famille_Stock's (0 couronnes) versé
+2019-05-24 20:59:08 **Famille_Stock's:** 850 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Isaac
+2019-05-24 20:59:08 Salaire de Isaac (0 couronnes) versé
+2019-05-24 20:59:08 **Isaac:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Kyra
+2019-05-24 20:59:08 Salaire de Kyra (0 couronnes) versé
+2019-05-24 20:59:08 **Kyra:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Kyran
+2019-05-24 20:59:08 Salaire de Kyran (0 couronnes) versé
+2019-05-24 20:59:08 **Kyran:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Lotic
+2019-05-24 20:59:08 Salaire de Lotic (0 couronnes) versé
+2019-05-24 20:59:08 **Lotic:** 985 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Nero
+2019-05-24 20:59:08 Salaire de Nero (0 couronnes) versé
+2019-05-24 20:59:08 **Nero:** 0 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 2000 couronnes versé sur le compte de Onyx
+2019-05-24 20:59:08 Salaire de Onyx (2000 couronnes) versé
+2019-05-24 20:59:08 **Onyx:** 45 000 Couronnes
+Salaire: 2 000 Couronnes
+2019-05-24 20:59:08 Salaire de 1500 couronnes versé sur le compte de Rose
+2019-05-24 20:59:08 Salaire de Rose (1500 couronnes) versé
+2019-05-24 20:59:08 **Rose:** 18 792 Couronnes
+Salaire: 1 500 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Skiewe
+2019-05-24 20:59:08 Salaire de Skiewe (0 couronnes) versé
+2019-05-24 20:59:08 **Skiewe:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Tamiel
+2019-05-24 20:59:08 Salaire de Tamiel (0 couronnes) versé
+2019-05-24 20:59:08 **Tamiel:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Twelein
+2019-05-24 20:59:08 Salaire de Twelein (0 couronnes) versé
+2019-05-24 20:59:08 **Twelein:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Urthl
+2019-05-24 20:59:08 Salaire de Urthl (0 couronnes) versé
+2019-05-24 20:59:08 **Urthl:** 1 000 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:08 Salaire de 0 couronnes versé sur le compte de Wepan
+2019-05-24 20:59:08 Salaire de Wepan (0 couronnes) versé
+2019-05-24 20:59:08 **Wepan:** 500 Couronnes
+Salaire: 0 Couronnes
+2019-05-24 20:59:13 Timer ticked
+2019-05-24 20:59:17 at Gateway Received Dispatch (TYPING_START)
+2019-05-24 20:59:21 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:21 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:21 at Rest POST channels/360639832017338370/messages: 140,52 ms
+2019-05-24 20:59:21 at Rest GET channels/411969883673329665/messages?limit=100: 109,06 ms
+2019-05-24 20:59:21 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:21 at Rest DELETE channels/411969883673329665/messages/567121179517911080: 87,39 ms
+2019-05-24 20:59:21 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:21 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:21 at Rest Rate limit triggered: channels/411969883673329665/messages
+2019-05-24 20:59:21 at Rest Rate limit triggered: channels/411969883673329665/messages
+2019-05-24 20:59:21 at Rest Rate limit triggered: channels/411969883673329665/messages
+2019-05-24 20:59:22 at Rest Rate limit triggered: channels/411969883673329665/messages
+2019-05-24 20:59:22 at Rest Rate limit triggered: channels/411969883673329665/messages
+2019-05-24 20:59:22 at Rest Rate limit triggered: channels/411969883673329665/messages
+2019-05-24 20:59:22 at Rest Rate limit triggered: channels/411969883673329665/messages
+2019-05-24 20:59:22 at Rest Rate limit triggered: channels/411969883673329665/messages
+2019-05-24 20:59:22 at Rest DELETE channels/411969883673329665/messages/567121176825036811: 811,19 ms
+2019-05-24 20:59:22 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:22 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:22 at Rest POST channels/411969883673329665/messages: 245,9 ms
+2019-05-24 20:59:22 **Aby:** 500 Couronnes
+Salaire: 0 Couronnes
+**Alisto:** 525 Couronnes
+Salaire: 0 Couronnes
+**Alwine:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Alyssa:** 500 Couronnes
+Salaire: 0 Couronnes
+**Atyur:** 500 Couronnes
+Salaire: 0 Couronnes
+**Calywen:** 1 203 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:22 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:22 at Rest POST channels/411969883673329665/messages: 120,96 ms
+2019-05-24 20:59:22 **Edward:** 5 300 Couronnes
+Salaire: 600 Couronnes
+**Emylia:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Eros:** 41 292 Couronnes
+Salaire: 2 000 Couronnes
+**Famille_Stock's:** 850 Couronnes
+Salaire: 0 Couronnes
+**Isaac:** 500 Couronnes
+Salaire: 0 Couronnes
+**Kyra:** 500 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:22 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:23 at Rest POST channels/411969883673329665/messages: 134,22 ms
+2019-05-24 20:59:23 **Kyran:** 500 Couronnes
+Salaire: 0 Couronnes
+**Lotic:** 985 Couronnes
+Salaire: 0 Couronnes
+**Nero:** 0 Couronnes
+Salaire: 0 Couronnes
+**Onyx:** 45 000 Couronnes
+Salaire: 2 000 Couronnes
+**Rose:** 18 792 Couronnes
+Salaire: 1 500 Couronnes
+**Skiewe:** 1 000 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:23 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:23 at Rest POST channels/411969883673329665/messages: 89,44 ms
+2019-05-24 20:59:23 **Tamiel:** 500 Couronnes
+Salaire: 0 Couronnes
+**Twelein:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Urthl:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Wepan:** 500 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:23 at Rest GET channels/541493264180707338/messages?limit=100: 72,55 ms
+2019-05-24 20:59:23 at Rest DELETE channels/541493264180707338/messages/567121189114216479: 84,45 ms
+2019-05-24 20:59:23 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:23 at Rest DELETE channels/541493264180707338/messages/567121188178886669: 117,7 ms
+2019-05-24 20:59:23 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:23 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:23 at Rest DELETE channels/541493264180707338/messages/567121187247751189: 80,78 ms
+2019-05-24 20:59:23 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:23 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:23 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:23 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:23 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:23 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:24 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:24 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:24 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:24 at Rest Rate limit triggered: channels/541493264180707338/messages
+2019-05-24 20:59:24 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:24 at Rest DELETE channels/541493264180707338/messages/567121186828451840: 848,72 ms
+2019-05-24 20:59:24 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:24 at Rest POST channels/541493264180707338/messages: 156,79 ms
+2019-05-24 20:59:24 **Aby:** 500 Couronnes
+Salaire: 0 Couronnes
+**Alisto:** 525 Couronnes
+Salaire: 0 Couronnes
+**Alwine:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Alyssa:** 500 Couronnes
+Salaire: 0 Couronnes
+**Atyur:** 500 Couronnes
+Salaire: 0 Couronnes
+**Calywen:** 1 203 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:24 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:24 at Rest POST channels/541493264180707338/messages: 97,18 ms
+2019-05-24 20:59:24 **Edward:** 5 300 Couronnes
+Salaire: 600 Couronnes
+**Emylia:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Eros:** 41 292 Couronnes
+Salaire: 2 000 Couronnes
+**Famille_Stock's:** 850 Couronnes
+Salaire: 0 Couronnes
+**Isaac:** 500 Couronnes
+Salaire: 0 Couronnes
+**Kyra:** 500 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:24 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:24 at Rest POST channels/541493264180707338/messages: 83,24 ms
+2019-05-24 20:59:24 **Kyran:** 500 Couronnes
+Salaire: 0 Couronnes
+**Lotic:** 985 Couronnes
+Salaire: 0 Couronnes
+**Nero:** 0 Couronnes
+Salaire: 0 Couronnes
+**Onyx:** 45 000 Couronnes
+Salaire: 2 000 Couronnes
+**Rose:** 18 792 Couronnes
+Salaire: 1 500 Couronnes
+**Skiewe:** 1 000 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:24 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:24 at Rest POST channels/541493264180707338/messages: 102,44 ms
+2019-05-24 20:59:24 **Tamiel:** 500 Couronnes
+Salaire: 0 Couronnes
+**Twelein:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Urthl:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Wepan:** 500 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:24 Comptes en banque mis à jour
+2019-05-24 20:59:25 at Gateway Received Dispatch (TYPING_START)
+2019-05-24 20:59:28 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:28 Timer ticked
+2019-05-24 20:59:28 at Rest GET channels/411969883673329665/messages?limit=100: 305,96 ms
+2019-05-24 20:59:29 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:29 at Rest DELETE channels/411969883673329665/messages/581647467549032448: 73,01 ms
+2019-05-24 20:59:29 at Rest DELETE channels/411969883673329665/messages/581647467028807690: 76,26 ms
+2019-05-24 20:59:29 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:29 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:29 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:29 at Rest POST channels/411969883673329665/messages: 138,89 ms
+2019-05-24 20:59:29 **Aby:** 500 Couronnes
+Salaire: 0 Couronnes
+**Alisto:** 525 Couronnes
+Salaire: 0 Couronnes
+**Alwine:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Alyssa:** 500 Couronnes
+Salaire: 0 Couronnes
+**Atyur:** 500 Couronnes
+Salaire: 0 Couronnes
+**Calywen:** 1 203 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:29 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:29 at Rest POST channels/411969883673329665/messages: 133,94 ms
+2019-05-24 20:59:29 **Edward:** 5 300 Couronnes
+Salaire: 600 Couronnes
+**Emylia:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Eros:** 41 292 Couronnes
+Salaire: 2 000 Couronnes
+**Famille_Stock's:** 850 Couronnes
+Salaire: 0 Couronnes
+**Isaac:** 500 Couronnes
+Salaire: 0 Couronnes
+**Kyra:** 500 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:29 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:29 at Rest POST channels/411969883673329665/messages: 114,08 ms
+2019-05-24 20:59:29 **Kyran:** 500 Couronnes
+Salaire: 0 Couronnes
+**Lotic:** 985 Couronnes
+Salaire: 0 Couronnes
+**Nero:** 0 Couronnes
+Salaire: 0 Couronnes
+**Onyx:** 45 000 Couronnes
+Salaire: 2 000 Couronnes
+**Rose:** 18 792 Couronnes
+Salaire: 1 500 Couronnes
+**Skiewe:** 1 000 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:29 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:29 at Rest POST channels/411969883673329665/messages: 176,62 ms
+2019-05-24 20:59:29 **Tamiel:** 500 Couronnes
+Salaire: 0 Couronnes
+**Twelein:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Urthl:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Wepan:** 500 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:30 at Rest GET channels/541493264180707338/messages?limit=100: 129,76 ms
+2019-05-24 20:59:30 at Rest DELETE channels/541493264180707338/messages/581647475107168276: 76,09 ms
+2019-05-24 20:59:30 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:30 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:30 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-24 20:59:30 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:30 at Rest POST channels/541493264180707338/messages: 129,86 ms
+2019-05-24 20:59:30 **Aby:** 500 Couronnes
+Salaire: 0 Couronnes
+**Alisto:** 525 Couronnes
+Salaire: 0 Couronnes
+**Alwine:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Alyssa:** 500 Couronnes
+Salaire: 0 Couronnes
+**Atyur:** 500 Couronnes
+Salaire: 0 Couronnes
+**Calywen:** 1 203 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:30 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:30 at Rest POST channels/541493264180707338/messages: 96,02 ms
+2019-05-24 20:59:30 **Edward:** 5 300 Couronnes
+Salaire: 600 Couronnes
+**Emylia:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Eros:** 41 292 Couronnes
+Salaire: 2 000 Couronnes
+**Famille_Stock's:** 850 Couronnes
+Salaire: 0 Couronnes
+**Isaac:** 500 Couronnes
+Salaire: 0 Couronnes
+**Kyra:** 500 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:30 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:30 at Rest POST channels/541493264180707338/messages: 94,2 ms
+2019-05-24 20:59:30 **Kyran:** 500 Couronnes
+Salaire: 0 Couronnes
+**Lotic:** 985 Couronnes
+Salaire: 0 Couronnes
+**Nero:** 0 Couronnes
+Salaire: 0 Couronnes
+**Onyx:** 45 000 Couronnes
+Salaire: 2 000 Couronnes
+**Rose:** 18 792 Couronnes
+Salaire: 1 500 Couronnes
+**Skiewe:** 1 000 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:30 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-24 20:59:30 at Rest POST channels/541493264180707338/messages: 86,81 ms
+2019-05-24 20:59:30 **Tamiel:** 500 Couronnes
+Salaire: 0 Couronnes
+**Twelein:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Urthl:** 1 000 Couronnes
+Salaire: 0 Couronnes
+**Wepan:** 500 Couronnes
+Salaire: 0 Couronnes
+
+2019-05-24 20:59:30 Comptes en banque mis à jour
+2019-05-24 20:59:30 Actualisation réussie
+2019-05-24 20:59:43 Timer ticked
+2019-05-24 20:59:47 at Gateway Sent Heartbeat
+2019-05-24 20:59:47 at Gateway Received HeartbeatAck
+2019-05-24 20:59:47 at Gateway Latency = 47 ms
+2019-05-24 20:59:58 Timer ticked
+2019-05-24 21:00:13 Timer ticked
+2019-05-24 21:00:28 at Gateway Sent Heartbeat
+2019-05-24 21:00:28 Timer ticked
+2019-05-24 21:00:28 at Gateway Received HeartbeatAck
+2019-05-24 21:00:28 at Gateway Latency = 47 ms
+2019-05-24 21:00:43 Timer ticked
+2019-05-24 21:00:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 21:00:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 21:00:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 21:00:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-24 21:00:58 Timer ticked
+2019-05-24 21:01:09 at Gateway Sent Heartbeat
+2019-05-24 21:01:10 at Gateway Received HeartbeatAck
+2019-05-24 21:01:10 at Gateway Latency = 47 ms
+2019-05-24 21:01:13 Timer ticked
+2019-05-24 21:01:28 Timer ticked
+2019-05-24 21:01:43 Timer ticked
+2019-05-24 21:01:51 at Gateway Sent Heartbeat
+2019-05-24 21:01:51 at Gateway Received HeartbeatAck
+2019-05-24 21:01:51 at Gateway Latency = 47 ms
+2019-05-24 21:01:58 Timer ticked
+2019-05-24 21:02:13 Timer ticked
+2019-05-24 21:02:28 Timer ticked
+2019-05-24 21:02:32 at Gateway Sent Heartbeat
+2019-05-24 21:02:32 at Gateway Received HeartbeatAck
+2019-05-24 21:02:32 at Gateway Latency = 47 ms
+2019-05-24 21:02:43 Timer ticked
+2019-05-24 21:02:58 Timer ticked
+2019-05-24 21:03:13 at Gateway Sent Heartbeat
+2019-05-24 21:03:13 at Gateway Received HeartbeatAck
+2019-05-24 21:03:13 at Gateway Latency = 47 ms
+2019-05-24 21:03:28 Timer ticked
+2019-05-24 21:03:43 Timer ticked
+2019-05-24 21:03:54 at Gateway Sent Heartbeat
+2019-05-24 21:03:55 at Gateway Received HeartbeatAck
+2019-05-24 21:03:55 at Gateway Latency = 46 ms
+2019-05-24 21:03:58 Timer ticked
+2019-05-24 21:04:13 Timer ticked
+2019-05-24 21:04:28 Timer ticked
+2019-05-24 21:04:36 at Gateway Sent Heartbeat
+2019-05-24 21:04:36 at Gateway Received HeartbeatAck
+2019-05-24 21:04:36 at Gateway Latency = 93 ms
+2019-05-24 21:04:43 Timer ticked
+2019-05-24 21:04:58 Timer ticked

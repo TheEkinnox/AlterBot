@@ -22,7 +22,7 @@ namespace AlterBotNet.Core.Data.Classes
         #region CONSTANTES ET ATTRIBUTS STATIQUES
 
         private static string _nomFichier = Assembly.GetEntryAssembly().Location.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Data\Logs\");
-        private static string _date = $"{DateTime.Now.Day}{DateTime.Now.Month}{DateTime.Now.Year}.altr";
+        private static string _date = $"{DateTime.Now.Day}{DateTime.Now.Month}{DateTime.Now.Year}.alog";
 
         #endregion
 

@@ -29,7 +29,7 @@ namespace AlterBotNet.Core.Commands
     {
         #region ATTRIBUTS
 
-        private Random rand = new Random();
+        private Random _rand = new Random();
 
         #endregion
 
@@ -42,9 +42,7 @@ namespace AlterBotNet.Core.Commands
             const int bonusCaly = 8;
             int max = 100;
             int[] resultat = new int[99999999];
-            int[] nbr = new int[20];
             string msgResultat = "";
-            string calcul = "";
             int sumResultats = 0;
             bool valide = true;
             bool containsCalcul = false;
@@ -55,7 +53,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (input == "magieprimaire" || input == "mp")
             {
-                resultat[0] = this.rand.Next(1,4 + 1);
+                resultat[0] = this._rand.Next(1,4 + 1);
                 Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
                 switch (resultat[0])
                 {
@@ -81,7 +79,7 @@ namespace AlterBotNet.Core.Commands
             {
                 if (int.TryParse(input.Replace("d", ""), out max))
                 {
-                    resultat[0] = this.rand.Next(max + 1);
+                    resultat[0] = this._rand.Next(max + 1);
                     Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
                     await ReplyAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
                     //return;
@@ -90,13 +88,12 @@ namespace AlterBotNet.Core.Commands
                 {
                     await this.Context.Channel.SendMessageAsync("Valeur invalide");
                     Logs.WriteLine("Valeur invalide");
-                    valide = false;
                     //return;
                 }
             }
             else if (char.IsDigit(input[0]) && !(input.Contains("d")) && int.TryParse(input, out max))
             {
-                resultat[0] = this.rand.Next(max + 1);
+                resultat[0] = this._rand.Next(max + 1);
                 Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
                 await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
             }
@@ -107,7 +104,7 @@ namespace AlterBotNet.Core.Commands
                 {
                     for (int i = 0; i < nbDes; i++)
                     {
-                        resultat[i] = this.rand.Next(max + 1);
+                        resultat[i] = this._rand.Next(max + 1);
                         sumResultats += resultat[i];
 
                         if (i + 1 < nbDes)
@@ -122,12 +119,10 @@ namespace AlterBotNet.Core.Commands
                     if (input.Contains('+') || input.Contains('-') || input.Contains('*') || input.Contains('/'))
                     {
                         containsCalcul = true;
-                        calcul = input.Replace($"{nbDes}d{max}", "");
                         Logs.WriteLine(sumResultats.ToString());
-                        sumResultats = (int)parser.Parse(sumResultats.ToString() + calcul, false);
+                        sumResultats = (int)parser.Parse(sumResultats.ToString(), false);
                         Logs.WriteLine("Calcul effectué");
                         Logs.WriteLine(sumResultats.ToString());
-                        msgResultat += calcul;
                     }
                     for (int i = 0; i < argus.Length; i++)
                     {
@@ -165,7 +160,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (input.ToLower() == "none")
             {
-                resultat[0] = this.rand.Next(max);
+                resultat[0] = this._rand.Next(max);
                 if (this.Context.User.Id != 298614183258488834)
                 {
                     Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");

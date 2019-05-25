@@ -18,14 +18,9 @@ namespace AlterBotNet.Core.Commands
         [Command("grim"), Alias("grm"), Summary("Affiche le contenu du grimoire commun")]
         public async Task SendPublicGrim([Remainder]string input = "none")
         {
-            SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
-            string[] argus;
-            ulong userId = this.Context.User.Id;
-            string error = "Valeur invalide, grim help pour plus d'information.";
             string message = "";
             string nomFichierXml = Global.CheminGrimoirePublic;
 
-            List<SpellAccount> grimAccounts = await Global.ChargerDonneesSpellXmlAsync(nomFichierXml);
             Logs.WriteLine("Commande grim utilisée par " + this.Context.User.Username);
             if (input != "none")
             {

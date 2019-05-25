@@ -1,19 +1,19 @@
-﻿ #region MÉTADONNÉES
+﻿#region MÉTADONNÉES
 
 // Nom du fichier : Program.cs
 // Auteur : Loick OBIANG (1832960)
-// Date de création : 2019-02-04
-// Date de modification : 2019-03-18
+// Date de création : 2019-04-20
+// Date de modification : 2019-05-25
 
 #endregion
 
 #region USING
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
+using AlterBotNet.Core.Commands;
 using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
@@ -56,6 +56,7 @@ namespace AlterBotNet
         /// <returns></returns>
         private async Task MainAsync()
         {
+            Console.Title = $"AlterBot v{Config.Version}";
             this._client = new DiscordSocketClient(new DiscordSocketConfig
             {
                 LogLevel = LogSeverity.Debug
@@ -87,7 +88,7 @@ namespace AlterBotNet
             Global.Client = this._client;
             await Task.Delay(-1);
         }
-        
+
         /// <summary>
         /// Mise à jour des channels banque
         /// </summary>
@@ -131,19 +132,7 @@ namespace AlterBotNet
         {
             SocketGuild guild = user.Guild;
             SocketTextChannel channel = guild.SystemChannel;
-            string guildName = guild.Name;
-            if (guildName == "ServeurTest")
-            {
-                //await this.Context.Channel.SendMessageAsync("Bienvenue sur Alternia " + this.Context.User.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#" + GetChannelByName("contexte-rp", guildName) + ">\n<#" + GetChannelByName("geographie-de-alternia", guildName) + ">\n" + GetChannelByName("banque", guildName) + "\n" + GetChannelByName("regles", guildName) + "\n" + GetChannelByName("liens-utiles", guildName) + "\n" + GetChannelByName("fiche-prototype", guildName) + "\n" + GetChannelByName("les-races-disponibles", guildName) +
-                //                                            "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + this.Context.Guild.GetRole(541492279894999080).Mention + "!", false, null, null);
-                await channel.SendMessageAsync("Bienvenue sur Alternia " + user.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#542072451324968972>\n<#542070741504360458>\n<#541493264180707338>\n<#542070805236940837>\n<#542072285033660437>\n<#542073013722546218>\n<#542073051790049302>" +
-                                               "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + guild.GetRole(541492279894999080).Mention + " !");
-            }
-            else
-            {
-                await channel.SendMessageAsync("Bienvenue sur Alternia " + user.Mention + "! Toutes les infos pour faire ta fiche sont ici :\n<#410438433849212928>\n<#410531350102147072>\n<#411969883673329665>\n<#409789542825197568>\n<#409849626988904459>\n<#410424057050300427>\n<#410487492463165440>" +
-                                               "\nSi tu as besoins d'aide n'hésite pas à demander à un membre du " + guild.GetRole(420536907525652482).Mention + " !");
-            }
+            await channel.SendMessageAsync(user.Mention + " " + Config.WelcomeMessage);
         }
 
         /// <summary>
@@ -195,7 +184,7 @@ namespace AlterBotNet
             if (context.User.IsBot) return;
 
             int argPos = 0;
-            if (!(message.HasStringPrefix("^^", ref argPos) || message.HasStringPrefix("a!", ref argPos))) return;
+            if (!(message.HasStringPrefix(Config.PrefixPrim, ref argPos) || message.HasStringPrefix(Config.PrefixSec, ref argPos))) return;
 
             IResult result = await this._commands.ExecuteAsync(context, argPos, null);
             if (!result.IsSuccess)

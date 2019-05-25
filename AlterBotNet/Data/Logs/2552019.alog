@@ -1,0 +1,1441 @@
+2019-05-25 00:11:35 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:11:36 at Rest GET voice/regions: 508,6 ms
+2019-05-25 00:11:36 Une erreur s'est produite lors du chargement de la configuration du bot avec le message suivant : 
+2019-05-25 00:11:36 at Gateway Connecting
+2019-05-25 00:11:36 at Gateway Connecting ApiClient
+2019-05-25 00:11:36 at Rest GET gateway: 33,78 ms
+2019-05-25 00:11:37 at Gateway Received Hello
+2019-05-25 00:11:37 at Gateway Heartbeat Started
+2019-05-25 00:11:37 at Gateway Sent Heartbeat
+2019-05-25 00:11:37 at Gateway Received HeartbeatAck
+2019-05-25 00:11:37 at Gateway Sent Identify
+2019-05-25 00:11:37 at Gateway Latency = 156 ms
+2019-05-25 00:11:38 at Gateway Received Dispatch (READY)
+2019-05-25 00:11:38 at Gateway GuildDownloader Started
+2019-05-25 00:11:38 at Gateway Sending Status
+2019-05-25 00:11:38 at Gateway Sent StatusUpdate
+2019-05-25 00:11:38 at Gateway Connected
+2019-05-25 00:11:38 at Gateway Raising Event
+2019-05-25 00:11:38 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:11:39 at Gateway Connected to ServeurTest
+2019-05-25 00:11:39 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:11:39 at Gateway Connected to Alternia
+2019-05-25 00:11:39 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:11:39 at Gateway Connected to plopotonie
+2019-05-25 00:11:39 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:11:39 at Gateway Connected to test2
+2019-05-25 00:11:39 at Gateway GuildDownloader Stopped
+2019-05-25 00:11:39 at Gateway Sent StatusUpdate
+2019-05-25 00:11:39 at Gateway Ignored Dispatch (PRESENCES_REPLACE)
+2019-05-25 00:11:52 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:11:52 at Rest GET voice/regions: 438,18 ms
+2019-05-25 00:11:53 Une erreur s'est produite lors du chargement de la configuration du bot avec le message suivant : 
+2019-05-25 00:13:19 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:13:20 at Rest GET voice/regions: 465,04 ms
+2019-05-25 00:13:20 Une erreur s'est produite lors du chargement de la configuration du bot avec le message suivant : Le fichier situé à "" est inexistant.
+2019-05-25 00:14:13 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:14:14 at Rest GET voice/regions: 510,5 ms
+2019-05-25 00:14:14 Une erreur s'est produite lors du chargement de la configuration du bot avec le message suivant : Le fichier situé à "" est inexistant.
+2019-05-25 00:16:27 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:16:30 at Rest GET voice/regions: 2015,98 ms
+2019-05-25 00:16:43 at Gateway Connecting
+2019-05-25 00:17:28 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:17:28 at Rest GET voice/regions: 412,51 ms
+2019-05-25 00:17:29 at Gateway Connecting
+2019-05-25 00:17:29 at Gateway Connecting ApiClient
+2019-05-25 00:17:29 at Rest GET gateway: 82,67 ms
+2019-05-25 00:17:41 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:17:41 at Rest GET voice/regions: 413,79 ms
+2019-05-25 00:17:42 Une erreur s'est produite lors du chargement de la configuration du bot avec le message suivant : Root element is missing.
+2019-05-25 00:21:12 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:21:13 at Rest GET voice/regions: 662,24 ms
+2019-05-25 00:21:13 Une erreur s'est produite lors du chargement de la configuration du bot avec le message suivant : There are multiple root elements. Line 3, position 2.
+2019-05-25 00:22:12 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:22:12 at Rest GET voice/regions: 388,01 ms
+2019-05-25 00:22:13 at Gateway Connecting
+2019-05-25 00:22:13 at Gateway Connecting ApiClient
+2019-05-25 00:22:13 at Rest GET gateway: 28,96 ms
+2019-05-25 00:22:13 at Gateway Received Hello
+2019-05-25 00:22:13 at Gateway Heartbeat Started
+2019-05-25 00:22:13 at Gateway Identifying
+2019-05-25 00:22:13 at Gateway Sent Heartbeat
+2019-05-25 00:22:13 at Gateway Received HeartbeatAck
+2019-05-25 00:22:14 at Gateway Sent Identify
+2019-05-25 00:22:14 at Gateway Received Dispatch (READY)
+2019-05-25 00:22:14 at Gateway GuildDownloader Started
+2019-05-25 00:22:14 at Gateway Sending Status
+2019-05-25 00:22:14 at Gateway Sent StatusUpdate
+2019-05-25 00:22:14 at Gateway Connected
+2019-05-25 00:22:14 at Gateway Raising Event
+2019-05-25 00:22:14 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:22:14 at Gateway Connected to ServeurTest
+2019-05-25 00:22:14 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:22:14 at Gateway Connected to Alternia
+2019-05-25 00:22:14 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:22:14 at Gateway Connected to plopotonie
+2019-05-25 00:22:14 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:22:14 at Gateway Connected to test2
+2019-05-25 00:22:14 at Gateway GuildDownloader Stopped
+2019-05-25 00:22:14 at Gateway Sent StatusUpdate
+2019-05-25 00:22:14 StartTimer
+2019-05-25 00:22:14 at Gateway Ready
+2019-05-25 00:22:29 Timer ticked
+2019-05-25 00:22:44 Timer ticked
+2019-05-25 00:22:55 at Gateway Sent Heartbeat
+2019-05-25 00:22:55 at Gateway Received HeartbeatAck
+2019-05-25 00:22:55 at Gateway Latency = 47 ms
+2019-05-25 00:22:59 Timer ticked
+2019-05-25 00:23:02 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 00:23:06 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:23:06 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:23:06 at Rest POST channels/360639832017338370/messages: 150,87 ms
+2019-05-25 00:23:06 La commande config à été utilisée par TheEkinnox(UserID : 260385529474842626) avec le paramètre show avec succès.
+2019-05-25 00:23:14 Timer ticked
+2019-05-25 00:23:29 Timer ticked
+2019-05-25 00:23:36 at Gateway Sent Heartbeat
+2019-05-25 00:23:36 at Gateway Received HeartbeatAck
+2019-05-25 00:23:36 at Gateway Latency = 47 ms
+2019-05-25 00:23:38 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 00:23:40 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:23:40 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:23:40 at Rest POST channels/360639832017338370/messages: 113,47 ms
+2019-05-25 00:23:40 Une erreur s'est produite avec le message suivant : Aucune option n'a été entrée.
+2019-05-25 00:23:44 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 00:23:44 Timer ticked
+2019-05-25 00:23:46 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:23:46 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:23:47 at Rest POST channels/360639832017338370/messages: 156,62 ms
+2019-05-25 00:23:47 Une erreur s'est produite avec le message suivant : L'option entrée est invalide.
+2019-05-25 00:23:59 Timer ticked
+2019-05-25 00:24:14 Timer ticked
+2019-05-25 00:24:17 at Gateway Sent Heartbeat
+2019-05-25 00:24:17 at Gateway Received HeartbeatAck
+2019-05-25 00:24:17 at Gateway Latency = 47 ms
+2019-05-25 00:24:29 Timer ticked
+2019-05-25 00:24:44 Timer ticked
+2019-05-25 00:24:59 at Gateway Sent Heartbeat
+2019-05-25 00:24:59 at Gateway Received HeartbeatAck
+2019-05-25 00:24:59 at Gateway Latency = 31 ms
+2019-05-25 00:24:59 Timer ticked
+2019-05-25 00:25:14 Timer ticked
+2019-05-25 00:25:22 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:25:23 at Rest GET voice/regions: 367 ms
+2019-05-25 00:25:23 at Gateway Connecting
+2019-05-25 00:25:23 at Gateway Connecting ApiClient
+2019-05-25 00:25:23 at Rest GET gateway: 30,41 ms
+2019-05-25 00:25:23 at Gateway Received Hello
+2019-05-25 00:25:23 at Gateway Heartbeat Started
+2019-05-25 00:25:23 at Gateway Identifying
+2019-05-25 00:25:23 at Gateway Sent Heartbeat
+2019-05-25 00:25:24 at Gateway Sent Identify
+2019-05-25 00:25:24 at Gateway Received HeartbeatAck
+2019-05-25 00:25:24 at Gateway Latency = 110 ms
+2019-05-25 00:25:24 at Gateway Received Dispatch (READY)
+2019-05-25 00:25:24 at Gateway GuildDownloader Started
+2019-05-25 00:25:24 at Gateway Sending Status
+2019-05-25 00:25:24 at Gateway Sent StatusUpdate
+2019-05-25 00:25:24 at Gateway Connected
+2019-05-25 00:25:24 at Gateway Raising Event
+2019-05-25 00:25:24 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:25:24 at Gateway Connected to plopotonie
+2019-05-25 00:25:24 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:25:24 at Gateway Connected to Alternia
+2019-05-25 00:25:24 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:25:24 at Gateway Connected to ServeurTest
+2019-05-25 00:25:24 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:25:24 at Gateway Connected to test2
+2019-05-25 00:25:24 at Gateway GuildDownloader Stopped
+2019-05-25 00:25:24 at Gateway Sent StatusUpdate
+2019-05-25 00:25:24 StartTimer
+2019-05-25 00:25:24 at Gateway Ready
+2019-05-25 00:25:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:25:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:25:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:25:37 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:25:39 Timer ticked
+2019-05-25 00:25:54 Timer ticked
+2019-05-25 00:26:05 at Gateway Sent Heartbeat
+2019-05-25 00:26:05 at Gateway Received HeartbeatAck
+2019-05-25 00:26:05 at Gateway Latency = 203 ms
+2019-05-25 00:26:09 Timer ticked
+2019-05-25 00:41:25 Une erreur s'est produite lors de l'obtention du motd avec le message suivant : Object reference not set to an instance of an object.
+2019-05-25 00:41:25 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:41:26 at Rest GET voice/regions: 447,25 ms
+2019-05-25 00:41:26 at Gateway Connecting
+2019-05-25 00:41:26 at Gateway Connecting ApiClient
+2019-05-25 00:41:26 at Rest GET gateway: 32,16 ms
+2019-05-25 00:41:27 at Gateway Received Hello
+2019-05-25 00:41:27 at Gateway Heartbeat Started
+2019-05-25 00:41:27 at Gateway Identifying
+2019-05-25 00:41:27 at Gateway Sent Heartbeat
+2019-05-25 00:41:27 at Gateway Sent Identify
+2019-05-25 00:41:27 at Gateway Received HeartbeatAck
+2019-05-25 00:41:27 at Gateway Latency = 125 ms
+2019-05-25 00:41:27 at Gateway Received Dispatch (READY)
+2019-05-25 00:41:27 at Gateway GuildDownloader Started
+2019-05-25 00:41:27 at Gateway Sending Status
+2019-05-25 00:41:27 at Gateway Sent StatusUpdate
+2019-05-25 00:41:27 at Gateway Connected
+2019-05-25 00:41:27 at Gateway Raising Event
+2019-05-25 00:41:27 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:41:27 at Gateway Connected to ServeurTest
+2019-05-25 00:41:27 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:41:27 at Gateway Connected to plopotonie
+2019-05-25 00:41:27 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:41:27 at Gateway Connected to Alternia
+2019-05-25 00:41:27 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:41:27 at Gateway Connected to test2
+2019-05-25 00:41:28 at Gateway GuildDownloader Stopped
+2019-05-25 00:41:28 at Gateway Sent StatusUpdate
+2019-05-25 00:41:28 StartTimer
+2019-05-25 00:41:28 at Gateway Ready
+2019-05-25 00:49:21 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:49:22 at Rest GET voice/regions: 349,8 ms
+2019-05-25 00:49:29 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:49:30 at Rest GET voice/regions: 342,78 ms
+2019-05-25 00:49:30 at Gateway Connecting
+2019-05-25 00:49:30 at Gateway Connecting ApiClient
+2019-05-25 00:49:30 at Rest GET gateway: 24,19 ms
+2019-05-25 00:49:30 at Gateway Received Hello
+2019-05-25 00:49:30 at Gateway Heartbeat Started
+2019-05-25 00:49:31 at Gateway Identifying
+2019-05-25 00:49:31 at Gateway Sent Heartbeat
+2019-05-25 00:49:31 at Gateway Sent Identify
+2019-05-25 00:49:31 at Gateway Received HeartbeatAck
+2019-05-25 00:49:31 at Gateway Latency = 156 ms
+2019-05-25 00:49:31 at Gateway Received Dispatch (READY)
+2019-05-25 00:49:31 at Gateway GuildDownloader Started
+2019-05-25 00:49:31 at Gateway Sending Status
+2019-05-25 00:49:31 at Gateway Sent StatusUpdate
+2019-05-25 00:49:31 at Gateway Connected
+2019-05-25 00:49:31 at Gateway Raising Event
+2019-05-25 00:49:31 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:49:31 at Gateway Connected to ServeurTest
+2019-05-25 00:49:31 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:49:31 at Gateway Connected to Alternia
+2019-05-25 00:49:31 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:49:31 at Gateway Connected to plopotonie
+2019-05-25 00:49:31 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:49:31 at Gateway Connected to test2
+2019-05-25 00:49:31 at Gateway GuildDownloader Stopped
+2019-05-25 00:49:31 at Gateway Sent StatusUpdate
+2019-05-25 00:49:31 StartTimer
+2019-05-25 00:49:31 at Gateway Ready
+2019-05-25 00:49:33 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:49:33 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:49:33 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:49:33 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:49:35 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 00:49:37 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:49:37 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:49:37 at Gateway Received Dispatch (MESSAGE_UPDATE)
+2019-05-25 00:49:37 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:49:37 at Rest POST channels/360639832017338370/messages: 117,17 ms
+2019-05-25 00:49:40 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:49:40 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:49:40 at Rest POST channels/360639832017338370/messages: 94,77 ms
+2019-05-25 00:49:46 Timer ticked
+2019-05-25 00:50:01 Timer ticked
+2019-05-25 00:50:12 at Gateway Sent Heartbeat
+2019-05-25 00:58:31 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 00:58:31 at Rest GET voice/regions: 336,59 ms
+2019-05-25 00:58:31 at Gateway Connecting
+2019-05-25 00:58:31 at Gateway Connecting ApiClient
+2019-05-25 00:58:31 at Rest GET gateway: 31,44 ms
+2019-05-25 00:58:32 at Gateway Received Hello
+2019-05-25 00:58:32 at Gateway Heartbeat Started
+2019-05-25 00:58:32 at Gateway Identifying
+2019-05-25 00:58:32 at Gateway Sent Heartbeat
+2019-05-25 00:58:32 at Gateway Sent Identify
+2019-05-25 00:58:32 at Gateway Received HeartbeatAck
+2019-05-25 00:58:32 at Gateway Latency = 172 ms
+2019-05-25 00:58:32 at Gateway Received Dispatch (READY)
+2019-05-25 00:58:32 at Gateway GuildDownloader Started
+2019-05-25 00:58:32 at Gateway Sending Status
+2019-05-25 00:58:32 at Gateway Sent StatusUpdate
+2019-05-25 00:58:32 at Gateway Connected
+2019-05-25 00:58:32 at Gateway Raising Event
+2019-05-25 00:58:32 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:58:32 at Gateway Connected to ServeurTest
+2019-05-25 00:58:32 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:58:32 at Gateway Connected to Alternia
+2019-05-25 00:58:32 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:58:32 at Gateway Connected to plopotonie
+2019-05-25 00:58:32 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 00:58:32 at Gateway Connected to test2
+2019-05-25 00:58:33 at Gateway GuildDownloader Stopped
+2019-05-25 00:58:33 at Gateway Sent StatusUpdate
+2019-05-25 00:58:33 StartTimer
+2019-05-25 00:58:33 at Gateway Ready
+2019-05-25 00:58:36 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 00:58:45 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 00:58:48 Timer ticked
+2019-05-25 00:58:49 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:58:49 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-25 00:58:49 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 00:58:49 at Rest POST channels/360639832017338370/messages: 194,99 ms
+2019-05-25 00:58:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:58:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:58:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:58:54 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:59:03 Timer ticked
+2019-05-25 00:59:13 at Gateway Sent Heartbeat
+2019-05-25 00:59:13 at Gateway Received HeartbeatAck
+2019-05-25 00:59:13 at Gateway Latency = 47 ms
+2019-05-25 00:59:18 Timer ticked
+2019-05-25 00:59:30 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 00:59:33 Timer ticked
+2019-05-25 00:59:48 Timer ticked
+2019-05-25 00:59:55 at Gateway Sent Heartbeat
+2019-05-25 00:59:55 at Gateway Received HeartbeatAck
+2019-05-25 00:59:55 at Gateway Latency = 47 ms
+2019-05-25 01:00:03 Timer ticked
+2019-05-25 01:00:18 Timer ticked
+2019-05-25 01:00:33 Timer ticked
+2019-05-25 01:00:36 at Gateway Sent Heartbeat
+2019-05-25 01:00:36 at Gateway Received HeartbeatAck
+2019-05-25 01:00:36 at Gateway Latency = 63 ms
+2019-05-25 01:00:48 Timer ticked
+2019-05-25 01:01:03 Timer ticked
+2019-05-25 01:01:17 at Gateway Sent Heartbeat
+2019-05-25 01:01:17 at Gateway Received HeartbeatAck
+2019-05-25 01:01:17 at Gateway Latency = 47 ms
+2019-05-25 01:01:18 Timer ticked
+2019-05-25 01:01:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:01:33 Timer ticked
+2019-05-25 01:01:48 Timer ticked
+2019-05-25 01:01:58 at Gateway Sent Heartbeat
+2019-05-25 01:01:58 at Gateway Received HeartbeatAck
+2019-05-25 01:01:58 at Gateway Latency = 47 ms
+2019-05-25 01:02:03 Timer ticked
+2019-05-25 01:02:18 Timer ticked
+2019-05-25 01:02:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:02:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:02:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:02:32 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:02:33 Timer ticked
+2019-05-25 01:02:40 at Gateway Sent Heartbeat
+2019-05-25 01:02:40 at Gateway Received HeartbeatAck
+2019-05-25 01:02:40 at Gateway Latency = 47 ms
+2019-05-25 01:02:48 Timer ticked
+2019-05-25 01:03:03 Timer ticked
+2019-05-25 01:03:18 Timer ticked
+2019-05-25 01:03:21 at Gateway Sent Heartbeat
+2019-05-25 01:03:21 at Gateway Received HeartbeatAck
+2019-05-25 01:03:21 at Gateway Latency = 296 ms
+2019-05-25 01:03:33 Timer ticked
+2019-05-25 01:03:48 Timer ticked
+2019-05-25 01:04:02 at Gateway Sent Heartbeat
+2019-05-25 01:04:02 at Gateway Received HeartbeatAck
+2019-05-25 01:04:02 at Gateway Latency = 47 ms
+2019-05-25 01:04:03 Timer ticked
+2019-05-25 01:04:18 Timer ticked
+2019-05-25 01:04:33 Timer ticked
+2019-05-25 01:04:44 at Gateway Sent Heartbeat
+2019-05-25 01:04:44 at Gateway Received HeartbeatAck
+2019-05-25 01:04:44 at Gateway Latency = 47 ms
+2019-05-25 01:04:48 Timer ticked
+2019-05-25 01:05:03 Timer ticked
+2019-05-25 01:05:18 Timer ticked
+2019-05-25 01:05:25 at Gateway Sent Heartbeat
+2019-05-25 01:05:25 at Gateway Received HeartbeatAck
+2019-05-25 01:05:25 at Gateway Latency = 47 ms
+2019-05-25 01:05:33 Timer ticked
+2019-05-25 01:05:48 Timer ticked
+2019-05-25 01:06:03 Timer ticked
+2019-05-25 01:06:06 at Gateway Sent Heartbeat
+2019-05-25 01:06:06 at Gateway Received HeartbeatAck
+2019-05-25 01:06:06 at Gateway Latency = 47 ms
+2019-05-25 01:06:18 Timer ticked
+2019-05-25 01:06:33 Timer ticked
+2019-05-25 01:06:47 at Gateway Sent Heartbeat
+2019-05-25 01:06:47 at Gateway Received HeartbeatAck
+2019-05-25 01:06:47 at Gateway Latency = 47 ms
+2019-05-25 01:06:48 Timer ticked
+2019-05-25 01:07:02 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:07:03 Timer ticked
+2019-05-25 01:07:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:07:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:07:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:07:04 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:07:18 Timer ticked
+2019-05-25 01:07:29 at Gateway Sent Heartbeat
+2019-05-25 01:07:29 at Gateway Received HeartbeatAck
+2019-05-25 01:07:29 at Gateway Latency = 31 ms
+2019-05-25 01:07:33 Timer ticked
+2019-05-25 01:07:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:07:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:07:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:07:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:07:48 Timer ticked
+2019-05-25 01:08:03 Timer ticked
+2019-05-25 01:08:10 at Gateway Sent Heartbeat
+2019-05-25 01:08:10 at Gateway Received HeartbeatAck
+2019-05-25 01:08:10 at Gateway Latency = 47 ms
+2019-05-25 01:08:18 Timer ticked
+2019-05-25 01:08:27 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:08:27 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:08:27 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:08:27 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:08:33 Timer ticked
+2019-05-25 01:08:48 Timer ticked
+2019-05-25 01:08:51 at Gateway Sent Heartbeat
+2019-05-25 01:08:51 at Gateway Received HeartbeatAck
+2019-05-25 01:08:51 at Gateway Latency = 62 ms
+2019-05-25 01:09:03 Timer ticked
+2019-05-25 01:09:18 Timer ticked
+2019-05-25 01:09:32 at Gateway Sent Heartbeat
+2019-05-25 01:09:32 at Gateway Received HeartbeatAck
+2019-05-25 01:09:32 at Gateway Latency = 62 ms
+2019-05-25 01:09:33 Timer ticked
+2019-05-25 01:09:48 Timer ticked
+2019-05-25 01:10:03 Timer ticked
+2019-05-25 01:10:14 at Gateway Sent Heartbeat
+2019-05-25 01:10:14 at Gateway Received HeartbeatAck
+2019-05-25 01:10:14 at Gateway Latency = 47 ms
+2019-05-25 01:10:18 Timer ticked
+2019-05-25 01:10:33 Timer ticked
+2019-05-25 01:10:48 Timer ticked
+2019-05-25 01:10:55 at Gateway Sent Heartbeat
+2019-05-25 01:10:55 at Gateway Received HeartbeatAck
+2019-05-25 01:10:55 at Gateway Latency = 47 ms
+2019-05-25 01:11:03 Timer ticked
+2019-05-25 01:11:18 Timer ticked
+2019-05-25 01:11:33 Timer ticked
+2019-05-25 01:11:36 at Gateway Sent Heartbeat
+2019-05-25 01:11:36 at Gateway Received HeartbeatAck
+2019-05-25 01:11:36 at Gateway Latency = 47 ms
+2019-05-25 01:11:48 Timer ticked
+2019-05-25 01:12:03 Timer ticked
+2019-05-25 01:12:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:12:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:12:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:12:13 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:12:18 at Gateway Sent Heartbeat
+2019-05-25 01:12:18 at Gateway Received HeartbeatAck
+2019-05-25 01:12:18 at Gateway Latency = 47 ms
+2019-05-25 01:12:18 Timer ticked
+2019-05-25 01:12:33 Timer ticked
+2019-05-25 01:12:48 Timer ticked
+2019-05-25 01:12:59 at Gateway Sent Heartbeat
+2019-05-25 01:12:59 at Gateway Received HeartbeatAck
+2019-05-25 01:12:59 at Gateway Latency = 31 ms
+2019-05-25 01:13:03 Timer ticked
+2019-05-25 01:13:18 Timer ticked
+2019-05-25 01:13:33 Timer ticked
+2019-05-25 01:13:40 at Gateway Sent Heartbeat
+2019-05-25 01:13:40 at Gateway Received HeartbeatAck
+2019-05-25 01:13:40 at Gateway Latency = 47 ms
+2019-05-25 01:13:48 Timer ticked
+2019-05-25 01:14:03 Timer ticked
+2019-05-25 01:14:18 Timer ticked
+2019-05-25 01:14:21 at Gateway Sent Heartbeat
+2019-05-25 01:14:21 at Gateway Received HeartbeatAck
+2019-05-25 01:14:21 at Gateway Latency = 125 ms
+2019-05-25 01:14:33 Timer ticked
+2019-05-25 01:14:48 Timer ticked
+2019-05-25 01:15:03 at Gateway Sent Heartbeat
+2019-05-25 01:15:03 at Gateway Received HeartbeatAck
+2019-05-25 01:15:03 at Gateway Latency = 47 ms
+2019-05-25 01:15:03 Timer ticked
+2019-05-25 01:15:18 Timer ticked
+2019-05-25 01:15:33 Timer ticked
+2019-05-25 01:15:44 at Gateway Sent Heartbeat
+2019-05-25 01:15:44 at Gateway Received HeartbeatAck
+2019-05-25 01:15:44 at Gateway Latency = 47 ms
+2019-05-25 01:15:48 Timer ticked
+2019-05-25 01:16:03 Timer ticked
+2019-05-25 01:16:18 Timer ticked
+2019-05-25 01:16:25 at Gateway Sent Heartbeat
+2019-05-25 01:16:25 at Gateway Received HeartbeatAck
+2019-05-25 01:16:25 at Gateway Latency = 46 ms
+2019-05-25 01:16:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:16:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:16:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:16:31 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:16:33 Timer ticked
+2019-05-25 01:16:48 Timer ticked
+2019-05-25 01:17:03 Timer ticked
+2019-05-25 01:17:07 at Gateway Sent Heartbeat
+2019-05-25 01:17:07 at Gateway Received HeartbeatAck
+2019-05-25 01:17:07 at Gateway Latency = 47 ms
+2019-05-25 01:17:18 Timer ticked
+2019-05-25 01:17:33 Timer ticked
+2019-05-25 01:17:48 Timer ticked
+2019-05-25 01:17:48 at Gateway Sent Heartbeat
+2019-05-25 01:17:48 at Gateway Received HeartbeatAck
+2019-05-25 01:17:48 at Gateway Latency = 62 ms
+2019-05-25 01:17:50 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:17:58 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:18:03 Timer ticked
+2019-05-25 01:18:05 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:18:05 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-25 01:18:05 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:18:05 at Rest POST channels/360639832017338370/messages: 161,25 ms
+2019-05-25 01:18:18 Timer ticked
+2019-05-25 01:18:29 at Gateway Sent Heartbeat
+2019-05-25 01:18:29 at Gateway Received HeartbeatAck
+2019-05-25 01:18:29 at Gateway Latency = 47 ms
+2019-05-25 01:18:33 Timer ticked
+2019-05-25 01:18:48 Timer ticked
+2019-05-25 01:19:03 Timer ticked
+2019-05-25 01:19:10 at Gateway Sent Heartbeat
+2019-05-25 01:19:10 at Gateway Received HeartbeatAck
+2019-05-25 01:19:10 at Gateway Latency = 47 ms
+2019-05-25 01:19:18 Timer ticked
+2019-05-25 01:19:33 Timer ticked
+2019-05-25 01:19:48 Timer ticked
+2019-05-25 01:19:50 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:19:52 at Gateway Sent Heartbeat
+2019-05-25 01:19:52 at Gateway Received HeartbeatAck
+2019-05-25 01:19:52 at Gateway Latency = 78 ms
+2019-05-25 01:20:03 Timer ticked
+2019-05-25 01:20:18 Timer ticked
+2019-05-25 01:20:33 Timer ticked
+2019-05-25 01:20:33 at Gateway Sent Heartbeat
+2019-05-25 01:20:33 at Gateway Received HeartbeatAck
+2019-05-25 01:20:33 at Gateway Latency = 46 ms
+2019-05-25 01:20:48 Timer ticked
+2019-05-25 01:21:03 Timer ticked
+2019-05-25 01:21:14 at Gateway Sent Heartbeat
+2019-05-25 01:21:14 at Gateway Received HeartbeatAck
+2019-05-25 01:21:14 at Gateway Latency = 46 ms
+2019-05-25 01:21:18 Timer ticked
+2019-05-25 01:21:33 Timer ticked
+2019-05-25 01:21:48 Timer ticked
+2019-05-25 01:21:55 at Gateway Sent Heartbeat
+2019-05-25 01:21:55 at Gateway Received HeartbeatAck
+2019-05-25 01:21:55 at Gateway Latency = 47 ms
+2019-05-25 01:21:58 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:22:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:22:03 Timer ticked
+2019-05-25 01:22:04 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:22:05 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:22:10 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:22:18 Timer ticked
+2019-05-25 01:22:33 Timer ticked
+2019-05-25 01:22:37 at Gateway Sent Heartbeat
+2019-05-25 01:22:37 at Gateway Received HeartbeatAck
+2019-05-25 01:22:37 at Gateway Latency = 47 ms
+2019-05-25 01:22:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:22:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:22:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:22:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:22:48 Timer ticked
+2019-05-25 01:22:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:23:01 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:23:03 Timer ticked
+2019-05-25 01:23:03 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:23:04 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:23:04 at Rest POST channels/360639832017338370/messages: 193,01 ms
+2019-05-25 01:23:04 Une erreur s'est produite lors de l'utilisation de la commande config avec le message suivant : Aucune option n'a été entrée.
+2019-05-25 01:23:06 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:23:08 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:23:08 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:23:08 at Rest POST channels/360639832017338370/messages: 88,07 ms
+2019-05-25 01:23:08 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 01:23:31 Une erreur s'est produite lors du chargement de la configuration du bot avec le message suivant : Name cannot begin with the '#' character, hexadecimal value 0x23. Line 7, position 92.
+2019-05-25 01:26:33 Une erreur s'est produite lors du chargement de la configuration du bot avec le message suivant : Invalid syntax for a decimal numeric entity reference. Line 7, position 95.
+2019-05-25 01:29:05 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 01:29:06 at Rest GET voice/regions: 396,73 ms
+2019-05-25 01:29:06 at Gateway Connecting
+2019-05-25 01:29:06 at Gateway Connecting ApiClient
+2019-05-25 01:29:06 at Rest GET gateway: 25,65 ms
+2019-05-25 01:29:06 at Gateway Received Hello
+2019-05-25 01:29:06 at Gateway Heartbeat Started
+2019-05-25 01:29:07 at Gateway Identifying
+2019-05-25 01:29:07 at Gateway Sent Heartbeat
+2019-05-25 01:29:07 at Gateway Latency = 171 ms
+2019-05-25 01:29:07 at Gateway Sent Identify
+2019-05-25 01:29:07 at Gateway Received Dispatch (READY)
+2019-05-25 01:29:07 at Gateway GuildDownloader Started
+2019-05-25 01:29:07 at Gateway Sending Status
+2019-05-25 01:29:07 at Gateway Sent StatusUpdate
+2019-05-25 01:29:07 at Gateway Connected
+2019-05-25 01:29:07 at Gateway Raising Event
+2019-05-25 01:29:07 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:29:07 at Gateway Connected to ServeurTest
+2019-05-25 01:29:07 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:29:07 at Gateway Connected to test2
+2019-05-25 01:29:07 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:29:07 at Gateway Connected to Alternia
+2019-05-25 01:29:07 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:29:07 at Gateway Connected to plopotonie
+2019-05-25 01:29:07 at Gateway GuildDownloader Stopped
+2019-05-25 01:29:07 at Gateway Sent StatusUpdate
+2019-05-25 01:29:07 StartTimer
+2019-05-25 01:29:07 at Gateway Ready
+2019-05-25 01:29:13 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:29:16 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:29:16 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:29:16 at Rest POST channels/360639832017338370/messages: 264,85 ms
+2019-05-25 01:29:16 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 01:29:22 Timer ticked
+2019-05-25 01:29:37 Timer ticked
+2019-05-25 01:29:42 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:29:48 at Gateway Sent Heartbeat
+2019-05-25 01:29:48 at Gateway Received HeartbeatAck
+2019-05-25 01:29:48 at Gateway Latency = 47 ms
+2019-05-25 01:29:52 Timer ticked
+2019-05-25 01:29:52 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:29:54 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:29:54 at Gateway Received Dispatch (MESSAGE_DELETE)
+2019-05-25 01:29:54 at Rest DELETE channels/360639832017338370/messages/581715547029372929: 145,25 ms
+2019-05-25 01:29:54 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:29:54 at Rest POST channels/360639832017338370/messages: 150,87 ms
+2019-05-25 01:30:07 Timer ticked
+2019-05-25 01:30:22 Timer ticked
+2019-05-25 01:30:31 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 01:30:31 at Rest GET voice/regions: 402,09 ms
+2019-05-25 01:30:32 at Gateway Connecting
+2019-05-25 01:30:32 at Gateway Connecting ApiClient
+2019-05-25 01:30:32 at Rest GET gateway: 51,73 ms
+2019-05-25 01:30:33 at Gateway Received Hello
+2019-05-25 01:30:33 at Gateway Heartbeat Started
+2019-05-25 01:30:33 at Gateway Identifying
+2019-05-25 01:30:33 at Gateway Sent Heartbeat
+2019-05-25 01:30:33 at Gateway Sent Identify
+2019-05-25 01:30:34 at Gateway Received HeartbeatAck
+2019-05-25 01:30:34 at Gateway Latency = 281 ms
+2019-05-25 01:30:34 at Gateway Received Dispatch (READY)
+2019-05-25 01:30:34 at Gateway GuildDownloader Started
+2019-05-25 01:30:34 at Gateway Sending Status
+2019-05-25 01:30:34 at Gateway Sent StatusUpdate
+2019-05-25 01:30:34 at Gateway Connected
+2019-05-25 01:30:34 at Gateway Raising Event
+2019-05-25 01:30:34 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:30:34 at Gateway Connected to ServeurTest
+2019-05-25 01:30:34 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:30:34 at Gateway Connected to plopotonie
+2019-05-25 01:30:34 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:30:34 at Gateway Connected to Alternia
+2019-05-25 01:30:34 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:30:34 at Gateway Connected to test2
+2019-05-25 01:30:34 at Gateway GuildDownloader Stopped
+2019-05-25 01:30:34 at Gateway Sent StatusUpdate
+2019-05-25 01:30:34 StartTimer
+2019-05-25 01:30:34 at Gateway Ready
+2019-05-25 01:30:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:30:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:30:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:30:34 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:30:36 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:30:37 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:30:37 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:30:37 Une erreur s'est produite lors de l'utilisation de la commande config avec le message suivant : Aucune option n'a été entrée.
+2019-05-25 01:30:47 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:30:47 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:30:47 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:30:47 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 01:30:49 Timer ticked
+2019-05-25 01:31:04 Timer ticked
+2019-05-25 01:31:15 at Gateway Sent Heartbeat
+2019-05-25 01:31:15 at Gateway Received HeartbeatAck
+2019-05-25 01:31:15 at Gateway Latency = 47 ms
+2019-05-25 01:31:18 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 01:31:18 at Rest GET voice/regions: 377,82 ms
+2019-05-25 01:31:18 at Gateway Connecting
+2019-05-25 01:31:18 at Gateway Connecting ApiClient
+2019-05-25 01:31:18 at Rest GET gateway: 27,37 ms
+2019-05-25 01:31:19 at Gateway Received Hello
+2019-05-25 01:31:19 at Gateway Heartbeat Started
+2019-05-25 01:31:19 at Gateway Identifying
+2019-05-25 01:31:19 at Gateway Sent Heartbeat
+2019-05-25 01:31:19 at Gateway Sent Identify
+2019-05-25 01:31:19 at Gateway Received HeartbeatAck
+2019-05-25 01:31:19 at Gateway Latency = 141 ms
+2019-05-25 01:31:19 at Gateway Received Dispatch (READY)
+2019-05-25 01:31:19 at Gateway GuildDownloader Started
+2019-05-25 01:31:19 at Gateway Sending Status
+2019-05-25 01:31:19 at Gateway Sent StatusUpdate
+2019-05-25 01:31:19 at Gateway Connected
+2019-05-25 01:31:19 at Gateway Raising Event
+2019-05-25 01:31:19 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:31:19 at Gateway Connected to ServeurTest
+2019-05-25 01:31:19 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:31:19 at Gateway Connected to plopotonie
+2019-05-25 01:31:19 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:31:19 at Gateway Connected to Alternia
+2019-05-25 01:31:19 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 01:31:19 at Gateway Connected to test2
+2019-05-25 01:31:20 at Gateway GuildDownloader Stopped
+2019-05-25 01:31:20 at Gateway Sent StatusUpdate
+2019-05-25 01:31:20 StartTimer
+2019-05-25 01:31:20 at Gateway Ready
+2019-05-25 01:31:33 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:31:35 Timer ticked
+2019-05-25 01:31:38 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:31:38 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:31:38 at Rest POST channels/360639832017338370/messages: 144,95 ms
+2019-05-25 01:31:38 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 01:31:50 Timer ticked
+2019-05-25 01:32:00 at Gateway Sent Heartbeat
+2019-05-25 01:32:00 at Gateway Received HeartbeatAck
+2019-05-25 01:32:00 at Gateway Latency = 32 ms
+2019-05-25 01:32:05 Timer ticked
+2019-05-25 01:32:20 Timer ticked
+2019-05-25 01:32:25 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:32:30 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:32:30 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:32:31 at Rest POST channels/486733430013558804/messages: 140,48 ms
+2019-05-25 01:32:31 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 01:32:35 Timer ticked
+2019-05-25 01:32:42 at Gateway Sent Heartbeat
+2019-05-25 01:32:42 at Gateway Received HeartbeatAck
+2019-05-25 01:32:42 at Gateway Latency = 47 ms
+2019-05-25 01:32:50 Timer ticked
+2019-05-25 01:32:52 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:33:00 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:33:05 Timer ticked
+2019-05-25 01:33:11 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:33:20 Timer ticked
+2019-05-25 01:33:20 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:33:23 at Gateway Sent Heartbeat
+2019-05-25 01:33:23 at Gateway Received HeartbeatAck
+2019-05-25 01:33:23 at Gateway Latency = 31 ms
+2019-05-25 01:33:30 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:33:35 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:33:35 La commande config setwelcome à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 01:33:35 Timer ticked
+2019-05-25 01:33:50 Timer ticked
+2019-05-25 01:34:04 at Gateway Sent Heartbeat
+2019-05-25 01:34:04 at Gateway Received HeartbeatAck
+2019-05-25 01:34:04 at Gateway Latency = 46 ms
+2019-05-25 01:34:05 Timer ticked
+2019-05-25 01:34:06 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:34:14 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:34:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:34:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:34:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:34:16 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:34:18 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:34:18 La commande config setmotd à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 01:34:20 Timer ticked
+2019-05-25 01:34:21 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:34:34 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:34:35 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:34:35 at Rest POST channels/486733430013558804/messages: 146,91 ms
+2019-05-25 01:34:35 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 01:34:35 Timer ticked
+2019-05-25 01:34:45 at Gateway Sent Heartbeat
+2019-05-25 01:34:45 at Gateway Received HeartbeatAck
+2019-05-25 01:34:45 at Gateway Latency = 46 ms
+2019-05-25 01:34:50 Timer ticked
+2019-05-25 01:35:04 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:35:05 Timer ticked
+2019-05-25 01:35:12 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:35:16 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:35:20 Timer ticked
+2019-05-25 01:35:27 at Gateway Sent Heartbeat
+2019-05-25 01:35:27 at Gateway Received HeartbeatAck
+2019-05-25 01:35:27 at Gateway Latency = 31 ms
+2019-05-25 01:35:35 Timer ticked
+2019-05-25 01:35:50 Timer ticked
+2019-05-25 01:36:05 Timer ticked
+2019-05-25 01:36:08 at Gateway Sent Heartbeat
+2019-05-25 01:36:08 at Gateway Received HeartbeatAck
+2019-05-25 01:36:08 at Gateway Latency = 47 ms
+2019-05-25 01:36:20 Timer ticked
+2019-05-25 01:36:35 Timer ticked
+2019-05-25 01:36:49 at Gateway Sent Heartbeat
+2019-05-25 01:36:49 at Gateway Received HeartbeatAck
+2019-05-25 01:36:49 at Gateway Latency = 47 ms
+2019-05-25 01:36:50 Timer ticked
+2019-05-25 01:37:05 Timer ticked
+2019-05-25 01:37:20 Timer ticked
+2019-05-25 01:37:30 at Gateway Sent Heartbeat
+2019-05-25 01:37:30 at Gateway Received HeartbeatAck
+2019-05-25 01:37:30 at Gateway Latency = 47 ms
+2019-05-25 01:37:35 Timer ticked
+2019-05-25 01:37:50 Timer ticked
+2019-05-25 01:38:05 Timer ticked
+2019-05-25 01:38:12 at Gateway Sent Heartbeat
+2019-05-25 01:38:12 at Gateway Received HeartbeatAck
+2019-05-25 01:38:12 at Gateway Latency = 47 ms
+2019-05-25 01:38:20 Timer ticked
+2019-05-25 01:38:35 Timer ticked
+2019-05-25 01:38:50 Timer ticked
+2019-05-25 01:38:53 at Gateway Sent Heartbeat
+2019-05-25 01:38:53 at Gateway Received HeartbeatAck
+2019-05-25 01:38:53 at Gateway Latency = 63 ms
+2019-05-25 01:39:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:39:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:39:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:39:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:39:05 Timer ticked
+2019-05-25 01:39:20 Timer ticked
+2019-05-25 01:39:34 at Gateway Sent Heartbeat
+2019-05-25 01:39:34 at Gateway Received HeartbeatAck
+2019-05-25 01:39:34 at Gateway Latency = 47 ms
+2019-05-25 01:39:35 Timer ticked
+2019-05-25 01:39:50 Timer ticked
+2019-05-25 01:40:05 Timer ticked
+2019-05-25 01:40:15 at Gateway Sent Heartbeat
+2019-05-25 01:40:15 at Gateway Received HeartbeatAck
+2019-05-25 01:40:16 at Gateway Latency = 78 ms
+2019-05-25 01:40:20 Timer ticked
+2019-05-25 01:40:35 Timer ticked
+2019-05-25 01:40:50 Timer ticked
+2019-05-25 01:40:57 at Gateway Sent Heartbeat
+2019-05-25 01:40:57 at Gateway Received HeartbeatAck
+2019-05-25 01:40:57 at Gateway Latency = 78 ms
+2019-05-25 01:41:05 Timer ticked
+2019-05-25 01:41:20 Timer ticked
+2019-05-25 01:41:35 Timer ticked
+2019-05-25 01:41:38 at Gateway Sent Heartbeat
+2019-05-25 01:41:38 at Gateway Received HeartbeatAck
+2019-05-25 01:41:38 at Gateway Latency = 62 ms
+2019-05-25 01:41:50 Timer ticked
+2019-05-25 01:42:05 Timer ticked
+2019-05-25 01:42:19 at Gateway Sent Heartbeat
+2019-05-25 01:42:19 at Gateway Received HeartbeatAck
+2019-05-25 01:42:19 at Gateway Latency = 78 ms
+2019-05-25 01:42:20 Timer ticked
+2019-05-25 01:42:35 Timer ticked
+2019-05-25 01:42:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:42:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:42:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:42:44 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:42:50 Timer ticked
+2019-05-25 01:43:01 at Gateway Sent Heartbeat
+2019-05-25 01:43:01 at Gateway Received HeartbeatAck
+2019-05-25 01:43:01 at Gateway Latency = 47 ms
+2019-05-25 01:43:05 Timer ticked
+2019-05-25 01:43:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:43:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:43:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:43:14 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:43:20 Timer ticked
+2019-05-25 01:43:35 Timer ticked
+2019-05-25 01:43:42 at Gateway Sent Heartbeat
+2019-05-25 01:43:42 at Gateway Received HeartbeatAck
+2019-05-25 01:43:42 at Gateway Latency = 47 ms
+2019-05-25 01:43:50 Timer ticked
+2019-05-25 01:44:05 Timer ticked
+2019-05-25 01:44:20 Timer ticked
+2019-05-25 01:44:23 at Gateway Sent Heartbeat
+2019-05-25 01:44:23 at Gateway Received HeartbeatAck
+2019-05-25 01:44:23 at Gateway Latency = 47 ms
+2019-05-25 01:44:35 Timer ticked
+2019-05-25 01:44:50 Timer ticked
+2019-05-25 01:45:04 at Gateway Sent Heartbeat
+2019-05-25 01:45:05 at Gateway Received HeartbeatAck
+2019-05-25 01:45:05 at Gateway Latency = 47 ms
+2019-05-25 01:45:05 Timer ticked
+2019-05-25 01:45:20 Timer ticked
+2019-05-25 01:45:35 Timer ticked
+2019-05-25 01:45:46 at Gateway Sent Heartbeat
+2019-05-25 01:45:46 at Gateway Received HeartbeatAck
+2019-05-25 01:45:46 at Gateway Latency = 46 ms
+2019-05-25 01:45:50 Timer ticked
+2019-05-25 01:46:05 Timer ticked
+2019-05-25 01:46:20 Timer ticked
+2019-05-25 01:46:27 at Gateway Sent Heartbeat
+2019-05-25 01:46:27 at Gateway Received HeartbeatAck
+2019-05-25 01:46:27 at Gateway Latency = 46 ms
+2019-05-25 01:46:35 Timer ticked
+2019-05-25 01:46:50 Timer ticked
+2019-05-25 01:47:05 Timer ticked
+2019-05-25 01:47:08 at Gateway Sent Heartbeat
+2019-05-25 01:47:08 at Gateway Received HeartbeatAck
+2019-05-25 01:47:08 at Gateway Latency = 47 ms
+2019-05-25 01:47:20 Timer ticked
+2019-05-25 01:47:35 Timer ticked
+2019-05-25 01:47:35 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:47:35 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:47:35 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:47:35 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:47:50 at Gateway Sent Heartbeat
+2019-05-25 01:47:50 at Gateway Received HeartbeatAck
+2019-05-25 01:47:50 at Gateway Latency = 47 ms
+2019-05-25 01:47:50 Timer ticked
+2019-05-25 01:48:05 Timer ticked
+2019-05-25 01:48:20 Timer ticked
+2019-05-25 01:48:31 at Gateway Sent Heartbeat
+2019-05-25 01:48:31 at Gateway Received HeartbeatAck
+2019-05-25 01:48:31 at Gateway Latency = 79 ms
+2019-05-25 01:48:35 Timer ticked
+2019-05-25 01:48:50 Timer ticked
+2019-05-25 01:49:05 Timer ticked
+2019-05-25 01:49:12 at Gateway Sent Heartbeat
+2019-05-25 01:49:12 at Gateway Received HeartbeatAck
+2019-05-25 01:49:12 at Gateway Latency = 46 ms
+2019-05-25 01:49:20 Timer ticked
+2019-05-25 01:49:35 Timer ticked
+2019-05-25 01:49:50 Timer ticked
+2019-05-25 01:49:53 at Gateway Sent Heartbeat
+2019-05-25 01:49:53 at Gateway Received HeartbeatAck
+2019-05-25 01:49:53 at Gateway Latency = 47 ms
+2019-05-25 01:50:05 Timer ticked
+2019-05-25 01:50:20 Timer ticked
+2019-05-25 01:50:35 at Gateway Sent Heartbeat
+2019-05-25 01:50:35 at Gateway Received HeartbeatAck
+2019-05-25 01:50:35 at Gateway Latency = 47 ms
+2019-05-25 01:50:35 Timer ticked
+2019-05-25 01:50:50 Timer ticked
+2019-05-25 01:51:05 Timer ticked
+2019-05-25 01:51:16 at Gateway Sent Heartbeat
+2019-05-25 01:51:16 at Gateway Received HeartbeatAck
+2019-05-25 01:51:16 at Gateway Latency = 62 ms
+2019-05-25 01:51:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:51:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:51:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:51:18 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:51:20 Timer ticked
+2019-05-25 01:51:26 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 01:51:28 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:51:28 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 01:51:28 at Rest POST channels/360639832017338370/messages: 198,93 ms
+2019-05-25 01:51:28 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 01:51:35 Timer ticked
+2019-05-25 01:51:50 Timer ticked
+2019-05-25 01:51:57 at Gateway Sent Heartbeat
+2019-05-25 01:51:57 at Gateway Received HeartbeatAck
+2019-05-25 01:51:57 at Gateway Latency = 47 ms
+2019-05-25 01:52:05 Timer ticked
+2019-05-25 01:52:20 Timer ticked
+2019-05-25 01:52:35 Timer ticked
+2019-05-25 01:52:38 at Gateway Sent Heartbeat
+2019-05-25 01:52:39 at Gateway Received HeartbeatAck
+2019-05-25 01:52:39 at Gateway Latency = 94 ms
+2019-05-25 01:52:50 Timer ticked
+2019-05-25 01:53:05 Timer ticked
+2019-05-25 01:53:20 Timer ticked
+2019-05-25 01:53:20 at Gateway Sent Heartbeat
+2019-05-25 01:53:20 at Gateway Received HeartbeatAck
+2019-05-25 01:53:20 at Gateway Latency = 46 ms
+2019-05-25 01:53:35 Timer ticked
+2019-05-25 01:53:50 Timer ticked
+2019-05-25 01:54:01 at Gateway Sent Heartbeat
+2019-05-25 01:54:01 at Gateway Received HeartbeatAck
+2019-05-25 01:54:01 at Gateway Latency = 62 ms
+2019-05-25 01:54:05 Timer ticked
+2019-05-25 01:54:20 Timer ticked
+2019-05-25 01:54:35 Timer ticked
+2019-05-25 01:54:42 at Gateway Sent Heartbeat
+2019-05-25 01:54:42 at Gateway Received HeartbeatAck
+2019-05-25 01:54:43 at Gateway Latency = 47 ms
+2019-05-25 01:54:50 Timer ticked
+2019-05-25 01:55:05 Timer ticked
+2019-05-25 01:55:20 Timer ticked
+2019-05-25 01:55:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:55:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:55:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:55:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:55:24 at Gateway Sent Heartbeat
+2019-05-25 01:55:24 at Gateway Received HeartbeatAck
+2019-05-25 01:55:24 at Gateway Latency = 47 ms
+2019-05-25 01:55:35 Timer ticked
+2019-05-25 01:55:50 Timer ticked
+2019-05-25 01:56:05 Timer ticked
+2019-05-25 01:56:05 at Gateway Sent Heartbeat
+2019-05-25 01:56:05 at Gateway Received HeartbeatAck
+2019-05-25 01:56:05 at Gateway Latency = 46 ms
+2019-05-25 01:56:20 Timer ticked
+2019-05-25 01:56:35 Timer ticked
+2019-05-25 01:56:46 at Gateway Sent Heartbeat
+2019-05-25 01:56:46 at Gateway Received HeartbeatAck
+2019-05-25 01:56:46 at Gateway Latency = 47 ms
+2019-05-25 01:56:50 Timer ticked
+2019-05-25 01:57:05 Timer ticked
+2019-05-25 01:57:20 Timer ticked
+2019-05-25 01:57:28 at Gateway Sent Heartbeat
+2019-05-25 01:57:28 at Gateway Received HeartbeatAck
+2019-05-25 01:57:28 at Gateway Latency = 47 ms
+2019-05-25 01:57:35 Timer ticked
+2019-05-25 01:57:50 Timer ticked
+2019-05-25 01:58:05 Timer ticked
+2019-05-25 01:58:09 at Gateway Sent Heartbeat
+2019-05-25 01:58:09 at Gateway Received HeartbeatAck
+2019-05-25 01:58:09 at Gateway Latency = 46 ms
+2019-05-25 01:58:20 Timer ticked
+2019-05-25 01:58:35 Timer ticked
+2019-05-25 01:58:39 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:58:50 Timer ticked
+2019-05-25 01:58:50 at Gateway Sent Heartbeat
+2019-05-25 01:58:50 at Gateway Received HeartbeatAck
+2019-05-25 01:58:50 at Gateway Latency = 47 ms
+2019-05-25 01:58:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:58:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:58:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:58:51 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:59:05 Timer ticked
+2019-05-25 01:59:20 Timer ticked
+2019-05-25 01:59:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:59:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:59:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:59:21 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 01:59:31 at Gateway Sent Heartbeat
+2019-05-25 01:59:31 at Gateway Received HeartbeatAck
+2019-05-25 01:59:31 at Gateway Latency = 63 ms
+2019-05-25 01:59:35 Timer ticked
+2019-05-25 01:59:50 Timer ticked
+2019-05-25 01:59:52 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:00:05 Timer ticked
+2019-05-25 02:00:13 at Gateway Sent Heartbeat
+2019-05-25 02:00:13 at Gateway Received HeartbeatAck
+2019-05-25 02:00:13 at Gateway Latency = 47 ms
+2019-05-25 02:00:20 Timer ticked
+2019-05-25 02:00:35 Timer ticked
+2019-05-25 02:00:50 Timer ticked
+2019-05-25 02:00:54 at Gateway Sent Heartbeat
+2019-05-25 02:00:54 at Gateway Received HeartbeatAck
+2019-05-25 02:00:54 at Gateway Latency = 47 ms
+2019-05-25 02:01:05 Timer ticked
+2019-05-25 02:01:20 Timer ticked
+2019-05-25 02:01:35 Timer ticked
+2019-05-25 02:01:35 at Gateway Sent Heartbeat
+2019-05-25 02:01:35 at Gateway Received HeartbeatAck
+2019-05-25 02:01:35 at Gateway Latency = 47 ms
+2019-05-25 02:01:50 Timer ticked
+2019-05-25 02:02:05 Timer ticked
+2019-05-25 02:02:16 at Gateway Sent Heartbeat
+2019-05-25 02:02:17 at Gateway Received HeartbeatAck
+2019-05-25 02:02:17 at Gateway Latency = 47 ms
+2019-05-25 02:02:20 Timer ticked
+2019-05-25 02:02:35 Timer ticked
+2019-05-25 02:02:50 Timer ticked
+2019-05-25 02:02:58 at Gateway Sent Heartbeat
+2019-05-25 02:02:58 at Gateway Received HeartbeatAck
+2019-05-25 02:02:58 at Gateway Latency = 47 ms
+2019-05-25 02:03:05 Timer ticked
+2019-05-25 02:03:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:03:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:03:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:03:20 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:03:20 Timer ticked
+2019-05-25 02:03:35 Timer ticked
+2019-05-25 02:03:39 at Gateway Sent Heartbeat
+2019-05-25 02:03:39 at Gateway Received HeartbeatAck
+2019-05-25 02:03:39 at Gateway Latency = 46 ms
+2019-05-25 02:03:50 Timer ticked
+2019-05-25 02:04:05 Timer ticked
+2019-05-25 02:04:05 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 02:04:12 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 02:04:20 Timer ticked
+2019-05-25 02:04:20 at Gateway Sent Heartbeat
+2019-05-25 02:04:20 at Gateway Received HeartbeatAck
+2019-05-25 02:04:20 at Gateway Latency = 47 ms
+2019-05-25 02:04:35 Timer ticked
+2019-05-25 02:04:50 Timer ticked
+2019-05-25 02:05:02 at Gateway Sent Heartbeat
+2019-05-25 02:05:02 at Gateway Received HeartbeatAck
+2019-05-25 02:05:02 at Gateway Latency = 47 ms
+2019-05-25 02:05:05 Timer ticked
+2019-05-25 02:05:20 Timer ticked
+2019-05-25 02:05:35 Timer ticked
+2019-05-25 02:05:43 at Gateway Sent Heartbeat
+2019-05-25 02:05:43 at Gateway Received HeartbeatAck
+2019-05-25 02:05:43 at Gateway Latency = 47 ms
+2019-05-25 02:05:50 Timer ticked
+2019-05-25 02:06:05 Timer ticked
+2019-05-25 02:06:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:06:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:06:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:06:11 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:06:20 Timer ticked
+2019-05-25 02:06:24 at Gateway Sent Heartbeat
+2019-05-25 02:06:24 at Gateway Received HeartbeatAck
+2019-05-25 02:06:24 at Gateway Latency = 47 ms
+2019-05-25 02:06:25 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:06:35 Timer ticked
+2019-05-25 02:06:50 Timer ticked
+2019-05-25 02:07:02 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:07:05 Timer ticked
+2019-05-25 02:07:05 at Gateway Sent Heartbeat
+2019-05-25 02:07:05 at Gateway Received HeartbeatAck
+2019-05-25 02:07:05 at Gateway Latency = 47 ms
+2019-05-25 02:07:20 Timer ticked
+2019-05-25 02:07:35 Timer ticked
+2019-05-25 02:07:47 at Gateway Sent Heartbeat
+2019-05-25 02:07:47 at Gateway Received HeartbeatAck
+2019-05-25 02:07:47 at Gateway Latency = 47 ms
+2019-05-25 02:07:50 Timer ticked
+2019-05-25 02:08:05 Timer ticked
+2019-05-25 02:08:20 Timer ticked
+2019-05-25 02:08:28 at Gateway Sent Heartbeat
+2019-05-25 02:08:28 at Gateway Received HeartbeatAck
+2019-05-25 02:08:28 at Gateway Latency = 78 ms
+2019-05-25 02:08:35 Timer ticked
+2019-05-25 02:08:50 Timer ticked
+2019-05-25 02:08:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:08:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:08:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:08:59 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:09:05 Timer ticked
+2019-05-25 02:09:09 at Gateway Sent Heartbeat
+2019-05-25 02:09:09 at Gateway Received HeartbeatAck
+2019-05-25 02:09:09 at Gateway Latency = 47 ms
+2019-05-25 02:09:20 Timer ticked
+2019-05-25 02:09:35 Timer ticked
+2019-05-25 02:09:50 Timer ticked
+2019-05-25 02:09:50 at Gateway Sent Heartbeat
+2019-05-25 02:09:50 at Gateway Received HeartbeatAck
+2019-05-25 02:09:50 at Gateway Latency = 47 ms
+2019-05-25 02:10:05 Timer ticked
+2019-05-25 02:10:20 Timer ticked
+2019-05-25 02:10:32 at Gateway Sent Heartbeat
+2019-05-25 02:10:32 at Gateway Received HeartbeatAck
+2019-05-25 02:10:32 at Gateway Latency = 32 ms
+2019-05-25 02:10:35 Timer ticked
+2019-05-25 02:10:50 Timer ticked
+2019-05-25 02:11:05 Timer ticked
+2019-05-25 02:11:13 at Gateway Sent Heartbeat
+2019-05-25 02:11:13 at Gateway Received HeartbeatAck
+2019-05-25 02:11:13 at Gateway Latency = 47 ms
+2019-05-25 02:11:20 Timer ticked
+2019-05-25 02:11:35 Timer ticked
+2019-05-25 02:11:50 Timer ticked
+2019-05-25 02:11:54 at Gateway Sent Heartbeat
+2019-05-25 02:11:54 at Gateway Received HeartbeatAck
+2019-05-25 02:11:54 at Gateway Latency = 46 ms
+2019-05-25 02:12:05 Timer ticked
+2019-05-25 02:12:20 Timer ticked
+2019-05-25 02:12:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:12:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:12:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:12:26 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:12:35 Timer ticked
+2019-05-25 02:12:36 at Gateway Sent Heartbeat
+2019-05-25 02:12:36 at Gateway Received HeartbeatAck
+2019-05-25 02:12:36 at Gateway Latency = 47 ms
+2019-05-25 02:12:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:12:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:12:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:12:46 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:12:50 Timer ticked
+2019-05-25 02:13:05 Timer ticked
+2019-05-25 02:13:17 at Gateway Sent Heartbeat
+2019-05-25 02:13:17 at Gateway Received HeartbeatAck
+2019-05-25 02:13:17 at Gateway Latency = 47 ms
+2019-05-25 02:13:20 Timer ticked
+2019-05-25 02:13:35 Timer ticked
+2019-05-25 02:13:50 Timer ticked
+2019-05-25 02:13:58 at Gateway Sent Heartbeat
+2019-05-25 02:13:58 at Gateway Received HeartbeatAck
+2019-05-25 02:13:58 at Gateway Latency = 47 ms
+2019-05-25 02:14:05 Timer ticked
+2019-05-25 02:14:20 Timer ticked
+2019-05-25 02:14:35 Timer ticked
+2019-05-25 02:14:39 at Gateway Sent Heartbeat
+2019-05-25 02:14:39 at Gateway Received HeartbeatAck
+2019-05-25 02:14:39 at Gateway Latency = 47 ms
+2019-05-25 02:14:50 Timer ticked
+2019-05-25 02:15:05 Timer ticked
+2019-05-25 02:15:20 Timer ticked
+2019-05-25 02:15:21 at Gateway Sent Heartbeat
+2019-05-25 02:15:21 at Gateway Received HeartbeatAck
+2019-05-25 02:15:21 at Gateway Latency = 47 ms
+2019-05-25 02:15:35 Timer ticked
+2019-05-25 02:15:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:15:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:15:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:15:43 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:15:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:15:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:15:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:15:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:15:50 Timer ticked
+2019-05-25 02:16:02 at Gateway Sent Heartbeat
+2019-05-25 02:16:02 at Gateway Received HeartbeatAck
+2019-05-25 02:16:02 at Gateway Latency = 47 ms
+2019-05-25 02:16:05 Timer ticked
+2019-05-25 02:16:20 Timer ticked
+2019-05-25 02:16:35 Timer ticked
+2019-05-25 02:16:43 at Gateway Sent Heartbeat
+2019-05-25 02:16:43 at Gateway Received HeartbeatAck
+2019-05-25 02:16:43 at Gateway Latency = 47 ms
+2019-05-25 02:16:50 Timer ticked
+2019-05-25 02:17:05 Timer ticked
+2019-05-25 02:17:20 Timer ticked
+2019-05-25 02:17:24 at Gateway Sent Heartbeat
+2019-05-25 02:17:24 at Gateway Received HeartbeatAck
+2019-05-25 02:17:24 at Gateway Latency = 47 ms
+2019-05-25 02:17:35 Timer ticked
+2019-05-25 02:17:50 Timer ticked
+2019-05-25 02:18:05 Timer ticked
+2019-05-25 02:18:06 at Gateway Sent Heartbeat
+2019-05-25 02:18:06 at Gateway Received HeartbeatAck
+2019-05-25 02:18:06 at Gateway Latency = 125 ms
+2019-05-25 02:18:20 Timer ticked
+2019-05-25 02:18:35 Timer ticked
+2019-05-25 02:18:47 at Gateway Sent Heartbeat
+2019-05-25 02:18:47 at Gateway Received HeartbeatAck
+2019-05-25 02:18:47 at Gateway Latency = 31 ms
+2019-05-25 02:18:50 Timer ticked
+2019-05-25 02:19:05 Timer ticked
+2019-05-25 02:19:20 Timer ticked
+2019-05-25 02:19:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:19:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:19:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:19:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:19:28 at Gateway Sent Heartbeat
+2019-05-25 02:19:28 at Gateway Received HeartbeatAck
+2019-05-25 02:19:28 at Gateway Latency = 46 ms
+2019-05-25 02:19:35 Timer ticked
+2019-05-25 02:19:40 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:19:40 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:19:40 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:19:40 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:19:50 Timer ticked
+2019-05-25 02:20:05 Timer ticked
+2019-05-25 02:20:09 at Gateway Sent Heartbeat
+2019-05-25 02:20:10 at Gateway Received HeartbeatAck
+2019-05-25 02:20:10 at Gateway Latency = 46 ms
+2019-05-25 02:20:20 Timer ticked
+2019-05-25 02:20:25 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:20:35 Timer ticked
+2019-05-25 02:20:50 Timer ticked
+2019-05-25 02:20:51 at Gateway Sent Heartbeat
+2019-05-25 02:20:51 at Gateway Received HeartbeatAck
+2019-05-25 02:20:51 at Gateway Latency = 63 ms
+2019-05-25 02:21:05 Timer ticked
+2019-05-25 02:21:20 Timer ticked
+2019-05-25 02:21:32 at Gateway Sent Heartbeat
+2019-05-25 02:21:32 at Gateway Received HeartbeatAck
+2019-05-25 02:21:32 at Gateway Latency = 46 ms
+2019-05-25 02:21:35 Timer ticked
+2019-05-25 02:21:50 Timer ticked
+2019-05-25 02:22:05 Timer ticked
+2019-05-25 02:22:13 at Gateway Sent Heartbeat
+2019-05-25 02:22:13 at Gateway Received HeartbeatAck
+2019-05-25 02:22:13 at Gateway Latency = 46 ms
+2019-05-25 02:22:20 Timer ticked
+2019-05-25 02:22:35 Timer ticked
+2019-05-25 02:22:50 Timer ticked
+2019-05-25 02:22:55 at Gateway Sent Heartbeat
+2019-05-25 02:22:55 at Gateway Received HeartbeatAck
+2019-05-25 02:22:55 at Gateway Latency = 47 ms
+2019-05-25 02:23:05 Timer ticked
+2019-05-25 02:23:20 Timer ticked
+2019-05-25 02:23:35 Timer ticked
+2019-05-25 02:23:36 at Gateway Sent Heartbeat
+2019-05-25 02:23:36 at Gateway Received HeartbeatAck
+2019-05-25 02:23:36 at Gateway Latency = 47 ms
+2019-05-25 02:23:50 Timer ticked
+2019-05-25 02:24:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:24:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:24:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:24:00 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:24:05 Timer ticked
+2019-05-25 02:24:17 at Gateway Sent Heartbeat
+2019-05-25 02:24:17 at Gateway Received HeartbeatAck
+2019-05-25 02:24:17 at Gateway Latency = 47 ms
+2019-05-25 02:24:20 Timer ticked
+2019-05-25 02:24:35 Timer ticked
+2019-05-25 02:24:50 Timer ticked
+2019-05-25 02:24:58 at Gateway Sent Heartbeat
+2019-05-25 02:24:58 at Gateway Received HeartbeatAck
+2019-05-25 02:24:58 at Gateway Latency = 31 ms
+2019-05-25 02:25:05 Timer ticked
+2019-05-25 02:25:20 Timer ticked
+2019-05-25 02:25:35 Timer ticked
+2019-05-25 02:25:40 at Gateway Sent Heartbeat
+2019-05-25 02:25:40 at Gateway Received HeartbeatAck
+2019-05-25 02:25:40 at Gateway Latency = 47 ms
+2019-05-25 02:25:50 Timer ticked
+2019-05-25 02:26:05 Timer ticked
+2019-05-25 02:26:20 Timer ticked
+2019-05-25 02:26:21 at Gateway Sent Heartbeat
+2019-05-25 02:26:21 at Gateway Received HeartbeatAck
+2019-05-25 02:26:21 at Gateway Latency = 31 ms
+2019-05-25 02:26:35 Timer ticked
+2019-05-25 02:26:50 Timer ticked
+2019-05-25 02:27:02 at Gateway Sent Heartbeat
+2019-05-25 02:27:02 at Gateway Received HeartbeatAck
+2019-05-25 02:27:02 at Gateway Latency = 47 ms
+2019-05-25 02:27:05 Timer ticked
+2019-05-25 02:27:20 Timer ticked
+2019-05-25 02:27:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:27:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:27:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:27:22 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:27:35 Timer ticked
+2019-05-25 02:27:43 at Gateway Sent Heartbeat
+2019-05-25 02:27:43 at Gateway Received HeartbeatAck
+2019-05-25 02:27:43 at Gateway Latency = 32 ms
+2019-05-25 02:27:50 Timer ticked
+2019-05-25 02:28:05 Timer ticked
+2019-05-25 02:28:20 Timer ticked
+2019-05-25 02:28:25 at Gateway Sent Heartbeat
+2019-05-25 02:28:25 at Gateway Received HeartbeatAck
+2019-05-25 02:28:25 at Gateway Latency = 78 ms
+2019-05-25 02:28:35 Timer ticked
+2019-05-25 02:28:50 Timer ticked
+2019-05-25 02:29:05 Timer ticked
+2019-05-25 02:29:06 at Gateway Sent Heartbeat
+2019-05-25 02:29:06 at Gateway Received HeartbeatAck
+2019-05-25 02:29:06 at Gateway Latency = 47 ms
+2019-05-25 02:29:20 Timer ticked
+2019-05-25 02:29:35 Timer ticked
+2019-05-25 02:29:47 at Gateway Sent Heartbeat
+2019-05-25 02:29:47 at Gateway Received HeartbeatAck
+2019-05-25 02:29:48 at Gateway Latency = 78 ms
+2019-05-25 02:29:50 Timer ticked
+2019-05-25 02:30:05 Timer ticked
+2019-05-25 02:30:20 Timer ticked
+2019-05-25 02:30:29 at Gateway Sent Heartbeat
+2019-05-25 02:30:29 at Gateway Received HeartbeatAck
+2019-05-25 02:30:29 at Gateway Latency = 47 ms
+2019-05-25 02:30:35 Timer ticked
+2019-05-25 02:30:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:30:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:30:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:30:48 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:30:50 Timer ticked
+2019-05-25 02:31:05 Timer ticked
+2019-05-25 02:31:10 at Gateway Sent Heartbeat
+2019-05-25 02:31:10 at Gateway Received HeartbeatAck
+2019-05-25 02:31:10 at Gateway Latency = 62 ms
+2019-05-25 02:31:20 Timer ticked
+2019-05-25 02:31:35 Timer ticked
+2019-05-25 02:31:50 Timer ticked
+2019-05-25 02:31:51 at Gateway Sent Heartbeat
+2019-05-25 02:31:51 at Gateway Received HeartbeatAck
+2019-05-25 02:31:51 at Gateway Latency = 63 ms
+2019-05-25 02:32:05 Timer ticked
+2019-05-25 02:32:20 Timer ticked
+2019-05-25 02:32:33 at Gateway Sent Heartbeat
+2019-05-25 02:32:33 at Gateway Received HeartbeatAck
+2019-05-25 02:32:33 at Gateway Latency = 63 ms
+2019-05-25 02:32:35 Timer ticked
+2019-05-25 02:32:50 Timer ticked
+2019-05-25 02:33:05 Timer ticked
+2019-05-25 02:33:14 at Gateway Sent Heartbeat
+2019-05-25 02:33:14 at Gateway Received HeartbeatAck
+2019-05-25 02:33:14 at Gateway Latency = 63 ms
+2019-05-25 02:33:20 Timer ticked
+2019-05-25 02:33:35 Timer ticked
+2019-05-25 02:33:50 Timer ticked
+2019-05-25 02:33:55 at Gateway Sent Heartbeat
+2019-05-25 02:33:55 at Gateway Received HeartbeatAck
+2019-05-25 02:33:55 at Gateway Latency = 78 ms
+2019-05-25 02:34:05 Timer ticked
+2019-05-25 02:34:20 Timer ticked
+2019-05-25 02:34:28 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:34:28 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:34:28 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:34:28 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:34:36 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 02:34:37 at Rest GET voice/regions: 348,88 ms
+2019-05-25 02:34:37 at Gateway Connecting
+2019-05-25 02:34:37 at Gateway Connecting ApiClient
+2019-05-25 02:34:37 at Rest GET gateway: 24,78 ms
+2019-05-25 02:34:37 at Gateway Received Hello
+2019-05-25 02:34:37 at Gateway Heartbeat Started
+2019-05-25 02:34:37 at Gateway Identifying
+2019-05-25 02:34:37 at Gateway Sent Heartbeat
+2019-05-25 02:34:37 at Gateway Sent Identify
+2019-05-25 02:34:37 at Gateway Received HeartbeatAck
+2019-05-25 02:34:37 at Gateway Latency = 156 ms
+2019-05-25 02:34:37 at Gateway Received Dispatch (READY)
+2019-05-25 02:34:38 at Gateway GuildDownloader Started
+2019-05-25 02:34:38 at Gateway Sending Status
+2019-05-25 02:34:38 at Gateway Sent StatusUpdate
+2019-05-25 02:34:38 at Gateway Connected
+2019-05-25 02:34:38 at Gateway Raising Event
+2019-05-25 02:34:38 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:34:38 at Gateway Connected to ServeurTest
+2019-05-25 02:34:38 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:34:38 at Gateway Connected to Alternia
+2019-05-25 02:34:38 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:34:38 at Gateway Connected to plopotonie
+2019-05-25 02:34:38 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:34:38 at Gateway Connected to test2
+2019-05-25 02:34:38 at Gateway GuildDownloader Stopped
+2019-05-25 02:34:38 at Gateway Sent StatusUpdate
+2019-05-25 02:34:38 StartTimer
+2019-05-25 02:34:38 at Gateway Ready
+2019-05-25 02:34:39 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 02:34:40 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:34:43 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 02:34:43 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 02:34:43 at Rest POST channels/360639832017338370/messages: 125,84 ms
+2019-05-25 02:34:43 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 02:34:53 Timer ticked
+2019-05-25 02:34:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:34:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:34:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:34:58 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:35:08 Timer ticked
+2019-05-25 02:35:09 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 02:35:19 at Gateway Sent Heartbeat
+2019-05-25 02:35:19 at Gateway Received HeartbeatAck
+2019-05-25 02:35:19 at Gateway Latency = 47 ms
+2019-05-25 02:35:23 Timer ticked
+2019-05-25 02:35:38 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 02:35:39 at Rest GET voice/regions: 462,86 ms
+2019-05-25 02:35:39 at Gateway Connecting
+2019-05-25 02:35:39 at Gateway Connecting ApiClient
+2019-05-25 02:35:39 at Rest GET gateway: 30,95 ms
+2019-05-25 02:35:40 at Gateway Received Hello
+2019-05-25 02:35:40 at Gateway Heartbeat Started
+2019-05-25 02:35:40 at Gateway Identifying
+2019-05-25 02:35:40 at Gateway Sent Heartbeat
+2019-05-25 02:35:40 at Gateway Sent Identify
+2019-05-25 02:35:40 at Gateway Received HeartbeatAck
+2019-05-25 02:35:40 at Gateway Latency = 156 ms
+2019-05-25 02:35:40 at Gateway Received Dispatch (READY)
+2019-05-25 02:35:40 at Gateway GuildDownloader Started
+2019-05-25 02:35:40 at Gateway Sending Status
+2019-05-25 02:35:40 at Gateway Sent StatusUpdate
+2019-05-25 02:35:40 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:35:40 at Gateway Connected
+2019-05-25 02:35:40 at Gateway Raising Event
+2019-05-25 02:35:41 at Gateway Connected to ServeurTest
+2019-05-25 02:35:41 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:35:41 at Gateway Connected to Alternia
+2019-05-25 02:35:41 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:35:41 at Gateway Connected to plopotonie
+2019-05-25 02:35:41 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:35:41 at Gateway Connected to test2
+2019-05-25 02:35:41 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 02:35:41 at Gateway GuildDownloader Stopped
+2019-05-25 02:35:41 at Gateway Sent StatusUpdate
+2019-05-25 02:35:41 StartTimer
+2019-05-25 02:35:41 at Gateway Ready
+2019-05-25 02:35:41 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 02:35:42 Une erreur s'est produite lors de l'utilisation de la commande config avec le message suivant : Aucune option n'a été entrée.
+2019-05-25 02:35:44 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 02:35:45 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 02:35:45 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 02:35:45 at Rest POST channels/360639832017338370/messages: 142,32 ms
+2019-05-25 02:35:45 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 02:35:56 Timer ticked
+2019-05-25 02:35:59 at Discord Discord.Net v2.0.1 (API v6)
+2019-05-25 02:36:00 at Rest GET voice/regions: 390,87 ms
+2019-05-25 02:36:00 at Gateway Connecting
+2019-05-25 02:36:00 at Gateway Connecting ApiClient
+2019-05-25 02:36:00 at Rest GET gateway: 36,64 ms
+2019-05-25 02:36:01 at Gateway Received Hello
+2019-05-25 02:36:01 at Gateway Heartbeat Started
+2019-05-25 02:36:01 at Gateway Identifying
+2019-05-25 02:36:01 at Gateway Sent Heartbeat
+2019-05-25 02:36:01 at Gateway Sent Identify
+2019-05-25 02:36:01 at Gateway Received HeartbeatAck
+2019-05-25 02:36:01 at Gateway Latency = 141 ms
+2019-05-25 02:36:01 at Gateway Received Dispatch (READY)
+2019-05-25 02:36:01 at Gateway GuildDownloader Started
+2019-05-25 02:36:01 at Gateway Sending Status
+2019-05-25 02:36:01 at Gateway Sent StatusUpdate
+2019-05-25 02:36:01 at Gateway Connected
+2019-05-25 02:36:01 at Gateway Raising Event
+2019-05-25 02:36:01 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:36:02 at Gateway Connected to ServeurTest
+2019-05-25 02:36:02 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:36:02 at Gateway Connected to Alternia
+2019-05-25 02:36:02 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:36:02 at Gateway Connected to plopotonie
+2019-05-25 02:36:02 at Gateway Received Dispatch (GUILD_AVAILABLE)
+2019-05-25 02:36:02 at Gateway Connected to test2
+2019-05-25 02:36:02 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 02:36:02 at Gateway GuildDownloader Stopped
+2019-05-25 02:36:02 at Gateway Sent StatusUpdate
+2019-05-25 02:36:02 StartTimer
+2019-05-25 02:36:02 at Gateway Ready
+2019-05-25 02:36:09 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 02:36:10 at Gateway Received Dispatch (MESSAGE_CREATE)
+2019-05-25 02:36:10 at Rest POST channels/360639832017338370/messages: 108,43 ms
+2019-05-25 02:36:10 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
+2019-05-25 02:36:17 Timer ticked
+2019-05-25 02:36:32 Timer ticked

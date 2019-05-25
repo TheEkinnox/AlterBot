@@ -65,35 +65,35 @@ namespace MathParserTK
 
         #region Markers (each marker should have length equals to 1)
 
-        private const string NumberMaker = "#";
-        private const string OperatorMarker = "$";
-        private const string FunctionMarker = "@";
+        private const string numberMaker = "#";
+        private const string operatorMarker = "$";
+        private const string functionMarker = "@";
 
         #endregion
 
         #region Internal tokens
 
-        private const string Plus = MathParser.OperatorMarker + "+";
-        private const string UnPlus = MathParser.OperatorMarker + "un+";
-        private const string Minus = MathParser.OperatorMarker + "-";
-        private const string UnMinus = MathParser.OperatorMarker + "un-";
-        private const string Multiply = MathParser.OperatorMarker + "*";
-        private const string Divide = MathParser.OperatorMarker + "/";
-        private const string Degree = MathParser.OperatorMarker + "^";
-        private const string LeftParent = MathParser.OperatorMarker + "(";
-        private const string RightParent = MathParser.OperatorMarker + ")";
-        private const string Sqrt = MathParser.FunctionMarker + "sqrt";
-        private const string Sin = MathParser.FunctionMarker + "sin";
-        private const string Cos = MathParser.FunctionMarker + "cos";
-        private const string Tg = MathParser.FunctionMarker + "tg";
-        private const string Ctg = MathParser.FunctionMarker + "ctg";
-        private const string Sh = MathParser.FunctionMarker + "sh";
-        private const string Ch = MathParser.FunctionMarker + "ch";
-        private const string Th = MathParser.FunctionMarker + "th";
-        private const string Log = MathParser.FunctionMarker + "log";
-        private const string Ln = MathParser.FunctionMarker + "ln";
-        private const string Exp = MathParser.FunctionMarker + "exp";
-        private const string Abs = MathParser.FunctionMarker + "abs";
+        private const string plus = MathParser.operatorMarker + "+";
+        private const string unPlus = MathParser.operatorMarker + "un+";
+        private const string minus = MathParser.operatorMarker + "-";
+        private const string unMinus = MathParser.operatorMarker + "un-";
+        private const string multiply = MathParser.operatorMarker + "*";
+        private const string divide = MathParser.operatorMarker + "/";
+        private const string degree = MathParser.operatorMarker + "^";
+        private const string leftParent = MathParser.operatorMarker + "(";
+        private const string rightParent = MathParser.operatorMarker + ")";
+        private const string sqrt = MathParser.functionMarker + "sqrt";
+        private const string sin = MathParser.functionMarker + "sin";
+        private const string cos = MathParser.functionMarker + "cos";
+        private const string tg = MathParser.functionMarker + "tg";
+        private const string ctg = MathParser.functionMarker + "ctg";
+        private const string sh = MathParser.functionMarker + "sh";
+        private const string ch = MathParser.functionMarker + "ch";
+        private const string th = MathParser.functionMarker + "th";
+        private const string log = MathParser.functionMarker + "log";
+        private const string ln = MathParser.functionMarker + "ln";
+        private const string exp = MathParser.functionMarker + "exp";
+        private const string abs = MathParser.functionMarker + "abs";
 
         #endregion
 
@@ -104,51 +104,51 @@ namespace MathParserTK
         /// <summary>
         /// Contains supported operators
         /// </summary>
-        private readonly Dictionary<string, string> supportedOperators =
+        private readonly Dictionary<string, string> _supportedOperators =
             new Dictionary<string, string>
             {
-                { "+", MathParser.Plus },                
-                { "-", MathParser.Minus },
-                { "*", MathParser.Multiply },
-                { "/", MathParser.Divide },
-                { "^", MathParser.Degree },
-                { "(", MathParser.LeftParent },
-                { ")", MathParser.RightParent }
+                { "+", MathParser.plus },                
+                { "-", MathParser.minus },
+                { "*", MathParser.multiply },
+                { "/", MathParser.divide },
+                { "^", MathParser.degree },
+                { "(", MathParser.leftParent },
+                { ")", MathParser.rightParent }
             };
 
         /// <summary>
         /// Contains supported functions
         /// </summary>
-        private readonly Dictionary<string, string> supportedFunctions =
+        private readonly Dictionary<string, string> _supportedFunctions =
             new Dictionary<string, string>
             {
-                { "sqrt", MathParser.Sqrt },
-                { "√", MathParser.Sqrt },
-                { "sin", MathParser.Sin },
-                { "cos", MathParser.Cos },
-                { "tg", MathParser.Tg },
-                { "ctg", MathParser.Ctg },
-                { "sh", MathParser.Sh },
-                { "ch", MathParser.Ch },
-                { "th", MathParser.Th },
-                { "log", MathParser.Log },
-                { "exp", MathParser.Exp },
-                { "abs", MathParser.Abs }
+                { "sqrt", MathParser.sqrt },
+                { "√", MathParser.sqrt },
+                { "sin", MathParser.sin },
+                { "cos", MathParser.cos },
+                { "tg", MathParser.tg },
+                { "ctg", MathParser.ctg },
+                { "sh", MathParser.sh },
+                { "ch", MathParser.ch },
+                { "th", MathParser.th },
+                { "log", MathParser.log },
+                { "exp", MathParser.exp },
+                { "abs", MathParser.abs }
             };
 
-        private readonly Dictionary<string, string> supportedConstants =
+        private readonly Dictionary<string, string> _supportedConstants =
             new Dictionary<string, string>
             {
-                {"pi", MathParser.NumberMaker +  Math.PI.ToString() },
-                {"e", MathParser.NumberMaker + Math.E.ToString() }
+                {"pi", MathParser.numberMaker +  Math.PI.ToString() },
+                {"e", MathParser.numberMaker + Math.E.ToString() }
             };
 
         #endregion
 
         #endregion
 
-        private readonly char decimalSeparator;
-        private bool isRadians;
+        private readonly char _decimalSeparator;
+        private bool _isRadians;
 
         #region Constructors
 
@@ -161,7 +161,7 @@ namespace MathParserTK
         {
             try
             {
-                this.decimalSeparator = Char.Parse(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+                this._decimalSeparator = Char.Parse(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
             }
             catch (FormatException ex)
             {
@@ -175,7 +175,7 @@ namespace MathParserTK
         /// <param name="decimalSeparator">Set decimal separator</param>
         public MathParser(char decimalSeparator)
         {
-            this.decimalSeparator = decimalSeparator;
+            this._decimalSeparator = decimalSeparator;
         }
 
         #endregion
@@ -187,11 +187,11 @@ namespace MathParserTK
         /// <returns>Result</returns>
         public double Parse(string expression, bool isRadians = true)
         {
-            this.isRadians = isRadians;
+            this._isRadians = isRadians;
 
             try
             {
-                return Calculate(ConvertToRPN(FormatString(expression)));
+                return Calculate(ConvertToRpn(FormatString(expression)));
             }
             catch (DivideByZeroException e)
             {
@@ -280,7 +280,7 @@ namespace MathParserTK
         /// </summary>
         /// <param name="expression">Math expression in infix notation</param>
         /// <returns>Math expression in postfix notation (RPN)</returns>
-        private string ConvertToRPN(string expression)
+        private string ConvertToRpn(string expression)
         {
             int pos = 0; // Current position of lexical analysis
             StringBuilder outputString = new StringBuilder();
@@ -298,7 +298,7 @@ namespace MathParserTK
             while (stack.Count > 0)
             {
                 // There should be only operators
-                if (stack.Peek()[0] == MathParser.OperatorMarker[0])
+                if (stack.Peek()[0] == MathParser.operatorMarker[0])
                 {
                     outputString.Append(stack.Pop());
                 }
@@ -325,7 +325,7 @@ namespace MathParserTK
             token.Append(expression[pos]);
 
             // If it is a operator
-            if (this.supportedOperators.ContainsKey(token.ToString()))
+            if (this._supportedOperators.ContainsKey(token.ToString()))
             {
                 // Determine it is unary or binary operator
                 bool isUnary = pos == 0 || expression[pos - 1] == '(';
@@ -334,16 +334,16 @@ namespace MathParserTK
                 switch (token.ToString())
                 {
                     case "+":
-                        return isUnary ? MathParser.UnPlus : MathParser.Plus;
+                        return isUnary ? MathParser.unPlus : MathParser.plus;
                     case "-":
-                        return isUnary ? MathParser.UnMinus : MathParser.Minus;
+                        return isUnary ? MathParser.unMinus : MathParser.minus;
                     default:
-                        return this.supportedOperators[token.ToString()];
+                        return this._supportedOperators[token.ToString()];
                 }
             }
             else if (Char.IsLetter(token[0])
-                || this.supportedFunctions.ContainsKey(token.ToString())
-                || this.supportedConstants.ContainsKey(token.ToString()))
+                || this._supportedFunctions.ContainsKey(token.ToString())
+                || this._supportedConstants.ContainsKey(token.ToString()))
             {
                 // Read function or constant name
 
@@ -353,13 +353,13 @@ namespace MathParserTK
                     token.Append(expression[pos]);
                 }
 
-                if (this.supportedFunctions.ContainsKey(token.ToString()))
+                if (this._supportedFunctions.ContainsKey(token.ToString()))
                 {
-                    return this.supportedFunctions[token.ToString()];
+                    return this._supportedFunctions[token.ToString()];
                 }
-                else if (this.supportedConstants.ContainsKey(token.ToString()))
+                else if (this._supportedConstants.ContainsKey(token.ToString()))
                 {
-                    return this.supportedConstants[token.ToString()];
+                    return this._supportedConstants[token.ToString()];
                 }
                 else
                 {
@@ -367,7 +367,7 @@ namespace MathParserTK
                 }
 
             }
-            else if (Char.IsDigit(token[0]) || token[0] == this.decimalSeparator)
+            else if (Char.IsDigit(token[0]) || token[0] == this._decimalSeparator)
             {
                 // Read number
 
@@ -389,7 +389,7 @@ namespace MathParserTK
 
                 // Read the fractional part of number
                 if (pos < expression.Length
-                    && expression[pos] == this.decimalSeparator)
+                    && expression[pos] == this._decimalSeparator)
                 {
                     // Add current system specific decimal separator
                     token.Append(CultureInfo.CurrentCulture
@@ -422,10 +422,10 @@ namespace MathParserTK
                     }
 
                     // Convert number from scientific notation to decimal notation
-                    return MathParser.NumberMaker + Convert.ToDouble(token.ToString());
+                    return MathParser.numberMaker + Convert.ToDouble(token.ToString());
                 }
 
-                return MathParser.NumberMaker + token.ToString();
+                return MathParser.numberMaker + token.ToString();
             }
             else
             {
@@ -443,34 +443,34 @@ namespace MathParserTK
         private StringBuilder SyntaxAnalysisInfixNotation(string token, StringBuilder outputString, Stack<string> stack)
         {
             // If it's a number just put to string            
-            if (token[0] == MathParser.NumberMaker[0])
+            if (token[0] == MathParser.numberMaker[0])
             {
                 outputString.Append(token);
             }
-            else if (token[0] == MathParser.FunctionMarker[0])
+            else if (token[0] == MathParser.functionMarker[0])
             {
                 // if it's a function push to stack
                 stack.Push(token);
             }
-            else if (token == MathParser.LeftParent)
+            else if (token == MathParser.leftParent)
             {
                 // If its '(' push to stack
                 stack.Push(token);
             }
-            else if (token == MathParser.RightParent)
+            else if (token == MathParser.rightParent)
             {
                 // If its ')' pop elements from stack to output string
                 // until find the ')'
 
                 string elem;
-                while ((elem = stack.Pop()) != MathParser.LeftParent)
+                while ((elem = stack.Pop()) != MathParser.leftParent)
                 {
                     outputString.Append(elem);
                 }
 
                 // if after this a function is in the peek of stack then put it to string
                 if (stack.Count > 0 &&
-                    stack.Peek()[0] == MathParser.FunctionMarker[0])
+                    stack.Peek()[0] == MathParser.functionMarker[0])
                 {
                     outputString.Append(stack.Pop());
                 }
@@ -506,7 +506,7 @@ namespace MathParserTK
         /// </summary>
         private bool IsRightAssociated(string token)
         {
-            return token == MathParser.Degree;
+            return token == MathParser.degree;
         }
 
         /// <summary>
@@ -516,31 +516,31 @@ namespace MathParserTK
         {
             switch (token)
             {
-                case MathParser.LeftParent:
+                case MathParser.leftParent:
                     return 0;
-                case MathParser.Plus:
-                case MathParser.Minus:
+                case MathParser.plus:
+                case MathParser.minus:
                     return 2;
-                case MathParser.UnPlus:
-                case MathParser.UnMinus:
+                case MathParser.unPlus:
+                case MathParser.unMinus:
                     return 6;
-                case MathParser.Multiply:
-                case MathParser.Divide:
+                case MathParser.multiply:
+                case MathParser.divide:
                     return 4;
-                case MathParser.Degree:
-                case MathParser.Sqrt:
+                case MathParser.degree:
+                case MathParser.sqrt:
                     return 8;
-                case MathParser.Sin:
-                case MathParser.Cos:
-                case MathParser.Tg:
-                case MathParser.Ctg:
-                case MathParser.Sh:
-                case MathParser.Ch:
-                case MathParser.Th:
-                case MathParser.Log:
-                case MathParser.Ln:
-                case MathParser.Exp:
-                case MathParser.Abs:
+                case MathParser.sin:
+                case MathParser.cos:
+                case MathParser.tg:
+                case MathParser.ctg:
+                case MathParser.sh:
+                case MathParser.ch:
+                case MathParser.th:
+                case MathParser.log:
+                case MathParser.ln:
+                case MathParser.exp:
+                case MathParser.abs:
                     return 10;
                 default:
                     throw new ArgumentException("Unknown operator");
@@ -559,14 +559,14 @@ namespace MathParserTK
         private double Calculate(string expression)
         {
             int pos = 0; // Current position of lexical analysis
-            var stack = new Stack<double>(); // Contains operands
+            Stack<double> stack = new Stack<double>(); // Contains operands
 
             // Analyse entire expression
             while (pos < expression.Length)
             {
-                string token = LexicalAnalysisRPN(expression, ref pos);
+                string token = LexicalAnalysisRpn(expression, ref pos);
 
-                stack = SyntaxAnalysisRPN(stack, token);
+                stack = SyntaxAnalysisRpn(stack, token);
             }
 
             // At end of analysis in stack should be only one operand (result)
@@ -584,7 +584,7 @@ namespace MathParserTK
         /// <param name="expression">Math expression in reverse-polish notation</param>
         /// <param name="pos">Current position of lexical analysis</param>
         /// <returns>Token</returns>
-        private string LexicalAnalysisRPN(string expression, ref int pos)
+        private string LexicalAnalysisRpn(string expression, ref int pos)
         {
             StringBuilder token = new StringBuilder();
 
@@ -592,9 +592,9 @@ namespace MathParserTK
 
             token.Append(expression[pos++]);
 
-            while (pos < expression.Length && expression[pos] != MathParser.NumberMaker[0]
-                && expression[pos] != MathParser.OperatorMarker[0]
-                && expression[pos] != MathParser.FunctionMarker[0])
+            while (pos < expression.Length && expression[pos] != MathParser.numberMaker[0]
+                && expression[pos] != MathParser.operatorMarker[0]
+                && expression[pos] != MathParser.functionMarker[0])
             {
                 token.Append(expression[pos++]);
             }
@@ -608,10 +608,10 @@ namespace MathParserTK
         /// <param name="stack">Stack which contains operands</param>
         /// <param name="token">Token</param>
         /// <returns>Stack which contains operands</returns>
-        private Stack<double> SyntaxAnalysisRPN(Stack<double> stack, string token)
+        private Stack<double> SyntaxAnalysisRpn(Stack<double> stack, string token)
         {
             // if it's operand then just push it to stack
-            if (token[0] == MathParser.NumberMaker[0])
+            if (token[0] == MathParser.numberMaker[0])
             {
                 stack.Push(double.Parse(token.Remove(0, 1)));
             }
@@ -623,43 +623,43 @@ namespace MathParserTK
 
                 switch (token)
                 {
-                    case MathParser.UnPlus:
+                    case MathParser.unPlus:
                         rst = arg;
                         break;
-                    case MathParser.UnMinus:
+                    case MathParser.unMinus:
                         rst = -arg;
                         break;
-                    case MathParser.Sqrt:
+                    case MathParser.sqrt:
                         rst = Math.Sqrt(arg);
                         break;
-                    case MathParser.Sin:
+                    case MathParser.sin:
                         rst = ApplyTrigFunction(Math.Sin, arg);
                         break;
-                    case MathParser.Cos:
+                    case MathParser.cos:
                         rst = ApplyTrigFunction(Math.Cos, arg);
                         break;
-                    case MathParser.Tg:
+                    case MathParser.tg:
                         rst = ApplyTrigFunction(Math.Tan, arg);
                         break;
-                    case MathParser.Ctg:
+                    case MathParser.ctg:
                         rst = 1 / ApplyTrigFunction(Math.Tan, arg);
                         break;
-                    case MathParser.Sh: 
+                    case MathParser.sh: 
                         rst = Math.Sinh(arg); 
                         break;
-                    case MathParser.Ch:rst = 
+                    case MathParser.ch:
                         rst = Math.Cosh(arg); 
                         break;
-                    case MathParser.Th:
+                    case MathParser.th:
                         rst = Math.Tanh(arg); 
                         break;
-                    case MathParser.Ln: 
+                    case MathParser.ln: 
                         rst = Math.Log(arg); 
                         break;
-                    case MathParser.Exp: 
+                    case MathParser.exp: 
                         rst = Math.Exp(arg); 
                         break;
-                    case MathParser.Abs: 
+                    case MathParser.abs: 
                         rst = Math.Abs(arg); 
                         break;
                     default:
@@ -679,26 +679,26 @@ namespace MathParserTK
 
                 switch (token)
                 {
-                    case MathParser.Plus:
+                    case MathParser.plus:
                         rst = arg1 + arg2;
                         break;
-                    case MathParser.Minus:
+                    case MathParser.minus:
                         rst = arg1 - arg2;
                         break;
-                    case MathParser.Multiply:
+                    case MathParser.multiply:
                         rst = arg1 * arg2;
                         break;
-                    case MathParser.Divide:
+                    case MathParser.divide:
                         if (arg2 == 0)
                         {
                             throw new DivideByZeroException("Second argument is zero");
                         }
                         rst = arg1 / arg2;
                         break;
-                    case MathParser.Degree:
+                    case MathParser.degree:
                         rst = Math.Pow(arg1, arg2);
                         break;
-                    case MathParser.Log:
+                    case MathParser.log:
                         rst = Math.Log(arg2, arg1);
                         break;
                     default:
@@ -719,7 +719,7 @@ namespace MathParserTK
         /// <returns>Result of function</returns>
         private double ApplyTrigFunction(Func<double, double> func, double arg)
         {
-            if (!this.isRadians)
+            if (!this._isRadians)
             {
                 arg = arg * Math.PI / 180; // Convert value to degree
             }
@@ -734,26 +734,26 @@ namespace MathParserTK
         {
             switch (token)
             {
-                case MathParser.UnPlus:
-                case MathParser.UnMinus:
-                case MathParser.Sqrt:
-                case MathParser.Tg:
-                case MathParser.Sh:
-                case MathParser.Ch:
-                case MathParser.Th:
-                case MathParser.Ln:
-                case MathParser.Ctg:
-                case MathParser.Sin:
-                case MathParser.Cos:
-                case MathParser.Exp:
-                case MathParser.Abs:
+                case MathParser.unPlus:
+                case MathParser.unMinus:
+                case MathParser.sqrt:
+                case MathParser.tg:
+                case MathParser.sh:
+                case MathParser.ch:
+                case MathParser.th:
+                case MathParser.ln:
+                case MathParser.ctg:
+                case MathParser.sin:
+                case MathParser.cos:
+                case MathParser.exp:
+                case MathParser.abs:
                     return 1;
-                case MathParser.Plus:
-                case MathParser.Minus:
-                case MathParser.Multiply:
-                case MathParser.Divide:
-                case MathParser.Degree:
-                case MathParser.Log:
+                case MathParser.plus:
+                case MathParser.minus:
+                case MathParser.multiply:
+                case MathParser.divide:
+                case MathParser.degree:
+                case MathParser.log:
                     return 2;
                 default:
                     throw new ArgumentException("Unknown operator");
