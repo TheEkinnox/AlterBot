@@ -132,7 +132,7 @@ namespace AlterBotNet
         {
             SocketGuild guild = user.Guild;
             SocketTextChannel channel = guild.SystemChannel;
-            await channel.SendMessageAsync(user.Mention + " " + Config.WelcomeMessage);
+            await channel.SendMessageAsync(Config.WelcomeMessage + " " + user.Mention);
         }
 
         /// <summary>

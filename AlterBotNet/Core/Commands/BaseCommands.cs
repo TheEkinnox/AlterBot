@@ -230,7 +230,7 @@ namespace AlterBotNet.Core.Commands
         {
             await this.Context.Message.DeleteAsync();
             SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault() ?? this.Context.User;
-                await this.Context.Channel.SendMessageAsync(mentionedUser.Mention + " " + Config.WelcomeMessage);
+            await this.Context.Channel.SendMessageAsync(Config.WelcomeMessage + " " + mentionedUser.Mention);
         }
 
         [Command("ban"), Summary("Ban l'utilisateur mentionné")]

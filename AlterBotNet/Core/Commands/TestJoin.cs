@@ -28,7 +28,7 @@ namespace AlterBotNet.Core.Commands
         [Command("testjoin"), Alias("tj","test","join"), Summary("Simule l'arrivée d'un joueur sur le serveur")]
         public async Task JoinMessage()
         {
-                await this.Context.Channel.SendMessageAsync(this.Context.User.Mention + " " + Config.WelcomeMessage);
+            await this.Context.Channel.SendMessageAsync(Config.WelcomeMessage + " " + this.Context.User.Mention);
         }
 
         public IChannel GetChannelByName(string name, string guildName)

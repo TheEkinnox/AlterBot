@@ -1439,3 +1439,43 @@
 2019-05-25 02:36:10 La commande config show à été utilisée par TheEkinnox (UserID:260385529474842626) avec succès.
 2019-05-25 02:36:17 Timer ticked
 2019-05-25 02:36:32 Timer ticked
+2019-05-25 02:36:42 at Gateway Sent Heartbeat
+2019-05-25 02:36:42 at Gateway Received HeartbeatAck
+2019-05-25 02:36:42 at Gateway Latency = 31 ms
+2019-05-25 02:36:47 Timer ticked
+2019-05-25 02:37:02 Timer ticked
+2019-05-25 02:37:17 Timer ticked
+2019-05-25 02:37:20 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 02:37:23 at Gateway Sent Heartbeat
+2019-05-25 02:37:23 at Gateway Received HeartbeatAck
+2019-05-25 02:37:23 at Gateway Latency = 47 ms
+2019-05-25 02:37:32 Timer ticked
+2019-05-25 02:37:32 at Gateway Received Dispatch (TYPING_START)
+2019-05-25 02:37:47 Timer ticked
+2019-05-25 02:38:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:38:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:38:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:38:01 at Gateway Received Dispatch (PRESENCE_UPDATE)
+2019-05-25 02:38:02 Timer ticked
+2019-05-25 02:38:04 at Gateway Sent Heartbeat
+2019-05-25 02:38:05 at Gateway Received HeartbeatAck
+2019-05-25 02:38:05 at Gateway Latency = 47 ms
+2019-05-25 02:38:17 Timer ticked
+2019-05-25 02:38:32 Timer ticked
+2019-05-25 02:38:46 at Gateway Sent Heartbeat
+2019-05-25 02:38:46 at Gateway Received HeartbeatAck
+2019-05-25 02:38:46 at Gateway Latency = 63 ms
+2019-05-25 02:38:47 Timer ticked
+2019-05-25 02:39:02 Timer ticked
+2019-05-25 02:39:17 Timer ticked
+2019-05-25 02:39:27 at Gateway Sent Heartbeat
+2019-05-25 02:39:27 at Gateway Received HeartbeatAck
+2019-05-25 02:39:27 at Gateway Latency = 62 ms
+2019-05-25 02:39:32 Timer ticked
+2019-05-25 02:39:47 Timer ticked
+2019-05-25 02:40:02 Timer ticked
+2019-05-25 02:40:08 at Gateway Sent Heartbeat
+2019-05-25 02:40:08 at Gateway Received HeartbeatAck
+2019-05-25 02:40:08 at Gateway Latency = 79 ms
+2019-05-25 02:40:17 Timer ticked
+2019-05-25 02:40:32 Timer ticked
