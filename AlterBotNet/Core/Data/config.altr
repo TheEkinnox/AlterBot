@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
-	<version>2.15.8</version>
-	<prefixprim>a!</prefixprim>
-	<prefixsec>^^</prefixsec>
-	<motd>Message test</motd>
-	<welcomemessage>Bienvenue sur Alternia! Toutes les infos pour faire ta fiche sont ici :
-&#60;#410438433849212928&#62;
-&#60;#410531350102147072&#62;
-&#60;#411969883673329665&#62;
-&#60;#409789542825197568&#62;
-&#60;#409849626988904459&#62;
-&#60;#410424057050300427&#62;
-&#60;#410487492463165440&#62;
-Si tu as besoins d'aide n'hésite pas à demander à un membre du &#60;@&#38;541492279894999080&#62;!</welcomemessage>
+  <version>2.15.10</version>
+  <prefixprim>a!</prefixprim>
+  <prefixsec>^^</prefixsec>
+  <motd>Message test</motd>
+  <welcomemessage>Bienvenue sur Alternia! Toutes les infos pour faire ta fiche sont ici :
+&lt;#410438433849212928&gt;
+&lt;#410531350102147072&gt;
+&lt;#411969883673329665&gt;
+&lt;#409789542825197568&gt;
+&lt;#409849626988904459&gt;
+&lt;#410424057050300427&gt;
+&lt;#410487492463165440&gt;
+Si tu as besoins d'aide n'hésite pas à demander à un membre du &lt;@&amp;420536907525652482&gt;!</welcomemessage>
 </config>

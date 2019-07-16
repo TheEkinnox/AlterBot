@@ -179,6 +179,7 @@ namespace AlterBotNet
         {
             SocketUserMessage message = messageParam as SocketUserMessage;
             SocketCommandContext context = new SocketCommandContext(this._client, message);
+            Global.Context = context;
 
             if (context.Message == null || context.Message.Content == "") return;
             if (context.User.IsBot) return;

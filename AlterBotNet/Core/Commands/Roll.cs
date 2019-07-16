@@ -2,22 +2,16 @@
 
 // Nom du fichier : Roll.cs
 // Auteur : Loick OBIANG (1832960)
-// Date de création : 2019-02-05
-// Date de modification : 2019-02-07
+// Date de création : 2019-04-20
+// Date de modification : 2019-06-04
 
 #endregion
 
 #region USING
 
 using System;
-using System.Diagnostics;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
 using System.Threading.Tasks;
-using System.Text;
 using AlterBotNet.Core.Data.Classes;
-using Discord;
 using Discord.Commands;
 using MathParserTK;
 
@@ -36,7 +30,7 @@ namespace AlterBotNet.Core.Commands
         #region MÉTHODES
 
         [Command("roll"), Alias("de", "dice", "r"), Summary("Lance 1 dé (par défaut 1d100) **:warning:LES PRIORITES D'OPERATEURS NE SONT PAS RESPECTEES:warning:**")]
-        public async Task LancerDe([Remainder]string input = "none")
+        public async Task LancerDe([Remainder] string input = "none")
         {
             MathParser parser = new MathParser();
             const int bonusCaly = 8;
@@ -53,7 +47,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (input == "magieprimaire" || input == "mp")
             {
-                resultat[0] = this._rand.Next(1,4 + 1);
+                resultat[0] = this._rand.Next(1, 4 + 1);
                 Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
                 switch (resultat[0])
                 {
@@ -79,7 +73,7 @@ namespace AlterBotNet.Core.Commands
             {
                 if (int.TryParse(input.Replace("d", ""), out max))
                 {
-                    resultat[0] = this._rand.Next(max + 1);
+                    resultat[0] = this._rand.Next(1,max + 1);
                     Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
                     await ReplyAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
                     //return;
@@ -91,43 +85,46 @@ namespace AlterBotNet.Core.Commands
                     //return;
                 }
             }
-            else if (char.IsDigit(input[0]) && !(input.Contains("d")) && int.TryParse(input, out max))
+            else if (char.IsDigit(input[0]) && !input.Contains("d") && int.TryParse(input, out max))
             {
-                resultat[0] = this._rand.Next(max + 1);
+                resultat[0] = this._rand.Next(1,max + 1);
                 Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
                 await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
             }
             else if (char.IsDigit(input[0]) && input.Contains("d"))
             {
                 string[] argus = input.Split('d', '+', '-', '*', '/');
-                if (int.TryParse(argus[0], out int nbDes) && (!String.IsNullOrEmpty(argus[1]) && int.TryParse(argus[1], out max)))
+                if (int.TryParse(argus[0], out int nbDes) && !String.IsNullOrEmpty(argus[1]) && int.TryParse(argus[1], out max))
                 {
                     for (int i = 0; i < nbDes; i++)
                     {
-                        resultat[i] = this._rand.Next(max + 1);
+                        resultat[i] = this._rand.Next(1,max + 1);
                         sumResultats += resultat[i];
 
                         if (i + 1 < nbDes)
                         {
-                            msgResultat += ($"{resultat[i]}, ");
+                            msgResultat += $"{resultat[i]}, ";
                         }
                         else
                         {
-                            msgResultat += ($"{resultat[i]}");
+                            msgResultat += $"{resultat[i]}";
                         }
                     }
+
                     if (input.Contains('+') || input.Contains('-') || input.Contains('*') || input.Contains('/'))
                     {
                         containsCalcul = true;
                         Logs.WriteLine(sumResultats.ToString());
-                        sumResultats = (int)parser.Parse(sumResultats.ToString(), false);
+                        sumResultats = (int) parser.Parse(sumResultats.ToString(), false);
                         Logs.WriteLine("Calcul effectué");
                         Logs.WriteLine(sumResultats.ToString());
                     }
+
                     for (int i = 0; i < argus.Length; i++)
                     {
                         Logs.WriteLine(argus[i]);
                     }
+
                     if (nbDes > 1 && valide && this.Context.User.Id != 298614183258488834)
                     {
                         Logs.WriteLine($"{this.Context.User.Username} a roll {sumResultats} ({msgResultat})");
@@ -160,7 +157,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (input.ToLower() == "none")
             {
-                resultat[0] = this._rand.Next(max);
+                resultat[0] = this._rand.Next(1,max);
                 if (this.Context.User.Id != 298614183258488834)
                 {
                     Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");

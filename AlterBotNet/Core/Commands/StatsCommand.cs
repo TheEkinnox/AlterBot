@@ -35,7 +35,7 @@ namespace AlterBotNet.Core.Commands
 
         #region MÉTHODES
 
-        [Command("stats"), Summary("Affiche les stats d'un personnage")]
+        [Command("stats"), Alias("sts"), Summary("Affiche les stats d'un personnage")]
         public async Task SendStats([Remainder] string input = "none")
         {
             SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
@@ -91,7 +91,7 @@ namespace AlterBotNet.Core.Commands
                 // =============================================
                 else if (input == "list")
                 {
-                    if (IsStaff((SocketGuildUser) this.Context.User))
+                    if (Global.IsStaff((SocketGuildUser) this.Context.User))
                     {
                         if (string.IsNullOrEmpty((await Global.StatsAccountsListAsync(nomFichier)).ToString()))
                         {
@@ -122,10 +122,9 @@ namespace AlterBotNet.Core.Commands
                     }
                     else
                     {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                        throw new Exception();
+                        Logs.WriteLine($"\"{this.Context.User.Username}\" a tenté d'utiliser la commande stats list sans être membre du staff.");
+                            await ReplyAsync($"Vous devez être membre du {Global.GetRoleByName(this.Context,"Staff").Mention} pour utiliser cette commande");
                     }
                 }
                 // ======================================
@@ -163,23 +162,21 @@ namespace AlterBotNet.Core.Commands
                         else
                         {
                             StatsAccount infoAccount = await Global.GetStatsAccountByNameAsync(nomFichier, argus[1]);
-                            if (infoAccount != null && (infoAccount.UserId == userId || IsStaff((SocketGuildUser) this.Context.User)))
+                            if (infoAccount != null && (infoAccount.UserId == userId || Global.IsStaff((SocketGuildUser) this.Context.User)))
                             {
                                 try
                                 {
                                     await ReplyAsync("Infos envoyées en mp");
-                                    Logs.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
+                                    Logs.WriteLine($"Statistiques de \"{infoAccount.Name}\" envoyées en mp à \"{this.Context.User.Username}\"");
                                     EmbedBuilder eb = new EmbedBuilder();
                                     eb.WithTitle($"Statistiques de **{infoAccount.Name}**")
                                         .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
                                         .AddField("==============================================", infoAccount.ToString() + $"\nPropriétaire: {this.Context.Guild.GetUser(infoAccount.UserId).Username}");
                                     await this.Context.User.SendMessageAsync("", false, eb.Build());
-                                    Logs.WriteLine(infoAccount.ToString());
                                 }
                                 catch (Exception e)
                                 {
-                                    Logs.WriteLine(e.ToString());
-                                    throw;
+                                    Logs.WriteLine($"Une erreure est survenu lors de l'utilisation de la commande \"stats info\" avec le message suivant : {e.Message}");
                                 }
                             }
                             else
@@ -203,7 +200,7 @@ namespace AlterBotNet.Core.Commands
                 // =============================================================================
                 else if (input.StartsWith("add"))
                 {
-                    if (HasRole((SocketGuildUser) this.Context.User, "Admin"))
+                    if (Global.HasRole((SocketGuildUser) this.Context.User, "Admin"))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours add
@@ -231,6 +228,7 @@ namespace AlterBotNet.Core.Commands
                                     uint dpMagie = depositAccount.Magie;
                                     uint dpResistance = depositAccount.Resistance;
                                     uint dpIntelligence = depositAccount.Intelligence;
+                                    uint dpSociabilite = depositAccount.Sociabilite;
                                     uint dpEsprit = depositAccount.Esprit;
                                     ulong dpUserId = depositAccount.UserId;
                                     string stat = argus[1];
@@ -277,6 +275,14 @@ namespace AlterBotNet.Core.Commands
                                                     dpIntelligence += valeurAjout;
                                                     stat = "intelligence";
                                                     break;
+                                                case "soc":
+                                                case "socio":
+                                                case "social":
+                                                case "sociabilité":
+                                                case "sociabilite":
+                                                    dpSociabilite += valeurAjout;
+                                                    stat = "sociabilité";
+                                                    break;
                                                 case "esp":
                                                 case "esprit":
                                                     dpEsprit += valeurAjout;
@@ -286,7 +292,7 @@ namespace AlterBotNet.Core.Commands
 
                                             statsAccounts.RemoveAt(await Global.GetStatsAccountIndexByNameAsync(nomFichier, argus[2]));
                                             Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
-                                            StatsAccount newAccount = new StatsAccount(dpName, dpForce, dpAgilité, dpTechnique, dpMagie, dpResistance, dpIntelligence, dpEsprit, dpUserId);
+                                            StatsAccount newAccount = new StatsAccount(dpName, dpForce, dpAgilité, dpTechnique, dpMagie, dpResistance, dpIntelligence, dpSociabilite, dpEsprit, dpUserId);
                                             statsAccounts.Add(newAccount);
                                             Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
                                             await ReplyAsync($"**{valeurAjout}** points en **{stat}** ajoutés à \"**{dpName}**\"");
@@ -326,7 +332,7 @@ namespace AlterBotNet.Core.Commands
                 // ================================================================================
                 else if (input.StartsWith("remove") || input.StartsWith("rem"))
                 {
-                    if (HasRole((SocketGuildUser) this.Context.User, "Admin"))
+                    if (Global.HasRole((SocketGuildUser) this.Context.User, "Admin"))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours remove
@@ -354,6 +360,7 @@ namespace AlterBotNet.Core.Commands
                                     uint wdMagie = withdrawAccount.Magie;
                                     uint wdResistance = withdrawAccount.Resistance;
                                     uint wdIntelligence = withdrawAccount.Intelligence;
+                                    uint wdSociabilite = withdrawAccount.Sociabilite;
                                     uint wdEsprit = withdrawAccount.Esprit;
                                     ulong wdUserId = withdrawAccount.UserId;
                                     string stat = argus[1];
@@ -400,6 +407,14 @@ namespace AlterBotNet.Core.Commands
                                                     wdIntelligence -= valeurAjout;
                                                     stat = "intelligence";
                                                     break;
+                                                case "soc":
+                                                case "socio":
+                                                case "social":
+                                                case "sociabilité":
+                                                case "sociabilite":
+                                                    wdSociabilite -= valeurAjout;
+                                                    stat = "sociabilité";
+                                                    break;
                                                 case "esp":
                                                 case "esprit":
                                                     wdEsprit -= valeurAjout;
@@ -409,7 +424,7 @@ namespace AlterBotNet.Core.Commands
 
                                             statsAccounts.RemoveAt(await Global.GetStatsAccountIndexByNameAsync(nomFichier, argus[2]));
                                             Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
-                                            StatsAccount newAccount = new StatsAccount(wdName, wdForce, wdAgilité, wdTechnique, wdMagie, wdResistance, wdIntelligence, wdEsprit, wdUserId);
+                                            StatsAccount newAccount = new StatsAccount(wdName, wdForce, wdAgilité, wdTechnique, wdMagie, wdResistance, wdIntelligence, wdSociabilite, wdEsprit, wdUserId);
                                             statsAccounts.Add(newAccount);
                                             Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
                                             await ReplyAsync($"**{valeurAjout}** points en **{stat}** ajoutés à \"**{wdName}**\"");
@@ -449,7 +464,7 @@ namespace AlterBotNet.Core.Commands
                 // =============================================================================
                 else if (input.StartsWith("set"))
                 {
-                    if (HasRole((SocketGuildUser)this.Context.User, "Admin"))
+                    if (Global.HasRole((SocketGuildUser)this.Context.User, "Admin"))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours add
@@ -477,6 +492,7 @@ namespace AlterBotNet.Core.Commands
                                     uint dpMagie = depositAccount.Magie;
                                     uint dpResistance = depositAccount.Resistance;
                                     uint dpIntelligence = depositAccount.Intelligence;
+                                    uint dpSociabilite = depositAccount.Sociabilite;
                                     uint dpEsprit = depositAccount.Esprit;
                                     ulong dpUserId = depositAccount.UserId;
                                     string stat = argus[1];
@@ -523,6 +539,14 @@ namespace AlterBotNet.Core.Commands
                                                     dpIntelligence = valeurAjout;
                                                     stat = "intelligence";
                                                     break;
+                                                case "soc":
+                                                case "socio":
+                                                case "social":
+                                                case "sociabilité":
+                                                case "sociabilite":
+                                                    dpSociabilite += valeurAjout;
+                                                    stat = "sociabilité";
+                                                    break;
                                                 case "esp":
                                                 case "esprit":
                                                     dpEsprit = valeurAjout;
@@ -532,7 +556,7 @@ namespace AlterBotNet.Core.Commands
 
                                             statsAccounts.RemoveAt(await Global.GetStatsAccountIndexByNameAsync(nomFichier, argus[2]));
                                             Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
-                                            StatsAccount newAccount = new StatsAccount(dpName, dpForce, dpAgilité, dpTechnique, dpMagie, dpResistance, dpIntelligence, dpEsprit, dpUserId);
+                                            StatsAccount newAccount = new StatsAccount(dpName, dpForce, dpAgilité, dpTechnique, dpMagie, dpResistance, dpIntelligence, dpSociabilite, dpEsprit, dpUserId);
                                             statsAccounts.Add(newAccount);
                                             Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
                                             await ReplyAsync($"\"**{dpName}**\" a désormais **{valeurAjout}** points en **{stat}**");
@@ -572,7 +596,7 @@ namespace AlterBotNet.Core.Commands
                 // =======================================================
                 else if (input.StartsWith("create") || input.StartsWith("cr"))
                 {
-                    if (HasRole((SocketGuildUser) this.Context.User, "RP") || IsStaff((SocketGuildUser) this.Context.User))
+                    if (Global.HasRole((SocketGuildUser) this.Context.User, "RP") || Global.IsStaff((SocketGuildUser) this.Context.User))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours create
@@ -598,11 +622,11 @@ namespace AlterBotNet.Core.Commands
                                 if (mentionedUser != null)
                                 {
                                     ulong crUserId = mentionedUser.Id;
-                                    newAccount = new StatsAccount(argus[1], 0, 0, 0, 0, 0, 0, 0, crUserId);
+                                    newAccount = new StatsAccount(argus[1], 0, 0, 0, 0, 0, 0, 0, 0, crUserId);
                                 }
                                 else
                                 {
-                                    newAccount = new StatsAccount(argus[1], 0, 0, 0, 0, 0, 0, 0, userId);
+                                    newAccount = new StatsAccount(argus[1], 0, 0, 0, 0, 0, 0, 0, 0, userId);
                                 }
 
                                 statsAccounts.Add(newAccount);
@@ -631,7 +655,7 @@ namespace AlterBotNet.Core.Commands
                 else if (input.StartsWith("delete") || input.StartsWith("del"))
                 {
                     argus = input.Split(' ');
-                    if (IsStaff((SocketGuildUser) this.Context.User) || userId == (await Global.GetStatsAccountByNameAsync(nomFichier, argus[1])).UserId)
+                    if (Global.IsStaff((SocketGuildUser) this.Context.User) || userId == (await Global.GetStatsAccountByNameAsync(nomFichier, argus[1])).UserId)
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours add
@@ -694,18 +718,14 @@ namespace AlterBotNet.Core.Commands
                 // ===============================================================================
                 // = Gestion de la commande (admin) stats setowner (nom_Personnage) @utilisateur =
                 // ===============================================================================
-                else if (input.StartsWith("setowner") || input.StartsWith("setown") || input.StartsWith("so"))
+                else if (input.StartsWith("so") || input.StartsWith("setowner") || input.StartsWith("setown"))
                 {
-                    if (HasRole((SocketGuildUser) this.Context.User, "Admin"))
+                    if (Global.HasRole((SocketGuildUser) this.Context.User, "Admin"))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours setowner
                         if (argus[0] == "setowner" || argus[0] == "setown" || argus[0] == "so")
                         {
-                            if (argus[1].Contains('_'))
-                                argus[1] = argus[1].Replace("_", " ");
-                            if (argus[1].Contains('-'))
-                                argus[1] = argus[1].Replace("-", " ");
                             if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                             {
                                 await ReplyAsync($"{error} Nombre max d'arguments dépassé");
@@ -718,6 +738,10 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                             {
+                                if (argus[1].Contains('_'))
+                                    argus[1] = argus[1].Replace("_", " ");
+                                if (argus[1].Contains('-'))
+                                    argus[1] = argus[1].Replace("-", " ");
                                 StatsAccount setAccount = await Global.GetStatsAccountByNameAsync(nomFichier, argus[1]);
                                 if (setAccount != null)
                                 {
@@ -732,12 +756,12 @@ namespace AlterBotNet.Core.Commands
                                             uint soMagie = setAccount.Magie;
                                             uint soResistance = setAccount.Resistance;
                                             uint soIntelligence = setAccount.Intelligence;
+                                            uint soSociabilite = setAccount.Sociabilite;
                                             uint soEsprit = setAccount.Esprit;
                                             ulong soUserId = mentionedUser.Id;
 
                                             statsAccounts.RemoveAt(await Global.GetStatsAccountIndexByNameAsync(nomFichier, soName));
-                                            Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
-                                            StatsAccount newAccount = new StatsAccount(soName, soForce, soAgilité, soTechnique, soMagie, soResistance, soIntelligence, soEsprit, soUserId);
+                                            StatsAccount newAccount = new StatsAccount(soName, soForce, soAgilité, soTechnique, soMagie, soResistance, soIntelligence, soSociabilite, soEsprit, soUserId);
                                             statsAccounts.Add(newAccount);
                                             Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
                                             await ReplyAsync($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
@@ -777,7 +801,7 @@ namespace AlterBotNet.Core.Commands
                 // =============================================================================
                 else if (input.StartsWith("rename") || input.StartsWith("setname") || input.StartsWith("rn"))
                 {
-                    if (HasRole((SocketGuildUser) this.Context.User, "Admin"))
+                    if (Global.HasRole((SocketGuildUser) this.Context.User, "Admin"))
                     {
                         argus = input.Split(' ');
                         // Sert à s'assurer qu'argus[0] == toujours setowner
@@ -816,6 +840,7 @@ namespace AlterBotNet.Core.Commands
                                         uint rnMagie = setAccount.Magie;
                                         uint rnResistance = setAccount.Resistance;
                                         uint rnIntelligence = setAccount.Intelligence;
+                                        uint rnSociabilite = setAccount.Sociabilite;
                                         uint rnEsprit = setAccount.Esprit;
                                         if (mentionedUser != null)
                                         {
@@ -823,7 +848,7 @@ namespace AlterBotNet.Core.Commands
 
                                             statsAccounts.RemoveAt(await Global.GetStatsAccountIndexByNameAsync(nomFichier, rnName));
                                             Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
-                                            StatsAccount newAccount = new StatsAccount(rnNewName, rnForce, rnAgilité, rnTechnique, rnMagie, rnResistance, rnIntelligence, rnEsprit, rnUserId);
+                                            StatsAccount newAccount = new StatsAccount(rnNewName, rnForce, rnAgilité, rnTechnique, rnMagie, rnResistance, rnIntelligence, rnSociabilite, rnEsprit, rnUserId);
                                             statsAccounts.Add(newAccount);
                                             Global.EnregistrerDonneesStats(nomFichier, statsAccounts);
                                             await ReplyAsync($"Le nom du compte de \"**{rnName}**\" est désormais \"**{rnNewName}**\"");
@@ -889,42 +914,6 @@ namespace AlterBotNet.Core.Commands
                 }
             }
         }
-
-        /// <summary>
-        /// Vérifie si l'utilisateur est membre du Staff ou non
-        /// </summary>
-        /// <param name="user">Utilisateur à vérifier</param>
-        /// <returns>True si l'utilisateur est membre du Staff ou false sinon</returns>
-        private bool IsStaff(SocketGuildUser user)
-        {
-            string targetRoleName = "Staff";
-            IEnumerable<ulong> result = from r in user.Guild.Roles
-                where r.Name == targetRoleName
-                select r.Id;
-            ulong roleId = result.FirstOrDefault();
-            if (roleId == 0) return false;
-            SocketRole targetRole = user.Guild.GetRole(roleId);
-            return user.Roles.Contains(targetRole);
-        }
-
-        /// <summary>
-        /// Vérifie si l'utilisateur est membre du role indiqué ou non
-        /// </summary>
-        /// <param name="user">Utilisateur à vérifier</param>
-        /// <param name="roleName">Nom du role à vérifier</param>
-        /// <returns>True si l'utilisateur est membre du role indiqué ou false sinon</returns>
-        private bool HasRole(SocketGuildUser user, string roleName)
-        {
-            string targetRoleName = roleName;
-            IEnumerable<ulong> result = from r in user.Guild.Roles
-                where r.Name == targetRoleName
-                select r.Id;
-            ulong roleId = result.FirstOrDefault();
-            if (roleId == 0) return false;
-            SocketRole targetRole = user.Guild.GetRole(roleId);
-            return user.Roles.Contains(targetRole);
-        }
-
         #endregion
     }
 }

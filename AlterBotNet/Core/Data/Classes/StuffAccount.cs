@@ -21,17 +21,11 @@ namespace AlterBotNet.Core.Data.Classes
 {
     public class StuffAccount
     {
-        #region CONSTANTES ET ATTRIBUTS STATIQUES
-
-        private const decimal salaire = 0;
-
-        #endregion
-
         #region PROPRIÉTÉS ET INDEXEURS
 
-        public string Name { get; set; }
-        public ulong UserId { get; set; }
-        public List<string> Items { get; set; }
+        public string Name { get; }
+        public ulong UserId { get; }
+        public List<string> Items { get; }
 
         #endregion
 
@@ -41,8 +35,8 @@ namespace AlterBotNet.Core.Data.Classes
         /// Constructeur permettant l'initialisation d'un compte en banque
         /// </summary>
         /// <param name="name">Nom du propriétaire du compte</param>
-        /// <param name="amount">Montant disponible sur le compte</param>
-        /// <param name="userId">ID Discord du créateur du compte</param>
+        /// <param name="items">Objets disponibles sur le compte</param>
+        /// <param name="userId">ID Discord du propriétaire du compte</param>
         public StuffAccount(string name = "", List<string> items = null, ulong userId = 0)
         {
             this.Name = name;
@@ -73,6 +67,25 @@ namespace AlterBotNet.Core.Data.Classes
             return message;
         }
 
+        internal bool HasItem(string nomItem, bool exactSearch = false)
+        {
+            for (int i = 0; i < this.Items.Count; i++)
+            {
+                if((exactSearch && this.Items[i].ToString() == nomItem) || (!exactSearch && this.Items.ToString().Contains(nomItem)))
+                    return true;
+            }
+
+            return false;
+        }
+
+        // todo: implémenter la méthode RemoveItem()
+        public void RemoveItem(string nomItem = null, int indexItem = -1, bool remAll = false)
+        {
+            if (string.IsNullOrWhiteSpace(nomItem) && indexItem == -1 && !remAll)
+                throw new ArgumentNullException(null, "Aucun paramètre n'a été entré pour la méthode \"RemoveItem()\".");
+            if ((nomItem != null && !HasItem(nomItem, true)) || nomItem == null && indexItem != -1 && this.Items[indexItem] == null)
+                throw new NullReferenceException("L'objet recherché ne peut être supprimé car il n'existe pas.");
+        }
         #endregion
     }
 }

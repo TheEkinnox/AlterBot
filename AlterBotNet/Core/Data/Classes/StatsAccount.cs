@@ -20,6 +20,7 @@ namespace AlterBotNet.Core.Data.Classes
         public uint Magie { get; set; }
         public uint Resistance { get; set; }
         public uint Intelligence { get; set; }
+        public uint Sociabilite { get; set; }
         public uint Esprit { get; set; }
         public ulong UserId { get; set; }
 
@@ -27,7 +28,7 @@ namespace AlterBotNet.Core.Data.Classes
 
         #region CONSTRUCTEURS
 
-        public StatsAccount(string name, uint force = 0, uint agilite = 0, uint technique = 0, uint magie = 0, uint resistance = 0, uint intelligence = 0, uint esprit = 0, ulong userId = 0)
+        public StatsAccount(string name, uint force = 0, uint agilite = 0, uint technique = 0, uint magie = 0, uint resistance = 0, uint intelligence = 0, uint sociabilite = 0, uint esprit = 0, ulong userId = 0)
         {
             this.Name = name;
             this.Force = force;
@@ -36,6 +37,7 @@ namespace AlterBotNet.Core.Data.Classes
             this.Magie = magie;
             this.Resistance = resistance;
             this.Intelligence = intelligence;
+            this.Sociabilite = sociabilite;
             this.Esprit = esprit;
             this.UserId = userId;
         }
@@ -53,6 +55,7 @@ namespace AlterBotNet.Core.Data.Classes
             message += $"\nMagie: {this.Magie}";
             message += $"\nRésistance: {this.Resistance}";
             message += $"\nIntelligence: {this.Intelligence}";
+            message += $"\nSociabilité: {this.Sociabilite}";
             message += this.Esprit > 0 ? $"\nEsprit: {this.Esprit}" : "";
 
             return message;

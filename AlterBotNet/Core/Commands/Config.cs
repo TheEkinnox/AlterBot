@@ -3,7 +3,7 @@
 // Nom du fichier : Config.cs
 // Auteur : Loick OBIANG (1832960)
 // Date de création : 2019-05-25
-// Date de modification : 2019-05-25
+// Date de modification : 2019-05-28
 
 #endregion
 
@@ -41,6 +41,7 @@ namespace AlterBotNet.Core.Commands
                 try
                 {
                     Global.ConfigXml.GetElementsByTagName("version")[0].InnerText = value;
+                    Global.EnregistrerConfigXml(Global.ConfigXml);
                 }
                 catch (Exception e)
                 {
@@ -70,6 +71,7 @@ namespace AlterBotNet.Core.Commands
                 try
                 {
                     Global.ConfigXml.GetElementsByTagName("prefixprim")[0].InnerText = value;
+                    Global.EnregistrerConfigXml(Global.ConfigXml);
                 }
                 catch (Exception e)
                 {
@@ -77,6 +79,7 @@ namespace AlterBotNet.Core.Commands
                 }
             }
         }
+
         public static string PrefixSec
         {
             get
@@ -98,6 +101,7 @@ namespace AlterBotNet.Core.Commands
                 try
                 {
                     Global.ConfigXml.GetElementsByTagName("prefixsec")[0].InnerText = value;
+                    Global.ConfigXml.Save(Global.CheminConfig);
                 }
                 catch (Exception e)
                 {
@@ -127,6 +131,7 @@ namespace AlterBotNet.Core.Commands
                 try
                 {
                     Global.ConfigXml.GetElementsByTagName("motd")[0].InnerText = value;
+                    Global.EnregistrerConfigXml(Global.ConfigXml);
                 }
                 catch (Exception e)
                 {
@@ -156,6 +161,7 @@ namespace AlterBotNet.Core.Commands
                 try
                 {
                     Global.ConfigXml.GetElementsByTagName("welcomemessage")[0].InnerText = value;
+                    Global.EnregistrerConfigXml(Global.ConfigXml);
                 }
                 catch (Exception e)
                 {

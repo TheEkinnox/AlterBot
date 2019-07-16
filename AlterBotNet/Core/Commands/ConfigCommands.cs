@@ -30,7 +30,7 @@ namespace AlterBotNet.Core.Commands
             {
                 if (Global.HasRole(this.Context.User as SocketGuildUser, "Admin"))
                 {
-                    switch (option)
+                    switch (option.ToLower())
                     {
                         case "show":
                             string motd = String.IsNullOrWhiteSpace(Config.Motd) ? "Aucun" : Config.Motd;
@@ -86,7 +86,7 @@ namespace AlterBotNet.Core.Commands
                                 throw new ArgumentException($"La longueure du prefix entré par {this.Context.User.Username} est superieur à 2 charactères.");
                             }
                             else
-                                Config.PrefixPrim = input;
+                                Config.PrefixSec = input;
 
                             break;
                         case "setmotd":
@@ -107,7 +107,6 @@ namespace AlterBotNet.Core.Commands
                             }
                             else
                                 Config.WelcomeMessage = input;
-
                             break;
                         case "none":
                             await ReplyAsync("Veuillez entrer une option pour utiliser cette commande...");
@@ -118,6 +117,7 @@ namespace AlterBotNet.Core.Commands
                     }
 
                     Logs.WriteLine($"La commande config {option} à été utilisée par {this.Context.User.Username} (UserID:{this.Context.User.Id}) avec succès.");
+                    await ReplyAsync($"La commande config {option} à été utilisée par {this.Context.User.Username} avec succès.");
                 }
                 else
                 {

@@ -10,6 +10,7 @@
 #region USING
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -205,6 +206,7 @@ namespace AlterBotNet.Core.Commands
             autre += "Faire parler le bot (c useless): `say message`\n";
             autre += "Saluer l'utilisateur qui a envoyé la commande: `hello`\n";
             autre += "Tester le message de bienvenue sur le serveur: `testjoin`\n";
+            autre += "(Admin) Donner un warn à un utilisateur: `warn @utilisateur raison`\n";
             try
             {
                 await ReplyAsync("Infos envoyées en mp");
@@ -214,7 +216,6 @@ namespace AlterBotNet.Core.Commands
                     .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
                     .AddField("=========== Commandes RP ===========", rp)
                     .AddField("========= Autres Commandes =========", autre);
-                //await this.Context.User.SendMessageAsync(infoAccount.ToString());
                 await this.Context.User.SendMessageAsync("", false, eb.Build());
                 Logs.WriteLine(rp);
             }
@@ -234,12 +235,13 @@ namespace AlterBotNet.Core.Commands
         }
 
         [Command("ban"), Summary("Ban l'utilisateur mentionné")]
-        [RequireBotPermission(GuildPermission.Administrator), RequireUserPermission(GuildPermission.Administrator)]
         public async Task BanUser([Remainder] string input = "none")
         {
             try
             {
-                SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
+                if(!Global.HasRole(this.Context.User as SocketGuildUser, "Admin"))
+                    throw new InvalidOperationException();
+                IGuildUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault() as IGuildUser;
                 if (input == "none" || mentionedUser == null)
                 {
                     await ReplyAsync("Vous devez au moins mentionner un utilisateur");
@@ -262,16 +264,22 @@ namespace AlterBotNet.Core.Commands
         }
 
         [Command("deban"), Summary("Deban l'utilisateur mentionné")]
-        [RequireBotPermission(GuildPermission.Administrator), RequireUserPermission(GuildPermission.Administrator)]
         public async Task UnbanUser(ulong userId)
         {
             try
             {
-                SocketUser mentionedUser = this.Context.Client.GetUser(userId);
+                if(!Global.HasRole(this.Context.User as SocketGuildUser, "Admin"))
+                    throw new InvalidOperationException();
+                IGuildUser mentionedUser = this.Context.Client.GetUser(userId) as IGuildUser;
+                if (mentionedUser == null)
+                {
+                    await ReplyAsync("Vous devez mentionner un utilisateur");
+                    return;
+                }
                 if (!mentionedUser.IsBot)
                     await mentionedUser.SendMessageAsync($"Vous avez été de-banni du serveur {this.Context.Guild.Name}");
-                    await this.Context.Guild.GetUser(260385529474842626).SendMessageAsync($"{mentionedUser.Username} a été de-banni du serveur {this.Context.Guild.Name}");
-                    Logs.WriteLine($"{mentionedUser.Username} a été de-banni du serveur {this.Context.Guild.Name}");
+                await this.Context.Guild.GetUser(260385529474842626).SendMessageAsync($"{mentionedUser.Username} a été de-banni du serveur {this.Context.Guild.Name}");
+                Logs.WriteLine($"{mentionedUser.Username} a été de-banni du serveur {this.Context.Guild.Name}");
                 await this.Context.Guild.RemoveBanAsync(mentionedUser);
             }
             catch (Exception e)
@@ -282,24 +290,27 @@ namespace AlterBotNet.Core.Commands
         }
 
         [Command("kick"), Summary("Kick l'utilisateur mentionné")]
-        [RequireBotPermission(GuildPermission.Administrator), RequireUserPermission(GuildPermission.Administrator)]
         public async Task KickUser([Remainder] string input = "none")
         {
             try
             {
-                SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
+                if(!Global.HasRole(this.Context.User as SocketGuildUser, "Admin"))
+                    throw new InvalidOperationException();
+                IGuildUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault() as IGuildUser;
                 if (input == "none" || mentionedUser == null)
                 {
-                    await ReplyAsync("Vous devez au moins mentionner un utilisateur");
+                    await ReplyAsync("Vous devez mentionner un utilisateur");
                     return;
                 }
 
                 string toRemove = input.Split(' ')[0];
                 string raison = input.Replace(toRemove, "");
+                if (string.IsNullOrWhiteSpace(raison))
+                    raison = "N/A";
                 if (!mentionedUser.IsBot)
-                    await mentionedUser.SendMessageAsync($"Vous avez été éjecté (kick) du serveur {this.Context.Guild.Name} pour la raison suivante: {raison}");
-                    await this.Context.Guild.GetUser(260385529474842626).SendMessageAsync($"{mentionedUser.Username} a été éjecté (kick) du serveur {this.Context.Guild.Name} pour la raison suivante: {raison}");
-                    Logs.WriteLine($"{mentionedUser.Username} a été éjecté (kick) du serveur {this.Context.Guild.Name} pour la raison suivante: {raison}");
+                    await mentionedUser.SendMessageAsync($"Vous avez été éjecté (kick) du serveur **{this.Context.Guild.Name}** pour la raison suivante: {raison}");
+                await this.Context.Guild.GetUser(260385529474842626).SendMessageAsync($"**{mentionedUser.Username}** a été éjecté (kick) du serveur **{this.Context.Guild.Name}** pour la raison suivante: {raison}");
+                Logs.WriteLine($"**{mentionedUser.Username}** a été éjecté (kick) du serveur **{this.Context.Guild.Name}** pour la raison suivante: {raison}");
                 await ((SocketGuildUser) mentionedUser).KickAsync(raison);
             }
             catch (Exception e)
@@ -309,6 +320,51 @@ namespace AlterBotNet.Core.Commands
             }
         }
 
+        [Command("warn"), Summary("Ajoute un warn à un utilisateur (le kick au bout de 3)")]
+        
+        public async Task WarnUser(string user = "none", [Remainder] string reason = "N/A")
+        {
+            if(!Global.HasRole(this.Context.User as SocketGuildUser, "Admin"))
+                throw new InvalidOperationException();
+            IGuildUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault() as IGuildUser;
+            if (user == "none" || mentionedUser == null)
+            {
+                await ReplyAsync("Vous devez mentionner un utilisateur...");
+                return;
+            }
+
+            if (reason == "N/A")
+            {
+                await ReplyAsync("Vous devez entrer la raison de l'avertissement...");
+                return;
+            }
+            List<Warn> warns = Global.ListeWarns;
+            warns.Add(new Warn(mentionedUser.Id, reason));
+            Global.ListeWarns = warns;
+            int userWarnsCount = 0;
+            if (Global.ListeWarns.Count > 0)
+            {
+                foreach (Warn warn in Global.ListeWarns)
+                {
+                    Logs.WriteLine(warn.ToString());
+                    if (warn.WarnedUser == mentionedUser.Id)
+                        userWarnsCount++;
+                }
+                if (!mentionedUser.IsBot)
+                    await mentionedUser.SendMessageAsync($"Vous avez reçu un avertissement de {this.Context.User.Username} pour la raison suivante: {reason}");
+                await this.Context.Guild.GetUser(260385529474842626).SendMessageAsync($"{mentionedUser.Username} a reçu un avertissement de {this.Context.User.Username} pour la raison suivante: {reason}");
+                await ReplyAsync($"{mentionedUser.Username} a reçu un avertissement de {this.Context.User.Username} pour la raison suivante: {reason}");
+                Logs.WriteLine($"{mentionedUser.Username} a reçu un avertissement de {this.Context.User.Username} pour la raison suivante: {reason}");
+                if (userWarnsCount % 3 == 0);
+                await KickUser(user + " 3ème avertissement atteint.");
+            }
+            else
+            {
+                Logs.WriteLine("Aucun warn enregistré");
+            }
+        }
+        
+        //ToDo: Commande mute
         #endregion
     }
 }
