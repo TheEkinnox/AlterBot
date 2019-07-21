@@ -11,16 +11,16 @@ namespace AlterBotNet.Core.Data.Classes
 	{
 		#region PROPRIÉTÉS ET INDEXEURS
 
-		public ulong WarnedUser { get; }
+		public ulong WarnedUserId { get; }
 		private string Reason { get; }
 
 		#endregion
 
 		#region CONSTRUCTEURS
 
-		public Warn(ulong pWarnedUser, string pReason)
+		public Warn(ulong pWarnedUserId, string pReason)
 		{
-			this.WarnedUser = pWarnedUser;
+			this.WarnedUserId = pWarnedUserId;
 			this.Reason = pReason;
 		}
 
@@ -30,7 +30,7 @@ namespace AlterBotNet.Core.Data.Classes
 
 		public override string ToString()
 		{
-			return $"{this.WarnedUser.ToString()};{this.Reason}";
+			return $"{this.WarnedUserId.ToString()};{this.Reason}";
 		}
 
 		#endregion

@@ -40,7 +40,7 @@ namespace AlterBotNet.Core.Data.Classes
 			.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\grimoireXML.altr");
 
 		internal static string CheminWarns = Assembly.GetEntryAssembly()?.Location
-			.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\warn.altr");
+			.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Ressources\Database\warns.altr");
 
 		#endregion
 
@@ -1143,18 +1143,20 @@ namespace AlterBotNet.Core.Data.Classes
 		public static async Task<List<Warn>> ChargerListeWarnsAsync()
 		{
 			StreamReader fluxLecture = new StreamReader(Global.CheminWarns);
-			string fichierWarns = fluxLecture.ReadToEnd().Trim();
+			string fichierWarns = fluxLecture.ReadToEnd().Replace('\r', ' ').Trim();
 			fluxLecture.Close();
 
 			List<Warn> warns = new List<Warn>();
 
 			foreach (string ligne in fichierWarns.Split('\n').ToList())
 			{
-				string[] elements = ligne.Split(';');
-				warns.Add(new Warn(ulong.Parse(elements[0] /*Id de l'utilisateur*/), elements[1] /*Raison de l'avertissement*/));
+				if(!string.IsNullOrWhiteSpace(ligne))
+				{
+					string[] elements = ligne.Split(';');
+					warns.Add(new Warn(ulong.Parse(elements[0] /*Id de l'utilisateur*/), elements[1] /*Raison de l'avertissement*/));
+				}
 			}
 
-			warns.TrimExcess();
 			return warns;
 		}
 
@@ -1165,7 +1167,7 @@ namespace AlterBotNet.Core.Data.Classes
 		{
 			StreamWriter fluxEcriture = new StreamWriter(Global.CheminWarns, false);
 			foreach (Warn warn in warns)
-				if (warn != null)
+				if (warn != null && !string.IsNullOrWhiteSpace(warn.ToString()))
 					fluxEcriture.WriteLine(warn.ToString());
 			fluxEcriture.Close();
 		}
