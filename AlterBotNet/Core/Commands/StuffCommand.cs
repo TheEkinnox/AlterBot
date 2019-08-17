@@ -41,56 +41,56 @@ namespace AlterBotNet.Core.Commands
             string message = "";
             string nomFichier = Global.CheminComptesStuff;
             
-            List<StuffAccount> stuffAccounts = await Global.ChargerDonneesStuffAsync(nomFichier);
+            List<StuffAccount> stuffAccounts = await Global.ChargerDonneesStuffAsync();
 
             if (input != "none")
             {
-                // ====================================
-                // = Gestion de la commande stuff help =
-                // ====================================
-                if (input == "help")
+                switch (input)
                 {
-                    string staff = "";
-                    message += "Aide sur la commande: `stuff help`\n";
-                    staff += "(staff) Afficher la liste des comptes: `stuff list`\n";
-                    staff += "(staff) Afficher la liste des comptes: `stuff update`\n";
-                    message += "Afficher les objets d'un personnage: `stuff info (nom_Personnage)`\n";
-                    staff += "(staff) Ajouter un objet à un personnage: `stuff add (objet) (nom_Personnage)`\n";
-                    staff += "(staff) Retirer un objet à un personnage: `stuff remove (objet) (nom_Personnage)`\n";
-                    message += "Transférer un objet d'un compte à un autre: `stuff give (objet) (nom_Personnage1) (nom_Personnage2)`\n";
-                    staff += "(staff) (RP) Créer un nouveau compte: `stuff create (nomPersonnage)`\n";
-                    staff += "(staff) Supprimer un compte: `stuff delete (nomPersonnage)`\n";
-                    message += "Trier la liste des comptes (par ordre alphabétique): `stuff sort`\n";
-                    staff += "(staff) Définir le propriétaire d'un personnage: `stuff setowner (nom_personnage) (@propriétaire)`\n";
-                    staff += "(staff) Changer le nom d'un personnage: `stuff rename (nom_personnage) (nouveauNom)`\n";
-                    staff += "(staff) Remplacer un objet dans l'inventaire d'un personnage: `stuff replace (nom_personnage) (objet) (nouvel-objet)`\n";
-                    try
+                    // =====================================
+                    // = Gestion de la commande stuff help =
+                    // =====================================
+                    case "help":
                     {
-                        await ReplyAsync("Aide envoyée en mp");
-                        Logs.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
-                        EmbedBuilder eb = new EmbedBuilder();
-                        eb.WithTitle(("**Aide de la commande stuff (stf,inv)**"))
-                            .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
-                            .AddField("========== Staff ==========", staff)
-                            .AddField("========== Autre ==========", message);
-                        //await this.Context.User.SendMessageAsync(infoAccount.ToString());
-                        await this.Context.User.SendMessageAsync("", false, eb.Build());
-                        Logs.WriteLine(message);
+                        string staff = "";
+                        message += "Aide sur la commande: `stuff help`\n";
+                        staff += "(staff) Afficher la liste des comptes: `stuff list`\n";
+                        staff += "(staff) Afficher la liste des comptes: `stuff update`\n";
+                        message += "Afficher les objets d'un personnage: `stuff info (nom_Personnage)`\n";
+                        staff += "(staff) Ajouter un objet à un personnage: `stuff add (objet) (nom_Personnage)`\n";
+                        staff += "(staff) Retirer un objet à un personnage: `stuff remove (objet) (nom_Personnage)`\n";
+                        message += "Transférer un objet d'un compte à un autre: `stuff give (objet) (nom_Personnage1) (nom_Personnage2)`\n";
+                        staff += "(staff) (RP) Créer un nouveau compte: `stuff create (nomPersonnage)`\n";
+                        staff += "(staff) Supprimer un compte: `stuff delete (nomPersonnage)`\n";
+                        message += "Trier la liste des comptes (par ordre alphabétique): `stuff sort`\n";
+                        staff += "(staff) Définir le propriétaire d'un personnage: `stuff setowner (nom_personnage) (@propriétaire)`\n";
+                        staff += "(staff) Changer le nom d'un personnage: `stuff rename (nom_personnage) (nouveauNom)`\n";
+                        staff += "(staff) Remplacer un objet dans l'inventaire d'un personnage: `stuff replace (nom_personnage) (objet) (nouvel-objet)`\n";
+                        try
+                        {
+                            await ReplyAsync("Aide envoyée en mp");
+                            Logs.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
+                            EmbedBuilder eb = new EmbedBuilder();
+                            eb.WithTitle(("**Aide de la commande stuff (stf,inv)**"))
+                                .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
+                                .AddField("========== Staff ==========", staff)
+                                .AddField("========== Autre ==========", message);
+                            //await this.Context.User.SendMessageAsync(infoAccount.ToString());
+                            await this.Context.User.SendMessageAsync("", false, eb.Build());
+                            Logs.WriteLine(message);
+                        }
+                        catch (Exception e)
+                        {
+                            Logs.WriteLine(e.ToString());
+                            throw;
+                        }
+
+                        break;
                     }
-                    catch (Exception e)
+
+                    case "list" when IsStaff((SocketGuildUser)this.Context.User):
                     {
-                        Logs.WriteLine(e.ToString());
-                        throw;
-                    }
-                }
-                // =============================================
-                // = Gestion de la commande (staff) stuff list =
-                // =============================================
-                else if (input == "list")
-                {
-                    if (IsStaff((SocketGuildUser)this.Context.User))
-                    {
-                        if (string.IsNullOrEmpty((await Global.StuffAccountsListAsync(nomFichier)).ToString()))
+                        if (string.IsNullOrEmpty((await Global.StuffAccountsListAsync()).ToString()))
                         {
                             await ReplyAsync("Liste vide");
                             Logs.WriteLine("Liste vide");
@@ -99,8 +99,8 @@ namespace AlterBotNet.Core.Commands
                         {
                             try
                             {
-                                Logs.WriteLine((await Global.StuffAccountsListAsync(nomFichier)).Count.ToString());
-                                foreach (string msg in await Global.StuffAccountsListAsync(nomFichier))
+                                Logs.WriteLine((await Global.StuffAccountsListAsync()).Count.ToString());
+                                foreach (string msg in await Global.StuffAccountsListAsync())
                                 {
                                     if (!string.IsNullOrEmpty(msg))
                                     {
@@ -115,201 +115,131 @@ namespace AlterBotNet.Core.Commands
                                 throw;
                             }
                         }
+
+                        break;
                     }
-                    else
+
+                    case "list" when this.Context.Guild.Name == "ServeurTest":
+                        await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                        break;
+                    // =============================================
+                    // = Gestion de la commande (staff) stuff list =
+                    // =============================================
+                    case "list":
+                        await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                        break;
+                    default:
                     {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
-                    }
-                }
-                // ======================================
-                // = Gestion de la commande stuff update =
-                // ======================================
-                else if (input.StartsWith("update") || input.StartsWith("up"))
-                {
-                    argus = input.Split(' ');
-                    // Sert à s'assurer qu'argus[0] == toujours update
-                    if (argus[0] == "update" || argus[0] == "up")
-                    {
-                        await Global.UpdateStuff();
-                        Logs.WriteLine("Actualisation réussie");
-                    }
-                }
-                // ======================================================
-                // = Gestion de la commande stuff info (nom_Personnage) =
-                // ======================================================
-                else if (input.StartsWith("info"))
-                {
-                    argus = input.Split(' ');
-                    // Sert à s'assurer qu'argus[0] == toujours info
-                    if (argus[0] == "info")
-                    {
-                        if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                        if (input.StartsWith("update") || input.StartsWith("up"))
                         {
-                            await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                            Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                        }
-                        else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                        {
-                            await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                            Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                        }
-                        else
-                        {
-                            StuffAccount infoAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]);
-                            if (infoAccount != null && (infoAccount.UserId == userId || IsStaff((SocketGuildUser)this.Context.User)))
+                            argus = input.Split(' ');
+                            // Sert à s'assurer qu'argus[0] == toujours update
+                            if (argus[0] == "update" || argus[0] == "up")
                             {
-                                try
-                                {
-                                    await ReplyAsync("Infos envoyées en mp");
-                                    Logs.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
-                                    EmbedBuilder eb = new EmbedBuilder();
-                                    eb.WithTitle(($"Inventaire de **{infoAccount.Name}**"))
-                                        .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
-                                        .AddField("==============================================", infoAccount.ToString());
-                                    //await this.Context.User.SendMessageAsync(infoAccount.ToString());
-                                    await this.Context.User.SendMessageAsync("", false, eb.Build());
-                                    Logs.WriteLine(infoAccount.ToString());
-                                }
-                                catch (Exception e)
-                                {
-                                    Logs.WriteLine(e.ToString());
-                                    throw;
-                                }
-                            }
-                            else
-                            {
-                                if (infoAccount == null)
-                                {
-                                    await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
-                                    Logs.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
-                                }
-                                else if (infoAccount.UserId != userId)
-                                {
-                                    await ReplyAsync($"{error} Vous devez être propriétaire du personnage ou membre du Staff pour utiliser cette commande");
-                                    Logs.WriteLine($"{error} Vous devez être propriétaire du personnage ou membre du Staff pour utiliser cette commande");
-                                }
+                                await Global.UpdateStuff();
+                                Logs.WriteLine("Actualisation réussie");
                             }
                         }
-                    }
-                }
-                // =====================================================================
-                // = Gestion de la commande (staff) stuff add (objet) (nom_Personnage) =
-                // =====================================================================
-                else if (input.StartsWith("add"))
-                {
-                    if (IsStaff((SocketGuildUser)this.Context.User))
-                    {
-                        argus = input.Split(' ');
-                        // Sert à s'assurer qu'argus[0] == toujours add
-                        if (argus[0] == "add")
+                        // =======================================
+                        // = Gestion de la commande stuff update =
+                        // =======================================
+                        else if (input.StartsWith("info"))
                         {
-                            if (argus.Length > 3) // Sert à s'assurer que argus[2] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                            argus = input.Split(' ');
+                            // Sert à s'assurer qu'argus[0] == toujours info
+                            if (argus[0] == "info")
                             {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 3) // Sert à s'assurer que argus[2] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else
-                            {
-                                StuffAccount depositAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]);
-                                if (depositAccount != null)
+                                if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
                                 {
-                                    string dpName = depositAccount.Name;
-                                    List<string> dpItems = depositAccount.Items;
-                                    ulong dpUserId = depositAccount.UserId;
-                                    if (argus[1].Contains('_'))
-                                        argus[1] = argus[1].Replace("_", " ");
-                                    if (argus[1].Contains('-'))
-                                        argus[1] = argus[1].Replace("-", " ");
-                                    try
-                                    {
-                                        dpItems.Add(argus[1]);
-                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        StuffAccount newAccount = new StuffAccount(dpName, dpItems, dpUserId);
-                                        stuffAccounts.Add(newAccount);
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        await ReplyAsync($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
-                                        Logs.WriteLine($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
-                                        Logs.WriteLine(newAccount.ToString());
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        Logs.WriteLine(e.ToString());
-                                        throw;
-                                    }
+                                    await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                    Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                }
+                                else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                                {
+                                    await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                    Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                                 }
                                 else
                                 {
-                                    await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
-                                    Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
+                                    StuffAccount infoAccount = await Global.GetStuffAccountByNameAsync(argus[1]);
+                                    if (infoAccount != null && (infoAccount.UserId == userId || IsStaff((SocketGuildUser)this.Context.User)))
+                                    {
+                                        try
+                                        {
+                                            await ReplyAsync("Infos envoyées en mp");
+                                            Logs.WriteLine($"message envoyé en mp à {this.Context.User.Username}");
+                                            EmbedBuilder eb = new EmbedBuilder();
+                                            eb.WithTitle(($"Inventaire de **{infoAccount.Name}**"))
+                                                .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
+                                                .AddField("==============================================", infoAccount.ToString().Replace(infoAccount.ToString().Split('\n')[0]+'\n',"") + $"\nPropriétaire: {this.Context.Guild.GetUser(infoAccount.UserId).Username}");
+                                            await this.Context.User.SendMessageAsync("", false, eb.Build());
+                                            Logs.WriteLine(infoAccount.ToString());
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            Logs.WriteLine(e.ToString());
+                                            throw;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (infoAccount == null)
+                                        {
+                                            await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
+                                            Logs.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
+                                        }
+                                        else if (infoAccount.UserId != userId)
+                                        {
+                                            await ReplyAsync($"{error} Vous devez être propriétaire du personnage ou membre du Staff pour utiliser cette commande");
+                                            Logs.WriteLine($"{error} Vous devez être propriétaire du personnage ou membre du Staff pour utiliser cette commande");
+                                        }
+                                    }
                                 }
                             }
                         }
-                    }
-                    else
-                    {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
-                    }
-                }
-                // ========================================================================
-                // = Gestion de la commande (admin) stuff remove (objet) (nom_Personnage) =
-                // ========================================================================
-                else if (input.StartsWith("remove") || input.StartsWith("rem"))
-                {
-                    if (IsStaff((SocketGuildUser)this.Context.User))
-                    {
-                        argus = input.Split(' ');
-                        // Sert à s'assurer qu'argus[0] == toujours remove
-                        if (argus[0] == "remove" || argus[0] == "rem")
+                        // ======================================================
+                        // = Gestion de la commande stuff info (nom_Personnage) =
+                        // ======================================================
+                        else if (input.StartsWith("add"))
                         {
-                            if (argus.Length > 3) // Sert à s'assurer qu'il n'y a que 3 paramètres)
+                            if (IsStaff((SocketGuildUser)this.Context.User))
                             {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 3) // Sert à s'assurer qu'il n'y a que 3 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else
-                            {
-                                StuffAccount withdrawAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]);
-                                if (withdrawAccount != null)// Sert à s'assurer que le compte existe bien
+                                argus = input.Split(' ');
+                                // Sert à s'assurer qu'argus[0] == toujours add
+                                if (argus[0] == "add")
                                 {
-                                    string wdName = withdrawAccount.Name;
-                                    List<string> wdItems = withdrawAccount.Items;
-                                    ulong wdUserId = withdrawAccount.UserId;
-                                    if (argus[1].Contains('_'))
-                                        argus[1] = argus[1].Replace("_", " ");
-                                    if (argus[1].Contains('-'))
-                                        argus[1] = argus[1].Replace("-", " ");
-                                    if (int.TryParse(argus[1],out int indexObj))
+                                    if (argus.Length > 3) // Sert à s'assurer que argus[2] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
                                     {
-                                        if (!string.IsNullOrEmpty(wdItems[indexObj]))
+                                        await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                        Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                    }
+                                    else if (argus.Length < 3) // Sert à s'assurer que argus[2] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                        Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                    }
+                                    else
+                                    {
+                                        StuffAccount depositAccount = await Global.GetStuffAccountByNameAsync(argus[2]);
+                                        if (depositAccount != null)
                                         {
+                                            string dpName = depositAccount.Name;
+                                            List<string> dpItems = depositAccount.Items;
+                                            ulong dpUserId = depositAccount.UserId;
+                                            if (argus[1].Contains('_'))
+                                                argus[1] = argus[1].Replace("_", " ");
+                                            if (argus[1].Contains('-'))
+                                                argus[1] = argus[1].Replace("-", " ");
                                             try
                                             {
-                                                string nomObj = wdItems[indexObj];
-                                                wdItems.RemoveAt(indexObj);
-                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
+                                                dpItems.Add(argus[1]);
+                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(argus[2]));
                                                 Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                                StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
+                                                StuffAccount newAccount = new StuffAccount(dpName, dpItems, dpUserId);
                                                 stuffAccounts.Add(newAccount);
                                                 Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                                await ReplyAsync($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
-                                                Logs.WriteLine($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
+                                                await ReplyAsync($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
+                                                Logs.WriteLine($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
                                                 Logs.WriteLine(newAccount.ToString());
                                             }
                                             catch (Exception e)
@@ -320,512 +250,489 @@ namespace AlterBotNet.Core.Commands
                                         }
                                         else
                                         {
-                                            try
-                                            {
-                                                await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
-                                                Logs.WriteLine($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
-                                            }
-                                            catch (Exception e)
-                                            {
-                                                Logs.WriteLine(e.ToString());
-                                                throw;
-                                            }
+                                            await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
+                                            Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
                                         }
                                     }
-                                    else if (wdItems.Contains(argus[1]))
+                                }
+                            }
+                            else
+                            {
+                                if (this.Context.Guild.Name == "ServeurTest")
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                                else
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                            }
+                        }
+                        // =====================================================================
+                        // = Gestion de la commande (staff) stuff add (objet) (nom_Personnage) =
+                        // =====================================================================
+                        else if (input.StartsWith("remove") || input.StartsWith("rem"))
+                        {
+                            if (IsStaff((SocketGuildUser)this.Context.User))
+                            {
+                                argus = input.Split(' ');
+                                // Sert à s'assurer qu'argus[0] == toujours remove
+                                if (argus[0] == "remove" || argus[0] == "rem")
+                                {
+                                    if (argus.Length > 3) // Sert à s'assurer qu'il n'y a que 3 paramètres)
                                     {
-                                        try
-                                        {
-                                            wdItems.Remove(argus[1]);
-                                            stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                            Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                            StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
-                                            stuffAccounts.Add(newAccount);
-                                            Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                            await ReplyAsync($"Objet \"**{argus[1]}**\" retiré du compte de \"**{wdName}**\"");
-                                            Logs.WriteLine($"Objet \"**{argus[1]}**\" retiré du compte de \"**{wdName}**\"");
-                                            Logs.WriteLine(newAccount.ToString());
-                                        }
-                                        catch (Exception e)
-                                        {
-                                            Logs.WriteLine(e.ToString());
-                                            throw;
-                                        }
+                                        await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                        Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                    }
+                                    else if (argus.Length < 3) // Sert à s'assurer qu'il n'y a que 3 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                        Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                                     }
                                     else
                                     {
-                                        await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
-                                        Logs.WriteLine($"{error} \"**{wdName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
-                                    }
-                                }
-                                else
-                                {
-                                    await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
-                    }
-                }
-                // ===================================================================================
-                // = Gestion de la commande stuff give (objet) (nom_Personnage1) (nom_Personnage2) =
-                // ===================================================================================
-                else if (input.StartsWith("give") || input.StartsWith("transfer") || input.StartsWith("tr"))
-                {
-                    argus = input.Split(' ');
-                    // Sert à s'assurer qu'argus[0] == toujours withdraw
-                    if (argus[0] == "give" || argus[0] == "transfer" || argus[0] == "tr")
-                    {
-                        if (argus.Length > 4) // Sert à s'assurer que argus[1] == forcément objet (et qu'il n'y a que 4 paramètres)
-                        {
-                            await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                            Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                        }
-                        else if (argus.Length < 4) // Sert à s'assurer que argus[1] == forcément montant (et qu'il n'y a que 4 paramètres)
-                        {
-                            await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                            Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                        }
-                        else
-                        {
-                            StuffAccount withdrawAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]);
-                            StuffAccount depositAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[3]);
-                            if (withdrawAccount != null && depositAccount != null)
-                            {
-                                // Paramètres pour le compte qui donne
-                                string wdName = withdrawAccount.Name;
-                                List<string> wdItems = withdrawAccount.Items;
-                                ulong wdUserId = withdrawAccount.UserId;
-                                // Paramètres pour le compte qui reçoit
-                                string dpName = depositAccount.Name;
-                                List<string> dpItems = depositAccount.Items;
-                                ulong dpUserId = depositAccount.UserId;
-                                if (argus[1].Contains('_'))
-                                    argus[1] = argus[1].Replace("_", " ");
-                                if (argus[1].Contains('-'))
-                                    argus[1] = argus[1].Replace("-", " ");
-                                if (int.TryParse(argus[1], out int indexObj))
-                                {
-                                    if (!string.IsNullOrEmpty(wdItems[indexObj]))
-                                    {
-                                        string nomObj = wdItems[indexObj];
-                                        wdItems.RemoveAt(indexObj);
-                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[2]));
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
-                                        stuffAccounts.Add(newAccount);
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        Logs.WriteLine($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
-                                        Logs.WriteLine(newAccount.ToString());
-                                        dpItems.Add(nomObj);
-                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, dpName));
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        StuffAccount newDpAccount = new StuffAccount(dpName, dpItems, dpUserId);
-                                        stuffAccounts.Add(newDpAccount);
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        Logs.WriteLine($"Objet \"**{nomObj}**\" ajouté sur le compte de \"**{dpName}**\"");
-                                        Logs.WriteLine(newDpAccount.ToString());
-
-                                        await ReplyAsync($"L'objet \"**{nomObj}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
-                                        Logs.WriteLine($"L'objet \"**{nomObj}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
-                                    }
-                                    else
-                                    {
-                                        await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
-                                        Logs.WriteLine($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
-                                    }
-                                }
-                                else if (wdItems.Contains(argus[1]))
-                                {
-                                    try
-                                    {
-                                        wdItems.Remove(argus[1]);
-                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, wdName));
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
-                                        stuffAccounts.Add(newAccount);
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        Logs.WriteLine($"Objet \"**{argus[1]}**\" retiré du compte de \"**{wdName}**\"");
-                                        Logs.WriteLine(newAccount.ToString());
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        Logs.WriteLine(e.ToString());
-                                        return;
-                                    }
-                                    try
-                                    {
-                                        dpItems.Add(argus[1]);
-                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, dpName));
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        StuffAccount newDpAccount = new StuffAccount(dpName, dpItems, dpUserId);
-                                        stuffAccounts.Add(newDpAccount);
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        Logs.WriteLine($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
-                                        Logs.WriteLine(newDpAccount.ToString());
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        Logs.WriteLine(e.ToString());
-                                        return;
-                                    }
-
-                                    await ReplyAsync($"L'objet \"**{argus[1]}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
-                                    Logs.WriteLine($"L'objet \"**{argus[1]}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
-                                }
-                                else
-                                {
-                                    if (dpItems.Contains(argus[1]))
-                                    {
-                                        await ReplyAsync($"{error} \"**{dpName}**\" possède déjà l'objet \"**{argus[1]}**\"");
-                                        Logs.WriteLine($"{error} \"**{dpName}**\" possède déjà l'objet \"**{argus[1]}**\"");
-                                    }
-                                    else if (!wdItems.Contains(argus[1]))
-                                    {
-                                        await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
-                                        Logs.WriteLine($"{error} \"**{wdName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                await ReplyAsync($"{error} Compte(s) \"**{argus[2]}**\" et/ou \"**{argus[3]}**\" inexistant(s): stuff create (nom_Personnage) pour créer un nouveau compte");
-                                Logs.WriteLine($"{error} Compte(s) \"**{argus[2]}**\" et/ou \"**{argus[3]}**\" inexistant(s): stuff create (nom_Personnage) pour créer un nouveau compte");
-                            }
-                        }
-                    }
-                }
-                // =======================================================
-                // = Gestion de la commande stuff create (nomPersonnage) =
-                // =======================================================
-                else if (input.StartsWith("create") || input.StartsWith("cr"))
-                {
-                    if (HasRole((SocketGuildUser) this.Context.User, "RP") || IsStaff((SocketGuildUser) this.Context.User))
-                    {
-                        argus = input.Split(' ');
-                        // Sert à s'assurer qu'argus[0] == toujours create
-                        if (argus[0] == "create" || argus[0] == "cr")
-                        {
-                            if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else if (await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]) == null)
-                            {
-                                List<string> items = new List<string>();
-                                StuffAccount newAccount;
-                                if (mentionedUser != null)
-                                {
-                                    ulong crUserId = mentionedUser.Id;
-                                    newAccount = new StuffAccount(argus[1], items, crUserId);
-                                }
-                                else
-                                {
-                                    newAccount = new StuffAccount(argus[1], items, userId);
-                                }
-
-                                stuffAccounts.Add(newAccount);
-                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                await ReplyAsync($"Compte de {argus[1]} créé");
-                                Logs.WriteLine($"Compte de {argus[1]} créé");
-                            }
-                            else if (await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]) != null)
-                            {
-                                await ReplyAsync($"{error} Le compte \"**{argus[1]}**\" existe déjà");
-                                Logs.WriteLine($"{error} Le compte \"**{argus[1]}**\" existe déjà");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} ou avoir le rôle {this.Context.Guild.GetRole(545753914998259715).Mention} pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} ou avoir le rôle {this.Context.Guild.GetRole(545753914998259715).Mention} pour utiliser cette commande");
-                    }
-                }
-                // =======================================================
-                // = Gestion de la commande stuff delete (nomPersonnage) =
-                // =======================================================
-                else if (input.StartsWith("delete") || input.StartsWith("del"))
-                {
-                    argus = input.Split(' ');
-                    if (IsStaff((SocketGuildUser)this.Context.User) || userId == (await Global.GetStuffAccountByNameAsync(nomFichier, argus[1])).UserId)
-                    {
-                        argus = input.Split(' ');
-                        // Sert à s'assurer qu'argus[0] == toujours add
-                        if (argus[0] == "delete" || argus[0] == "del")
-                        {
-                            if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else if (await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[1]) != -1)
-                            {
-                                int toRemIndex = await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[1]);
-                                stuffAccounts.RemoveAt(toRemIndex);
-                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                await ReplyAsync($"Compte de {argus[1]} supprimé");
-                                Logs.WriteLine($"Compte de {argus[1]} supprimé");
-                            }
-                            else if (await Global.GetStuffAccountIndexByNameAsync(nomFichier, argus[1]) == -1)
-                            {
-                                await ReplyAsync($"{error} Compte \"**{argus[1]}**\"  inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
-                                Logs.WriteLine($"{error} Compte \"**{argus[1]}**\"  inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
-                    }
-                }
-                // =====================================
-                // = Gestion de la commande stuff sort =
-                // =====================================
-                else if (input == "sort")
-                {
-                    try
-                    {
-                        List<StuffAccount> sortedList = stuffAccounts.OrderBy(o => o.Name).ToList();
-                        Global.EnregistrerDonneesStuff(nomFichier, sortedList);
-                        await ReplyAsync("La liste des comptes a été triée par ordre alphabétique");
-                    }
-                    catch (Exception e)
-                    {
-                        Logs.WriteLine(e.ToString());
-                        throw;
-                    }
-                }
-                // ===============================================================================
-                // = Gestion de la commande (admin) stuff setowner (nom_Personnage) @utilisateur =
-                // ===============================================================================
-                else if (input.StartsWith("setowner") || input.StartsWith("setown") || input.StartsWith("so"))
-                {
-                    if (IsStaff((SocketGuildUser)this.Context.User))
-                    {
-                        argus = input.Split(' ');
-                        // Sert à s'assurer qu'argus[0] == toujours setowner
-                        if (argus[0] == "setowner" || argus[0] == "setown" || argus[0] == "so")
-                        {
-                            if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else
-                            {
-                                StuffAccount setAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]);
-                                if (setAccount != null)
-                                {
-                                    if (mentionedUser != null)
-                                    {
-                                        try
+                                        StuffAccount withdrawAccount = await Global.GetStuffAccountByNameAsync(argus[2]);
+                                        if (withdrawAccount != null)// Sert à s'assurer que le compte existe bien
                                         {
-                                            string soName = setAccount.Name;
-                                            ulong soUserId = mentionedUser.Id;
-                                            List<string> soItems = setAccount.Items;
-
-                                            stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, soName));
-                                            Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                            StuffAccount newAccount = new StuffAccount(soName, soItems, soUserId);
-                                            stuffAccounts.Add(newAccount);
-                                            Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                            await ReplyAsync($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
-                                            Logs.WriteLine($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
-                                            Logs.WriteLine(newAccount.ToString());
-                                        }
-                                        catch (Exception e)
-                                        {
-                                            Logs.WriteLine(e.ToString());
-                                            throw;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        await ReplyAsync($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
-                                        Logs.WriteLine($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
-                                    }
-                                }
-                                else
-                                {
-                                    await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
-                    }
-                }
-                // =============================================================================
-                // = Gestion de la commande (admin) stuff rename (nom_Personnage) (nouveauNom) =
-                // =============================================================================
-                else if (input.StartsWith("rename") || input.StartsWith("setname") || input.StartsWith("rn"))
-                {
-                    if (IsStaff((SocketGuildUser)this.Context.User))
-                    {
-                        argus = input.Split(' ');
-                        // Sert à s'assurer qu'argus[0] == toujours setowner
-                        if (argus[0] == "rename" || argus[0] == "setname" || argus[0] == "rn")
-                        {
-                            if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else
-                            {
-                                StuffAccount setAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]);
-                                if (setAccount != null && await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]) == null)
-                                {
-                                    try
-                                    {
-                                        string rnName = setAccount.Name;
-                                        string rnNewName = argus[2];
-                                        ulong rnUserId = setAccount.UserId;
-                                        List<string> rnItems = setAccount.Items;
-
-                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, rnName));
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        StuffAccount newAccount = new StuffAccount(rnNewName, rnItems, rnUserId);
-                                        stuffAccounts.Add(newAccount);
-                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                        await ReplyAsync($"Le nom du compte de \"**{rnName}**\" est désormais \"**{rnNewName}**\"");
-                                        Logs.WriteLine($"Le nom du compte de \"**{rnName}**\" est désormais \"**{rnNewName}**\"");
-                                        Logs.WriteLine(newAccount.ToString());
-                                    }
-                                    catch (Exception e)
-                                    {
-                                        Logs.WriteLine(e.ToString());
-                                        throw;
-                                    }
-                                }
-                                else if ((await Global.GetStuffAccountByNameAsync(nomFichier, argus[2]) != null))
-                                {
-                                    await ReplyAsync($"{error} Le compte \"**{argus[2]}**\" existe déjà");
-                                    Logs.WriteLine($"{error} Le compte \"**{argus[2]}**\" existe déjà");
-                                }
-                                else
-                                {
-                                    await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Logs.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
-                        else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
-                    }
-                }
-                // ========================================================================
-                // = Gestion de la commande (admin) stuff replace (objet) (nom_Personnage) =
-                // ========================================================================
-                else if (input.StartsWith("replace") || input.StartsWith("rep"))
-                {
-                    if (IsStaff((SocketGuildUser)this.Context.User))
-                    {
-                        argus = input.Split(' ');
-                        // Sert à s'assurer qu'argus[0] == toujours remove
-                        if (argus[0] == "replace" || argus[0] == "rep")
-                        {
-                            if (argus.Length > 4) // Sert à s'assurer qu'il n'y a que 3 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre max d'arguments dépassé");
-                                Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
-                            }
-                            else if (argus.Length < 4) // Sert à s'assurer qu'il n'y a que 3 paramètres)
-                            {
-                                await ReplyAsync($"{error} Nombre insuffisant d'arguments");
-                                Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
-                            }
-                            else
-                            {
-                                StuffAccount repAccount = await Global.GetStuffAccountByNameAsync(nomFichier, argus[1]);
-                                if (repAccount != null)// Sert à s'assurer que le compte existe bien
-                                {
-                                    string repAccountName = repAccount.Name;
-                                    List<string> repAccountItems = repAccount.Items;
-                                    ulong repAccountUserId = repAccount.UserId;
-                                    if (argus[2].Contains('_') || argus[3].Contains('_'))
-                                    {
-                                        argus[2] = argus[2].Replace("_", " ");
-                                        argus[3] = argus[3].Replace("_", " ");
-                                    }
-                                    if (argus[2].Contains('-') || argus[3].Contains('-'))
-                                    {
-                                        argus[2] = argus[2].Replace("-", " ");
-                                        argus[3] = argus[3].Replace("-", " ");
-                                    }
-                                    if (int.TryParse(argus[2], out int indexObj))
-                                    {
-                                        if (!string.IsNullOrEmpty(repAccountItems[indexObj]))
-                                        {
-                                            try
+                                            string wdName = withdrawAccount.Name;
+                                            List<string> wdItems = withdrawAccount.Items;
+                                            ulong wdUserId = withdrawAccount.UserId;
+                                            if (argus[1].Contains('_'))
+                                                argus[1] = argus[1].Replace("_", " ");
+                                            if (argus[1].Contains('-'))
+                                                argus[1] = argus[1].Replace("-", " ");
+                                            if (int.TryParse(argus[1],out int indexObj))
                                             {
-                                                string nomObj = repAccountItems[indexObj];
-                                                repAccountItems[indexObj] = argus[3];
-                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(nomFichier, repAccountName));
-                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                                StuffAccount newAccount = new StuffAccount(repAccountName, repAccountItems, repAccountUserId);
-                                                stuffAccounts.Add(newAccount);
-                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
-                                                await ReplyAsync($"Objet \"**{nomObj}**\" remplacé par l'objet \"**{argus[3]}**\" sur le compte de \"**{repAccountName}**\"");
-                                                Logs.WriteLine($"Objet \"**{nomObj}**\" remplacé par l'objet \"**{argus[3]}**\" sur le compte de \"**{repAccountName}**\"");
+                                                if (!string.IsNullOrEmpty(wdItems[indexObj]))
+                                                {
+                                                    try
+                                                    {
+                                                        string nomObj = wdItems[indexObj];
+                                                        wdItems.RemoveAt(indexObj);
+                                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(argus[2]));
+                                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                        StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
+                                                        stuffAccounts.Add(newAccount);
+                                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                        await ReplyAsync($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
+                                                        Logs.WriteLine($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
+                                                        Logs.WriteLine(newAccount.ToString());
+                                                    }
+                                                    catch (Exception e)
+                                                    {
+                                                        Logs.WriteLine(e.ToString());
+                                                        throw;
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    try
+                                                    {
+                                                        await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                                        Logs.WriteLine($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                                    }
+                                                    catch (Exception e)
+                                                    {
+                                                        Logs.WriteLine(e.ToString());
+                                                        throw;
+                                                    }
+                                                }
                                             }
-                                            catch (Exception e)
+                                            else if (wdItems.Contains(argus[1]))
                                             {
-                                                Logs.WriteLine(e.ToString());
-                                                throw;
+                                                try
+                                                {
+                                                    wdItems.Remove(argus[1]);
+                                                    stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(argus[2]));
+                                                    Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                    StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
+                                                    stuffAccounts.Add(newAccount);
+                                                    Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                    await ReplyAsync($"Objet \"**{argus[1]}**\" retiré du compte de \"**{wdName}**\"");
+                                                    Logs.WriteLine($"Objet \"**{argus[1]}**\" retiré du compte de \"**{wdName}**\"");
+                                                    Logs.WriteLine(newAccount.ToString());
+                                                }
+                                                catch (Exception e)
+                                                {
+                                                    Logs.WriteLine(e.ToString());
+                                                    throw;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
+                                                Logs.WriteLine($"{error} \"**{wdName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
                                             }
                                         }
                                         else
                                         {
+                                            await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                            Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (this.Context.Guild.Name == "ServeurTest")
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                                else
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                            }
+                        }
+                        // ========================================================================
+                        // = Gestion de la commande (admin) stuff remove (objet) (nom_Personnage) =
+                        // ========================================================================
+                        else if (input.StartsWith("give") || input.StartsWith("transfer") || input.StartsWith("tr"))
+                        {
+                            argus = input.Split(' ');
+                            // Sert à s'assurer qu'argus[0] == toujours withdraw
+                            if (argus[0] == "give" || argus[0] == "transfer" || argus[0] == "tr")
+                            {
+                                if (argus.Length > 4) // Sert à s'assurer que argus[1] == forcément objet (et qu'il n'y a que 4 paramètres)
+                                {
+                                    await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                    Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                }
+                                else if (argus.Length < 4) // Sert à s'assurer que argus[1] == forcément montant (et qu'il n'y a que 4 paramètres)
+                                {
+                                    await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                    Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                }
+                                else
+                                {
+                                    StuffAccount withdrawAccount = await Global.GetStuffAccountByNameAsync(argus[2]);
+                                    StuffAccount depositAccount = await Global.GetStuffAccountByNameAsync(argus[3]);
+                                    if (withdrawAccount != null && depositAccount != null)
+                                    {
+                                        // Paramètres pour le compte qui donne
+                                        string wdName = withdrawAccount.Name;
+                                        List<string> wdItems = withdrawAccount.Items;
+                                        ulong wdUserId = withdrawAccount.UserId;
+                                        // Paramètres pour le compte qui reçoit
+                                        string dpName = depositAccount.Name;
+                                        List<string> dpItems = depositAccount.Items;
+                                        ulong dpUserId = depositAccount.UserId;
+                                        if (argus[1].Contains('_'))
+                                            argus[1] = argus[1].Replace("_", " ");
+                                        if (argus[1].Contains('-'))
+                                            argus[1] = argus[1].Replace("-", " ");
+                                        if (int.TryParse(argus[1], out int indexObj))
+                                        {
+                                            if (!string.IsNullOrEmpty(wdItems[indexObj]))
+                                            {
+                                                string nomObj = wdItems[indexObj];
+                                                wdItems.RemoveAt(indexObj);
+                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(argus[2]));
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
+                                                stuffAccounts.Add(newAccount);
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                Logs.WriteLine($"Objet \"**{nomObj}**\" retiré du compte de \"**{wdName}**\"");
+                                                Logs.WriteLine(newAccount.ToString());
+                                                dpItems.Add(nomObj);
+                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(dpName));
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                StuffAccount newDpAccount = new StuffAccount(dpName, dpItems, dpUserId);
+                                                stuffAccounts.Add(newDpAccount);
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                Logs.WriteLine($"Objet \"**{nomObj}**\" ajouté sur le compte de \"**{dpName}**\"");
+                                                Logs.WriteLine(newDpAccount.ToString());
+
+                                                await ReplyAsync($"L'objet \"**{nomObj}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
+                                                Logs.WriteLine($"L'objet \"**{nomObj}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
+                                            }
+                                            else
+                                            {
+                                                await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                                Logs.WriteLine($"{error} \"**{wdName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                            }
+                                        }
+                                        else if (wdItems.Contains(argus[1]))
+                                        {
                                             try
                                             {
-                                                await ReplyAsync($"{error} \"**{repAccountName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
-                                                Logs.WriteLine($"{error} \"**{repAccountName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                                wdItems.Remove(argus[1]);
+                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(wdName));
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                StuffAccount newAccount = new StuffAccount(wdName, wdItems, wdUserId);
+                                                stuffAccounts.Add(newAccount);
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                Logs.WriteLine($"Objet \"**{argus[1]}**\" retiré du compte de \"**{wdName}**\"");
+                                                Logs.WriteLine(newAccount.ToString());
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                Logs.WriteLine(e.ToString());
+                                                return;
+                                            }
+                                            try
+                                            {
+                                                dpItems.Add(argus[1]);
+                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(dpName));
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                StuffAccount newDpAccount = new StuffAccount(dpName, dpItems, dpUserId);
+                                                stuffAccounts.Add(newDpAccount);
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                Logs.WriteLine($"Objet \"**{argus[1]}**\" ajouté sur le compte de \"**{dpName}**\"");
+                                                Logs.WriteLine(newDpAccount.ToString());
+                                            }
+                                            catch (Exception e)
+                                            {
+                                                Logs.WriteLine(e.ToString());
+                                                return;
+                                            }
+
+                                            await ReplyAsync($"L'objet \"**{argus[1]}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
+                                            Logs.WriteLine($"L'objet \"**{argus[1]}**\" a été transféré du compte de {wdName} vers le compte de {dpName}");
+                                        }
+                                        else
+                                        {
+                                            if (dpItems.Contains(argus[1]))
+                                            {
+                                                await ReplyAsync($"{error} \"**{dpName}**\" possède déjà l'objet \"**{argus[1]}**\"");
+                                                Logs.WriteLine($"{error} \"**{dpName}**\" possède déjà l'objet \"**{argus[1]}**\"");
+                                            }
+                                            else if (!wdItems.Contains(argus[1]))
+                                            {
+                                                await ReplyAsync($"{error} \"**{wdName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
+                                                Logs.WriteLine($"{error} \"**{wdName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        await ReplyAsync($"{error} Compte(s) \"**{argus[2]}**\" et/ou \"**{argus[3]}**\" inexistant(s): stuff create (nom_Personnage) pour créer un nouveau compte");
+                                        Logs.WriteLine($"{error} Compte(s) \"**{argus[2]}**\" et/ou \"**{argus[3]}**\" inexistant(s): stuff create (nom_Personnage) pour créer un nouveau compte");
+                                    }
+                                }
+                            }
+                        }
+                        // =================================================================================
+                        // = Gestion de la commande stuff give (objet) (nom_Personnage1) (nom_Personnage2) =
+                        // =================================================================================
+                        else if (input.StartsWith("create") || input.StartsWith("cr"))
+                        {
+                            if (HasRole((SocketGuildUser) this.Context.User, "RP") || IsStaff((SocketGuildUser) this.Context.User))
+                            {
+                                argus = input.Split(' ');
+                                // Sert à s'assurer qu'argus[0] == toujours create
+                                if (argus[0] == "create" || argus[0] == "cr")
+                                {
+                                    if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                        Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                    }
+                                    else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                        Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                    }
+                                    else if (await Global.GetStuffAccountByNameAsync(argus[1]) == null)
+                                    {
+                                        List<string> items = new List<string>();
+                                        StuffAccount newAccount;
+                                        if (mentionedUser != null)
+                                        {
+                                            ulong crUserId = mentionedUser.Id;
+                                            newAccount = new StuffAccount(argus[1], items, crUserId);
+                                        }
+                                        else
+                                        {
+                                            newAccount = new StuffAccount(argus[1], items, userId);
+                                        }
+
+                                        stuffAccounts.Add(newAccount);
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                        await ReplyAsync($"Compte de {argus[1]} créé");
+                                        Logs.WriteLine($"Compte de {argus[1]} créé");
+                                    }
+                                    else if (await Global.GetStuffAccountByNameAsync(argus[1]) != null)
+                                    {
+                                        await ReplyAsync($"{error} Le compte \"**{argus[1]}**\" existe déjà");
+                                        Logs.WriteLine($"{error} Le compte \"**{argus[1]}**\" existe déjà");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (this.Context.Guild.Name == "ServeurTest")
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} ou avoir le rôle {this.Context.Guild.GetRole(545753914998259715).Mention} pour utiliser cette commande");
+                                else
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} ou avoir le rôle {this.Context.Guild.GetRole(545753914998259715).Mention} pour utiliser cette commande");
+                            }
+                        }
+                        // =======================================================
+                        // = Gestion de la commande stuff create (nomPersonnage) =
+                        // =======================================================
+                        else if (input.StartsWith("delete") || input.StartsWith("del"))
+                        {
+                            argus = input.Split(' ');
+                            if (IsStaff((SocketGuildUser)this.Context.User) || userId == (await Global.GetStuffAccountByNameAsync(argus[1])).UserId)
+                            {
+                                argus = input.Split(' ');
+                                // Sert à s'assurer qu'argus[0] == toujours add
+                                if (argus[0] == "delete" || argus[0] == "del")
+                                {
+                                    if (argus.Length > 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                        Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                    }
+                                    else if (argus.Length < 2) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 2 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                        Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                    }
+                                    else if (await Global.GetStuffAccountIndexByNameAsync(argus[1]) != -1)
+                                    {
+                                        int toRemIndex = await Global.GetStuffAccountIndexByNameAsync(argus[1]);
+                                        stuffAccounts.RemoveAt(toRemIndex);
+                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                        await ReplyAsync($"Compte de {argus[1]} supprimé");
+                                        Logs.WriteLine($"Compte de {argus[1]} supprimé");
+                                    }
+                                    else if (await Global.GetStuffAccountIndexByNameAsync(argus[1]) == -1)
+                                    {
+                                        await ReplyAsync($"{error} Compte \"**{argus[1]}**\"  inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
+                                        Logs.WriteLine($"{error} Compte \"**{argus[1]}**\"  inexistant: stuff create (nom_Personnage) pour créer un nouveau compte");
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (this.Context.Guild.Name == "ServeurTest")
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                                else
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                            }
+                        }
+                        // =======================================================
+                        // = Gestion de la commande stuff delete (nomPersonnage) =
+                        // =======================================================
+                        else if (input == "sort")
+                        {
+                            try
+                            {
+                                List<StuffAccount> sortedList = stuffAccounts.OrderBy(o => o.Name).ToList();
+                                Global.EnregistrerDonneesStuff(nomFichier, sortedList);
+                                await ReplyAsync("La liste des comptes a été triée par ordre alphabétique");
+                            }
+                            catch (Exception e)
+                            {
+                                Logs.WriteLine(e.ToString());
+                                throw;
+                            }
+                        }
+                        // =====================================
+                        // = Gestion de la commande stuff sort =
+                        // =====================================
+                        else if (input.StartsWith("setowner") || input.StartsWith("setown") || input.StartsWith("so"))
+                        {
+                            if (IsStaff((SocketGuildUser)this.Context.User))
+                            {
+                                argus = input.Split(' ');
+                                // Sert à s'assurer qu'argus[0] == toujours setowner
+                                if (argus[0] == "setowner" || argus[0] == "setown" || argus[0] == "so")
+                                {
+                                    if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                        Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                    }
+                                    else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                        Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                    }
+                                    else
+                                    {
+                                        StuffAccount setAccount = await Global.GetStuffAccountByNameAsync(argus[1]);
+                                        if (setAccount != null)
+                                        {
+                                            if (mentionedUser != null)
+                                            {
+                                                try
+                                                {
+                                                    string soName = setAccount.Name;
+                                                    ulong soUserId = mentionedUser.Id;
+                                                    List<string> soItems = setAccount.Items;
+
+                                                    stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(soName));
+                                                    Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                    StuffAccount newAccount = new StuffAccount(soName, soItems, soUserId);
+                                                    stuffAccounts.Add(newAccount);
+                                                    Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                    await ReplyAsync($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
+                                                    Logs.WriteLine($"Le propriétaire du compte de \"**{soName}**\" est désormais \"**{mentionedUser.Mention}**\"");
+                                                    Logs.WriteLine(newAccount.ToString());
+                                                }
+                                                catch (Exception e)
+                                                {
+                                                    Logs.WriteLine(e.ToString());
+                                                    throw;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                await ReplyAsync($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
+                                                Logs.WriteLine($"{error} Vous devez mentionner un utilisateur (@utilisateur)");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                            Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (this.Context.Guild.Name == "ServeurTest")
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                                else
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                            }
+                        }
+                        // ===============================================================================
+                        // = Gestion de la commande (admin) stuff setowner (nom_Personnage) @utilisateur =
+                        // ===============================================================================
+                        else if (input.StartsWith("rename") || input.StartsWith("setname") || input.StartsWith("rn"))
+                        {
+                            if (IsStaff((SocketGuildUser)this.Context.User))
+                            {
+                                argus = input.Split(' ');
+                                // Sert à s'assurer qu'argus[0] == toujours setowner
+                                if (argus[0] == "rename" || argus[0] == "setname" || argus[0] == "rn")
+                                {
+                                    if (argus.Length > 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                        Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                    }
+                                    else if (argus.Length < 3) // Sert à s'assurer que argus[1] == forcément nomPerso (et qu'il n'y a que 3 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                        Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
+                                    }
+                                    else
+                                    {
+                                        StuffAccount setAccount = await Global.GetStuffAccountByNameAsync(argus[1]);
+                                        if (setAccount != null && await Global.GetStuffAccountByNameAsync(argus[2]) == null)
+                                        {
+                                            try
+                                            {
+                                                string rnName = setAccount.Name;
+                                                string rnNewName = argus[2];
+                                                ulong rnUserId = setAccount.UserId;
+                                                List<string> rnItems = setAccount.Items;
+
+                                                stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(rnName));
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                StuffAccount newAccount = new StuffAccount(rnNewName, rnItems, rnUserId);
+                                                stuffAccounts.Add(newAccount);
+                                                Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                await ReplyAsync($"Le nom du compte de \"**{rnName}**\" est désormais \"**{rnNewName}**\"");
+                                                Logs.WriteLine($"Le nom du compte de \"**{rnName}**\" est désormais \"**{rnNewName}**\"");
+                                                Logs.WriteLine(newAccount.ToString());
                                             }
                                             catch (Exception e)
                                             {
@@ -833,44 +740,146 @@ namespace AlterBotNet.Core.Commands
                                                 throw;
                                             }
                                         }
+                                        else if ((await Global.GetStuffAccountByNameAsync(argus[2]) != null))
+                                        {
+                                            await ReplyAsync($"{error} Le compte \"**{argus[2]}**\" existe déjà");
+                                            Logs.WriteLine($"{error} Le compte \"**{argus[2]}**\" existe déjà");
+                                        }
+                                        else
+                                        {
+                                            await ReplyAsync($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                            Logs.WriteLine($"{error} Compte \"**{argus[1]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                        }
                                     }
-                                    else if (!int.TryParse(argus[2], out indexObj))
+                                }
+                            }
+                            else
+                            {
+                                if (this.Context.Guild.Name == "ServeurTest")
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                                else
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
+                            }
+                        }
+                        // =============================================================================
+                        // = Gestion de la commande (admin) stuff rename (nom_Personnage) (nouveauNom) =
+                        // =============================================================================
+                        else if (input.StartsWith("replace") || input.StartsWith("rep"))
+                        {
+                            if (IsStaff((SocketGuildUser)this.Context.User))
+                            {
+                                argus = input.Split(' ');
+                                // Sert à s'assurer qu'argus[0] == toujours remove
+                                if (argus[0] == "replace" || argus[0] == "rep")
+                                {
+                                    if (argus.Length > 4) // Sert à s'assurer qu'il n'y a que 3 paramètres)
                                     {
-                                        await ReplyAsync($"{error} Vous devez utiliser le numéro de l'objet pour le remplacer");
-                                        Logs.WriteLine($"{error} Vous devez utiliser le numéro de l'objet pour le remplacer");
+                                        await ReplyAsync($"{error} Nombre max d'arguments dépassé");
+                                        Logs.WriteLine($"{error} Nombre max d'arguments dépassé");
+                                    }
+                                    else if (argus.Length < 4) // Sert à s'assurer qu'il n'y a que 3 paramètres)
+                                    {
+                                        await ReplyAsync($"{error} Nombre insuffisant d'arguments");
+                                        Logs.WriteLine($"{error} Nombre insuffisant d'arguments");
                                     }
                                     else
                                     {
-                                        await ReplyAsync($"{error} \"**{repAccountName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
-                                        Logs.WriteLine($"{error} \"**{repAccountName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
+                                        StuffAccount repAccount = await Global.GetStuffAccountByNameAsync(argus[1]);
+                                        if (repAccount != null)// Sert à s'assurer que le compte existe bien
+                                        {
+                                            string repAccountName = repAccount.Name;
+                                            List<string> repAccountItems = repAccount.Items;
+                                            ulong repAccountUserId = repAccount.UserId;
+                                            if (argus[2].Contains('_') || argus[3].Contains('_'))
+                                            {
+                                                argus[2] = argus[2].Replace("_", " ");
+                                                argus[3] = argus[3].Replace("_", " ");
+                                            }
+                                            if (argus[2].Contains('-') || argus[3].Contains('-'))
+                                            {
+                                                argus[2] = argus[2].Replace("-", " ");
+                                                argus[3] = argus[3].Replace("-", " ");
+                                            }
+                                            if (int.TryParse(argus[2], out int indexObj))
+                                            {
+                                                if (!string.IsNullOrEmpty(repAccountItems[indexObj]))
+                                                {
+                                                    try
+                                                    {
+                                                        string nomObj = repAccountItems[indexObj];
+                                                        repAccountItems[indexObj] = argus[3];
+                                                        stuffAccounts.RemoveAt(await Global.GetStuffAccountIndexByNameAsync(repAccountName));
+                                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                        StuffAccount newAccount = new StuffAccount(repAccountName, repAccountItems, repAccountUserId);
+                                                        stuffAccounts.Add(newAccount);
+                                                        Global.EnregistrerDonneesStuff(nomFichier, stuffAccounts);
+                                                        await ReplyAsync($"Objet \"**{nomObj}**\" remplacé par l'objet \"**{argus[3]}**\" sur le compte de \"**{repAccountName}**\"");
+                                                        Logs.WriteLine($"Objet \"**{nomObj}**\" remplacé par l'objet \"**{argus[3]}**\" sur le compte de \"**{repAccountName}**\"");
+                                                    }
+                                                    catch (Exception e)
+                                                    {
+                                                        Logs.WriteLine(e.ToString());
+                                                        throw;
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    try
+                                                    {
+                                                        await ReplyAsync($"{error} \"**{repAccountName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                                        Logs.WriteLine($"{error} \"**{repAccountName}**\" ne possède pas d'objet à l'index \"**{argus[1]}**\"");
+                                                    }
+                                                    catch (Exception e)
+                                                    {
+                                                        Logs.WriteLine(e.ToString());
+                                                        throw;
+                                                    }
+                                                }
+                                            }
+                                            else if (!int.TryParse(argus[2], out indexObj))
+                                            {
+                                                await ReplyAsync($"{error} Vous devez utiliser le numéro de l'objet pour le remplacer");
+                                                Logs.WriteLine($"{error} Vous devez utiliser le numéro de l'objet pour le remplacer");
+                                            }
+                                            else
+                                            {
+                                                await ReplyAsync($"{error} \"**{repAccountName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
+                                                Logs.WriteLine($"{error} \"**{repAccountName}**\" ne possède pas l'objet \"**{argus[1]}**\"");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                            Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
+                                        }
                                     }
                                 }
+                            }
+                            else
+                            {
+                                if (this.Context.Guild.Name == "ServeurTest")
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
                                 else
-                                {
-                                    await ReplyAsync($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                    Logs.WriteLine($"{error} Compte \"**{argus[2]}**\" inexistant: bank add (nom_Personnage) pour créer un nouveau compte");
-                                }
+                                    await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
                             }
                         }
-                    }
-                    else
-                    {
-                        if (this.Context.Guild.Name == "ServeurTest")
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(541492279894999080).Mention} pour utiliser cette commande");
+                        // =========================================================================
+                        // = Gestion de la commande (admin) stuff replace (objet) (nom_Personnage) =
+                        // =========================================================================
                         else
-                            await ReplyAsync($"Vous devez être membre du {this.Context.Guild.GetRole(420536907525652482).Mention} pour utiliser cette commande");
-                    }
-                }
-                else
-                {
-                    try
-                    {
-                        await ReplyAsync(error);
-                    }
-                    catch (Exception e)
-                    {
-                        Logs.WriteLine(e.ToString());
-                        throw;
+                        {
+                            try
+                            {
+                                await ReplyAsync(error);
+                            }
+                            catch (Exception e)
+                            {
+                                Logs.WriteLine(e.ToString());
+                                throw;
+                            }
+                        }
+
+                        break;
                     }
                 }
             }

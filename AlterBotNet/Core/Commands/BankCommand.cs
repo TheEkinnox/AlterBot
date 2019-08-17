@@ -89,6 +89,7 @@ namespace AlterBotNet.Core.Commands
                         throw;
                     }
                 }
+                
                 // ====================================
                 // = Gestion de la commande bank list =
                 // ====================================
@@ -96,12 +97,12 @@ namespace AlterBotNet.Core.Commands
                 {
                     try
                     {
-                        Logs.WriteLine((await Global.BankAccountsListAsync(nomFichier)).Count.ToString());
                         foreach (string msg in await Global.BankAccountsListAsync(nomFichier))
                         {
                             if (!string.IsNullOrEmpty(msg))
                             {
                                 await ReplyAsync(msg);
+                                //await ReplyAsync(null, false, msg);
                             }
                         }
                         Logs.WriteLine($"Liste envoyée sur le channel {this.Context.Channel.Name}");
@@ -249,7 +250,11 @@ namespace AlterBotNet.Core.Commands
                             BankAccount infoAccount = await Global.GetBankAccountByNameAsync(nomFichier, argus[1]);
                             if (infoAccount != null)
                             {
-                                await ReplyAsync(infoAccount.ToString());
+                                EmbedBuilder eb = new EmbedBuilder();
+                                eb.WithTitle(($"Argent de **{infoAccount.Name}**"))
+                                    .WithColor(this._rand.Next(256), this._rand.Next(256), this._rand.Next(256))
+                                    .AddField("==============================================", infoAccount.ToString().Replace(infoAccount.ToString().Split('\n')[0]+'\n',"Disponible: ") + $"\nPropriétaire: {this.Context.Guild.GetUser(infoAccount.UserId).Username}");
+                                await ReplyAsync("", false, eb.Build());
                                 Logs.WriteLine(infoAccount.ToString());
                             }
                             else

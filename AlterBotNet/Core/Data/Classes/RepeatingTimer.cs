@@ -36,7 +36,7 @@ namespace AlterBotNet.Core.Data.Classes
         }
 
         private static void OnTimerTicked(object sender, ElapsedEventArgs e)
-            => RepeatingTimer.OnTimerTickedAsync(sender, e).GetAwaiter().GetResult();
+            => RepeatingTimer.OnTimerTickedAsync().GetAwaiter().GetResult();
 
         static string _cheminComptesEnBanque = Global.CheminComptesEnBanque;
         private static bool _salaireVerse = false;
@@ -46,7 +46,7 @@ namespace AlterBotNet.Core.Data.Classes
 
         private static int _ticksPasses = 120;
 
-        private static async Task OnTimerTickedAsync(object sender, ElapsedEventArgs e)
+        private static async Task OnTimerTickedAsync()
         {
             Logs.WriteLine("Timer ticked");
 

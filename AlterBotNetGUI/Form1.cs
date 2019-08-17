@@ -10,14 +10,16 @@ using System.Windows.Forms;
 
 namespace AlterBotNetGUI
 {
-    public partial class frmAlterBot : Form
+    public partial class FrmAlterBot : Form
     {
-        public frmAlterBot()
+        public FrmAlterBot()
         {
             InitializeComponent();
         }
 
+        // ReSharper disable UnusedParameter.Local
         private void BtnQuitter_Click(object sender, EventArgs e)
+            // ReSharper restore UnusedParameter.Local
         {
             Close();
             Dispose();
