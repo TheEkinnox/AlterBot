@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -376,5 +377,35 @@ namespace AlterBotNet.Core.Commands
 		#endregion
 
 		//ToDo: Commande mute
+		[Command("mute"), Description("Retire à un utilisateur la permission d'envoyer des messages dans le salon actuel")]
+		public async Task MuteUser(string user, string option, [Remainder] string reason = "none")
+		{
+			try
+			{
+				if (!Global.HasRole(this.Context.User as SocketGuildUser, "Admin"))
+				{
+					await ReplyAsync("Vous devez être administrateur pour utiliser cette commande");
+					throw new InvalidOperationException($"L'utilisateur \"{this.Context.User.Username}\" a tenté d'utiliser la commande warn mais n'est pas administrateur");
+				}
+				IGuildUser mentionedUser = (IGuildUser) this.Context.Message.MentionedUsers.FirstOrDefault();
+				if (user == "none" || mentionedUser == null)
+				{
+					await ReplyAsync("Vous devez mentionner un utilisateur...");
+					return;
+				}
+				if (user != mentionedUser.Mention)
+				{
+					await ReplyAsync("Veuilez respecter la syntaxe (mute utilisateur option [raison]...");
+					return;
+				}
+				
+				
+			}
+			catch (Exception e)
+			{
+				Logs.WriteLine(e.Message);
+				throw;
+			}
+		}
 	}
 }
