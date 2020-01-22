@@ -29,7 +29,7 @@ namespace AlterBotNet.Core.Commands
 
         #region MÉTHODES
 
-        [Command("roll"), Alias("de", "dice", "r"), Summary("Lance 1 dé (par défaut 1d100) **:warning:LES PRIORITES D'OPERATEURS NE SONT PAS RESPECTEES:warning:**")]
+        [Command("roll"), Alias("de", "dice", "r"), Summary("Lance 1 dé (par défaut 1d100)")]
         public async Task LancerDe([Remainder] string input = "none")
         {
             MathParser parser = new MathParser();
@@ -39,41 +39,18 @@ namespace AlterBotNet.Core.Commands
             string msgResultat = "";
             int sumResultats = 0;
             bool valide = true;
-            bool containsCalcul = false;
+            bool containsCalcul = input.Contains('+') || input.Contains('-') || input.Contains('*') || input.Contains('/');
+            string calculString;
 
             if (input == "help")
             {
                 await this.Context.Channel.SendMessageAsync("Lance le nombre indiqué de dés (par défaut 1d100)");
             }
-            else if (input == "magieprimaire" || input == "mp")
-            {
-                resultat[0] = this._rand.Next(1, 4 + 1);
-                Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
-                switch (resultat[0])
-                {
-                    case 1:
-                        Logs.WriteLine($"@{this.Context.User.Username} a obtenu une magie d'eau (@{Global.GetRoleByName(this.Context, "MJ").Name})");
-                        await ReplyAsync($"{this.Context.User.Mention} a obtenu une magie d'eau ({Global.GetRoleByName(this.Context, "MJ").Mention})");
-                        break;
-                    case 2:
-                        Logs.WriteLine($"@{this.Context.User.Username} a obtenu une magie d'air (@{Global.GetRoleByName(this.Context, "MJ").Name})");
-                        await ReplyAsync($"{this.Context.User.Mention} a obtenu une magie d'air ({Global.GetRoleByName(this.Context, "MJ").Mention})");
-                        break;
-                    case 3:
-                        Logs.WriteLine($"@{this.Context.User.Username} a obtenu une magie de feu (@{Global.GetRoleByName(this.Context, "MJ").Name})");
-                        await ReplyAsync($"{this.Context.User.Mention} a obtenu une magie de feu ({Global.GetRoleByName(this.Context, "MJ").Mention})");
-                        break;
-                    case 4:
-                        Logs.WriteLine($"@{this.Context.User.Username} a obtenu une magie de terre (@{Global.GetRoleByName(this.Context, "MJ").Name})");
-                        await ReplyAsync($"{this.Context.User.Mention} a obtenu une magie de terre ({Global.GetRoleByName(this.Context, "MJ").Mention})");
-                        break;
-                }
-            }
             else if (input.StartsWith("d"))
             {
                 if (int.TryParse(input.Replace("d", ""), out max))
                 {
-                    resultat[0] = this._rand.Next(1,max + 1);
+                    resultat[0] = this._rand.Next(1, max + 1);
                     Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
                     await ReplyAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
                     //return;
@@ -87,7 +64,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (char.IsDigit(input[0]) && !input.Contains("d") && int.TryParse(input, out max))
             {
-                resultat[0] = this._rand.Next(1,max + 1);
+                resultat[0] = this._rand.Next(1, max + 1);
                 Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
                 await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {resultat[0]}");
             }
@@ -98,7 +75,7 @@ namespace AlterBotNet.Core.Commands
                 {
                     for (int i = 0; i < nbDes; i++)
                     {
-                        resultat[i] = this._rand.Next(1,max + 1);
+                        resultat[i] = this._rand.Next(1, max + 1);
                         sumResultats += resultat[i];
 
                         if (i + 1 < nbDes)
@@ -111,11 +88,12 @@ namespace AlterBotNet.Core.Commands
                         }
                     }
 
-                    if (input.Contains('+') || input.Contains('-') || input.Contains('*') || input.Contains('/'))
+                    if (containsCalcul)
                     {
-                        containsCalcul = true;
                         Logs.WriteLine(sumResultats.ToString());
-                        sumResultats = (int) parser.Parse(sumResultats.ToString(), false);
+                        calculString = input.Replace(nbDes.ToString() + "d" + max.ToString(), "");
+                        sumResultats = (int)parser.Parse(sumResultats.ToString() + calculString, false);
+                        msgResultat += calculString;
                         Logs.WriteLine("Calcul effectué");
                         Logs.WriteLine(sumResultats.ToString());
                     }
@@ -135,18 +113,10 @@ namespace AlterBotNet.Core.Commands
                         Logs.WriteLine($"{this.Context.User.Username} a roll {sumResultats} ({msgResultat}");
                         await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {sumResultats} ({msgResultat} = {sumResultats})");
                     }
-                    else if (valide)
+                    else
                     {
-                        //if (this.Context.User.Username != "TheEkinnox")
-                        //{
                         Logs.WriteLine($"{this.Context.User.Username} a roll {sumResultats}");
                         await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {sumResultats}");
-                        //}
-                        //else
-                        //{
-                        //    Logs.WriteLine($"{this.Context.User.Username} a roll {sumResultats}");
-                        //    await this.Context.Channel.SendMessageAsync($"{this.Context.User.Mention} a roll {94}");
-                        //}
                     }
                 }
                 else
@@ -157,7 +127,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (input.ToLower() == "none")
             {
-                resultat[0] = this._rand.Next(1,max);
+                resultat[0] = this._rand.Next(1, max);
                 if (this.Context.User.Id != 298614183258488834)
                 {
                     Logs.WriteLine($"{this.Context.User.Username} a roll {resultat[0]}");
