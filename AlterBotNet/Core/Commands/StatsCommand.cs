@@ -123,9 +123,9 @@ namespace AlterBotNet.Core.Commands
                     }
                     else
                     {
-                        throw new Exception();
                         Logs.WriteLine($"\"{this.Context.User.Username}\" a tenté d'utiliser la commande stats list sans être membre du staff.");
-                            await ReplyAsync($"Vous devez être membre du {Global.GetRoleByName(this.Context,"Staff").Mention} pour utiliser cette commande");
+                        await ReplyAsync($"Vous devez être membre du {Global.GetRoleByName(this.Context,"Staff").Mention} pour utiliser cette commande");
+                        throw new Exception();
                     }
                 }
                 // ======================================
