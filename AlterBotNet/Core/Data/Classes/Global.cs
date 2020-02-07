@@ -18,7 +18,10 @@ namespace AlterBotNet.Core.Data.Classes
 	public static class Global
 	{
 		#region CONSTANTES ET ATTRIBUTS STATIQUES
-
+		internal static MethodInfo[] Commands = Assembly.GetEntryAssembly()?.GetTypes()
+                      .SelectMany(t => t.GetMethods())
+                      .Where(m => m.GetCustomAttributes(typeof(CommandAttribute), false).Length > 0)
+                      .ToArray();
 		internal static string CheminConfig = Assembly.GetEntryAssembly()?.Location
 			.Replace(@"bin\Debug\netcoreapp2.1\AlterBotNet.dll", @"Core\Data\config.altr");
 
@@ -63,6 +66,16 @@ namespace AlterBotNet.Core.Data.Classes
 		#endregion
 
 		#region MÉTHODES
+
+		public static bool IsRPCommand(MethodInfo cmd)
+        {
+			return cmd.GetCustomAttribute(typeof(RolePlayCommandAttribute),false) != null;
+        }
+
+		public static bool IsHiddenCommand(MethodInfo cmd)
+        {
+			return cmd.GetCustomAttribute(typeof(HiddenCommandAttribute),false) != null;
+        }
 
 		/// <summary>
 		/// Vérifie si l'utilisateur est membre du Staff ou non
@@ -1174,4 +1187,12 @@ namespace AlterBotNet.Core.Data.Classes
 
 		#endregion
 	}
+
+    public class RolePlayCommandAttribute : Attribute
+    {
+    }
+
+    public class HiddenCommandAttribute : Attribute
+    {
+    }
 }

@@ -31,7 +31,8 @@ namespace AlterBotNet.Core.Commands
         private Random _rand = new Random();
         #region MÉTHODES
 
-        [Command("stuff"), Alias("stf","inv"), Summary("Affiche le stuff d'un personnage")]
+        [RolePlayCommand]
+        [Command("stuff"), Alias("stf","inv"), Summary("Gérer l'inventaire d'un personnage")]
         public async Task SendStuff([Remainder]string input = "none")
         {
             SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
@@ -885,16 +886,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (input == "none")
             {
-                try
-                {
-                    await ReplyAsync(error);
-                    Logs.WriteLine(error);
-                }
-                catch (Exception e)
-                {
-                    Logs.WriteLine(e.ToString());
-                    throw;
-                }
+                await SendStuff("help");
             }
         }
 

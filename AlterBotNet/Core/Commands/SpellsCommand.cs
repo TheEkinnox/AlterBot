@@ -15,7 +15,8 @@ namespace AlterBotNet.Core.Commands
         private Random _rand = new Random();
         #region MÉTHODES
 
-        [Command("spell"), Alias("spl"), Summary("Affiche le contenu du grimoire d'un personnage")]
+        [RolePlayCommand]
+        [Command("spell"), Alias("spl"), Summary("Gérer le contenu du grimoire d'un personnage")]
         public async Task SendSpell([Remainder]string input = "none")
         {
             SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
@@ -850,16 +851,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (input == "none")
             {
-                try
-                {
-                    await ReplyAsync(error);
-                    Logs.WriteLine(error);
-                }
-                catch (Exception e)
-                {
-                    Logs.WriteLine(e.ToString());
-                    throw;
-                }
+                await SendSpell("help");
             }
         }
         #endregion

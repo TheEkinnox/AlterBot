@@ -30,7 +30,8 @@ namespace AlterBotNet.Core.Commands
 
         #region MÉTHODES
 
-        [Command("grim"), Alias("grm"), Summary("Affiche le contenu du grimoire commun")]
+        [RolePlayCommand]
+        [Command("grim"), Alias("grm"), Summary("(Admin) Gérer le contenu du grimoire commun")]
         public async Task SendPublicGrim([Remainder] string input = "none")
         {
             string message = "";

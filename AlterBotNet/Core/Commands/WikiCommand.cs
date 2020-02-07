@@ -23,7 +23,7 @@ namespace AlterBotNet.Core.Commands
     {
         #region MÉTHODES
 
-        [Command("wiki"), Summary("Commande d'accès au wiki")]
+        [Command("wiki"), Summary("Commande d'accès a une page du wiki (par défaut l'acceuil)")]
         public async Task SendWiki([Remainder]string option = "none")
         {
             try
@@ -76,12 +76,19 @@ namespace AlterBotNet.Core.Commands
                     case "nephilims":
                         await ReplyAsync("**Les Nephilims :heart:**\nhttps://alternia.fandom.com/fr/wiki/Nephilim");
                         break;
+                    case "comu":
+                    case "communaute":
+                    case "la communaute":
+                        await ReplyAsync("**La Communauté**https://alternia.fandom.com/fr/wiki/Catégorie:La_Communauté");
+                        break;
                     case "none":
                         await ReplyAsync("**Le Wiki**\nhttps://alternia.fandom.com/fr/");
                         break;
                     default:
-                        await ReplyAsync("L'option entrée est invalide. Veuillez réessayer.");
-                        throw new ArgumentException("L'option entrée est invalide.");
+                        await ReplyAsync($"https://alternia.fandom.com/fr/wiki/{option}");
+                        //await ReplyAsync("L'option entrée est invalide. Veuillez réessayer.");
+                        //throw new ArgumentException("L'option entrée est invalide.");
+                        break;
                 }
             }
             catch (Exception e)

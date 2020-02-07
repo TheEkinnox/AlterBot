@@ -29,7 +29,8 @@ namespace AlterBotNet.Core.Commands
 
         #region MÉTHODES
 
-        [Command("roll"), Alias("de", "dice", "r"), Summary("Lance 1 dé (par défaut 1d100)")]
+        [RolePlayCommand]
+        [Command("roll"), Alias("de", "dice", "r"), Summary("Lancer un (1) dé (par défaut 1d100)")]
         public async Task LancerDe([Remainder] string input = "none")
         {
             MathParser parser = new MathParser();

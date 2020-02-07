@@ -35,7 +35,8 @@ namespace AlterBotNet.Core.Commands
 
         #region MÉTHODES
 
-        [Command("stats"), Alias("sts"), Summary("Affiche les stats d'un personnage")]
+        [RolePlayCommand]
+        [Command("stats"), Alias("sts"), Summary("Gérer les stats d'un personnage")]
         public async Task SendStats([Remainder] string input = "none")
         {
             SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
@@ -902,16 +903,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (input == "none")
             {
-                try
-                {
-                    await ReplyAsync(error);
-                    Logs.WriteLine(error);
-                }
-                catch (Exception e)
-                {
-                    Logs.WriteLine(e.ToString());
-                    throw;
-                }
+                await SendStats("help");
             }
         }
         #endregion

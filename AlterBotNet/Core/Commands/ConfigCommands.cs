@@ -23,7 +23,7 @@ namespace AlterBotNet.Core.Commands
     {
         #region MÉTHODES
 
-        [Command("config"), Alias("cfg", "settings", "stgs"), Summary("Commande de gestion de la configuration du bot")]
+        [Command("config"), Alias("cfg", "settings", "stgs"), Summary("(Admin) Gérer la configuration du bot")]
         public async Task SendConfig(string option = "none", [Remainder] string input = "none")
         {
             try

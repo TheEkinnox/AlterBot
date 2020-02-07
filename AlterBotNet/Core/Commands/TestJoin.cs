@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Text;
-
+using AlterBotNet.Core.Data.Classes;
 using Discord;
 using Discord.Commands;
 
@@ -25,7 +25,8 @@ namespace AlterBotNet.Core.Commands
     {
         #region MÉTHODES
 
-        [Command("testjoin"), Alias("tj","test","join"), Summary("Simule l'arrivée d'un joueur sur le serveur")]
+        [HiddenCommand]
+        [Command("testjoin"), Alias("tj","test","join"), Summary("Simuler l'arrivée d'un joueur sur le serveur")]
         public async Task JoinMessage()
         {
             await this.Context.Channel.SendMessageAsync(Config.WelcomeMessage + " " + this.Context.User.Mention);

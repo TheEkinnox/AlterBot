@@ -36,7 +36,7 @@ namespace AlterBotNet.Core.Commands
 
         #region MÉTHODES
 
-        [Command("bank"), Alias("bnk", "money", "bk"), Summary("Affiche l'argent en banque d'un utilisateur")]
+        [Command("bank"), Alias("bnk", "money", "bk"), Summary("Gérer le compte en banque d'un utilisateur")]
         public async Task SendBank([Remainder] string input = "none")
         {
             SocketUser mentionedUser = this.Context.Message.MentionedUsers.FirstOrDefault();
@@ -800,8 +800,7 @@ namespace AlterBotNet.Core.Commands
             }
             else if (input == "none")
             {
-                await ReplyAsync(error);
-                Logs.WriteLine(error);
+                await SendBank("help");
             }
         }
 
